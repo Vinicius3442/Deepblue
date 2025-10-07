@@ -1,0 +1,184 @@
+/* style.css - Recriado com Foco em Escala Orgânica e Design Fluido (Sem Media Queries)
+*/
+
+:root {
+    /* Paleta de Cores */
+    --color-text: #f0f4f8;
+    --color-text-dark: #2c2c54;
+    --color-accent: #ffb86c;
+    --color-shadow: rgba(0, 10, 18, 0.7);
+
+    /* Tipografia */
+    --font-family-display: 'Oswald', sans-serif;
+    --font-family-body: 'Roboto', sans-serif;
+    --font-family-monospace: 'Courier New', Courier, monospace;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family-body);
+    color: var(--color-text);
+    background-color: #000a12; /* Cor de fundo final do oceano */
+    overflow-x: hidden;
+    position: relative; /* Necessário para o efeito de vinheta */
+}
+
+/* Efeito de vinheta para imersão */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(circle, transparent 50%, rgba(0, 0, 0, 0.6));
+    pointer-events: none; /* Garante que não interfere com cliques */
+    z-index: 1000;
+}
+
+/* Camada de fundo fixa que muda de cor via JS */
+.ocean-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    background: #87ceeb; /* Cor inicial */
+}
+
+/* Tela de título inicial */
+.title-slide {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-text-dark);
+    padding: 1rem;
+}
+
+/* Tipografia fluida com clamp(MIN, IDEAL, MAX) */
+.main-title {
+    font-family: var(--font-family-display);
+    font-size: clamp(3rem, 10vw, 8rem);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.subtitle {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    max-width: 60ch; /* Limita a largura do texto para melhor legibilidade */
+}
+
+.scroll-indicator {
+    margin-top: 4rem;
+    animation: pulseScroll 2.5s infinite;
+}
+
+.arrow-down {
+    width: 2px;
+    height: 30px;
+    background: var(--color-text-dark);
+    margin: 1rem auto 0;
+}
+
+@keyframes pulseScroll {
+    0%, 100% { opacity: 1; transform: translateY(0); }
+    50% { opacity: 0.6; transform: translateY(10px); }
+}
+
+/* O contêiner principal do oceano */
+#ocean-abyss {
+    position: relative;
+    width: 100%;
+    margin-top: 100vh; /* Empurra para depois do título */
+}
+
+/* "Ilhas de Conteúdo": O layout principal agora é mais livre.
+   O cluster ocupa uma grande área e os elementos internos são posicionados dentro dele.
+*/
+.zone-cluster {
+    position: absolute;
+    left: 5vw; /* Centraliza o cluster com 5% de margem em cada lado */
+    width: 90vw;
+    min-height: 60vh; /* Garante espaço para os animais nadarem */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.zone-title {
+    font-family: var(--font-family-display);
+    font-size: clamp(2.5rem, 9vw, 6rem);
+    text-transform: uppercase;
+    text-shadow: 0 0 15px var(--color-shadow);
+    z-index: 10;
+    position: relative; /* Garante que fique acima da galeria */
+}
+
+.zone-range {
+    font-family: var(--font-family-monospace);
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: var(--color-accent);
+    text-shadow: 0 0 10px var(--color-shadow);
+    margin-top: 1rem;
+    position: relative;
+    z-index: 10;
+}
+
+/* A galeria agora é o container de fundo para o texto e os animais */
+.fauna-gallery {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.fauna-gallery figure {
+    position: absolute;
+    will-change: transform; /* Otimização de performance para animação */
+}
+
+.fauna-gallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 5px 15px var(--color-shadow));
+}
+
+
+/* Indicador de profundidade fixo */
+.depth-indicator {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2000; /* Acima da vinheta */
+    background: rgba(0, 0, 0, 0.6);
+    color: var(--color-text);
+    font-family: var(--font-family-monospace);
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    white-space: nowrap; /* Impede quebra de linha */
+}
+
+.depth-indicator .depth-value {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--color-accent);
+}
