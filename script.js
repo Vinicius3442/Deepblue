@@ -32,49 +32,56 @@ document.addEventListener("DOMContentLoaded", () => {
   let isTicking = false;
 
   // --- MODAL ---
+  // Crie o modal apenas UMA vez e adicione ao body
   const modal = document.createElement("div");
   modal.className = "animal-modal";
   modal.innerHTML = `
     <div class="modal-content">
       <span class="modal-close">&times;</span>
-      <img src="" alt="">
-      <h2></h2>
-      <h3></h3>
-      <p></p>
+      <img src="" alt="Animal Image">
+      <h2 class="modal-title"></h2>
+      <h3 class="modal-scientific-name"></h3>
+      <p class="modal-description"></p>
     </div>
   `;
   document.body.appendChild(modal);
+
+  // Obtenha as referências dos elementos internos do modal APÓS ele ser adicionado ao DOM
   const modalImg = modal.querySelector("img");
-  const modalTitle = modal.querySelector("h2");
-  const modalScientific = modal.querySelector("h3");
-  const modalDescription = modal.querySelector("p");
-  modal.querySelector(".modal-close").addEventListener("click", () => modal.classList.remove("active"));
+  const modalTitle = modal.querySelector(".modal-title");
+  const modalScientific = modal.querySelector(".modal-scientific-name");
+  const modalDescription = modal.querySelector(".modal-description");
+  const modalCloseBtn = modal.querySelector(".modal-close");
+
+  // Listener para fechar o modal
+  modalCloseBtn.addEventListener("click", () => {
+    modal.classList.remove("active");
+  });
+
+  // Opcional: Fechar o modal clicando fora do conteúdo
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      modal.classList.remove("active");
+    }
+  });
+
 
   // --- INICIALIZAÇÃO ---
   function init() {
-    // A altura total do abismo é a profundidade máxima em pixels mais a altura da janela
-    // para que se possa rolar até o "fundo" e ver o final da última zona.
     const totalHeight = CONFIG.MAX_DEPTH * CONFIG.PIXELS_PER_METER + window.innerHeight;
     oceanAbyss.style.height = `${totalHeight}px`;
 
-    // Posiciona as zonas verticalmente no abismo.
-    // Cada zona começa na sua 'startDepth' convertida para pixels.
     ZONES.forEach(zone => {
       const element = document.getElementById(zone.id);
       if (element) {
-        element.style.top = `${zone.startDepth * CONFIG.PIXELS_PER_METER}px`;
+        const zoneTop = zone.startDepth * CONFIG.PIXELS_PER_METER;
+        element.style.top = `${zoneTop}px`;
       }
     });
 
     prepareAnimals();
     window.addEventListener("scroll", onScroll);
-    window.addEventListener("resize", () => {
-      // Reajusta a altura do abismo e as posições dos animais em resize
-      init(); // Recalcula tudo
-      update(); // Atualiza a tela
-    });
-    // Dispara uma atualização inicial para definir o estado correto
-    update();
+    update(); // Dispara uma atualização inicial
   }
 
   // --- SCROLL ---
@@ -89,12 +96,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-function update() {
+  function update() {
     const scrollY = lastScrollY;
-    const initialSectionHeight = document.querySelector(".sky-and-surface-wrapper").offsetHeight;
-    const effectiveScrollY = Math.max(0, scrollY - initialSectionHeight);
-
-    currentDepth = Math.min(Math.floor(effectiveScrollY / CONFIG.PIXELS_PER_METER), CONFIG.MAX_DEPTH);
+    currentDepth = Math.min(Math.floor(scrollY / CONFIG.PIXELS_PER_METER), CONFIG.MAX_DEPTH);
 
     const titleOpacity = Math.max(0, 1 - (scrollY / (window.innerHeight * 0.75)));
     titleSlide.style.opacity = titleOpacity;
@@ -137,14 +141,9 @@ function update() {
 
   // --- ANIMAIS ---
   function prepareAnimals() {
-    // Limpa a array de animais para evitar duplicação em resize
-    animals = [];
-
     document.querySelectorAll('[data-animal="true"]').forEach(figure => {
       const gallery = figure.parentElement;
-      // Usamos getBoundingClientRect para obter as dimensões atuais da galeria.
-      // É importante que o .fauna-gallery tenha width/height definidos (e.g., width: 100%; height: 100%;)
-      const galleryRect = gallery.getBoundingClientRect();
+      const galleryRect = gallery.getBoundingClientRect(); // Use gallery.getBoundingClientRect() para referências
 
       const depth = parseInt(figure.dataset.depth, 10);
       const type = figure.dataset.type || "generic";
@@ -154,11 +153,6 @@ function update() {
       const smoothness = 0.015 + Math.random() * 0.015;
       const verticalDrift = 0.2 + Math.random() * 0.4;
 
-      // Pegar as dimensões do animal para calcular os limites de forma precisa
-      // figure.offsetWidth e figure.offsetHeight são mais confiáveis aqui
-      const animalWidth = figure.offsetWidth || 150; // Valor padrão se não conseguir calcular
-      const animalHeight = figure.offsetHeight || 150; // Valor padrão se não conseguir calcular
-
       const animal = {
         figure,
         img: figure.querySelector("img"),
@@ -166,12 +160,9 @@ function update() {
         type,
         articlePath,
         isActive: false,
-        // Posição inicial relativa à galeria, garantindo que o animal não comece fora.
-        // `galleryRect.width - animalWidth` garante que a borda direita do animal esteja dentro do limite.
-        x: Math.random() * (galleryRect.width - animalWidth),
-        y: Math.random() * (galleryRect.height - animalHeight),
-        width: animalWidth, // Armazenamos as dimensões para uso posterior
-        height: animalHeight, // Armazenamos as dimensões para uso posterior
+        x: Math.random() * (window.innerWidth - (figure.offsetWidth || 100)), // Posição relativa à viewport
+        y: Math.random() * (window.innerHeight - (figure.offsetHeight || 100)), // Posição relativa à viewport
+        homeY: window.innerHeight / 2,
         speed: baseSpeed,
         baseSpeed,
         wander: 0.6 + Math.random() * 0.5,
@@ -188,7 +179,9 @@ function update() {
       animal.figure.style.opacity = 0;
       animal.figure.style.transition = 'opacity 0.5s ease-in-out';
 
+      // Listener para abrir o modal
       figure.addEventListener("click", async () => {
+        console.log("Animal clicked:", animal.img.alt, "Path:", animal.articlePath); // Debug
         if (!animal.articlePath) {
           console.warn("Animal sem caminho de artigo:", animal.img.alt);
           return;
@@ -204,7 +197,7 @@ function update() {
           modalTitle.textContent = data.name;
           modalScientific.textContent = data.scientificName || "";
           modalDescription.textContent = data.description;
-          modal.classList.add("active");
+          modal.classList.add("active"); // Ativa o modal
         } catch (err) {
           console.error("Erro ao carregar artigo JSON:", err);
         }
@@ -213,11 +206,7 @@ function update() {
       animals.push(animal);
     });
 
-    // Garante que a animação só seja iniciada uma vez
-    if (!window.animalAnimationStarted) {
-      animateAnimals();
-      window.animalAnimationStarted = true;
-    }
+    animateAnimals();
   }
 
   function checkAnimalActivation() {
@@ -236,20 +225,27 @@ function update() {
     });
   }
 
+
   function animateAnimals() {
     animals.forEach(animal => {
-      if (!animal.isActive) return;
+      if (!animal.isActive) {
+        // Se o animal não estiver ativo, não precisamos animá-lo nem atualizar sua posição
+        return;
+      }
 
-      // É CRÍTICO obter galleryRect dentro do loop de animação,
-      // pois a posição do elemento pai na viewport pode mudar com o scroll.
-      // No entanto, para fins de LIMITES, precisamos do TAMANHO da galeria,
-      // que não muda com o scroll. gallery.offsetWidth e gallery.offsetHeight são melhores.
-      const galleryWidth = animal.figure.parentElement.offsetWidth;
-      const galleryHeight = animal.figure.parentElement.offsetHeight;
+      // Certifique-se de que galleryRect está atualizado para o posicionamento relativo
+      // A posição dos animais deve ser relativa ao 'zone-cluster' pai
+      // Pegar o 'zone-cluster' pai para calcular o offset
+      const parentZone = animal.figure.closest('.zone-cluster');
+      if (!parentZone) return; // Se não houver pai, algo está errado
+
+      const parentZoneRect = parentZone.getBoundingClientRect(); // Posição da zona na viewport
+
+      const imgWidth = animal.img?.offsetWidth || animal.figure.offsetWidth || 50;
+      const imgHeight = animal.img?.offsetHeight || animal.figure.offsetHeight || 50;
 
       animal.time += 0.01;
 
-      // Ajustes de direção e velocidade... (mesma lógica anterior)
       if (Math.random() < 0.01) animal.targetDirection += (Math.random() - 0.5) * animal.wander * 0.5;
       let angleDiff = Math.atan2(Math.sin(animal.targetDirection - animal.direction), Math.cos(animal.targetDirection - animal.direction));
       animal.direction += angleDiff * animal.smoothness;
@@ -287,36 +283,12 @@ function update() {
       animal.x += currentSpeedX;
       animal.y += currentSpeedY;
 
-      // --- LÓGICA DE COLISÃO COM AS BORDAS (Rebatimento) ---
-      // Bordas horizontais
-      if (animal.x < 0) {
-        animal.x = 0;
-        animal.direction = Math.PI - animal.direction; // Inverte a direção horizontal
-        animal.targetDirection = Math.PI - animal.targetDirection; // Ajusta o target também
-      } else if (animal.x + animal.width > galleryWidth) {
-        animal.x = galleryWidth - animal.width;
-        animal.direction = Math.PI - animal.direction; // Inverte a direção horizontal
-        animal.targetDirection = Math.PI - animal.targetDirection; // Ajusta o target também
-      }
+      // Limites horizontais e verticais para garantir que os animais fiquem dentro da galeria do pai
+      animal.x = Math.max(0, Math.min(animal.x, parentZoneRect.width - imgWidth));
+      animal.y = Math.max(0, Math.min(animal.y, parentZoneRect.height - imgHeight));
 
-      // Bordas verticais
-      if (animal.y < 0) {
-        animal.y = 0;
-        animal.direction = -animal.direction; // Inverte a direção vertical
-        animal.targetDirection = -animal.targetDirection; // Ajusta o target também
-      } else if (animal.y + animal.height > galleryHeight) {
-        animal.y = galleryHeight - animal.height;
-        animal.direction = -animal.direction; // Inverte a direção vertical
-        animal.targetDirection = -animal.targetDirection; // Ajusta o target também
-      }
-      // Garante que o ângulo esteja sempre entre 0 e 2*PI
-      animal.direction = (animal.direction + 2 * Math.PI) % (2 * Math.PI);
-      animal.targetDirection = (animal.targetDirection + 2 * Math.PI) % (2 * Math.PI);
-
-      // Flip horizontal (baseado na direção atual)
       animal.flip = Math.cos(animal.direction) < 0 ? -1 : 1;
 
-      // Aplica a transformação CSS
       animal.figure.style.transform = `translate(${animal.x}px, ${animal.y}px) scale(${animal.scale}) scaleX(${animal.flip})`;
     });
 
