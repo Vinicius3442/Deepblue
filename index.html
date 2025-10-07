@@ -1,78 +1,159 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Deep Blue | A Descida Real</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="ocean-background"></div>
-    <div class="depth-indicator" id="depth-indicator">
-        <span class="depth-value">0</span> METROS
-    </div>
-    <div class="title-slide">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- A interface do céu e da superfície do oceano que irá rolar para fora da vista -->
+    <div class="sky-and-surface-wrapper">
+      <div class="sky"></div>
+      <div class="ocean-surface">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path
+            d="M0,64 C240,128,480,0,720,64 C960,128,1200,0,1440,64 L1440,120 L0,120 Z"
+          ></path>
+          <path
+            d="M0,80 C288,160,576,0,864,80 C1152,160,1440,0,1440,80 L1440,120 L0,120 Z"
+            opacity="0.6"
+          ></path>
+          <path
+            d="M0,96 C360,192,720,0,1080,96 C1440,192,1800,0,1800,96 L1800,120 L0,120 Z"
+            opacity="0.3"
+          ></path>
+        </svg>
+      </div>
+      <!-- O título também rola com o céu e a superfície -->
+      <div class="title-slide">
         <h1 class="main-title">A Descida</h1>
-        <p class="subtitle">Uma jornada em escala real às profundezas do oceano.</p>
+        <p class="subtitle">
+          Uma jornada em escala real às profundezas do oceano.
+        </p>
         <div class="scroll-indicator">
-            <span>Role para iniciar</span>
-            <div class="arrow-down"></div>
+          <span>Role para iniciar</span>
+          <div class="arrow-down"></div>
         </div>
+      </div>
     </div>
 
+    <!-- Este é o fundo principal do oceano que muda de cor -->
+    <div class="ocean-background"></div>
+
+    <!-- Indicador de profundidade fixo -->
+    <div class="depth-indicator" id="depth-indicator">
+      <span class="depth-value">0</span> METROS
+    </div>
+
+    <!-- O abismo oceânico, onde as zonas e animais aparecem -->
     <main id="ocean-abyss">
-
-        <div class="zone-cluster" id="zone-epipelagic">
-            <h2 class="zone-title">Zona Epipelágica</h2>
-            <p class="zone-range">(Superfície até 200m)</p>
-            <div class="fauna-gallery">
-                <figure data-animal="true"><img src="https://placehold.co/150x150/5d98d4/f7f1e3?text=Golfinho" alt="Golfinho"></figure>
-                <figure data-animal="true"><img src="https://placehold.co/120x120/5d98d4/f7f1e3?text=Tartaruga" alt="Tartaruga"></figure>
-                <figure data-animal="true"><img src="https://placehold.co/180x180/5d98d4/f7f1e3?text=Atum" alt="Atum"></figure>
-            </div>
+      <!-- As zonas serão posicionadas pelo JavaScript -->
+      <!-- Zona Epipelágica -->
+      <div class="zone-cluster" id="zone-epipelagic">
+        <h2 class="zone-title">Zona Epipelágica</h2>
+        <p class="zone-range">(Superfície até 200m)</p>
+        <div class="fauna-gallery">
+          <!-- Mamíferos -->
+          <figure data-animal="true" data-depth="50" data-type="mamifero">
+            <img src="./img/Animals/mammals/dolphin.jpg" alt="Golfinho" />
+          </figure>
+          <figure data-animal="true" data-depth="50" data-type="mamifero">
+            <img src="./img/Animals/mammals/turtle.png" alt="Tartaruga" />
+          </figure>
+          <figure
+            data-animal="true"
+            data-depth="130"
+            data-type="predador-medio"
+            data-article="./articles/fish/balopelagic/tuna.json"
+          >
+            <img src="./img/Animals/fish/tuna.png" alt="Atum" />
+          </figure>
         </div>
+      </div>
 
-        <div class="zone-cluster" id="zone-mesopelagic">
-            <h2 class="zone-title">Zona Mesopelágica</h2>
-            <p class="zone-range">(200m até 1.000m)</p>
-            <div class="fauna-gallery">
-                 <figure data-animal="true"><img src="https://placehold.co/100x100/3b6d9e/f7f1e3?text=Peixe-Lanterna" alt="Peixe-Lanterna"></figure>
-                 <figure data-animal="true"><img src="https://placehold.co/130x130/3b6d9e/f7f1e3?text=Lula+Vampira" alt="Lula Vampira"></figure>
-                 <figure data-animal="true"><img src="https://placehold.co/110x110/3b6d9e/f7f1e3?text=Peixe-Machado" alt="Peixe Machado"></figure>
-            </div>
+      <!-- Zona Mesopelágica -->
+      <div class="zone-cluster" id="zone-mesopelagic">
+        <h2 class="zone-title">Zona Mesopelágica</h2>
+        <p class="zone-range">(200m até 1.000m)</p>
+        <div class="fauna-gallery">
+          <!-- Predador pequeno -->
+          <figure
+            data-animal="true"
+            data-depth="350"
+            data-type="predador-pequeno"
+          >
+            <img src="./img/Animals/small-predator.png" alt="Peixe-Lanterna" />
+          </figure>
+          <!-- Lulas/Polvos -->
+          <figure data-animal="true" data-depth="600" data-type="lula">
+            <img src="./img/Animals/squid.png" alt="Lula Vampira" />
+          </figure>
+          <!-- Predador médio -->
+          <figure
+            data-animal="true"
+            data-depth="850"
+            data-type="predador-medio"
+          >
+            <img src="./img/Animals/medium-predator.png" alt="Peixe-Machado" />
+          </figure>
         </div>
+      </div>
 
-        <div class="zone-cluster" id="zone-bathypelagic">
-            <h2 class="zone-title">Zona Batipelágica</h2>
-            <p class="zone-range">(1.000m até 4.000m)</p>
-            <div class="fauna-gallery">
-                <figure data-animal="true"><img src="https://placehold.co/150x150/1a4d80/f7f1e3?text=Peixe-Pescador" alt="Peixe-Pescador"></figure>
-                <figure data-animal="true"><img src="https://placehold.co/200x200/1a4d80/f7f1e3?text=Enguia-Pelicano" alt="Enguia-Pelicano"></figure>
-            </div>
+      <!-- Zona Batipelágica -->
+      <div class="zone-cluster" id="zone-bathypelagic">
+        <h2 class="zone-title">Zona Batipelágica</h2>
+        <p class="zone-range">(1.000m até 4.000m)</p>
+        <div class="fauna-gallery">
+          <!-- Predador grande -->
+          <figure
+            data-animal="true"
+            data-depth="1500"
+            data-type="predador-grande"
+          >
+            <img src="./img/Animals/large-predator.png" alt="Peixe-Pescador" />
+          </figure>
+          <figure data-animal="true" data-depth="2200" data-type="lula">
+            <img src="./img/Animals/octopus.png" alt="Enguia-Pelicano" />
+          </figure>
         </div>
+      </div>
 
-        <div class="zone-cluster" id="zone-abyssopelagic">
-            <h2 class="zone-title">Zona Abissopelágica</h2>
-            <p class="zone-range">(4.000m até 6.000m)</p>
-            <div class="fauna-gallery">
-                <figure data-animal="true"><img src="https://placehold.co/130x130/0a1f33/f7f1e3?text=Peixe-Tripé" alt="Peixe-Tripé"></figure>
-                <figure data-animal="true"><img src="https://placehold.co/160x160/0a1f33/f7f1e3?text=Polvo-Dumbo" alt="Polvo-Dumbo"></figure>
-            </div>
+      <!-- Zona Abissopelágica -->
+      <div class="zone-cluster" id="zone-abyssopelagic">
+        <h2 class="zone-title">Zona Abissopelágica</h2>
+        <p class="zone-range">(4.000m até 6.000m)</p>
+        <div class="fauna-gallery">
+          <!-- Água-viva -->
+          <figure data-animal="true" data-depth="4500" data-type="aguaviva">
+            <img src="./img/Animals/jellyfish.png" alt="Peixe-Tripé" />
+          </figure>
+          <!-- Predador médio grande ou lula -->
+          <figure data-animal="true" data-depth="5200" data-type="lula">
+            <img src="./img/Animals/octopus.png" alt="Polvo-Dumbo" />
+          </figure>
         </div>
-        
-        <div class="zone-cluster" id="zone-hadopelagic">
-            <h2 class="zone-title">Zona Hadopelágica</h2>
-            <p class="zone-range">(6.000m até 11.000m)</p>
-             <div class="fauna-gallery">
-                <figure data-animal="true"><img src="https://placehold.co/140x140/000a12/f7f1e3?text=Peixe-Caracol" alt="Peixe-Caracol"></figure>
-            </div>
-        </div>
+      </div>
 
+      <!-- Zona Hadopelágica -->
+      <div class="zone-cluster" id="zone-hadopelagic">
+        <h2 class="zone-title">Zona Hadopelágica</h2>
+        <p class="zone-range">(6.000m até 11.000m)</p>
+        <div class="fauna-gallery">
+          <!-- Crustáceos -->
+          <figure data-animal="true" data-depth="8200" data-type="crustaceo">
+            <img src="./img/Animals/crab.png" alt="Peixe-Caracol" />
+          </figure>
+        </div>
+      </div>
     </main>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
