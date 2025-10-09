@@ -1,0 +1,62 @@
+{
+  "name": "Lula-de-recife-caribenha",
+  "scientificName": "Sepioteuthis sepioidea",
+  "img": "../../../img/Animals/molluscae/caribbean-reef-squid/caribbean-reef-squid.png",
+  "description": "A Lula-de-recife-caribenha é um cefalópode fascinante encontrado nas águas rasas e quentes do Mar do Caribe. Famosa por sua incrível capacidade de mudar de cor e padrão, ela usa sua pele como uma tela para se comunicar, caçar e se camuflar de predadores com uma complexidade impressionante.",
+  "fichaTecnica": {
+    "Reino": "Animalia",
+    "Filo": "Mollusca",
+    "Classe": "Cephalopoda",
+    "Ordem": "Myopsida",
+    "Família": "Loliginidae",
+    "Tamanho": "Até 20 cm (comprimento do manto)",
+    "Dieta": "Carnívora (pequenos peixes e crustáceos)",
+    "Habitat": "Recifes de coral e leitos de ervas marinhas",
+    "Expectativa de Vida": "Menos de 1 ano"
+  },
+  "mapaDistribuicao": {
+    "img": "./img/Animals/squid/reef_squid/mapa.png",
+    "alt": "Mapa mostrando a distribuição da Lula-de-recife-caribenha no Oceano Atlântico Ocidental e Mar do Caribe."
+  },
+  "comparativoTamanho": {
+    "img": "./img/Animals/squid/reef_squid/tamanho.png",
+    "alt": "Comparação de tamanho da Lula-de-recife com uma mão humana.",
+    "descricao": "Com um manto de até 20 cm, a Lula-de-recife-caribenha é relativamente pequena, cabendo confortavelmente na palma de uma mão humana."
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "./img/Animals/squid/reef_squid/galeria_01.jpg",
+      "alt": "Lula-de-recife exibindo padrões de cores vibrantes.",
+      "legenda": "Os cromatóforos na pele da lula permitem mudanças de cor quase instantâneas."
+    },
+    {
+      "type": "image",
+      "src": "./img/Animals/squid/reef_squid/galeria_02.jpg",
+      "alt": "Um pequeno cardume de lulas-de-recife pairando sobre um recife.",
+      "legenda": "Elas são animais sociais e frequentemente vistas em pequenos grupos."
+    },
+    {
+      "type": "video",
+      "src": "./img/Animals/squid/reef_squid/galeria_03.mp4",
+      "alt": "Vídeo de uma lula-de-recife pulsando suas nadadeiras para se mover.",
+      "legenda": "Suas grandes nadadeiras percorrem todo o comprimento do corpo, permitindo um controle de voo preciso na água."
+    }
+  ],
+  "curiosidades": [
+    "Possuem três corações e seu sangue é azul, pois é baseado em cobre (hemocianina) em vez de ferro.",
+    "São mestres da comunicação, capazes de enviar uma mensagem para uma lula à sua direita e outra completamente diferente para uma lula à sua esquerda, simultaneamente.",
+    "Apesar de viverem na água, são conhecidas por 'voarem' para fora da água por curtas distâncias para escapar de predadores, de forma semelhante aos peixes-voadores.",
+    "Caçam à noite, usando sua excelente visão e jatos de água para capturar presas."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Lula-comum-europeia",
+      "img": "./img/Animals/related/european_squid.jpg"
+    },
+    {
+      "nome": "Choco (Cuttlefish)",
+      "img": "./img/Animals/related/cuttlefish.jpg"
+    }
+  ]
+}

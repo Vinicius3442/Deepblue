@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const CONFIG = {
     MAX_DEPTH: 11000,
     PIXELS_PER_METER: 50,
-    ANIMAL_ACTIVATION_RANGE: 300, // Faixa de profundidade (em metros) para ativar os animais
-    OCEAN_FLOOR_START_DEPTH: 7000, // Profundidade onde o solo começa a aparecer
-    OCEAN_FLOOR_FULL_OPACITY_DEPTH: 10000, // Profundidade onde o solo está totalmente visível
+    ANIMAL_ACTIVATION_RANGE: 300,
+    OCEAN_FLOOR_START_DEPTH: 7000,
+    OCEAN_FLOOR_FULL_OPACITY_DEPTH: 10000,
   };
 
   const oceanAbyss = document.getElementById("ocean-abyss");
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "#depth-indicator .depth-value"
   );
   const titleSlide = document.querySelector(".title-slide");
-  const oceanFloor = document.querySelector(".ocean-floor-svg-wrapper"); // Seleciona o novo elemento do solo
+  const oceanFloor = document.querySelector(".ocean-floor-svg-wrapper");
   const particleCanvas = document.getElementById("particle-canvas");
   const ctx = particleCanvas.getContext("2d");
   let particles = [];
@@ -72,29 +72,23 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   function calculatePressure(depth) {
-    // A pressão na Terra aumenta em aproximadamente 1 atmosfera (ATM) a cada 10 metros de profundidade.
-    // Começamos com 1 ATM na superfície.
     const pressure = 1 + depth / 10;
     return pressure;
   }
 
   function calculateTemperature(depth) {
-    // A temperatura do oceano não cai de forma linear. Usamos um modelo de 3 camadas.
-    const surfaceTemp = 20; // 20°C
-    const deepTemp = 4; // 4°C
+    const surfaceTemp = 20;
+    const deepTemp = 4;
 
     if (depth <= 200) {
-      // 1. Camada da Superfície (Epipelágica): A temperatura cai muito pouco.
-      // Interpolação linear de 20°C a 19°C nos primeiros 200m.
+      // 1. Camada da Superfície (Epipelágica):
       return surfaceTemp - depth / 200;
     } else if (depth <= 1000) {
-      // 2. Termoclina (Mesopelágica): A temperatura cai drasticamente.
-      // Interpolação linear de 19°C (a 200m) até 4°C (a 1000m).
-      const progress = (depth - 200) / 800; // Progresso (0 a 1) dentro desta zona de 800m
-      return 19 - 15 * progress; // 19°C - (diferença de 15°C * progresso)
+      // 2. Termoclina (Mesopelágica):
+      const progress = (depth - 200) / 800;
+      return 19 - 15 * progress;
     } else {
-      // 3. Oceano Profundo: A temperatura permanece muito fria e estável.
-      // Queda muito lenta de 4°C para ~2°C nos próximos 10.000m.
+      // 3. Oceano Profundo:
       const progress = (depth - 1000) / 10000;
       return deepTemp - 2 * progress;
     }
@@ -105,11 +99,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let lastScrollY = 0;
   let isTicking = false;
 
-  // Variável para a "semente" do Perlin Noise simulado (para movimentos mais orgânicos)
   let noiseSeedX = Math.random() * 1000;
   let noiseSeedY = Math.random() * 1000;
 
-  // --- ESTRUTURA HTML DO MODAL (sem alteração) ---
   const modal = document.createElement("div");
   modal.className = "animal-modal";
   modal.innerHTML = `
@@ -152,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
   document.body.appendChild(modal);
 
-  // --- LÓGICA DO MODAL ---
+  // --- MODAL ---
   const modalCloseBtn = modal.querySelector(".modal-close");
   const modalTitle = modal.querySelector(".modal-title");
   const modalScientific = modal.querySelector(".modal-scientific-name");
@@ -161,18 +153,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeExpandedMediaBtn = modal.querySelector(".close-expanded-media");
   const expandedMediaContent = modal.querySelector(".expanded-media-content");
 
-  // --- NOVAS FUNÇÕES DE CONTROLE ---
+  // --- FUNÇÕES DE CONTROLE MODAL ---
   function openModal() {
-    document.body.style.overflow = "hidden"; // Bloqueia o scroll da página
+    document.body.style.overflow = "hidden";
     modal.classList.add("active");
   }
 
   function closeModal() {
-    document.body.style.overflow = "auto"; // Desbloqueia o scroll da página
+    document.body.style.overflow = "auto";
     modal.classList.remove("active");
   }
 
-  // Listeners agora chamam as funções de controle
   modalCloseBtn.addEventListener("click", closeModal);
   modal.addEventListener("click", (event) => {
     if (event.target === modal) closeModal();
@@ -208,8 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const label = key
         .replace(/([A-Z])/g, " $1")
         .replace(/^./, (str) => str.toUpperCase());
-      li.innerHTML = `<strong>${label}:</strong> <span>${value}</span>`; // Adicionado span para o valor
-      fichaList.appendChild(li);
+      li.innerHTML = `<strong>${label}:</strong> <span>${value}</span>`;
     }
     const mapModule = modal.querySelector(".map-module");
     if (animalData.mapaDistribuicao && animalData.mapaDistribuicao.img) {
@@ -234,7 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
       sizeModule.style.display = "none";
     }
     const galleryGrid = modal.querySelector(".gallery-grid");
-    galleryGrid.innerHTML = ""; // Limpa a galeria para garantir que não haja duplicatas
+    galleryGrid.innerHTML = "";
 
     animalData.galeria.forEach((item) => {
       const wrapper = document.createElement("div");
@@ -337,17 +327,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       },
       { once: true }
-    ); // Garante que o listener seja removido após um clique
+    );
 
     expandedMediaViewer.classList.add("active");
   }
 
-  // --- FUNÇÃO PARA SIMULAR PERLIN NOISE (SIMPLIFICADA) ---
-  // Esta é uma implementação MUITO simplificada e não um Perlin Noise real,
-  // mas gera um movimento mais orgânico do que Math.random() puro.
   function pseudoPerlinNoise(x, y) {
-    const freq = 0.05; // Frequência do "ruído"
-    const amplitude = 0.5; // Amplitude do "ruído"
+    const freq = 0.05;
+    const amplitude = 0.5;
     return (
       (Math.sin(x * freq) + Math.sin(y * freq) + Math.sin((x + y) * freq)) *
         amplitude +
@@ -357,23 +344,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- INICIALIZAÇÃO E ANIMAÇÃO ---
   function init() {
-    // Define a altura total do #ocean-abyss para permitir o scroll
     const totalHeight =
       CONFIG.MAX_DEPTH * CONFIG.PIXELS_PER_METER + window.innerHeight;
     oceanAbyss.style.height = `${totalHeight}px`;
 
-    // Posiciona as zonas de profundidade (apenas para referência visual no HTML)
     ZONES.forEach((zone) => {
       const element = document.getElementById(zone.id);
       if (element) {
-        // Ajusta o top para que o título da zona apareça no início daquela profundidade
         element.style.top = `${zone.startDepth * CONFIG.PIXELS_PER_METER}px`;
       }
     });
 
     prepareAnimals();
     window.addEventListener("scroll", onScroll);
-    update(); // Chamada inicial para renderizar tudo corretamente
+    update();
     setupParticles();
     requestAnimationFrame(animateParticles);
 
@@ -382,46 +366,52 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000);
   }
 
+  // Função para preparar os animais
   function prepareAnimals() {
     document.querySelectorAll('[data-animal="true"]').forEach((figure) => {
-      const specifiedScale = parseFloat(figure.dataset.scale);
-      const scale = !isNaN(specifiedScale) ? specifiedScale : 1.0;
-
-      // Inicializa a posição aleatoriamente dentro da galeria da zona
+      const specifiedScale = parseFloat(figure.dataset.scale) || 1.0;
       const gallery = figure.parentElement;
-      const initialX =
-        Math.random() * (gallery.offsetWidth - (figure.offsetWidth || 100));
-      const initialY =
-        Math.random() * (gallery.offsetHeight - (figure.offsetHeight || 100));
+      const zoneDiv = gallery.parentElement;
+
+      // Encontra a zona do animal para calcular a posição Y correta
+      const zoneData = ZONES.find((z) => z.id === zoneDiv.id);
+      const nextZoneData = ZONES[ZONES.indexOf(zoneData) + 1];
+
+      const zoneHeight = nextZoneData
+        ? (nextZoneData.startDepth - zoneData.startDepth) *
+          CONFIG.PIXELS_PER_METER
+        : window.innerHeight;
+
+      const animalDepthInMeters = parseInt(figure.dataset.depth, 10);
+
+      const depthRatio =
+        (animalDepthInMeters - zoneData.startDepth) /
+        (nextZoneData.startDepth - zoneData.startDepth);
+      const homeY = depthRatio * zoneHeight;
 
       const animal = {
         figure,
         img: figure.querySelector("img"),
-        depth: parseInt(figure.dataset.depth, 10),
-        type: figure.dataset.type || "generic",
+        depth: animalDepthInMeters,
+        homeY: homeY,
+        name: figure.dataset.name || "Espécie desconhecida",
         articlePath: figure.dataset.article || null,
-        isActive: false, // Só ativo quando visível
-        x: initialX,
-        y: initialY,
-        vx: (Math.random() - 0.5) * 0.5, // Velocidade inicial X
-        vy: (Math.random() - 0.5) * 0.5, // Velocidade inicial Y
-        speed: 0.3 + Math.random() * 0.5, // Velocidade base dos animais
-        maxSpeed: 0.8 + Math.random() * 0.5, // Velocidade máxima para picos
-        wanderStrength: 0.02 + Math.random() * 0.03, // Força da mudança de direção
-        scale: scale,
-        flip: 1, // 1 para normal, -1 para flipado
-        noiseOffsetX: Math.random() * 1000, // Offset para Perlin Noise
-        noiseOffsetY: Math.random() * 1000, // Offset para Perlin Noise
-        noiseSpeed: 0.005 + Math.random() * 0.005, // Velocidade do "tempo" para o noise
-        name: figure.dataset.name || "Espécie desconhecida", // Pega o nome do HTML
-        sighted: false, // Nova propriedade para controlar o log de avistamento
+        isActive: false,
+        sighted: false,
+        x: Math.random() * (gallery.offsetWidth || window.innerWidth),
+        y: homeY, // Começa na sua posição ideal
+        vx: Math.random() - 0.5,
+        vy: Math.random() - 0.5,
+        scale: specifiedScale,
+        flip: 1,
+        wanderAngle: Math.random() * Math.PI * 2,
       };
 
       animal.figure.style.opacity = 0;
-      animal.figure.style.transition = "opacity 0.5s ease-in-out"; // Transição suave de opacidade
+      animal.figure.style.transition = "opacity 0.5s ease-in-out";
 
       figure.addEventListener("click", async () => {
-        if (!animal.articlePath) return; // Se não tiver articlePath, não faz nada
+        if (!animal.articlePath) return;
         try {
           const response = await fetch(animal.articlePath);
           if (!response.ok)
@@ -434,7 +424,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       animals.push(animal);
     });
-    animateAnimals(); // Inicia o loop de animação
+    animateAnimals();
   }
 
   function onScroll() {
@@ -454,17 +444,15 @@ document.addEventListener("DOMContentLoaded", () => {
       CONFIG.MAX_DEPTH
     );
 
-    // Efeito de fade-out para o título inicial
     const titleOpacity = Math.max(
       0,
       1 - lastScrollY / (window.innerHeight * 0.75)
     );
     titleSlide.style.opacity = titleOpacity;
-    titleSlide.style.pointerEvents = titleOpacity > 0 ? "auto" : "none"; // Desabilita cliques quando invisível
+    titleSlide.style.pointerEvents = titleOpacity > 0 ? "auto" : "none";
 
-    // Atualiza o indicador de profundidade
     depthValueSpan.textContent = currentDepth.toLocaleString("pt-BR");
-    depthIndicator.style.opacity = lastScrollY > 50 ? 1 : 0; // Mostra/esconde o indicador
+    depthIndicator.style.opacity = lastScrollY > 50 ? 1 : 0;
 
     if (lastScrollY > window.innerHeight * 0.8) {
       logDisplay.classList.add("visible");
@@ -477,15 +465,15 @@ document.addEventListener("DOMContentLoaded", () => {
       const pressure = calculatePressure(currentDepth);
       const temperature = calculateTemperature(currentDepth);
 
-      hudPressure.textContent = pressure.toFixed(0); // Pressão sem casas decimais
-      hudTemperature.textContent = temperature.toFixed(1); // Temperatura com uma casa decimal
+      hudPressure.textContent = pressure.toFixed(0);
+      hudTemperature.textContent = temperature.toFixed(1);
     } else {
       vehicleHud.style.opacity = 0;
     }
 
     updateBackgroundColor(currentDepth);
     checkAnimalActivation();
-    updateOceanFloor(currentDepth); // Nova função para o solo
+    updateOceanFloor(currentDepth);
     updateParticleVisibility(currentDepth);
 
     if (currentDepth >= CONFIG.MAX_DEPTH && !logCleared) {
@@ -499,7 +487,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateBackgroundColor(depth) {
-    // Encontra a zona inicial e final para a interpolação de cor
     let startZone = ZONES[0],
       endZone = ZONES[1];
     for (let i = 0; i < ZONES.length - 1; i++) {
@@ -509,13 +496,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // Lógica para registrar a entrada na zona (movida para cá e corrigida)
     if (startZone && !startZone.logged && startZone.startDepth > 0) {
       addLogMessage(`Entrando na Zona ${startZone.name}.`);
       startZone.logged = true;
     }
 
-    // Calcula o fator de mistura entre as cores
     let blendFactor = 0;
     if (endZone.startDepth !== startZone.startDepth) {
       blendFactor = Math.max(
@@ -528,7 +513,6 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     }
 
-    // Interpola as cores
     const r =
       startZone.color[0] +
       blendFactor * (endZone.color[0] - startZone.color[0]);
@@ -548,7 +532,6 @@ document.addEventListener("DOMContentLoaded", () => {
     oceanBackground.style.filter = `brightness(${brightnessFactor})`;
   }
 
-  // SUBSTITUA A SUA FUNÇÃO INTEIRA POR ESTA:
   function checkAnimalActivation() {
     const range = CONFIG.ANIMAL_ACTIVATION_RANGE;
     animals.forEach((animal) => {
@@ -557,9 +540,16 @@ document.addEventListener("DOMContentLoaded", () => {
       const isInRange =
         Math.abs(animal.depth - viewportCenterDepth) < range / 2;
 
+
       if (isInRange && !animal.isActive) {
+
+        if (animal.img.dataset.src) {
+          animal.img.src = animal.img.dataset.src;
+        }
+
         animal.isActive = true;
         animal.figure.style.opacity = 1;
+
         if (!animal.sighted) {
           addLogMessage(`AVISTAMENTO: ${animal.name}.`, "sighting");
           animal.sighted = true;
@@ -585,75 +575,114 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // --- NOVO SISTEMA DE ANIMAÇÃO DOS ANIMAIS ---
+  // --- Função Animar animais por tipo ---
   function animateAnimals() {
     animals.forEach((animal) => {
-      if (!animal.isActive) {
-        return; // Não anima se não estiver ativo
+      if (!animal.isActive) return;
+
+      // Decide qual comportamento aplicar com base no tipo do animal
+      switch (animal.type) {
+        case "lula":
+          applyLulaPhysics(animal);
+          break;
+        case "agua-viva":
+          applyAguaVivaPhysics(animal);
+          break;
+        default:
+          applyPeixePhysics(animal);
+          break;
       }
 
-      const gallery = animal.figure.parentElement;
-      if (!gallery) return;
+      const flipThreshold = 0.1;
 
-      const galleryWidth = gallery.offsetWidth;
-      const galleryHeight = gallery.offsetHeight;
-      const imgWidth = animal.figure.offsetWidth || animal.scale * 100; // Estimativa se não renderizado
-      const imgHeight = animal.figure.offsetHeight || animal.scale * 100;
-
-      // Simula Perlin Noise para um movimento mais orgânico
-      animal.noiseOffsetX += animal.noiseSpeed;
-      animal.noiseOffsetY += animal.noiseSpeed;
-
-      const targetXDirection =
-        pseudoPerlinNoise(animal.noiseOffsetX, noiseSeedX) * 2 - 1; // -1 a 1
-      const targetYDirection =
-        pseudoPerlinNoise(animal.noiseOffsetY, noiseSeedY) * 2 - 1; // -1 a 1
-
-      // Interpolação suave para a velocidade
-      animal.vx = animal.vx * 0.95 + targetXDirection * animal.wanderStrength;
-      animal.vy = animal.vy * 0.95 + targetYDirection * animal.wanderStrength;
-
-      // Limita a velocidade
-      const currentSpeed = Math.sqrt(
-        animal.vx * animal.vx + animal.vy * animal.vy
-      );
-      if (currentSpeed > animal.maxSpeed) {
-        animal.vx = (animal.vx / currentSpeed) * animal.maxSpeed;
-        animal.vy = (animal.vy / currentSpeed) * animal.maxSpeed;
-      }
-
-      // Aplica a velocidade base
-      animal.x += animal.vx * animal.speed;
-      animal.y += animal.vy * animal.speed;
-
-      // Mantém os animais dentro dos limites da galeria
-      if (animal.x < 0) {
-        animal.x = 0;
-        animal.vx *= -1; // Inverte a direção X
-      } else if (animal.x + imgWidth > galleryWidth) {
-        animal.x = galleryWidth - imgWidth;
-        animal.vx *= -1; // Inverte a direção X
-      }
-
-      if (animal.y < 0) {
-        animal.y = 0;
-        animal.vy *= -1; // Inverte a direção Y
-      } else if (animal.y + imgHeight > galleryHeight) {
-        animal.y = galleryHeight - imgHeight;
-        animal.vy *= -1; // Inverte a direção Y
-      }
-
-      // Vira a imagem na direção do movimento
-      if (animal.vx < 0) {
-        animal.flip = -1;
-      } else if (animal.vx > 0) {
+      if (animal.vx > flipThreshold) {
         animal.flip = 1;
+      } else if (animal.vx < -flipThreshold) {
+        animal.flip = -1;
       }
 
       animal.figure.style.transform = `translate(${animal.x}px, ${animal.y}px) scale(${animal.scale}) scaleX(${animal.flip})`;
     });
 
-    requestAnimationFrame(animateAnimals); // Continua o loop
+    requestAnimationFrame(animateAnimals);
+  }
+
+  function applyPeixePhysics(animal) {
+    const gallery = animal.figure.parentElement;
+    if (!gallery) return;
+    const galleryWidth = gallery.offsetWidth;
+    const galleryHeight = gallery.offsetHeight;
+    const imgWidth = animal.figure.offsetWidth || animal.scale * 100;
+
+    animal.wanderAngle += (Math.random() - 0.5) * 0.4;
+    const wanderForce = {
+      x: Math.cos(animal.wanderAngle) * 0.1,
+      y: Math.sin(animal.wanderAngle) * 0.1,
+    };
+    const homeForce = { x: 0, y: (animal.homeY - animal.y) * 0.005 };
+    const avoidanceForce = { x: 0, y: 0 };
+    const margin = 100;
+    if (animal.x < margin) avoidanceForce.x = 1;
+    if (animal.x > galleryWidth - imgWidth - margin) avoidanceForce.x = -1;
+    if (animal.y < margin) avoidanceForce.y = 1;
+    if (animal.y > galleryHeight - imgWidth - margin) avoidanceForce.y = -1;
+
+    const accelerationX = wanderForce.x + homeForce.x + avoidanceForce.x * 0.5;
+    const accelerationY = wanderForce.y + homeForce.y + avoidanceForce.y * 0.5;
+    animal.vx += accelerationX;
+    animal.vy += accelerationY;
+
+    animal.vx *= 0.96;
+    animal.vy *= 0.96;
+    const maxSpeed = 1.2;
+    const speed = Math.sqrt(animal.vx * animal.vx + animal.vy * animal.vy);
+    if (speed > maxSpeed) {
+      animal.vx = (animal.vx / speed) * maxSpeed;
+      animal.vy = (animal.vy / speed) * maxSpeed;
+    }
+
+    animal.x += animal.vx;
+    animal.y += animal.vy;
+  }
+
+  // 3. NOVA FÍSICA DAS LULAS (PROPULSÃO A JATO)
+  function applyLulaPhysics(animal) {
+    animal.propulsionTimer = (animal.propulsionTimer || 0) - 1;
+
+    if (animal.propulsionTimer <= 0) {
+      animal.propulsionTimer = 60 + Math.random() * 120;
+
+      const angle = (Math.random() - 0.5) * 0.8;
+      const thrust = 4 + Math.random() * 4;
+
+      animal.vx += animal.flip * Math.cos(angle) * thrust;
+      animal.vy += Math.sin(angle) * thrust * 0.5;
+    }
+
+    animal.vx *= 0.94;
+    animal.vy *= 0.94;
+    animal.vy += (animal.homeY - animal.y) * 0.002;
+
+    animal.x += animal.vx;
+    animal.y += animal.vy;
+
+  }
+
+  // 4. FÍSICA DAS ÁGUAS-VIVAS (PULSAÇÃO VERTICAL)
+  function applyAguaVivaPhysics(animal) {
+    animal.pulseTimer = (animal.pulseTimer || Math.random() * 100) + 0.05;
+
+    const pulseForce = Math.sin(animal.pulseTimer) * 0.1;
+    animal.vy += pulseForce;
+
+    animal.vx += (Math.random() - 0.5) * 0.01;
+
+    animal.vx *= 0.9;
+    animal.vy *= 0.9;
+    animal.vy += (animal.homeY - animal.y) * 0.005;
+
+    animal.x += animal.vx;
+    animal.y += animal.vy;
   }
 
   function setupParticles() {
@@ -663,11 +692,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const particleCount = (particleCanvas.width * particleCanvas.height) / 8000;
 
     for (let i = 0; i < particleCount; i++) {
-      const isBioluminescent = Math.random() < 0.05; // 5% de chance de brilhar
+      const isBioluminescent = Math.random() < 0.05;
       const particle = {
         x: Math.random() * particleCanvas.width,
         y: Math.random() * particleCanvas.height,
-        z: Math.random() * 0.7 + 0.3, // 'z' continua controlando o paralaxe do scroll
+        z: Math.random() * 0.7 + 0.3,
         radius: isBioluminescent
           ? Math.random() * 1.5 + 0.5
           : Math.random() * 1.2,
@@ -676,7 +705,6 @@ document.addEventListener("DOMContentLoaded", () => {
           : Math.random() * 0.5 + 0.3,
         isBioluminescent: isBioluminescent,
 
-        // --- NOVAS PROPRIEDADES PARA O MOVIMENTO ---
         // Apenas para as partículas que brilham
         vx: isBioluminescent ? (Math.random() - 0.5) * 0.5 : 0, // velocidade horizontal
         vy: isBioluminescent ? (Math.random() - 0.5) * 0.5 : 0, // velocidade vertical
@@ -693,15 +721,11 @@ document.addEventListener("DOMContentLoaded", () => {
     particles.forEach((p) => {
       // --- LÓGICA PARA CRIATURAS BIOLUMINESCENTES ---
       if (p.isBioluminescent && currentDepth > PARTICLE_START_DEPTH) {
-        // 1. MOVIMENTO PRÓPRIO (NADAR)
-        // Muda a direção de forma suave e aleatória
         p.wanderAngle += (Math.random() - 0.5) * 0.3;
 
-        // Adiciona uma pequena força na nova direção
         p.vx += Math.cos(p.wanderAngle) * 0.03;
         p.vy += Math.sin(p.wanderAngle) * 0.03;
 
-        // Limita a velocidade para não ficarem muito rápidos
         const speed = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
         const maxSpeed = 0.4;
         if (speed > maxSpeed) {
@@ -709,11 +733,9 @@ document.addEventListener("DOMContentLoaded", () => {
           p.vy = (p.vy / speed) * maxSpeed;
         }
 
-        // Aplica a velocidade para mover a partícula
         p.x += p.vx;
         p.y += p.vy;
 
-        // 2. EFEITO PARALAXE DO SCROLL (continua funcionando!)
         p.y += deltaY * p.z * 0.1;
 
         // 3. DESENHO (Formato de cometa com brilho)
@@ -721,7 +743,6 @@ document.addEventListener("DOMContentLoaded", () => {
         ctx.shadowColor = "rgba(100, 255, 200, 0.9)";
         ctx.shadowBlur = 10;
         ctx.fillStyle = `rgba(100, 255, 200, ${p.opacity})`;
-        // Desenha a cabeça
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fill();
 
@@ -737,10 +758,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // --- LÓGICA PARA PARTÍCULAS NORMAIS (NEVE MARINHA) ---
       } else {
-        // Movimento passivo, apenas com o scroll
         p.y += deltaY * p.z * 0.1;
 
-        // Desenho de um círculo simples e sem brilho
         ctx.beginPath();
         ctx.shadowBlur = 0;
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
@@ -748,7 +767,6 @@ document.addEventListener("DOMContentLoaded", () => {
         ctx.fill();
       }
 
-      // Reposiciona as partículas (todas elas) se saírem da tela
       if (p.y > particleCanvas.height) {
         p.y = 0;
         p.x = Math.random() * particleCanvas.width;
@@ -795,12 +813,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Auto-scroll para a nova mensagem
     logMessagesList.scrollTop = logMessagesList.scrollHeight;
 
-    // Limita o número de mensagens para não sobrecarregar
     if (logMessagesList.children.length > 50) {
       logMessagesList.removeChild(logMessagesList.children[0]);
     }
   }
 
-  // --- INICIALIZA O SCRIPT QUANDO O DOM ESTIVER PRONTO ---
   init();
 });
