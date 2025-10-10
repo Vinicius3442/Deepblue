@@ -1,0 +1,82 @@
+{
+  "name": "Tubarão-Duende",
+  "scientificName": "Mitsukurina owstoni",
+  "img": "../../../img/Animals/fish/goblin_shark/goblin_shark.png",
+  "description": "Conhecido como 'fóssil vivo', o Tubarão-Duende é uma espécie rara e misteriosa que habita as profundezas do oceano. Sua aparência única, com focinho alongado e mandíbula protrátil cheia de dentes em forma de agulha, lhe rendeu o apelido de 'tubarão mais feio do mundo'. Apesar da aparência assustadora, é um predador relativamente lento e adaptado a um ambiente de pouca luz e alta pressão.",
+  "fichaTecnica": {
+    "statusConservacao": "Pouco Preocupante (LC)",
+    "profundidade": "200m até 1.300m",
+    "dieta": "Peixes ósseos, lulas e crustáceos",
+    "tamanhoMaximo": "Até 3,8 metros",
+    "expectativaVida": "Estimada entre 35 e 40 anos",
+    "habitat": "Zonas profundas e frias dos oceanos Atlântico, Índico e Pacífico"
+  },
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/fish/bathypelagic/goblin_shark/map_goblin_shark.png",
+    "alt": "Mapa de distribuição do Tubarão-Duende."
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/fish/bathypelagic/goblin_shark/size_goblin_shark.png",
+    "alt": "Comparativo de tamanho entre um Tubarão-Duende e um ser humano.",
+    "descricao": "O Tubarão-Duende adulto pode atingir quase 4 metros de comprimento, sendo ligeiramente menor que um grande tubarão-branco."
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/goblin_shark/gallery/goblin_shark_1.jpg",
+      "alt": "Tubarão-Duende com sua característica coloração rosada.",
+      "legenda": "Sua pele sem pigmento permite que os vasos sanguíneos fiquem visíveis, dando o tom rosado característico."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/goblin_shark/gallery/goblin_shark_2.jpg",
+      "alt": "Mandíbula do Tubarão-Duende projetada para frente.",
+      "legenda": "Sua mandíbula pode se estender rapidamente para capturar presas, em um movimento extremamente veloz."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/goblin_shark/gallery/goblin_shark_3.jpg",
+      "alt": "Close da cabeça do Tubarão-Duende mostrando os dentes finos e afiados.",
+      "legenda": "Os dentes em forma de agulha são ideais para agarrar presas escorregadias em águas profundas."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/goblin_shark/gallery/goblin_shark_4.jpg",
+      "alt": "Tubarão-Duende capturado por câmeras em águas profundas.",
+      "legenda": "Filmagens mostram o Tubarão-Duende movendo-se lentamente, quase flutuando, com movimentos econômicos."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/goblin_shark/gallery/goblin_shark_5.jpg",
+      "alt": "Exemplar jovem de Tubarão-Duende preservado em laboratório.",
+      "legenda": "Exemplares jovens são raríssimos; este foi encontrado no Japão, medindo pouco mais de 80 cm."
+    },
+    {
+      "type": "video",
+      "src": "../../../img/Animals/fish/bathypelagic/goblin_shark/gallery/video/goblin_shark_video.mp4",
+      "alt": "Vídeo de um Tubarão-Duende em movimento.",
+      "legenda": "Filmagens raras mostram o Tubarão-Duende caçando lentamente nas profundezas do Pacífico."
+    }
+  ],
+  "curiosidades": [
+    "É considerado um 'fóssil vivo' porque pertence a uma linhagem de mais de 125 milhões de anos.",
+    "Sua mandíbula é uma das mais extensíveis entre todos os peixes, podendo projetar-se até 10% do comprimento total da cabeça.",
+    "Possui órgãos sensoriais chamados ampolas de Lorenzini, que detectam campos elétricos emitidos por presas escondidas.",
+    "Devido à profundidade em que vive, raramente é visto vivo — a maioria dos registros vem de exemplares acidentalmente pescados.",
+    "Acredita-se que viva de forma solitária e que suba a profundidades menores apenas durante a noite para caçar."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Tubarão-Angra",
+      "img": "../../../img/Animals/related/frilled_shark.jpg"
+    },
+    {
+      "nome": "Tubarão-Cobra",
+      "img": "../../../img/Animals/related/frilled_shark_closeup.jpg"
+    },
+    {
+      "nome": "Tubarão-duende-japonês",
+      "img": "../../../img/Animals/related/japanese_goblin_shark.jpg"
+    }
+  ]
+}
