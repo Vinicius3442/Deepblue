@@ -1,7 +1,7 @@
 {
   "name": "Tubarão-Duende",
   "scientificName": "Mitsukurina owstoni",
-  "img": "../../../img/Animals/fish/goblin_shark/goblin_shark.png",
+  "img": "../../../img/Animals/fish/bathypelagic/goblin_shark/goblin_shark.png",
   "description": "Conhecido como 'fóssil vivo', o Tubarão-Duende é uma espécie rara e misteriosa que habita as profundezas do oceano. Sua aparência única, com focinho alongado e mandíbula protrátil cheia de dentes em forma de agulha, lhe rendeu o apelido de 'tubarão mais feio do mundo'. Apesar da aparência assustadora, é um predador relativamente lento e adaptado a um ambiente de pouca luz e alta pressão.",
   "fichaTecnica": {
     "statusConservacao": "Pouco Preocupante (LC)",
