@@ -1,0 +1,78 @@
+{
+  "name": "Enguia-Pelicano",
+  "scientificName": "Eurypharynx pelecanoides",
+  "img": "../../../img/Animals/fish/bathypelagic/pelican_eel/pelican_eel.png",
+  "description": "A Enguia-Pelicano é uma das criaturas mais surreais das profundezas do oceano. Seu corpo alongado e boca descomunal lembram um saco elástico, capaz de engolir presas muito maiores que sua própria cabeça. Apesar do nome, ela não é uma enguia verdadeira, mas pertence a um grupo único de peixes adaptados à escuridão e alta pressão do fundo marinho.",
+  "fichaTecnica": {
+    "statusConservacao": "Não Avaliada (NE)",
+    "profundidade": "1.200m até 3.600m",
+    "dieta": "Pequenos crustáceos, lulas e peixes de profundidade",
+    "tamanhoMaximo": "Até 1 metro",
+    "expectativaVida": "Desconhecida (estimada em 5 a 7 anos)",
+    "habitat": "Zonas profundas dos oceanos Atlântico, Pacífico e Índico"
+  },
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/fish/bathypelagic/pelican_eel/map_pelican_eel.png",
+    "alt": "Mapa de distribuição global da Enguia-Pelicano."
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/fish/bathypelagic/pelican_eel/size_pelican_eel.png",
+    "alt": "Comparativo de tamanho entre uma Enguia-Pelicano e um ser humano.",
+    "descricao": "Apesar da aparência monstruosa, a Enguia-Pelicano raramente ultrapassa 1 metro de comprimento."
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/pelican_eel/gallery/pelican_eel_1.jpg",
+      "alt": "Enguia-Pelicano com a boca completamente aberta.",
+      "legenda": "A mandíbula inferior é elástica e se expande como um saco para capturar presas grandes."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/pelican_eel/gallery/pelican_eel_2.jpg",
+      "alt": "Detalhe da cauda bioluminescente da Enguia-Pelicano.",
+      "legenda": "Sua cauda possui uma pequena luz bioluminescente vermelha usada para atrair presas na escuridão."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/pelican_eel/gallery/pelican_eel_3.jpg",
+      "alt": "Enguia-Pelicano nadando em águas profundas.",
+      "legenda": "Movimenta-se de forma ondulante e lenta, semelhante a uma fita flutuando no escuro."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/pelican_eel/gallery/pelican_eel_4.jpg",
+      "alt": "Cabeça da Enguia-Pelicano em close.",
+      "legenda": "Seus olhos são pequenos e adaptados para detectar luz bioluminescente, não imagens detalhadas."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/pelican_eel/gallery/pelican_eel_5.jpg",
+      "alt": "Ilustração científica da Enguia-Pelicano.",
+      "legenda": "Estudos mostram que sua mandíbula pode se estender em quase 90 graus para frente e para baixo."
+    },
+    {
+      "type": "video",
+      "src": "../../../img/Animals/fish/bathypelagic/pelican_eel/gallery/video/pelican_eel_video.mp4",
+      "alt": "Vídeo raro mostrando a Enguia-Pelicano viva.",
+      "legenda": "Filmagens profundas mostram o balançar hipnótico de sua cauda luminosa atraindo presas."
+    }
+  ],
+  "curiosidades": [
+    "Apesar do nome, ela não está relacionada aos pelicanos ou às enguias verdadeiras.",
+    "Sua boca elástica é uma adaptação para capturar presas grandes em um ambiente de poucos recursos.",
+    "A Enguia-Pelicano é um dos peixes mais raramente observados vivos; a maioria das descobertas vem de armadilhas de grande profundidade.",
+    "Seu estômago pode se expandir consideravelmente, permitindo engolir presas quase do seu próprio tamanho.",
+    "Foi descrita pela primeira vez em 1887 e continua sendo um enigma da zoologia marinha."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Peixe-Tripé (Bathypterois grallator)",
+      "img": "../../../img/Animals/related/tripod_fish.jpg"
+    },
+    {
+      "nome": "Peixe-Dragão-do-Pacífico (Stomias pacificus)",
+      "img": "../../../img/Animals/related/pacific_dragonfish.jpg"
+    }
+  ]
+}

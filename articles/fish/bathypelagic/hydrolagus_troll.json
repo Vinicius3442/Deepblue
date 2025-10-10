@@ -1,0 +1,82 @@
+{
+  "name": "Quimera-Azul",
+  "scientificName": "Hydrolagus trolli",
+  "img": "../../../img/Animals/fish/bathypelagic/hydrolagus_troll/hydrolagus_troll.png",
+  "description": "A Quimera-Azul é uma espécie rara e fascinante que habita as profundezas frias do Pacífico. Reconhecida pela coloração azul-prateada e pelos grandes olhos adaptados à escuridão, ela pertence a um antigo grupo de peixes cartilaginosos aparentados aos tubarões e raias. Seu aspecto enigmático e movimentos lentos tornaram-na uma das criaturas mais emblemáticas do fundo do mar.",
+  "fichaTecnica": {
+    "statusConservacao": "Dados Insuficientes (DD)",
+    "profundidade": "1.000m até 2.600m",
+    "dieta": "Crustáceos e pequenos peixes bentônicos",
+    "tamanhoMaximo": "Até 1,2 metro",
+    "expectativaVida": "Estimada entre 25 e 30 anos",
+    "habitat": "Zonas frias e profundas do Pacífico Sul e Norte"
+  },
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/fish/bathypelagic/hydrolagus_troll/map_hydrolagus_troll.png",
+    "alt": "Mapa de distribuição da Quimera-Azul."
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/fish/bathypelagic/hydrolagus_troll/size_hydrolagus_troll.png",
+    "alt": "Comparativo de tamanho entre uma Quimera-Azul e um ser humano.",
+    "descricao": "A Quimera-Azul é relativamente pequena, mas seu corpo alongado e coloração metálica a tornam uma das criaturas mais elegantes das profundezas."
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/hydrolagus_troll/gallery/hydrolagus_troll_1.jpg",
+      "alt": "Quimera-Azul nadando em águas profundas.",
+      "legenda": "Filmada pela primeira vez viva em 2016 pela NOAA, a mais de 2.000 metros de profundidade."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/hydrolagus_troll/gallery/hydrolagus_troll_2.jpg",
+      "alt": "Close do rosto da Quimera-Azul mostrando seus grandes olhos.",
+      "legenda": "Seus olhos enormes refletem a luz, uma adaptação essencial para enxergar em ambientes sem luminosidade."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/hydrolagus_troll/gallery/hydrolagus_troll_3.jpg",
+      "alt": "Vista lateral da Quimera-Azul com sua barbatana dorsal pontiaguda.",
+      "legenda": "A barbatana dorsal possui um espinho rígido e levemente venenoso, usado para defesa."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/hydrolagus_troll/gallery/hydrolagus_troll_4.jpg",
+      "alt": "Detalhe do corpo azul-metálico da Quimera-Azul.",
+      "legenda": "Sua coloração azulada se destaca mesmo na escuridão total, refletindo luz bioluminescente de outras criaturas."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/hydrolagus_troll/gallery/hydrolagus_troll_5.jpg",
+      "alt": "Exemplar da Quimera-Azul preservado em laboratório.",
+      "legenda": "A estrutura cartilaginosa e a pele gelatinosa tornam difícil a preservação de espécimes."
+    },
+    {
+      "type": "video",
+      "src": "../../../img/Animals/fish/bathypelagic/hydrolagus_troll/gallery/video/hydrolagus_troll_video.mp4",
+      "alt": "Vídeo real da Quimera-Azul em águas profundas.",
+      "legenda": "Filmagem inédita de uma Quimera-Azul viva — a primeira do gênero *Hydrolagus* registrada em mar aberto."
+    }
+  ],
+  "curiosidades": [
+    "É chamada de 'Quimera-Azul' por causa do tom metálico azulado que reflete sob a luz artificial dos submarinos.",
+    "Pertence ao mesmo grupo dos tubarões e raias, mas segue uma linhagem evolutiva própria de mais de 300 milhões de anos.",
+    "Os machos possuem um apêndice cefálico usado durante o acasalamento, característico das quimeras.",
+    "Sua pele gelatinosa e sem escamas é adaptada à alta pressão das profundezas.",
+    "Foi filmada viva pela primeira vez em 2016, tornando-se um ícone da vida abissal."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Quimera-de-Chifre-Curto",
+      "img": "../../../img/Animals/related/chimaera_shortnose.jpg"
+    },
+    {
+      "nome": "Raia-Fantasma",
+      "img": "../../../img/Animals/related/ghost_ray.jpg"
+    },
+    {
+      "nome": "Peixe-Enguia-Fantasma",
+      "img": "../../../img/Animals/related/ghost_eel.jpg"
+    }
+  ]
+}
