@@ -1,0 +1,76 @@
+{
+  "name": "Grande-Tubarão-Martelo",
+  "scientificName": "Sphyrna mokarran",
+  "img": "../../../img/Animals/fish/hammerhead_shark/hammerhead_shark.png",
+  "description": "O Grande-Tubarão-Martelo é o maior e mais emblemático dos tubarões-martelo, facilmente reconhecido por sua cabeça em forma de 'T'. Este formato inusitado lhe confere uma visão panorâmica e melhora a detecção eletromagnética, sendo um caçador especializado em arraias.",
+
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/fish/hammerhead_shark/map_hammerhead.jpg",
+    "alt": "Mapa de distribuição do Grande-Tubarão-Martelo no globo"
+  },
+
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/fish/hammerhead_shark/hammerhead_size.jpg",
+    "alt": "Comparativo de tamanho de um Grande-Tubarão-Martelo com um mergulhador",
+    "descricao": "O Grande-Tubarão-Martelo pode crescer até mais de 6 metros de comprimento, rivalizando com o Tubarão-Branco em tamanho, embora geralmente seja mais esguio."
+  },
+
+  "fichaTecnica": {
+    "statusConservacao": "Criticamente em Perigo (CR)",
+    "profundidade": "Superfície até 300m (com mergulhos pontuais mais profundos)",
+    "dieta": "Carnívoro (principalmente arraias, peixes, outros tubarões)",
+    "tamanhoMaximo": "Até 6 metros e mais de 500 kg",
+    "expectativaVida": "Cerca de 20 a 30 anos",
+    "habitat": "Águas costeiras, recifes e oceano aberto em zonas tropicais e temperadas quentes."
+  },
+
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/hammerhead_shark/gallery/hammerhead1.jpg",
+      "alt": "Tubarão-Martelo nadando em recife",
+      "legenda": "A cabeça ampla do tubarão-martelo atua como um hidrofólio, ajudando-o a fazer curvas rápidas e precisas enquanto caça."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/hammerhead_shark/gallery/hammerhead2.jpg",
+      "alt": "Grande cardume de Tubarões-Martelo",
+      "legenda": "Em certas épocas do ano, milhares de tubarões-martelo se reúnem em grandes cardumes migratórios, um espetáculo raro da vida marinha."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/hammerhead_shark/gallery/hammerhead3.jpg",
+      "alt": "Visão frontal do Tubarão-Martelo",
+      "legenda": "A distância entre os olhos na extremidade da cabeça proporciona uma excelente visão binocular e de 360 graus."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/hammerhead_shark/gallery/hammerhead4.jpg",
+      "alt": "Tubarão-Martelo caçando no fundo arenoso",
+      "legenda": "O tubarão usa sua cabeça para 'varrer' o fundo do mar, localizando arraias e outras presas enterradas usando ampolas de Lorenzini."
+    },
+    {
+      "type": "video",
+      "src": "../../../img/Animals/fish/hammerhead_shark/gallery/video/hammerhead_migration.mp4",
+      "alt": "Vídeo da migração de tubarões-martelo",
+      "legenda": "Uma visão impressionante das massivas escolas de tubarões-martelo que migram anualmente em busca de águas ricas em alimento."
+    }
+  ],
+
+  "curiosidades": [
+    "A forma de martelo da cabeça maximiza a área de superfície das ampolas de Lorenzini, permitindo-lhe detectar os campos elétricos de suas presas favoritas, como arraias, que se escondem na areia.",
+    "O Grande-Tubarão-Martelo é um dos poucos predadores conhecidos por caçar e consumir ativamente arraias venenosas.",
+    "Ao contrário de muitas outras espécies de tubarões, as fêmeas do Grande-Tubarão-Martelo dão à luz filhotes vivos e totalmente desenvolvidos."
+  ],
+
+  "especiesRelacionadas": [
+    {
+      "nome": "Tubarão-Martelo-Recortado (Sphyrna lewini)",
+      "img": "../../../img/Animals/fish/hammerhead_shark/scalloped_hammerhead.png"
+    },
+    {
+      "nome": "Tubarão-Martelo-Pequeno (Sphyrna tiburo)",
+      "img": "../../../img/Animals/fish/hammerhead_shark/bonnethead_shark.png"
+    }
+  ]
+}

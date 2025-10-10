@@ -1,7 +1,7 @@
 {
   "name": "Tubarão-Branco",
   "scientificName": "Carcharodon carcharias",
-  "img": "../../../img/Animals/fish/epipelagic/tubarao_branco/tubarao_branco.png",
+  "img": "../../../img/Animals/fish/tubarao_branco/tubarao_branco.png",
   "description": "O Grande Tubarão-Branco é o maior peixe predador do mundo e uma lenda dos oceanos. Com um corpo robusto em forma de torpedo, uma força imensa e uma boca equipada com fileiras de dentes serrilhados, ele é um predador de topo perfeitamente evoluído. Apesar de sua reputação temível, é uma criatura complexa e crucial para a saúde dos ecossistemas marinhos.",
   "fichaTecnica": {
     "statusConservacao": "Vulnerável (VU)",

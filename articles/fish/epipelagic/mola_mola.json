@@ -1,0 +1,65 @@
+{
+  "name": "Peixe-Lua",
+  "scientificName": "Mola mola",
+  "img": "../../../img/Animals/fish/epipelagic/mola_mola/mola_mola_main.png",
+  "description": "O Peixe-Lua, ou Mola mola, é o peixe ósseo mais pesado do mundo, conhecido por sua aparência bizarra e corpo em formato de disco. Sem uma cauda verdadeira, ele se move usando suas longas nadadeiras dorsal e anal. Apesar de seu tamanho massivo, é uma criatura dócil que passa grande parte do tempo 'tomando sol' perto da superfície para se aquecer após mergulhos profundos em busca de alimento.",
+  "fichaTecnica": {
+    "statusConservacao": "Vulnerável (VU)",
+    "profundidade": "Superfície até 600m (geralmente nos primeiros 200m)",
+    "dieta": "Carnívoro (principalmente águas-vivas e outros zooplânctons gelatinosos)",
+    "tamanhoMaximo": "Até 3.3 metros de altura e 2.300kg",
+    "expectativaVida": "Desconhecida na natureza (até 10 anos em cativeiro)",
+    "habitat": "Oceanos temperados e tropicais em todo o mundo"
+  },
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/fish/epipelagic/mola_mola/map_mola_mola.png",
+    "alt": "Mapa de distribuição global do Peixe-Lua."
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/fish/epipelagic/mola_mola/size_mola_mola.png",
+    "alt": "Comparativo de tamanho de um Peixe-Lua com um ser humano.",
+    "descricao": "A altura de um Peixe-Lua adulto, da ponta da nadadeira dorsal à anal, pode ser maior que a altura de um homem adulto."
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/epipelagic/mola_mola/gallery/mola_1.jpg",
+      "alt": "Peixe-Lua deitado de lado na superfície do oceano.",
+      "legenda": "O comportamento de 'tomar sol' na superfície ajuda o peixe a regular sua temperatura corporal e permite que aves marinhas removam parasitas de sua pele."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/epipelagic/mola_mola/gallery/mola_2.jpg",
+      "alt": "Close-up da cabeça de um Peixe-Lua, mostrando sua boca pequena.",
+      "legenda": "Sua boca é pequena e seus dentes são fundidos em uma estrutura semelhante a um bico, adaptada para comer presas macias como águas-vivas."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/epipelagic/mola_mola/gallery/mola_3.jpg",
+      "alt": "Mergulhador nadando ao lado de um grande Peixe-Lua.",
+      "legenda": "Apesar de sua aparência intimidadora, os Peixes-Lua são inofensivos para os seres humanos."
+    },
+    {
+      "type": "video",
+      "src": "../../../img/Animals/fish/epipelagic/mola_mola/gallery/video/mola_mola_swimming.mp4",
+      "alt": "Vídeo de um Peixe-Lua nadando.",
+      "legenda": "O Peixe-Lua nada batendo suas nadadeiras dorsal e anal em sincronia, um método de propulsão único entre os peixes."
+    }
+  ],
+  "curiosidades": [
+    "A fêmea do Peixe-Lua pode produzir até 300 milhões de ovos de uma só vez, o maior número entre todos os vertebrados conhecidos.",
+    "Eles não possuem uma nadadeira caudal (cauda) tradicional. A estrutura em forma de leme na parte de trás se chama 'clavus'.",
+    "O Peixe-Lua é frequentemente infestado por uma grande quantidade de parasitas, às vezes mais de 40 espécies diferentes em um único indivíduo.",
+    "Seu esqueleto é em grande parte cartilaginoso, o que o torna mais leve do que seria se fosse totalmente ósseo."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Peixe-Lua Rabudo",
+      "img": "../../../img/Animals/related/sharptail_mola.jpg"
+    },
+    {
+      "nome": "Baiacu",
+      "img": "../../../img/Animals/related/pufferfish.jpg"
+    }
+  ]
+}
