@@ -1,7 +1,7 @@
 {
   "name": "Tubarão-Azul",
   "scientificName": "Prionace glauca",
-  "img": "../../../img/Animals/fish/blue-shark/tubarao_azul.png",
+  "img": "../../../img/Animals/fish/epipelagic/blue-shark/tubarao_azul.png",
   "description": "O Tubarão-Azul é um dos mais elegantes e prolíficos tubarões do oceano aberto. Com seu corpo esguio e coloração azul-índigo brilhante, ele é um mestre da camuflagem em alto-mar. Conhecido como o 'nômade do oceano', realiza vastas migrações anuais em busca de alimento e parceiros, sendo uma espécie verdadeiramente cosmopolita.",
   "fichaTecnica": {
     "Status de Conservação": "Quase Ameaçada (NT)",

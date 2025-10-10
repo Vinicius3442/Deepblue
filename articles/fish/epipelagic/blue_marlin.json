@@ -1,16 +1,16 @@
 {
   "name": "Marlin-Azul",
   "scientificName": "Makaira nigricans",
-  "img": "../../../img/Animals/fish/blue_marlin/blue_marlin.png",
+  "img": "../../../img/Animals/fish/epipelagic/blue_marlin/blue_marlin.png",
   "description": "O Marlin-Azul é um dos peixes mais icônicos e um predador de topo nos oceanos abertos. Conhecido por sua velocidade e saltos espetaculares ao ser fisgado, é altamente valorizado na pesca esportiva. Sua característica mais marcante é o 'rostro' longo e pontiagudo, usado para atordoar presas.",
 
   "mapaDistribuicao": {
-    "img": "../../../img/Animals/fish/blue_marlin/map_blue_marlin.jpg",
+    "img": "../../../img/Animals/fish/epipelagic/blue_marlin/map_blue_marlin.jpg",
     "alt": "Mapa de distribuição do Marlin-Azul no globo"
   },
 
   "comparativoTamanho": {
-    "img": "../../../img/Animals/fish/blue_marlin/blue_marlin_size.jpg",
+    "img": "../../../img/Animals/fish/epipelagic/blue_marlin/blue_marlin_size.jpg",
     "alt": "Comparativo de tamanho de um Marlin-Azul com um ser humano",
     "descricao": "As fêmeas de Marlin-Azul são significativamente maiores que os machos, podendo atingir mais de 4 metros de comprimento e pesar quase 1.000 kg. Os machos raramente excedem 1,5 metro."
   },
@@ -27,31 +27,31 @@
   "galeria": [
     {
       "type": "image",
-      "src": "../../../img/Animals/fish/blue_marlin/gallery/marlin1.jpg",
+      "src": "../../../img/Animals/fish/epipelagic/blue_marlin/gallery/marlin1.jpg",
       "alt": "Marlin-Azul pulando fora da água",
       "legenda": "O Marlin-Azul é famoso por seus saltos acrobáticos e vigorosos, especialmente durante a caça ou quando está engajado em uma luta após ser pescado."
     },
     {
       "type": "image",
-      "src": "../../../img/Animals/fish/blue_marlin/gallery/marlin2.jpg",
+      "src": "../../../img/Animals/fish/epipelagic/blue_marlin/gallery/marlin2.jpg",
       "alt": "Cabeça de Marlin-Azul com o rostro em destaque",
       "legenda": "Um close-up da impressionante mandíbula e do rostro (espada) do marlim, uma ferramenta essencial para sua caça."
     },
     {
       "type": "image",
-      "src": "../../../img/Animals/fish/blue_marlin/gallery/marlin3.jpg",
+      "src": "../../../img/Animals/fish/epipelagic/blue_marlin/gallery/marlin3.jpg",
       "alt": "Marlin-Azul nadando perto da superfície",
       "legenda": "A coloração azul-escura e prata, perfeitamente adaptada para camuflagem nas águas azuis abertas."
     },
     {
       "type": "image",
-      "src": "../../../img/Animals/fish/blue_marlin/gallery/marlin4.jpg",
+      "src": "../../../img/Animals/fish/epipelagic/blue_marlin/gallery/marlin4.jpg",
       "alt": "Marlin-Azul caçando cardume",
       "legenda": "Observado caçando em grupo, o Marlin-Azul usa sua velocidade e 'espada' para desorientar as presas."
     },
     {
       "type": "video",
-      "src": "../../../img/Animals/fish/blue_marlin/gallery/video/blue_marlin_hunt.mp4",
+      "src": "../../../img/Animals/fish/epipelagic/blue_marlin/gallery/video/blue_marlin_hunt.mp4",
       "alt": "Vídeo de um Marlin-Azul caçando",
       "legenda": "Filmagens raras mostrando a técnica de caça do Marlin-Azul em alta velocidade."
     }
@@ -67,15 +67,15 @@
   "especiesRelacionadas": [
     {
       "nome": "Marlin-Branco",
-      "img": "../../../img/Animals/fish/blue_marlin/white_marlin.png"
+      "img": "../../../img/Animals/fish/epipelagic/blue_marlin/white_marlin.png"
     },
     {
       "nome": "Marlin-Listrado",
-      "img": "../../../img/Animals/fish/blue_marlin/striped_marlin.png"
+      "img": "../../../img/Animals/fish/epipelagic/blue_marlin/striped_marlin.png"
     },
     {
       "nome": "Peixe-Espada",
-      "img": "../../../img/Animals/fish/blue_marlin/swordfish.png"
+      "img": "../../../img/Animals/fish/epipelagic/blue_marlin/swordfish.png"
     }
   ]
 }

@@ -1,16 +1,16 @@
 {
   "name": "Espadarte",
   "scientificName": "Xiphias gladius",
-  "img": "../../../img/Animals/fish/swordfish/swordfish.png",
+  "img": "../../../img/Animals/fish/epipelagic/swordfish/swordfish.png",
   "description": "O Espadarte, ou Peixe-Espada, é um dos principais predadores pelágicos, conhecido mundialmente por seu 'rostro' longo e achatado, que lembra uma espada. É um peixe de águas quentes e frias, capaz de tolerar uma ampla faixa de temperaturas, o que lhe permite realizar migrações verticais diárias extremas, caçando desde a superfície até profundidades de centenas de metros.",
 
   "mapaDistribuicao": {
-    "img": "../../../img/Animals/fish/swordfish/map_swordfish.jpg",
+    "img": "../../../img/Animals/fish/epipelagic/swordfish/map_swordfish.jpg",
     "alt": "Mapa de distribuição do Espadarte no globo"
   },
 
   "comparativoTamanho": {
-    "img": "../../../img/Animals/fish/swordfish/swordfish_size.jpg",
+    "img": "../../../img/Animals/fish/epipelagic/swordfish/swordfish_size.jpg",
     "alt": "Comparativo de tamanho de um Espadarte com um mergulhador",
     "descricao": "Espadartes podem atingir até 4,5 metros de comprimento, sendo a 'espada' uma parte significativa de seu tamanho total. Eles são um dos peixes ósseos mais rápidos."
   },
@@ -27,31 +27,31 @@
   "galeria": [
     {
       "type": "image",
-      "src": "../../../img/Animals/fish/swordfish/gallery/swordfish1.jpg",
+      "src": "../../../img/Animals/fish/epipelagic/swordfish/gallery/swordfish1.jpg",
       "alt": "Espadarte nadando em oceano aberto",
       "legenda": "Com um corpo hidrodinâmico e sem dentes ou escamas, o espadarte é construído para a velocidade máxima."
     },
     {
       "type": "image",
-      "src": "../../../img/Animals/fish/swordfish/gallery/swordfish2.jpg",
+      "src": "../../../img/Animals/fish/epipelagic/wordfish/gallery/swordfish2.jpg",
       "alt": "Espadarte saltando da água",
       "legenda": "Como outros peixes de bico, o espadarte é conhecido por saltar da água, seja para se livrar de parasitas ou durante a caça."
     },
     {
       "type": "image",
-      "src": "../../../img/Animals/fish/swordfish/gallery/swordfish3.jpg",
+      "src": "../../../img/Animals/fish/epipelagic/swordfish/gallery/swordfish3.jpg",
       "alt": "Rostro do Espadarte em close-up",
       "legenda": "O rostro (a espada) não é usado para espetar, mas sim para golpear e atordoar as presas antes de consumi-las."
     },
     {
       "type": "image",
-      "src": "../../../img/Animals/fish/swordfish/gallery/swordfish4.jpg",
+      "src": "../../../img/Animals/fish/epipelagic/swordfish/gallery/swordfish4.jpg",
       "alt": "Espadarte em uma feira de peixes, mostrando seu tamanho",
       "legenda": "A pesca comercial do espadarte é global devido ao seu valor alimentar, sendo um alvo popular desde a antiguidade."
     },
     {
       "type": "video",
-      "src": "../../../img/Animals/fish/swordfish/gallery/video/swordfish_hunt.mp4",
+      "src": "../../../img/Animals/fish/epipelagic/swordfish/gallery/video/swordfish_hunt.mp4",
       "alt": "Vídeo de Espadarte caçando em águas profundas",
       "legenda": "Filmagens raras capturam o espadarte usando sua espada para desorientar cardumes em águas escuras."
     }
@@ -67,11 +67,11 @@
   "especiesRelacionadas": [
     {
       "nome": "Marlin-Branco (Kajikia albidus)",
-      "img": "../../../img/Animals/fish/swordfish/white_marlin.png"
+      "img": "../../../img/Animals/fish/epipelagic/swordfish/white_marlin.png"
     },
     {
       "nome": "Atum-Rabilho (Thunnus thynnus)",
-      "img": "../../../img/Animals/fish/swordfish/blue_tuna.png"
+      "img": "../../../img/Animals/fish/epipelagic/swordfish/blue_tuna.png"
     }
   ]
 }

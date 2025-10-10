@@ -1,16 +1,16 @@
 {
   "name": "Dourado (Mahi-Mahi)",
   "scientificName": "Coryphaena hippurus",
-  "img": "../../../img/Animals/fish/dourado/dourado.png",
+  "img": "../../../img/Animals/fish/epipelagic/dourado/dourado.png",
   "description": "O dourado, também conhecido como mahi-mahi, é um dos peixes mais vibrantes e rápidos dos oceanos. Famoso por suas cores iridescentes de verde, azul e amarelo, é um predador de superfície que personifica a beleza e a velocidade das águas tropicais.",
 
   "mapaDistribuicao": {
-    "img": "../../../img/Animals/fish/dourado/mapa_dourado.jpg",
+    "img": "../../../img/Animals/epipelagic/fish/dourado/mapa_dourado.jpg",
     "alt": "Mapa de distribuição do Dourado no globo"
   },
 
   "comparativoTamanho": {
-    "img": "../../../img/Animals/fish/dourado/tamanho_dourado.jpg",
+    "img": "../../../img/Animals/epipelagic/fish/dourado/tamanho_dourado.jpg",
     "alt": "Comparativo de tamanho de um Dourado com um ser humano",
     "descricao": "Um dourado adulto pode atingir até 2 metros de comprimento, embora seu tamanho comum seja em torno de 1 metro. Seu corpo é esguio e comprimido lateralmente, ideal para natação rápida."
   },
@@ -27,37 +27,37 @@
   "galeria": [
     {
       "type": "image",
-      "src": "../../../img/Animals/fish/dourado/gallery/dourado1.jpg",
+      "src": "../../../img/Animals/fish/epipelagic/dourado/gallery/dourado1.jpg",
       "alt": "Close-up de um Dourado exibindo suas cores vibrantes",
       "legenda": "As cores espetaculares do dourado não são pigmento, mas sim resultado da refração de luz em células especiais na pele, que mudam rapidamente de cor com seu humor."
     },
     {
       "type": "image",
-      "src": "../../../img/Animals/fish/dourado/gallery/dourado2.jpg",
+      "src": "../../../img/Animals/fish/epipelagic/dourado/gallery/dourado2.jpg",
       "alt": "Dourado saltando para fora da água",
       "legenda": "Conhecido por sua natureza acrobática, o dourado frequentemente salta para fora da água ao perseguir presas ou quando fisgado."
     },
     {
       "type": "image",
-      "src": "../../../img/Animals/fish/dourado/gallery/dourado3.jpg",
+      "src": "../../../img/Animals/fish/epipelagic/dourado/gallery/dourado3.jpg",
       "alt": "Dourado proximo a superficie",
       "legenda": "Dourados são peixes de crescimento rápido, podendo atingir a maturidade em apenas 4-5 meses, o que os torna uma espécie resiliente apesar da pesca intensa."
     },
     {
       "type": "image",
-      "src": "../../../img/Animals/fish/dourado/gallery/dourado4.jpg",
+      "src": "../../../img/Animals/fish/epipelagic/dourado/gallery/dourado4.jpg",
       "alt": "Cardume de Dourados nadando próximo à superfície",
       "legenda": "Apesar de serem encontrados sozinhos, os dourados frequentemente se reúnem em cardumes, especialmente em torno de objetos flutuantes em mar aberto."
     },
     {
       "type": "image",
-      "src": "../../../img/Animals/fish/dourado/gallery/dourado5.jpg",
+      "src": "../../../img/Animals/fish/epipelagic/dourado/gallery/dourado5.jpg",
       "alt": "Dourado bonito nadando em águas claras",
       "legenda": "O dourado é altamente valorizado na pesca esportiva e comercial, não apenas por sua carne saborosa, mas também por sua luta vigorosa quando fisgado."
     },
     {
-      "type": "video",
-      "src": "../../../img/Animals/fish/dourado/gallery/video/dourado.mp4",
+      "type": "image",
+      "src": "../../../img/Animals/fish/epipelagic/dourado/gallery/dourado6.jpg",
       "alt": "Vídeo de um grupo de Dourados na Flórida",
       "legenda": "Observe a incrível velocidade e agilidade do dourado enquanto ele persegue incansavelmente sua presa na superfície do oceano."
     }

@@ -1,7 +1,7 @@
 {
   "name": "Grande Barracuda",
   "scientificName": "Sphyraena barracuda",
-  "img": "../../../img/Animals/fish/barracuda/barracuda.png",
+  "img": "../../../img/Animals/fish/epipelagic/barracuda/barracuda.png",
   "description": "A Grande Barracuda é um predador voraz e oportunista, conhecido por seu corpo alongado em forma de torpedo e sua boca cheia de dentes afiados. Patrulhando recifes de corais e o mar aberto, sua velocidade explosiva e aparência intimidadora a tornam um dos caçadores mais eficientes da Zona Epipelágica.",
   "fichaTecnica": {
     "Status de Conservação": "Pouco Preocupante (LC)",

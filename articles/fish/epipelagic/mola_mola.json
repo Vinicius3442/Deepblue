@@ -1,7 +1,7 @@
 {
   "name": "Peixe-Lua",
   "scientificName": "Mola mola",
-  "img": "../../../img/Animals/fish/epipelagic/mola_mola/mola_mola_main.png",
+  "img": "../../../img/Animals/fish/epipelagic/mola_mola/mola_mola.png",
   "description": "O Peixe-Lua, ou Mola mola, é o peixe ósseo mais pesado do mundo, conhecido por sua aparência bizarra e corpo em formato de disco. Sem uma cauda verdadeira, ele se move usando suas longas nadadeiras dorsal e anal. Apesar de seu tamanho massivo, é uma criatura dócil que passa grande parte do tempo 'tomando sol' perto da superfície para se aquecer após mergulhos profundos em busca de alimento.",
   "fichaTecnica": {
     "statusConservacao": "Vulnerável (VU)",

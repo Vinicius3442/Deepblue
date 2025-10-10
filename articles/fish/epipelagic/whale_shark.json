@@ -1,7 +1,7 @@
 {
   "name": "Tubarão-Baleia",
   "scientificName": "Rhincodon typus",
-  "img": "../../../img/Animals/fish/whale_shark/whale_shark.png",
+  "img": "../../../img/Animals/fish/epipelagic/whale_shark/whale_shark.png",
   "description": "O Tubarão-Baleia é o maior peixe do mundo. Apesar do seu nome e tamanho, ele é um gigante gentil e inofensivo para os humanos. É um filtrador que se alimenta exclusivamente de plâncton, e sua pele é coberta por um padrão único de manchas brancas e listras, usadas como camuflagem e para identificação individual.",
 
   "mapaDistribuicao": {
