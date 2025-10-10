@@ -1,0 +1,65 @@
+{
+  "name": "Grande Barracuda",
+  "scientificName": "Sphyraena barracuda",
+  "img": "../../../img/Animals/fish/barracuda/barracuda.png",
+  "description": "A Grande Barracuda é um predador voraz e oportunista, conhecido por seu corpo alongado em forma de torpedo e sua boca cheia de dentes afiados. Patrulhando recifes de corais e o mar aberto, sua velocidade explosiva e aparência intimidadora a tornam um dos caçadores mais eficientes da Zona Epipelágica.",
+  "fichaTecnica": {
+    "Status de Conservação": "Pouco Preocupante (LC)",
+    "Tamanho Máximo": "Até 1.8 metros e 50kg",
+    "Expectativa de Vida": "Aproximadamente 14 anos",
+    "Dieta": "Carnívora (peixes, cefalópodes, crustáceos)",
+    "Velocidade": "Pode atingir 58 km/h em arranques curtos",
+    "Habitat": "Recifes de corais, manguezais e águas costeiras tropicais"
+  },
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/fish/epipelagic/barracuda/map_barracuda.png",
+    "alt": "Mapa de distribuição da Grande Barracuda nos oceanos tropicais e subtropicais do mundo."
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/fish/epipelagic/barracuda/size_barracuda.png",
+    "alt": "Comparativo de tamanho de uma Grande Barracuda com um ser humano.",
+    "descricao": "Uma barracuda adulta pode ter um comprimento comparável à altura de uma pessoa, tornando-a um predador imponente."
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/epipelagic/barracuda/gallery/barracuda_1.jpg",
+      "alt": "Close-up da cabeça de uma barracuda, mostrando seus dentes afiados.",
+      "legenda": "A boca da barracuda possui duas fileiras de dentes desiguais e afiados como adagas, projetados para rasgar a presa."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/epipelagic/barracuda/gallery/barracuda_2.jpg",
+      "alt": "Uma barracuda solitária patrulhando um recife de coral.",
+      "legenda": "Barracudas adultas são frequentemente solitárias, usando o ambiente para emboscar suas presas."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/epipelagic/barracuda/gallery/barracuda_3.jpg",
+      "alt": "Um cardume de barracudas jovens.",
+      "legenda": "Indivíduos mais jovens costumam formar cardumes como forma de proteção e para caçar de forma mais eficiente."
+    },
+    {
+      "type": "video",
+      "src": "../../../img/Animals/fish/epipelagic/barracuda/gallery/video/barracuda_hunting.mp4",
+      "alt": "Vídeo de uma barracuda atacando um peixe.",
+      "legenda": "Sua aceleração explosiva permite que ela capture presas ágeis em um piscar de olhos."
+    }
+  ],
+  "curiosidades": [
+    "Barracudas são atraídas por objetos metálicos e brilhantes, que podem confundir com as escamas de suas presas, o que às vezes leva a acidentes com mergulhadores.",
+    "Elas possuem uma visão excelente e contam primariamente com os olhos para caçar, ao contrário de tubarões que dependem mais do olfato.",
+    "Apesar da aparência assustadora, ataques a humanos são raros e geralmente ocorrem por provocação ou confusão em águas turvas.",
+    "A mandíbula inferior proeminente dá à barracuda sua famosa 'cara de mau'."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Bicuda (Barracuda-europeia)",
+      "img": "../../../img/Animals/related/bicuda.jpg"
+    },
+    {
+      "nome": "Wahoo (Cavala-gigante)",
+      "img": "../../../img/Animals/related/wahoo.jpg"
+    }
+  ]
+}

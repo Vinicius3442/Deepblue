@@ -1,0 +1,65 @@
+{
+  "name": "Lula-Gigante",
+  "scientificName": "Architeuthis dux",
+  "img": "../../../img/Animals/molluscae/giant_squid/giant_squid.png",
+  "description": "A Lula-Gigante é um dos invertebrados mais enigmáticos e colossais do planeta. Habitante das profundezas escuras do oceano, por séculos foi considerada uma lenda, inspirando mitos de monstros marinhos como o Kraken. Raras observações em seu habitat natural e carcaças encontradas revelam uma criatura de proporções monumentais, perfeitamente adaptada a um mundo de imensa pressão e escuridão.",
+  "fichaTecnica": {
+    "statusConservacao": "Pouco Preocupante (LC)",
+    "profundidade": "300m até 1.000m (mas pode ir mais fundo)",
+    "dieta": "Carnívora (peixes de profundidade, outras lulas)",
+    "tamanhoMaximo": "Fêmeas até 13m; machos até 10m (incluindo tentáculos)",
+    "expectativaVida": "Estimada em cerca de 5 anos",
+    "habitat": "Oceano profundo em todo o mundo"
+  },
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/squid/bathypelagic/giant_squid/map_giant_squid.png",
+    "alt": "Mapa de distribuição global da Lula-Gigante."
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/squid/bathypelagic/giant_squid/size_giant_squid.png",
+    "alt": "Comparativo de tamanho de uma Lula-Gigante com um ônibus escolar.",
+    "descricao": "O comprimento de uma Lula-Gigante fêmea pode rivalizar com o de um ônibus escolar, tornando-a um dos maiores animais do oceano."
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/squid/bathypelagic/giant_squid/gallery/giant_squid_1.jpg",
+      "alt": "Close-up do olho de uma Lula-Gigante.",
+      "legenda": "A Lula-Gigante possui os maiores olhos de todo o reino animal, com até 27 cm de diâmetro, do tamanho de um prato de jantar."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/squid/bathypelagic/giant_squid/gallery/giant_squid_2.jpg",
+      "alt": "Ilustração científica de uma Lula-Gigante.",
+      "legenda": "Seus dois tentáculos de alimentação são muito mais longos que os outros oito braços, e possuem ventosas com anéis serrilhados para agarrar a presa."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/squid/bathypelagic/giant_squid/gallery/giant_squid_3.jpg",
+      "alt": "Marcas de ventosas de lula gigante na pele de uma baleia cachalote.",
+      "legenda": "Cicatrizes na pele de baleias cachalote são evidências das batalhas épicas que ocorrem nas profundezas entre esses dois gigantes."
+    },
+    {
+      "type": "video",
+      "src": "../../../img/Animals/squid/bathypelagic/giant_squid/gallery/video/giant_squid_video.mp4",
+      "alt": "Raro vídeo de uma Lula-Gigante viva em seu habitat natural.",
+      "legenda": "Filmada pela primeira vez em 2012, a Lula-Gigante viva é um dos avistamentos mais cobiçados da biologia marinha."
+    }
+  ],
+  "curiosidades": [
+    "Seus olhos gigantes são adaptados para captar a mais tênue luz bioluminescente nas profundezas, permitindo que detectem predadores como a baleia cachalote.",
+    "Apesar do tamanho, seu corpo é frágil e gelatinoso, composto principalmente de cloreto de amônio, que é mais leve que a água do mar e ajuda na flutuabilidade.",
+    "Até hoje, ninguém jamais testemunhou uma Lula-Gigante se alimentando.",
+    "Acredita-se que a lenda do Kraken, o monstro marinho escandinavo, tenha sido inspirada em avistamentos de Carcaças de Lula-Gigante."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Lula-Colossal",
+      "img": "../../../img/Animals/related/colossal_squid.jpg"
+    },
+    {
+      "nome": "Baleia Cachalote",
+      "img": "../../../img/Animals/related/sperm_whale.jpg"
+    }
+  ]
+}

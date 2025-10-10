@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- CONFIGURAÇÕES E ELEMENTOS ---
   const CONFIG = {
     MAX_DEPTH: 11000,
-    PIXELS_PER_METER: 50,
+    PIXELS_PER_METER: 25,
     ANIMAL_ACTIVATION_RANGE: 300,
     OCEAN_FLOOR_START_DEPTH: 7000,
     OCEAN_FLOOR_FULL_OPACITY_DEPTH: 10000,
@@ -200,6 +200,8 @@ document.addEventListener("DOMContentLoaded", () => {
         .replace(/([A-Z])/g, " $1")
         .replace(/^./, (str) => str.toUpperCase());
       li.innerHTML = `<strong>${label}:</strong> <span>${value}</span>`;
+
+      fichaList.appendChild(li);
     }
     const mapModule = modal.querySelector(".map-module");
     if (animalData.mapaDistribuicao && animalData.mapaDistribuicao.img) {
@@ -357,6 +359,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     prepareAnimals();
     window.addEventListener("scroll", onScroll);
+
+    // Listener global de mouse, agora com a lógica completa e correta
+    document.body.addEventListener("mousemove", (e) => {
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+      animals.forEach((animal) => {
+        if (!animal.isActive) return;
+        const rect = animal.figure.getBoundingClientRect();
+        const animalScreenX = rect.left + rect.width / 2;
+        const animalScreenY = rect.top + rect.height / 2;
+        const dx = animalScreenX - mouseX;
+        const dy = animalScreenY - mouseY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        const reactionRadius = 150;
+        if (distance < reactionRadius && animal.spookTimer <= 0) {
+          animal.spookTimer = 120;
+          const force = (reactionRadius - distance) / reactionRadius;
+          animal.vx += (dx / distance) * force * 2.5;
+          animal.vy += (dy / distance) * force * 2.5;
+        }
+      });
+    });
+
     update();
     setupParticles();
     requestAnimationFrame(animateParticles);
@@ -367,13 +392,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Função para preparar os animais
+  // SUBSTITUA A SUA FUNÇÃO 'prepareAnimals' INTEIRA POR ESTA:
   function prepareAnimals() {
     document.querySelectorAll('[data-animal="true"]').forEach((figure) => {
       const specifiedScale = parseFloat(figure.dataset.scale) || 1.0;
       const gallery = figure.parentElement;
       const zoneDiv = gallery.parentElement;
 
-      // Encontra a zona do animal para calcular a posição Y correta
       const zoneData = ZONES.find((z) => z.id === zoneDiv.id);
       const nextZoneData = ZONES[ZONES.indexOf(zoneData) + 1];
 
@@ -383,10 +408,11 @@ document.addEventListener("DOMContentLoaded", () => {
         : window.innerHeight;
 
       const animalDepthInMeters = parseInt(figure.dataset.depth, 10);
+      const depthRatio = nextZoneData
+        ? (animalDepthInMeters - zoneData.startDepth) /
+          (nextZoneData.startDepth - zoneData.startDepth)
+        : 0.5;
 
-      const depthRatio =
-        (animalDepthInMeters - zoneData.startDepth) /
-        (nextZoneData.startDepth - zoneData.startDepth);
       const homeY = depthRatio * zoneHeight;
 
       const animal = {
@@ -396,15 +422,18 @@ document.addEventListener("DOMContentLoaded", () => {
         homeY: homeY,
         name: figure.dataset.name || "Espécie desconhecida",
         articlePath: figure.dataset.article || null,
+        type: figure.dataset.type || "peixe",
         isActive: false,
         sighted: false,
-        x: Math.random() * (gallery.offsetWidth || window.innerWidth),
-        y: homeY, // Começa na sua posição ideal
+        x: -9999,
+        y: homeY,
         vx: Math.random() - 0.5,
         vy: Math.random() - 0.5,
         scale: specifiedScale,
         flip: 1,
         wanderAngle: Math.random() * Math.PI * 2,
+        spookTimer: 0,
+        width: 0,
       };
 
       animal.figure.style.opacity = 0;
@@ -540,11 +569,17 @@ document.addEventListener("DOMContentLoaded", () => {
       const isInRange =
         Math.abs(animal.depth - viewportCenterDepth) < range / 2;
 
-
       if (isInRange && !animal.isActive) {
-
         if (animal.img.dataset.src) {
-          animal.img.src = animal.img.dataset.src;
+          animal.img.src = animal.img.dataset.src; // Inicia o carregamento
+
+          // ESSA É A PARTE CRÍTICA:
+          // Define o que fazer QUANDO a imagem terminar de carregar
+          animal.img.onload = () => {
+            // Agora que a imagem carregou, medimos a largura real e guardamos
+            animal.width = animal.figure.offsetWidth;
+          };
+          animal.img.removeAttribute("data-src");
         }
 
         animal.isActive = true;
@@ -579,6 +614,14 @@ document.addEventListener("DOMContentLoaded", () => {
   function animateAnimals() {
     animals.forEach((animal) => {
       if (!animal.isActive) return;
+      if (animal.x === -9999) {
+        const gallery = animal.figure.parentElement;
+        if (gallery && gallery.offsetWidth > 0) {
+          animal.x = Math.random() * gallery.offsetWidth;
+        } else {
+          return;
+        }
+      }
 
       // Decide qual comportamento aplicar com base no tipo do animal
       switch (animal.type) {
@@ -608,11 +651,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function applyPeixePhysics(animal) {
+    if (animal.spookTimer > 0) animal.spookTimer--;
+
     const gallery = animal.figure.parentElement;
-    if (!gallery) return;
+    if (!gallery || gallery.offsetWidth === 0) return;
+
     const galleryWidth = gallery.offsetWidth;
     const galleryHeight = gallery.offsetHeight;
-    const imgWidth = animal.figure.offsetWidth || animal.scale * 100;
+    const imgWidth = animal.width || animal.scale * 100;
 
     animal.wanderAngle += (Math.random() - 0.5) * 0.4;
     const wanderForce = {
@@ -621,14 +667,14 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     const homeForce = { x: 0, y: (animal.homeY - animal.y) * 0.005 };
     const avoidanceForce = { x: 0, y: 0 };
-    const margin = 100;
+    const margin = 200;
     if (animal.x < margin) avoidanceForce.x = 1;
     if (animal.x > galleryWidth - imgWidth - margin) avoidanceForce.x = -1;
     if (animal.y < margin) avoidanceForce.y = 1;
     if (animal.y > galleryHeight - imgWidth - margin) avoidanceForce.y = -1;
 
-    const accelerationX = wanderForce.x + homeForce.x + avoidanceForce.x * 0.5;
-    const accelerationY = wanderForce.y + homeForce.y + avoidanceForce.y * 0.5;
+    const accelerationX = wanderForce.x + homeForce.x + avoidanceForce.x * 1.0;
+    const accelerationY = wanderForce.y + homeForce.y + avoidanceForce.y * 1.0;
     animal.vx += accelerationX;
     animal.vy += accelerationY;
 
@@ -647,29 +693,52 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 3. NOVA FÍSICA DAS LULAS (PROPULSÃO A JATO)
   function applyLulaPhysics(animal) {
-    animal.propulsionTimer = (animal.propulsionTimer || 0) - 1;
+    if (animal.spookTimer > 0) animal.spookTimer--;
 
+    // Lógica de Propulsão (Jato)
+    animal.propulsionTimer = (animal.propulsionTimer || 0) - 1;
     if (animal.propulsionTimer <= 0) {
       animal.propulsionTimer = 60 + Math.random() * 120;
-
       const angle = (Math.random() - 0.5) * 0.8;
       const thrust = 4 + Math.random() * 4;
-
       animal.vx += animal.flip * Math.cos(angle) * thrust;
       animal.vy += Math.sin(angle) * thrust * 0.5;
     }
 
+    // --- LÓGICA PARA EVITAR PAREDES (ADICIONADA AQUI) ---
+    const gallery = animal.figure.parentElement;
+    const avoidanceForce = { x: 0, y: 0 }; // Força de desvio começa em zero
+
+    if (gallery) {
+      const galleryWidth = gallery.offsetWidth;
+      const imgWidth = animal.width || animal.scale * 100;
+      const margin = 200; // Usa a mesma margem segura dos peixes
+
+      if (animal.x < margin) avoidanceForce.x = 1;
+      if (animal.x > galleryWidth - imgWidth - margin) avoidanceForce.x = -1;
+      if (animal.y < margin) avoidanceForce.y = 1;
+      if (animal.y > gallery.offsetHeight - imgWidth - margin)
+        avoidanceForce.y = -1;
+    }
+
+    // Aplica a força de desvio à velocidade
+    animal.vx += avoidanceForce.x * 1.0;
+    animal.vy += avoidanceForce.y * 1.0;
+    // --- FIM DA LÓGICA DE EVITAR PAREDES ---
+
+    // Atrito forte e retorno suave à profundidade
     animal.vx *= 0.94;
     animal.vy *= 0.94;
     animal.vy += (animal.homeY - animal.y) * 0.002;
 
+    // Atualiza a posição
     animal.x += animal.vx;
     animal.y += animal.vy;
-
   }
 
   // 4. FÍSICA DAS ÁGUAS-VIVAS (PULSAÇÃO VERTICAL)
   function applyAguaVivaPhysics(animal) {
+    if (animal.spookTimer > 0) animal.spookTimer--;
     animal.pulseTimer = (animal.pulseTimer || Math.random() * 100) + 0.05;
 
     const pulseForce = Math.sin(animal.pulseTimer) * 0.1;
@@ -692,7 +761,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const particleCount = (particleCanvas.width * particleCanvas.height) / 8000;
 
     for (let i = 0; i < particleCount; i++) {
-      const isBioluminescent = Math.random() < 0.05;
+      const isBioluminescent = Math.random() < 0.1; // Aumentei a chance para 10%
       const particle = {
         x: Math.random() * particleCanvas.width,
         y: Math.random() * particleCanvas.height,
@@ -705,11 +774,30 @@ document.addEventListener("DOMContentLoaded", () => {
           : Math.random() * 0.5 + 0.3,
         isBioluminescent: isBioluminescent,
 
-        // Apenas para as partículas que brilham
-        vx: isBioluminescent ? (Math.random() - 0.5) * 0.5 : 0, // velocidade horizontal
-        vy: isBioluminescent ? (Math.random() - 0.5) * 0.5 : 0, // velocidade vertical
-        wanderAngle: isBioluminescent ? Math.random() * Math.PI * 2 : 0, // Ângulo para mudar de direção
+        // --- NOVAS PROPRIEDADES DE MOVIMENTO E TIPO ---
+        vx: 0,
+        vy: 0,
+        wanderAngle: 0,
+        bioType: "none", // Novo: tipo de bioluminescência
       };
+
+      if (isBioluminescent) {
+        // Define velocidades iniciais apenas para as criaturas
+        particle.vx = (Math.random() - 0.5) * 0.5;
+        particle.vy = (Math.random() - 0.5) * 0.5;
+        particle.wanderAngle = Math.random() * Math.PI * 2;
+
+        // Escolhe um tipo aleatório de bioluminescência
+        const bioRoll = Math.random();
+        if (bioRoll < 0.6) {
+          particle.bioType = "nadador_verde"; // 60% de chance: o que já tínhamos
+        } else if (bioRoll < 0.9) {
+          particle.bioType = "pulsante_azul"; // 30% de chance: um novo tipo que pulsa
+        } else {
+          particle.bioType = "estatico_amarelo"; // 10% de chance: um tipo que quase não se move
+        }
+      }
+
       particles.push(particle);
     }
   }
@@ -721,11 +809,35 @@ document.addEventListener("DOMContentLoaded", () => {
     particles.forEach((p) => {
       // --- LÓGICA PARA CRIATURAS BIOLUMINESCENTES ---
       if (p.isBioluminescent && currentDepth > PARTICLE_START_DEPTH) {
-        p.wanderAngle += (Math.random() - 0.5) * 0.3;
+        let color = "100, 255, 200"; // Cor padrão (verde)
 
-        p.vx += Math.cos(p.wanderAngle) * 0.03;
-        p.vy += Math.sin(p.wanderAngle) * 0.03;
+        // Aplica comportamento com base no tipo
+        switch (p.bioType) {
+          case "nadador_verde":
+            // O movimento de nadar que já tínhamos
+            p.wanderAngle += (Math.random() - 0.5) * 0.3;
+            p.vx += Math.cos(p.wanderAngle) * 0.03;
+            p.vy += Math.sin(p.wanderAngle) * 0.03;
+            break;
 
+          case "pulsante_azul":
+            color = "100, 180, 255"; // Cor azul
+            // Movimento de pulsação suave e lento
+            p.opacity = 0.5 + Math.sin(p.wanderAngle) * 0.3;
+            p.wanderAngle += 0.02; // Controla a velocidade da pulsação
+            p.vx *= 0.9; // Movimento horizontal quase nulo
+            p.vy *= 0.9;
+            break;
+
+          case "estatico_amarelo":
+            color = "255, 220, 100"; // Cor amarela/dourada
+            // Quase não se move, apenas flutua
+            p.vx *= 0.8;
+            p.vy *= 0.8;
+            break;
+        }
+
+        // Limita a velocidade para os nadadores
         const speed = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
         const maxSpeed = 0.4;
         if (speed > maxSpeed) {
@@ -733,28 +845,30 @@ document.addEventListener("DOMContentLoaded", () => {
           p.vy = (p.vy / speed) * maxSpeed;
         }
 
+        // Aplica a velocidade e o paralaxe
         p.x += p.vx;
         p.y += p.vy;
-
         p.y += deltaY * p.z * 0.1;
 
-        // 3. DESENHO (Formato de cometa com brilho)
+        // Desenha a partícula com a cor e brilho corretos
         ctx.beginPath();
-        ctx.shadowColor = "rgba(100, 255, 200, 0.9)";
+        ctx.shadowColor = `rgba(${color}, 0.9)`;
         ctx.shadowBlur = 10;
-        ctx.fillStyle = `rgba(100, 255, 200, ${p.opacity})`;
+        ctx.fillStyle = `rgba(${color}, ${p.opacity})`;
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fill();
 
-        // Desenha a cauda
-        const tailX = p.x - p.vx * 4; // A cauda fica na direção oposta ao movimento
-        const tailY = p.y - p.vy * 4;
-        ctx.beginPath();
-        ctx.moveTo(p.x, p.y);
-        ctx.lineTo(tailX, tailY);
-        ctx.lineWidth = p.radius * 0.8;
-        ctx.strokeStyle = `rgba(100, 255, 200, ${p.opacity * 0.5})`;
-        ctx.stroke();
+        // A cauda apenas para os nadadores
+        if (p.bioType === "nadador_verde") {
+          const tailX = p.x - p.vx * 4;
+          const tailY = p.y - p.vy * 4;
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(tailX, tailY);
+          ctx.lineWidth = p.radius * 0.8;
+          ctx.strokeStyle = `rgba(${color}, ${p.opacity * 0.5})`;
+          ctx.stroke();
+        }
 
         // --- LÓGICA PARA PARTÍCULAS NORMAIS (NEVE MARINHA) ---
       } else {

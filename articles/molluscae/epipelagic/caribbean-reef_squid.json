@@ -4,15 +4,12 @@
   "img": "../../../img/Animals/molluscae/caribbean-reef-squid/caribbean-reef-squid.png",
   "description": "A Lula-de-recife-caribenha é um cefalópode fascinante encontrado nas águas rasas e quentes do Mar do Caribe. Famosa por sua incrível capacidade de mudar de cor e padrão, ela usa sua pele como uma tela para se comunicar, caçar e se camuflar de predadores com uma complexidade impressionante.",
   "fichaTecnica": {
-    "Reino": "Animalia",
-    "Filo": "Mollusca",
-    "Classe": "Cephalopoda",
-    "Ordem": "Myopsida",
-    "Família": "Loliginidae",
-    "Tamanho": "Até 20 cm (comprimento do manto)",
-    "Dieta": "Carnívora (pequenos peixes e crustáceos)",
-    "Habitat": "Recifes de coral e leitos de ervas marinhas",
-    "Expectativa de Vida": "Menos de 1 ano"
+    "statusConservacao": "Pouco Preocupante (LC)",
+    "profundidade": "Superfície até 20m",
+    "dieta": "Carnívora (pequenos peixes e crustáceos)",
+    "tamanhoMaximo": "Até 20 cm (comprimento do manto)",
+    "expectativaVida": "Menos de 1 ano",
+    "habitat": "Recifes de coral e leitos de ervas marinhas no Atlântico Ocidental"
   },
   "mapaDistribuicao": {
     "img": "./img/Animals/squid/reef_squid/mapa.png",

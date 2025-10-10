@@ -1,0 +1,65 @@
+{
+  "name": "Tubarão-Azul",
+  "scientificName": "Prionace glauca",
+  "img": "../../../img/Animals/fish/blue-shark/tubarao_azul.png",
+  "description": "O Tubarão-Azul é um dos mais elegantes e prolíficos tubarões do oceano aberto. Com seu corpo esguio e coloração azul-índigo brilhante, ele é um mestre da camuflagem em alto-mar. Conhecido como o 'nômade do oceano', realiza vastas migrações anuais em busca de alimento e parceiros, sendo uma espécie verdadeiramente cosmopolita.",
+  "fichaTecnica": {
+    "Status de Conservação": "Quase Ameaçada (NT)",
+    "Tamanho Máximo": "Até 3.8 metros",
+    "Expectativa de Vida": "Cerca de 20 anos",
+    "Dieta": "Carnívoro (principalmente lulas e peixes de cardume)",
+    "Habitat": "Oceano aberto (pelágico), em águas temperadas e tropicais",
+    "Ninhada": "Pode ter de 25 a mais de 100 filhotes de uma só vez"
+  },
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/sharks/epipelagic/tubarao_azul/map_tubarao_azul.png",
+    "alt": "Mapa de distribuição do Tubarão-Azul, mostrando sua presença em todos os oceanos do mundo."
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/sharks/epipelagic/tubarao_azul/size_tubarao_azul.png",
+    "alt": "Comparativo de tamanho de um Tubarão-Azul com um mergulhador.",
+    "descricao": "Um Tubarão-Azul adulto pode atingir um comprimento superior ao de dois humanos deitados, cabeça com cabeça."
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/sharks/epipelagic/tubarao_azul/gallery/tubarao_azul_1.jpg",
+      "alt": "Tubarão-Azul nadando em águas abertas e cristalinas.",
+      "legenda": "A coloração azul profunda em suas costas serve como camuflagem contra o fundo escuro do oceano quando visto de cima."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/sharks/epipelagic/tubarao_azul/gallery/tubarao_azul_2.jpg",
+      "alt": "Close-up do focinho de um Tubarão-Azul.",
+      "legenda": "Seu focinho longo e cônico é uma de suas características mais distintas."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/sharks/epipelagic/tubarao_azul/gallery/tubarao_azul_3.jpg",
+      "alt": "Tubarão-Azul visto de baixo, mostrando sua barriga branca.",
+      "legenda": "O ventre branco (contra-sombreamento) o camufla contra a superfície iluminada do oceano quando visto de baixo."
+    },
+    {
+      "type": "video",
+      "src": "../../../img/Animals/sharks/epipelagic/tubarao_azul/gallery/video/tubarao_azul_swimming.mp4",
+      "alt": "Vídeo de um Tubarão-Azul nadando graciosamente.",
+      "legenda": "Suas longas nadadeiras peitorais permitem que ele plane pela água com grande eficiência e agilidade."
+    }
+  ],
+  "curiosidades": [
+    "O Tubarão-Azul realiza uma das maiores migrações entre todos os tubarões, podendo cruzar todo o Oceano Atlântico.",
+    "São tubarões vivíparos, o que significa que os embriões se desenvolvem dentro da mãe, conectados por uma placenta, de forma semelhante aos mamíferos.",
+    "Apesar de sua natureza curiosa, são geralmente tímidos e raramente representam uma ameaça para humanos.",
+    "Possuem grandes olhos, bem adaptados para caçar em condições de pouca luz no oceano aberto."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Tubarão-Tigre",
+      "img": "../../../img/Animals/related/tiger_shark.jpg"
+    },
+    {
+      "nome": "Tubarão-Galha-Branca-Oceânico",
+      "img": "../../../img/Animals/related/oceanic_whitetip.jpg"
+    }
+  ]
+}

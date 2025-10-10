@@ -1,0 +1,65 @@
+{
+  "name": "Moreia-Verde",
+  "scientificName": "Gymnothorax funebris",
+  "img": "../../../img/Animals/fish/moreia-verde/moreia_verde.png",
+  "description": "A Moreia-Verde é uma enguia solitária e imponente, encontrada se esgueirando por fendas de recifes de corais e rochas. Sua cor verde vibrante não vem de pigmento, mas de uma camada de muco amarelado que cobre sua pele naturalmente azulada, protegendo-a de parasitas e abrasões. Com uma aparência serpentina e uma boca que raramente se fecha, ela é uma caçadora noturna formidável.",
+  "fichaTecnica": {
+    "Status de Conservação": "Pouco Preocupante (LC)",
+    "Tamanho Máximo": "Até 2.5 metros",
+    "Expectativa de Vida": "Até 30 anos",
+    "Dieta": "Carnívora (peixes, polvos, caranguejos e lagostas)",
+    "Visão": "Muito pobre, depende do olfato apurado para caçar",
+    "Habitat": "Fendas e buracos em recifes de corais e áreas rochosas"
+  },
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/fish/epipelagic/moreia_verde/map_moreia_verde.png",
+    "alt": "Mapa de distribuição da Moreia-Verde no Oceano Atlântico Ocidental."
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/fish/epipelagic/moreia_verde/size_moreia_verde.png",
+    "alt": "Comparativo de tamanho de uma Moreia-Verde com um mergulhador.",
+    "descricao": "Uma Moreia-Verde grande pode ter um comprimento maior que a altura de um humano adulto, com um corpo robusto como um braço."
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/epipelagic/moreia_verde/gallery/moreia_1.jpg",
+      "alt": "Close-up da cabeça de uma Moreia-Verde saindo de uma fenda.",
+      "legenda": "Moreias frequentemente mantêm a boca aberta para bombear água por suas brânquias e respirar."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/epipelagic/moreia_verde/gallery/moreia_2.jpg",
+      "alt": "Moreia-Verde nadando em águas abertas.",
+      "legenda": "Embora prefiram tocas, elas nadam com um movimento ondulatório, semelhante a uma serpente, quando precisam se mover."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/epipelagic/moreia_verde/gallery/moreia_3.jpg",
+      "alt": "Moreia-Verde sendo limpa por um camarão-limpador.",
+      "legenda": "Elas possuem uma relação simbiótica com camarões-limpadores, que removem parasitas de sua pele e boca."
+    },
+    {
+      "type": "video",
+      "src": "../../../img/Animals/fish/epipelagic/moreia_verde/gallery/video/moreia_jaw.mp4",
+      "alt": "Vídeo mostrando a mandíbula faríngea de uma moreia.",
+      "legenda": "O 'segundo maxilar' da moreia, ou mandíbula faríngea, se projeta da garganta para agarrar a presa e puxá-la para dentro."
+    }
+  ],
+  "curiosidades": [
+    "A cor verde é uma ilusão. Sua pele é azul escura, mas coberta por um muco amarelado tóxico que, combinado, parece verde.",
+    "Possuem um segundo par de mandíbulas na garganta (mandíbulas faríngeas), como o Alien do filme, para ajudar a engolir presas grandes.",
+    "Apesar da aparência ameaçadora, não são agressivas e só mordem para se defender se se sentirem encurraladas.",
+    "Caçam principalmente à noite, usando seu olfato extremamente desenvolvido para localizar presas adormecidas em tocas."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Moreia-pintada",
+      "img": "../../../img/Animals/related/spotted_moray.jpg"
+    },
+    {
+      "nome": "Moreia-zebra",
+      "img": "../../../img/Animals/related/zebra_moray.jpg"
+    }
+  ]
+}
