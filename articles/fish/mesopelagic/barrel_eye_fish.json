@@ -1,0 +1,78 @@
+{
+  "name": "Peixe Olhos de Barril",
+  "scientificName": "Macropinna microstoma",
+  "img": "../../../img/Animals/fish/mesopelagic/barrel_eye_fish/barrel_eye_fish.png",
+  "description": "O Peixe Olhos de Barril é conhecido por sua cabeça transparente que protege seus olhos tubular altamente sensíveis, permitindo detectar presas e predadores na escuridão da batipelágica. Seus olhos podem girar independentemente, proporcionando uma visão panorâmica sem movimentar o corpo.",
+  "fichaTecnica": {
+    "statusConservacao": "Não Avaliada (NE)",
+    "profundidade": "600m até 800m",
+    "dieta": "Pequenos crustáceos e zooplâncton",
+    "tamanhoMaximo": "12 cm",
+    "expectativaVida": "Desconhecida",
+    "habitat": "Zonas profundas do Pacífico Norte e Japão"
+  },
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/fish/mesopelagic/barrel_eye_fish/map_barrel_eye_fish.png",
+    "alt": "Mapa de distribuição do Peixe Olhos de Barril."
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/fish/mesopelagic/barrel_eye_fish/size_barrel_eye_fish.png",
+    "alt": "Comparativo de tamanho de um Peixe Olhos de Barril com uma mão humana.",
+    "descricao": "Peixe Olhos de Barril é pequeno, mas seus olhos grandes e cabeça transparente tornam-no visualmente impressionante."
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/mesopelagic/barrel_eye_fish/gallery/barrel_eye_1.jpg",
+      "alt": "Peixe Olhos de Barril com olhos voltados para cima.",
+      "legenda": "Seus olhos tubular podem girar 90° para cima sem mover o corpo."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/mesopelagic/barrel_eye_fish/gallery/barrel_eye_2.jpg",
+      "alt": "Vista lateral do Peixe Olhos de Barril",
+      "legenda": "A cabeça transparente permite observar os olhos e cérebro protegidos da pressão profunda."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/mesopelagic/barrel_eye_fish/gallery/barrel_eye_3.jpg",
+      "alt": "Close da cabeça transparente do Peixe Olhos de Barril",
+      "legenda": "A transparência da cabeça é uma adaptação única que ajuda na caça em baixa luminosidade."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/mesopelagic/barrel_eye_fish/gallery/barrel_eye_4.jpg",
+      "alt": "Peixe Olhos de Barril em águas profundas",
+      "legenda": "Movimenta-se lentamente, utilizando nadadeiras peitorais para direção precisa."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/mesopelagic/barrel_eye_fish/gallery/barrel_eye_5.jpg",
+      "alt": "Ilustração científica do Peixe Olhos de Barril",
+      "legenda": "Representação mostrando os olhos tubular dentro da cabeça transparente."
+    },
+    {
+      "type": "video",
+      "src": "../../../img/Animals/fish/mesopelagic/barrel_eye_fish/gallery/video/barrel_eye_video.mp4",
+      "alt": "Vídeo do Peixe Olhos de Barril vivo",
+      "legenda": "Filmagem em águas profundas mostrando o movimento dos olhos tubular do Peixe Olhos de Barril."
+    }
+  ],
+  "curiosidades": [
+    "Seus olhos são tão sensíveis que podem detectar presas mesmo com luz quase inexistente.",
+    "A cabeça transparente funciona como uma cúpula protetora, expondo o cérebro e os olhos à pressão profunda.",
+    "Apesar do tamanho pequeno, é um predador eficiente graças à visão estratégica.",
+    "Foi observado vivo pela primeira vez somente em 2009, graças a submarinos de observação remota.",
+    "É um dos peixes mais visualmente bizarros da batipelágica, famoso em documentários."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Peixe-Dragão-do-Pacífico",
+      "img": "../../../img/Animals/related/pacific_dragonfish.jpg"
+    },
+    {
+      "nome": "Peixe-Pescador",
+      "img": "../../../img/Animals/related/anglerfish.jpg"
+    }
+  ]
+}
