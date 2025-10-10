@@ -1,0 +1,76 @@
+{ 
+ "name": "Lula-Comum",
+  "scientificName": "Loligo vulgaris",
+  "img": "../../../img/Animals/molluscae/common_squid/common_squid.png",
+  "description": "A Lula-Comum é uma espécie de lula de corpo alongado e fino, encontrada em grandes cardumes em águas rasas e oceânicas. Ela é um predador ágil e rápido, essencial para a cadeia alimentar marinha, servindo como principal alimento para muitos peixes, mamíferos e aves marinhas. É amplamente pescada para consumo humano.",
+
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/molluscae/common_squid/map_common_squid.jpg",
+    "alt": "Mapa de distribuição da Lula-Comum no Atlântico Leste e Mediterrâneo"
+  },
+
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/molluscae/common_squid/common_squid_size.jpg",
+    "alt": "Comparativo de tamanho de uma Lula-Comum com uma mão humana",
+    "descricao": "As Lulas-Comuns tipicamente têm um manto (corpo) que atinge cerca de 30 a 50 cm de comprimento, sendo consideravelmente menores que os grandes predadores oceânicos."
+  },
+
+  "fichaTecnica": {
+    "statusConservacao": "Pouco Preocupante (LC)",
+    "profundidade": "Superfície até 250m (mais comum entre 10m e 150m)",
+    "dieta": "Carnívoro (peixes pequenos, crustáceos e outras lulas)",
+    "tamanhoMaximo": "Até 50 cm de comprimento do manto (sem contar os tentáculos)",
+    "expectativaVida": "Cerca de 1 a 3 anos",
+    "habitat": "Águas costeiras e oceânicas do Atlântico Leste (do Mar do Norte à África) e Mar Mediterrâneo."
+  },
+
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/common_squid/gallery/squid1.jpg",
+      "alt": "Lula-Comum nadando em águas claras",
+      "legenda": "O corpo hidrodinâmico e as barbatanas laterais facilitam a locomoção rápida, permitindo-lhes escapar de predadores."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/common_squid/gallery/squid2.jpg",
+      "alt": "Cardume de Lulas-Comuns",
+      "legenda": "Esses moluscos são altamente sociais e formam grandes cardumes para caçar e se proteger, muitas vezes exibindo comunicação visual complexa."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/common_squid/gallery/squid3.jpg",
+      "alt": "Lula-Comum usando camuflagem no fundo do mar",
+      "legenda": "Como outros cefalópodes, a Lula-Comum pode mudar rapidamente a cor e a textura de sua pele para se camuflar ou se comunicar."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/common_squid/gallery/squid4.jpg",
+      "alt": "Lula-Comum com tinta na água",
+      "legenda": "Em caso de ameaça, a lula libera uma nuvem de tinta escura para desorientar predadores e ganhar tempo para a fuga."
+    },
+    {
+      "type": "video",
+      "src": "../../../img/Animals/molluscae/common_squid/gallery/video/common_squid_chase.mp4",
+      "alt": "Vídeo de uma Lula-Comum caçando pequenos peixes",
+      "legenda": "O vídeo mostra a técnica de caça rápida, onde os tentáculos são projetados para capturar a presa."
+    }
+  ],
+
+  "curiosidades": [
+    "Lulas são nadadoras de propulsão a jato, sugando água no manto e expelindo-a através de um sifão, o que permite alta velocidade.",
+    "Elas têm três corações: dois bombeiam sangue para as guelras, e o terceiro (o coração sistêmico) circula o sangue para o resto do corpo.",
+    "Apesar de viverem pouco (cerca de um ano), seu ciclo de vida é marcado por um crescimento extremamente rápido e reprodução intensa."
+  ],
+
+  "especiesRelacionadas": [
+    {
+      "nome": "Lula-de-Humboldt (Dosidicus gigas)",
+      "img": "../../../img/Animals/molluscae/common_squid/humboldt_squid.png"
+    },
+    {
+      "nome": "Polvo-Comum (Octopus vulgaris)",
+      "img": "../../../img/Animals/molluscae/common_squid/common_octopus.png"
+    }
+  ]
+}

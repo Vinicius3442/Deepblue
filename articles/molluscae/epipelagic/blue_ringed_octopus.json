@@ -1,0 +1,76 @@
+{
+  "name": "Polvo-Azul-de-Anéis",
+  "scientificName": "Hapalochlaena maculosa",
+  "img": "../../../img/Animals/molluscae/blue_ringed_octopus/blue_ringed_octopus.png",
+  "description": "O Polvo-Azul-de-Anéis é um cefalópode minúsculo, mas é um dos animais mais venenosos do mundo. Ele é reconhecido pelos anéis azuis brilhantes que pulsam quando o animal se sente ameaçado. O veneno (tetrodotoxina) é fatal e não possui antídoto, apesar de seu tamanho modesto.",
+
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/molluscae/blue_ringed_octopus/map_blue_ringed_octopus.jpg",
+    "alt": "Mapa de distribuição do Polvo-Azul-de-Anéis no Pacífico e Índico"
+  },
+
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/molluscae/blue_ringed_octopus/blue_ringed_octopus_size.jpg",
+    "alt": "Comparativo de tamanho de um Polvo-Azul-de-Anéis com uma moeda",
+    "descricao": "Este polvo é minúsculo, raramente ultrapassando 20 centímetros, incluindo os braços. Seu corpo (manto) é do tamanho de uma bola de golfe."
+  },
+
+  "fichaTecnica": {
+    "statusConservacao": "Pouco Preocupante (LC)",
+    "profundidade": "0m até 30m (principalmente águas costeiras rasas)",
+    "dieta": "Carnívoro (pequenos caranguejos e camarões)",
+    "tamanhoMaximo": "Até 20 cm de envergadura",
+    "expectativaVida": "Cerca de 1 a 2 anos",
+    "habitat": "Piscinas de maré e recifes de coral na costa da Austrália, Japão e outras regiões do Pacífico e Índico."
+  },
+
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/blue_ringed_octopus/gallery/blue1.jpg",
+      "alt": "Polvo-Azul-de-Anéis exibindo seus anéis azuis brilhantes",
+      "legenda": "Os anéis azuis são um sinal de aviso (aposematismo) que ele exibe quando se sente estressado ou ameaçado."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/blue_ringed_octopus/gallery/blue2.jpg",
+      "alt": "Polvo-Azul-de-Anéis camuflado em uma rocha",
+      "legenda": "Quando não está ameaçado, ele exibe uma cor marrom ou cinza para se misturar ao ambiente."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/blue_ringed_octopus/gallery/blue3.jpg",
+      "alt": "Close-up da pele do Polvo-Azul-de-Anéis",
+      "legenda": "O veneno é inoculado através de uma mordida, mas o polvo só morde se for provocado ou manuseado."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/blue_ringed_octopus/gallery/blue4.jpg",
+      "alt": "Polvo-Azul-de-Anéis em aquário, mostrando o tamanho pequeno",
+      "legenda": "Seu pequeno tamanho o torna difícil de detectar, mas o perigo está concentrado."
+    },
+    {
+      "type": "video",
+      "src": "../../../img/Animals/molluscae/blue_ringed_octopus/gallery/video/blue_ringed_pulsing.mp4",
+      "alt": "Vídeo do Polvo-Azul-de-Anéis pulsando os anéis azuis",
+      "legenda": "A exibição da cor azul pulsante é um dos avisos visuais mais impressionantes da natureza."
+    }
+  ],
+
+  "curiosidades": [
+    "O veneno contido no Polvo-Azul-de-Anéis é a tetrodotoxina, a mesma toxina encontrada no baiacu (fugu).",
+    "Estima-se que um único polvo tenha veneno suficiente para matar cerca de 26 seres humanos adultos em minutos.",
+    "Apesar do perigo, a mordida é geralmente indolor inicialmente, o que a torna ainda mais traiçoeira."
+  ],
+
+  "especiesRelacionadas": [
+    {
+      "nome": "Polvo-Comum (Octopus vulgaris)",
+      "img": "../../../img/Animals/molluscae/blue_ringed_octopus/common_octopus.png"
+    },
+    {
+      "nome": "Choco (Sépia) (Sepia officinalis)",
+      "img": "../../../img/Animals/molluscae/blue_ringed_octopus/common_cuttlefish.png"
+    }
+  ]
+}
