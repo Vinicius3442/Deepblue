@@ -1,0 +1,65 @@
+{
+  "name": "Baleia-Azul",
+  "scientificName": "Balaenoptera musculus",
+  "img": "../../../img/Animals/mammals/blue_whale/blue_whale.png",
+  "description": "A Baleia-Azul é o maior animal do planeta Terra, superando até mesmo os maiores dinossauros em massa. Este gigante gentil e majestoso percorre os oceanos do mundo, comunicando-se através de sons de baixa frequência que podem viajar por centenas de quilômetros. Apesar de seu tamanho colossal, sua dieta consiste quase exclusivamente de pequenas criaturas semelhantes a camarões, chamadas krill.",
+  "fichaTecnica": {
+    "statusConservacao": "Em Perigo (EN)",
+    "profundidade": "Superfície até 500m",
+    "dieta": "Carnívora (principalmente Krill)",
+    "tamanhoMaximo": "Até 30 metros e 190 toneladas",
+    "expectativaVida": "80 a 90 anos",
+    "habitat": "Todos os oceanos, de águas polares a tropicais"
+  },
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/mammals/epipelagic/blue_whale/map_blue_whale.png",
+    "alt": "Mapa de distribuição global da Baleia-Azul."
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/mammals/epipelagic/blue_whale/size_blue_whale.png",
+    "alt": "Comparativo de tamanho de uma Baleia-Azul com um avião Boeing 737.",
+    "descricao": "O comprimento de uma Baleia-Azul adulta é comparável ao de um avião Boeing 737, e seu coração sozinho pode ser do tamanho de um carro pequeno."
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/mammals/epipelagic/blue_whale/gallery/whale_1.jpg",
+      "alt": "Baleia-Azul vista de cima, mostrando seu corpo imenso e esguio.",
+      "legenda": "A coloração azul-acinzentada da baleia fica vibrantemente azul sob a água, daí o seu nome."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/mammals/epipelagic/blue_whale/gallery/whale_2.jpg",
+      "alt": "Cauda (fluke) de uma Baleia-Azul mergulhando.",
+      "legenda": "A cauda de uma Baleia-Azul pode ter a largura de uma pequena aeronave."
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/mammals/epipelagic/blue_whale/gallery/whale_3.jpg",
+      "alt": "Baleia-Azul se alimentando com a boca aberta.",
+      "legenda": "Para se alimentar, ela abre sua enorme boca e engole toneladas de água e krill, depois usa sua língua para empurrar a água para fora através das placas de barbatana."
+    },
+    {
+      "type": "video",
+      "src": "../../../img/Animals/mammals/epipelagic/blue_whale/gallery/video/blue_whale_lunge_feeding.mp4",
+      "alt": "Vídeo de uma Baleia-Azul se alimentando com a técnica 'lunge feeding'.",
+      "legenda": "O 'lunge feeding' é uma manobra energética onde a baleia avança em alta velocidade sobre um cardume de krill."
+    }
+  ],
+  "curiosidades": [
+    "O som produzido por uma Baleia-Azul é mais alto que um motor a jato, atingindo 188 decibéis. A maior parte é de frequência tão baixa que os humanos não podem ouvir.",
+    "Um filhote de Baleia-Azul já nasce com cerca de 7 metros e 3 toneladas, e bebe mais de 400 litros de leite por dia.",
+    "Sua língua sozinha pode pesar tanto quanto um elefante.",
+    "Apesar de seu tamanho, a Baleia-Azul é relativamente rápida, podendo atingir velocidades de até 32 km/h quando necessário."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Baleia-Fin",
+      "img": "../../../img/Animals/related/fin_whale.jpg"
+    },
+    {
+      "nome": "Baleia-Jubarte",
+      "img": "../../../img/Animals/related/humpback_whale.jpg"
+    }
+  ]
+}
