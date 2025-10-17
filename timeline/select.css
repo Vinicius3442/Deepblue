@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap");
+
+body {
+  background: linear-gradient(to bottom, #004d7a, #002c4a, #001220, #000);
+  color: #e0f7ff;
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/caustics.png"); /* Efeito de luz na água */
+  background-size: cover;
+  opacity: 0.1;
+  animation: slow-pan 60s linear infinite;
+  z-index: 0;
+}
+
+@keyframes slow-pan {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.selection-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.selection-container h1 {
+  font-family: "Oswald", sans-serif;
+  font-size: 3rem;
+  color: #00ffff;
+  text-shadow: 0 0 15px #00ffff, 0 0 25px rgba(0, 255, 255, 0.5);
+  margin-bottom: 4rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.era-group {
+  margin-bottom: 5rem;
+}
+
+.era-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+.era-card {
+  background: rgba(10, 40, 70, 0.4);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 255, 255, 0.4);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: #e0f7ff;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5),
+    inset 0 0 15px rgba(0, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.era-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7), 0 0 25px #00ffff;
+  border-color: #00ffff;
+}
+
+.era-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.era-card h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+.era-card p {
+  font-family: monospace;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+.era-card span {
+  margin-top: auto; /* Empurra para o fundo do card */
+  font-weight: bold;
+  color: #00ffff;
+  font-style: italic;
+}
+
+/* Estilos para cards bloqueados */
+.era-card.locked {
+  border-color: rgba(255, 77, 77, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5),
+    inset 0 0 15px rgba(255, 77, 77, 0.2);
+  cursor: not-allowed;
+}
+.era-card.locked:hover {
+  transform: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 25px #ff4d4d;
+  border-color: #ff4d4d;
+}
+.era-card.locked span,
+.era-card.locked p {
+  color: #ff4d4d;
+}
+
+/* Estilo especial para o botão de retorno */
+.era-card.return-card {
+  border-color: rgba(255, 184, 108, 0.6);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5),
+    inset 0 0 15px rgba(255, 184, 108, 0.3);
+}
+.era-card.return-card:hover {
+  border-color: #ffb86c;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7), 0 0 25px #ffb86c;
+}
+.era-card.return-card span {
+  color: #ffb86c;
+}
+
+/* Efeito de Bolhas */
+#bubbles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  background: rgba(0, 255, 255, 0.15);
+  border-radius: 50%;
+  animation: rise 15s infinite;
+}
+.cards-wrapper.paleozoic-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+@keyframes rise {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) translateX(var(--x-end));
+    opacity: 0;
+  }
+}
+/* Código JS para posicionar as bolhas seria necessário para um efeito mais aleatório, mas podemos simular com nth-child */
+.bubble:nth-child(1) {
+  width: 40px;
+  height: 40px;
+  left: 10%;
+  animation-duration: 25s;
+  --x-end: 20px;
+}
+.bubble:nth-child(2) {
+  width: 20px;
+  height: 20px;
+  left: 20%;
+  animation-duration: 15s;
+  animation-delay: 2s;
+  --x-end: -30px;
+}
+.bubble:nth-child(3) {
+  width: 50px;
+  height: 50px;
+  left: 35%;
+  animation-duration: 30s;
+  animation-delay: 7s;
+  --x-end: 40px;
+}
+.bubble:nth-child(4) {
+  width: 80px;
+  height: 80px;
+  left: 50%;
+  animation-duration: 22s;
+  --x-end: -50px;
+}
+.bubble:nth-child(5) {
+  width: 35px;
+  height: 35px;
+  left: 55%;
+  animation-duration: 28s;
+  animation-delay: 1s;
+  --x-end: 25px;
+}
+.bubble:nth-child(6) {
+  width: 45px;
+  height: 45px;
+  left: 65%;
+  animation-duration: 18s;
+  animation-delay: 3s;
+  --x-end: -20px;
+}
+.bubble:nth-child(7) {
+  width: 60px;
+  height: 60px;
+  left: 70%;
+  animation-duration: 24s;
+  --x-end: 35px;
+}
+.bubble:nth-child(8) {
+  width: 25px;
+  height: 25px;
+  left: 80%;
+  animation-duration: 14s;
+  animation-delay: 5s;
+  --x-end: -45px;
+}
+.bubble:nth-child(9) {
+  width: 15px;
+  height: 15px;
+  left: 70%;
+  animation-duration: 19s;
+  animation-delay: 9s;
+  --x-end: 50px;
+}
+.bubble:nth-child(10) {
+  width: 90px;
+  height: 90px;
+  left: 25%;
+  animation-duration: 26s;
+  --x-end: -30px;
+}
+#bubbles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden; /* Garante que as bolhas não causem scroll */
+}
+
+.bubble {
+    position: absolute;
+    bottom: -150px; /* Começa fora da tela */
+    border-radius: 50%;
+    
+    /* Novo visual 3D */
+    background: radial-gradient(circle at 30% 30%, rgba(0, 255, 255, 0.4), rgba(0, 255, 255, 0.1));
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    filter: blur(1px); /* Um leve desfoque para integrar melhor */
+
+    /* Duas animações rodando ao mesmo tempo */
+    animation: 
+        rise 15s infinite ease-in,          /* Animação de subida */
+        wobble 3s infinite ease-in-out;     /* Animação de zigue-zague */
+}
+
+/* Animação para a subida */
+@keyframes rise {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-120vh); /* Sobe para bem além da tela */
+        opacity: 0;
+    }
+}
+
+/* Nova animação para o zigue-zague */
+@keyframes wobble {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(20px); } /* Move 20px para o lado */
+}

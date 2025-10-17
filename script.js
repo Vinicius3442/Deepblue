@@ -10,14 +10,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const PARTICLE_START_DEPTH = 1000;
   const oceanAbyss = document.getElementById("ocean-abyss");
   const oceanBackground = document.querySelector(".ocean-background");
-  const depthValueSpan = document.querySelector(
-    "#depth-indicator .depth-value"
-  );
+
   const titleSlide = document.querySelector(".title-slide");
   const oceanFloor = document.querySelector(".ocean-floor-svg-wrapper");
   const particleCanvas = document.getElementById("particle-canvas");
   const ctx = particleCanvas.getContext("2d");
   const resetButton = document.getElementById("reset-button");
+  const timeTravelButton = document.getElementById("time-travel-button");
 
   // --- ELEMENTOS DA NOVA INTERFACE DO LOG ---
   const logToggleButton = document.getElementById("log-toggle-button");
@@ -552,11 +551,10 @@ document.addEventListener("DOMContentLoaded", () => {
       1 - lastScrollY / (window.innerHeight * 0.75)
     );
 
-    // --- LÓGICA DO HUD AMBIENTAL DE CANTO (ATUALIZADO) ---
+    // LÓGICA DO HUD AMBIENTAL DE CANTO
     cornerDepthHud.style.opacity = lastScrollY > 50 ? 1 : 0;
     cornerDepthValue.textContent = currentDepth.toLocaleString("pt-BR");
-    
-    // Calcula e atualiza pressão e temperatura
+
     const pressure = calculatePressure(currentDepth);
     const temperature = calculateTemperature(currentDepth);
     cornerPressureValue.textContent = pressure.toFixed(0);
@@ -564,12 +562,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Atualiza os status do veículo no painel
     const depthRatio = currentDepth / CONFIG.MAX_DEPTH;
-    vehicleStats.hull = Math.max(0, 100 - (depthRatio * 15) + Math.sin(Date.now() / 1000) * 0.5);
-    vehicleStats.energy = Math.max(0, 100 - (depthRatio * 40));
+    vehicleStats.hull = Math.max(
+      0,
+      100 - depthRatio * 15 + Math.sin(Date.now() / 1000) * 0.5
+    );
+    vehicleStats.energy = Math.max(0, 100 - depthRatio * 40);
     updateLogPanelUI();
 
-    // Mostra o botão de reset no final
-    resetButton.classList.toggle('visible', currentDepth >= CONFIG.MAX_DEPTH);
+    // CORREÇÃO AQUI: Define 'atTheEnd' e usa para os dois botões
+    const atTheEnd = currentDepth >= CONFIG.MAX_DEPTH;
+    resetButton.classList.toggle("visible", atTheEnd);
+    timeTravelButton.classList.toggle("visible", atTheEnd);
 
     // CHAMA AS FUNÇÕES DE ATUALIZAÇÃO VISUAL
     updateBackgroundColor(currentDepth);
@@ -1065,5 +1068,14 @@ document.addEventListener("DOMContentLoaded", () => {
     ZONES.forEach((zone) => (zone.logged = false));
   });
 
+  timeTravelButton.addEventListener("click", () => {
+    // Adiciona uma classe ao body para o efeito de distorção de saída
+    document.body.classList.add("time-travel-start");
+
+    // Espera a animação de CSS terminar antes de navegar
+    setTimeout(() => {
+      window.location.href = "./timetravel/timetravel.html";
+    }, 1500); // 1.5 segundos
+  });
   init();
 });

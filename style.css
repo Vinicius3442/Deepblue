@@ -290,9 +290,10 @@ body {
 /* Estilos para o Botão de Reset */
 #reset-button {
   position: fixed;
-  bottom: 8rem; /* Posição vertical acima do HUD de canto */
+  bottom: 8rem;
+  /* Desloca para a esquerda a partir do centro */
   left: 50%;
-  transform: translateX(-50%); /* Centraliza horizontalmente */
+  transform: translateX(-105%); /* Move 100% da sua própria largura + 5% de margem para a esquerda */
   z-index: 2600;
   
   /* Aparência (sem alterações) */
@@ -312,7 +313,7 @@ body {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.2s ease;
+  transition: all 0.4s ease;
 }
 
 #reset-button.visible {
@@ -322,15 +323,60 @@ body {
 }
 
 #reset-button:hover {
-  /* Combina a translação com a escala */
-  transform: translateX(-50%) scale(1.05);
+  /* Mantém a transformação original ao dar hover */
+  transform: translateX(-105%) scale(1.05);
   filter: brightness(1.1);
 }
 
 #reset-button:active {
-  /* Combina a translação com a escala */
-  transform: translateX(-50%) scale(0.98);
+  transform: translateX(-105%) scale(0.98);
 }
+
+#time-travel-button {
+  position: fixed;
+  bottom: 8rem;
+  /* Desloca para a direita a partir do centro */
+  left: 50%;
+  transform: translateX(5%); /* Move 5% da sua própria largura para a direita (para criar um espaço) */
+  z-index: 2600;
+  
+  /* Aparência distinta (sem alterações) */
+  background: linear-gradient(45deg, #4c00ff, #aa00ff);
+  color: var(--color-text);
+  font-family: var(--font-family-display);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  border: 1px solid #c37aff;
+  border-radius: 6px;
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 0 15px #7a00ff, 0 0 25px rgba(170, 0, 255, 0.5);
+  
+  /* Estado inicial e transição (sem alterações) */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  animation: pulse-purple 3s infinite;
+}
+
+#time-travel-button.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+#time-travel-button:hover {
+  transform: translateX(5%) scale(1.05);
+  box-shadow: 0 0 25px #7a00ff, 0 0 40px rgba(170, 0, 255, 0.7);
+}
+
+@keyframes pulse-purple {
+  0% { box-shadow: 0 0 15px #7a00ff; }
+  50% { box-shadow: 0 0 25px #c37aff; }
+  100% { box-shadow: 0 0 15px #7a00ff; }
+}
+
 /* Posicionamento dos animais - Ajuste conforme necessário para cada zona */
 #zone-epipelagic figure:nth-of-type(1) {
   top: 30%;
@@ -1267,4 +1313,14 @@ body {
 #corner-depth-hud .hud-secondary-metrics span {
   font-weight: bold;
   font-size: 1rem;
+}
+
+body.time-travel-start {
+  animation: screen-distort 1.5s ease-in-out forwards;
+}
+
+@keyframes screen-distort {
+  0% { filter: none; }
+  50% { filter: hue-rotate(360deg) blur(5px) saturate(5); transform: scale(1.1); }
+  100% { filter: hue-rotate(0deg) blur(20px) saturate(10); transform: scale(0.5); opacity: 0; }
 }
