@@ -1,7 +1,7 @@
 {
   "name": "Polvo-Azul-de-Anéis",
   "scientificName": "Hapalochlaena maculosa",
-  "img": "../../../img/Animals/molluscae/blue_ringed_octopus/blue_ringed_octopus.png",
+  "img": "../../../img/Animals/molluscae/epipelagic/blue_ringed_octopus/blue_ringed_octopus.png",
   "description": "O Polvo-Azul-de-Anéis é um cefalópode minúsculo, mas é um dos animais mais venenosos do mundo. Ele é reconhecido pelos anéis azuis brilhantes que pulsam quando o animal se sente ameaçado. O veneno (tetrodotoxina) é fatal e não possui antídoto, apesar de seu tamanho modesto.",
 
   "mapaDistribuicao": {

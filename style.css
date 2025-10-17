@@ -16,10 +16,9 @@
   --font-family-body: "Roboto", sans-serif;
   --font-family-monospace: "Courier New", Courier, monospace;
 
-
-  --color-sand-base: #18232c;    /* Cor base mais escura do solo */
+  --color-sand-base: #18232c; /* Cor base mais escura do solo */
   --color-sand-highlight: #2c3e50; /* Cor para o topo iluminado das dunas */
-  --color-sand-shadow: #121a21;   
+  --color-sand-shadow: #121a21;
 }
 
 *,
@@ -208,7 +207,7 @@ body {
   height: 100vh;
   z-index: -1; /* Abaixo de todo o conteúdo */
   background: var(--color-ocean-surface); /* Cor inicial */
-  transition: background-color 1s ease-out; /* Transição suave de cor */
+  transition: background-color 0.3s ease-out; /* Transição suave de cor */
 }
 
 /* --- ABISMO OCEÂNICO --- */
@@ -229,7 +228,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;  /* ALTERE DE 'center' PARA 'flex-start' */
+  justify-content: flex-start; /* ALTERE DE 'center' PARA 'flex-start' */
   padding: 5rem 2rem 2rem 2rem; /* ADICIONE um padding-top maior */
   color: var(--color-text);
   text-align: center;
@@ -288,7 +287,40 @@ body {
   user-drag: none;
   user-select: none;
 }
-
+/* Estilos para o Botão de Reset */
+#reset-button {
+  position: fixed;
+  bottom: 2rem; /* Alinhado com a base da nova UI */
+  left: 2rem;
+  z-index: 2600; /* Z-index alto */
+  background-color: var(--color-accent);
+  color: var(--color-text-dark);
+  font-family: var(--font-family-display);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 0 15px var(--color-accent), 0 0 25px rgba(255, 184, 108, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.2s ease;
+}
+#reset-button.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+#reset-button:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+#reset-button:active {
+  transform: scale(0.98);
+}
 /* Posicionamento dos animais - Ajuste conforme necessário para cada zona */
 #zone-epipelagic figure:nth-of-type(1) {
   top: 30%;
@@ -374,7 +406,6 @@ body {
   visibility: visible; /* Torna o modal ativo */
 }
 
-
 .animal-modal .modal-content {
   background: #0c1e2c;
   padding: 2rem;
@@ -444,7 +475,7 @@ body {
   background: #142635; /* Fundo um pouco mais suave */
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px; /* Bordas mais arredondadas */
-  
+
   /* --- MELHORIA VISUAL: Sombra para dar profundidade --- */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   overflow: hidden; /* Garante que os cantos arredondados funcionem em tudo */
@@ -477,7 +508,7 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 0 2rem; /* Aumentei o espaçamento */
   flex-shrink: 0;
-  background-color: rgba(0,0,0,0.1); /* Fundo sutil para a área das abas */
+  background-color: rgba(0, 0, 0, 0.1); /* Fundo sutil para a área das abas */
 }
 
 .tab-button {
@@ -513,7 +544,7 @@ body {
   width: 8px;
 }
 .modal-body::-webkit-scrollbar-track {
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
 }
 .modal-body::-webkit-scrollbar-thumb {
   background-color: var(--color-accent);
@@ -533,8 +564,51 @@ body {
   display: block;
 }
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.expanded-media-viewer .expanded-media-content iframe {
+  width: 100%; /* Ocupa a largura do container */
+  aspect-ratio: 16 / 9; /* Força a proporção de vídeo 16:9 */
+  border: none;
+  border-radius: 12px; /* Mantém a consistência visual */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+.image-credit {
+  font-size: 0.75rem; /* Pequeno */
+  font-style: italic; /* Itálico */
+  color: rgba(255, 255, 255, 0.6); /* Cor cinza-claro com transparência */
+  text-align: right; /* Alinhado à direita */
+  margin-top: -0.5rem; /* Puxa um pouco para cima, para perto da imagem */
+  margin-bottom: 1rem; /* Espaço abaixo do crédito */
+  padding-right: 0.5rem; /* Pequeno espaço à direita */
+}
+
+/* Garante que o crédito da galeria expandida também funcione */
+.expanded-media-viewer .image-credit {
+  text-align: center;
+  margin-top: 0.5rem;
+  padding-right: 0;
+}
+
+/* Ajuste no módulo de informação para acomodar o crédito */
+.info-module img {
+  margin: 0 auto 0.75rem auto; /* Reduz a margem inferior */
+}
+.info-module .image-credit {
+  margin-bottom: 1.5rem; /* Adiciona a margem de volta abaixo do crédito */
+}
+
+.modal-body {
+  overflow-y: auto;
+  padding: 1.5rem 2rem;
+  flex: 1;
 }
 
 .info-module {
@@ -602,7 +676,10 @@ body {
 /* --- ABA GALERIA --- */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Imagens um pouco maiores */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(150px, 1fr)
+  ); /* Imagens um pouco maiores */
   gap: 1.2rem; /* Mais espaçamento */
   margin-bottom: 2rem;
 }
@@ -632,15 +709,44 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 0;
+} /* Estilos para a miniatura do vídeo do YouTube na galeria */
+.gallery-item-wrapper.youtube-thumb {
+  position: relative; /* Necessário para posicionar o ícone de play */
 }
 
+.gallery-item-wrapper.youtube-thumb::after {
+  content: "▶"; /* Ícone de play (pode ser trocado por um SVG) */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 50px; /* Alinha verticalmente o caractere ▶ */
+  padding-left: 5px; /* Ajuste fino para centralizar o caractere ▶ */
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  pointer-events: none; /* Garante que o clique vá para o wrapper */
+}
+
+.gallery-item-wrapper.youtube-thumb:hover::after {
+  transform: translate(-50%, -50%) scale(1.1);
+  background-color: rgba(255, 0, 0, 0.7);
+}
 .expanded-media-viewer {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.95); /* Fundo quase opaco */
+  background-color: rgba(0, 0, 0, 0.95);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -651,25 +757,34 @@ body {
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
   padding: 2rem;
   box-sizing: border-box;
-  border-radius: 16px; /* Para harmonizar com o modal */
+  border-radius: 16px;
 }
-
+.expanded-media-viewer .close-expanded-media {
+  position: absolute; /* Mais importante: Tira o 'x' do fluxo normal */
+  top: 1.5rem; /* Distância do topo */
+  right: 1.5rem; /* Distância da direita */
+  font-size: 2.5rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10; /* Garante que ele fique sobre todos os outros elementos */
+  transition: transform 0.2s ease-in-out;
+}
 .expanded-media-viewer.active {
   opacity: 1;
   pointer-events: auto;
   visibility: visible;
 }
 
-.expanded-media-viewer .close-expanded-media {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  font-size: 2.5rem; /* Botão maior */
-  color: #fff;
-  cursor: pointer;
-  z-index: 10;
-  transition: transform 0.2s ease-in-out;
+.expanded-media-viewer .expanded-media-content {
+  max-width: 90%;
+  max-height: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%; /* <--- ADICIONE ESTA LINHA */
 }
+
 .expanded-media-viewer .close-expanded-media:hover {
   transform: rotate(90deg);
   color: var(--color-accent);
@@ -703,7 +818,10 @@ body {
 }
 .related-species-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Itens maiores */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(180px, 1fr)
+  ); /* Itens maiores */
   gap: 1.5rem;
   margin-top: 1.5rem;
   text-align: center;
@@ -807,7 +925,7 @@ body {
   height: 100%;
   z-index: 1; /* Fica entre o fundo colorido e o conteúdo principal */
   pointer-events: none; /* Não interfere com cliques do mouse */
-  
+
   /* Começa invisível e terá uma transição suave */
   opacity: 0;
   transition: opacity 1.5s ease-in-out;
@@ -830,19 +948,24 @@ body {
   transform: translateY(20px);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
   /* display: flex; e flex-direction: column; foram REMOVIDOS */
-  
-  background-image: linear-gradient(rgba(0,0,0,0.3) 50%, transparent 50%);
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3) 50%, transparent 50%);
   background-size: 100% 4px;
   animation: flicker 0.15s infinite;
 }
 
 /* Animação de flicker para o look analógico */
 @keyframes flicker {
-  0% { opacity: 0.98; }
-  50% { opacity: 1; }
-  100% { opacity: 0.98; }
+  0% {
+    opacity: 0.98;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.98;
+  }
 }
-
 
 #log-display.visible {
   opacity: 1;
@@ -880,28 +1003,48 @@ body {
   margin-bottom: 0.75rem;
   white-space: nowrap;
   overflow: hidden;
-  border-right: .15em solid #0f0;
-  animation: 
-    typing 1s steps(30, end),
-    blink-caret .75s step-end infinite;
+  border-right: 0.15em solid #0f0;
+  animation: typing 1s steps(30, end), blink-caret 0.75s step-end infinite;
 }
 .log-message.sighting {
-    color: #ffb86c;
-    text-shadow: 0 0 5px #ffb86c;
-    border-right-color: #ffb86c;
+  color: #ffb86c;
+  text-shadow: 0 0 5px #ffb86c;
+  border-right-color: #ffb86c;
 }
 .log-message.system {
-    color: #f0f4f8;
-    text-shadow: 0 0 5px #f0f4f8;
-    border-right-color: #f0f4f8;
+  color: #f0f4f8;
+  text-shadow: 0 0 5px #f0f4f8;
+  border-right-color: #f0f4f8;
 }
 
 /* Animações (typing, blink-caret) e scrollbar continuam as mesmas */
-@keyframes typing { from { width: 0 } to { width: 100% } }
-@keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: inherit; } }
-#log-messages-list::-webkit-scrollbar { width: 6px; }
-#log-messages-list::-webkit-scrollbar-track { background: rgba(0,0,0,0.2); }
-#log-messages-list::-webkit-scrollbar-thumb { background-color: #0ff; border-radius: 6px; }
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: inherit;
+  }
+}
+#log-messages-list::-webkit-scrollbar {
+  width: 6px;
+}
+#log-messages-list::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+#log-messages-list::-webkit-scrollbar-thumb {
+  background-color: #0ff;
+  border-radius: 6px;
+}
 
 #vehicle-hud {
   position: fixed;
@@ -926,4 +1069,176 @@ body {
 #vehicle-hud span {
   font-weight: bold;
   font-size: 1.2rem;
+}
+#log-interface {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 2500;
+}
+
+#log-toggle-button {
+  background-color: rgba(10, 25, 40, 0.85);
+  border: 1px solid rgba(100, 255, 255, 0.5);
+  border-radius: 8px;
+  color: #0ff;
+  font-family: var(--font-family-monospace);
+  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.2);
+  backdrop-filter: blur(5px);
+}
+#log-toggle-button:hover {
+  background-color: rgba(20, 45, 60, 0.9);
+  color: #fff;
+  box-shadow: 0 0 25px rgba(0, 200, 255, 0.4);
+}
+
+#log-panel {
+  position: absolute;
+  bottom: calc(100% + 1rem);
+  right: 0;
+  width: 420px;
+  max-width: 90vw;
+  background-color: rgba(10, 25, 40, 0.9);
+  border: 1px solid rgba(100, 255, 255, 0.5);
+  border-radius: 8px;
+  box-shadow: 0 0 25px rgba(0, 200, 255, 0.2);
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+#log-panel.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.log-panel-header {
+  padding: 0.75rem 1rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-family: var(--font-family-display);
+  font-size: 1.2rem;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(100, 255, 255, 0.3);
+}
+
+.log-tabs {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.log-tab-button {
+  flex: 1;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 0.8rem 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: var(--font-family-monospace);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.log-tab-button:hover {
+  background-color: rgba(100, 255, 255, 0.1);
+}
+.log-tab-button.active {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+
+.log-panel-body {
+  padding: 1.5rem;
+  height: 250px;
+  overflow-y: auto;
+}
+.log-tab-content {
+  display: none;
+}
+.log-tab-content.active {
+  display: block;
+}
+#log-messages-list {
+  list-style: none;
+  padding: 0;
+}
+.log-message a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.log-message a:hover {
+  color: #fff;
+}
+
+.stat-group {
+  margin-bottom: 1.5rem;
+}
+.stat-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-family-monospace);
+}
+.stat-group span {
+  float: right;
+  font-family: var(--font-family-monospace);
+  color: var(--color-accent);
+}
+.stat-bar {
+  width: 100%;
+  height: 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(100, 255, 255, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.stat-bar-fill {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #0ff, var(--color-accent));
+  transition: width 0.5s ease-out;
+}
+
+.crew-list,
+.fauna-log-list {
+  list-style: none;
+  padding: 0;
+  line-height: 2;
+}
+.fauna-log-list li {
+  color: var(--color-accent);
+  cursor: pointer;
+  text-decoration: underline;
+}
+.fauna-log-list li:hover {
+  color: #fff;
+}
+
+#zone-info-title {
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+#zone-info-list {
+  list-style: square;
+  padding-left: 1.5rem;
+  line-height: 1.8;
+}
+
+.log-panel-body::-webkit-scrollbar {
+  width: 6px;
+}
+.log-panel-body::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+.log-panel-body::-webkit-scrollbar-thumb {
+  background-color: #0ff;
+  border-radius: 6px;
 }

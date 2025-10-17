@@ -1,7 +1,7 @@
 {
   "name": "Lula-Gigante",
   "scientificName": "Architeuthis dux",
-  "img": "../../../img/Animals/molluscae/giant_squid/giant_squid.png",
+  "img": "../../../img/Animals/molluscae/bathypelagic/giant_squid/giant_squid.png",
   "description": "A Lula-Gigante é um dos invertebrados mais enigmáticos e colossais do planeta. Habitante das profundezas escuras do oceano, por séculos foi considerada uma lenda, inspirando mitos de monstros marinhos como o Kraken. Raras observações em seu habitat natural e carcaças encontradas revelam uma criatura de proporções monumentais, perfeitamente adaptada a um mundo de imensa pressão e escuridão.",
   "fichaTecnica": {
     "statusConservacao": "Pouco Preocupante (LC)",

@@ -60,11 +60,11 @@
             data-depth="70"
             data-type="predador-medio"
             data-name="Atum Azul"
-            data-article="./articles/fish/epipelagic/tuna.json"
+            data-article="./articles/fish/epipelagic/blue_tuna.json"
             data-scale="1.6"
           >
             <img
-              data-src="./img/Animals/fish/epipelagic/tuna/blue_tuna.png"
+              data-src="./img/Animals/fish/epipelagic/blue_tuna/blue_tuna.png"
               src=""
               alt="Atum"
             />
@@ -420,15 +420,63 @@
       </div>
     </main>
 
-    <div id="log-display">
-      <div class="log-header">LOG DE BORDO</div>
-      <ul id="log-messages-list"></ul>
+    <div id="log-interface">
+      <button id="log-toggle-button" class="closed">
+        <span>Log de Bordo</span>
+      </button>
+
+      <div id="log-panel">
+        <div class="log-panel-header">
+          <h3>Sistemas de Bordo</h3>
+        </div>
+        <div class="log-tabs">
+          <button class="log-tab-button active" data-tab="geral">Geral</button>
+          <button class="log-tab-button" data-tab="veiculo">Veículo</button>
+          <button class="log-tab-button" data-tab="tripulacao">Tripulação</button>
+          <button class="log-tab-button" data-tab="fauna">Fauna</button>
+          <button class="log-tab-button" data-tab="zona">Zona Atual</button>
+        </div>
+        <div class="log-panel-body">
+          <div class="log-tab-content active" id="log-content-geral">
+            <ul id="log-messages-list"></ul>
+          </div>
+          <div class="log-tab-content" id="log-content-veiculo">
+            <div class="stat-group">
+              <label>Integridade do Casco</label>
+              <div class="stat-bar"><div id="hull-bar" class="stat-bar-fill"></div></div>
+              <span id="hull-value">100%</span>
+            </div>
+            <div class="stat-group">
+              <label>Reservas de Energia</label>
+              <div class="stat-bar"><div id="energy-bar" class="stat-bar-fill"></div></div>
+              <span id="energy-value">100%</span>
+            </div>
+            <div class="stat-group">
+              <label>Níveis de Oxigênio</label>
+              <div class="stat-bar"><div id="oxygen-bar" class="stat-bar-fill"></div></div>
+              <span id="oxygen-value">100%</span>
+            </div>
+          </div>
+          <div class="log-tab-content" id="log-content-tripulacao">
+            <ul class="crew-list">
+              <li><strong>Cmdt. Eva Rostova:</strong> <span class="status-ok">Estável</span></li>
+              <li><strong>Dr. Aris Thorne (Ciência):</strong> <span class="status-ok">Estável</span></li>
+              <li><strong>Kenji Tanaka (Engenharia):</strong> <span class="status-ok">Estável</span></li>
+            </ul>
+          </div>
+          <div class="log-tab-content" id="log-content-fauna">
+            <p class="log-empty-state">Nenhum espécime notável registrado ainda.</p>
+            <ul class="fauna-log-list"></ul>
+          </div>
+          <div class="log-tab-content" id="log-content-zona">
+            <h4 id="zone-info-title">Zona Epipelágica</h4>
+            <ul id="zone-info-list"></ul>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div id="vehicle-hud">
-      <p>PRESSÃO EXT: <span id="hud-pressure">1</span> ATM</p>
-      <p>TEMP. EXT: <span id="hud-temperature">20.0</span> °C</p>
-    </div>
+    <button id="reset-button">Retornar à Superfície</button>
 
     <script src="script.js"></script>
   </body>

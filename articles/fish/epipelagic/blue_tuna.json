@@ -1,0 +1,93 @@
+{
+  "name": "Atum-Azul",
+  "scientificName": "Thunnus thynnus",
+  "img": "../../../img/Animals/fish/epipelagic/blue_tuna/blue_tuna.png",
+  "fonte": "NOAA Fisheries",
+  "description": "O atum-azul é um dos maiores, mais rápidos e magníficos predadores do oceano. Conhecido por suas migrações épicas, este peixe de sangue quente é uma maravilha da engenharia evolutiva, mas enfrenta sérios riscos devido à pesca excessiva.",
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/fish/epipelagic/blue_tuna/map_tuna.jpg",
+    "alt": "Mapa de distribuição do Atum-Azul no globo",
+    "fonte": "IUCN Red List of Threatened Species"
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/fish/epipelagic/blue_tuna/tuna_size.jpg",
+    "alt": "Comparativo de tamanho de um Atum-Azul com um mergulhador",
+    "descricao": "Um atum-azul adulto pode facilmente ultrapassar o tamanho de um ser humano, chegando a mais de 3 metros de comprimento.",
+    "fonte": "Autor Desconhecido"
+  },
+  "fichaTecnica": {
+    "statusConservacao": "Em Perigo (EN)",
+    "profundidade": "Superfície até 1.000m",
+    "dieta": "Carnívoro (peixes menores, lulas, crustáceos)",
+    "tamanhoMaximo": "Até 3 metros e 680kg",
+    "expectativaVida": "Até 40 anos",
+    "habitat": "Oceano Atlântico e mares adjacentes, como o Mediterrâneo"
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/epipelagic/blue_tuna/gallery/tuna1.jpg",
+      "alt": "Atum-azul morto em um barco de pesca",
+      "legenda": "Um exemplar impressionante, demonstrando o tamanho e a força que fazem do Atum-Azul um dos mais cobiçados troféus da pesca esportiva.",
+      "fonte": "Shutterstock"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/epipelagic/blue_tuna/gallery/tuna2.jpg",
+      "alt": "Atum nadando no oceano",
+      "legenda": "Um atum-azul em seu habitat natural, mostrando a beleza e agilidade dessa espécie.",
+      "fonte": "Wikimedia Commons"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/epipelagic/blue_tuna/gallery/tuna3.jpg",
+      "alt": "Atum em baixo da agua de frente",
+      "legenda": "A silhueta elegante do atum-azul, destacando seu corpo hidrodinâmico adaptado para velocidade e eficiência na natação.",
+      "fonte": "Adobe Stock"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/epipelagic/blue_tuna/gallery/tuna4.jpg",
+      "alt": "Atum enorme com a boca aberta",
+      "legenda": "Um close-up do atum-azul, revelando detalhes de sua anatomia e a força de sua mandíbula.",
+      "fonte": "Getty Images"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/epipelagic/blue_tuna/gallery/tuna5.jpg",
+      "alt": "Atum junto de um cardume.",
+      "legenda": "Um atum-azul nadando em harmonia com um cardume, destacando seu comportamento social.",
+      "fonte": "Pexels"
+    },
+{
+      "type": "youtube",
+      "src": "F90aZNVL4Tg",
+      "alt": "Vídeo de um atum se alimentando",
+      "legenda": "Um vídeo fascinante mostrando um atum-azul em ação, capturando sua velocidade e comportamento de caça.",
+      "fonte": "National Geographic (via YouTube)"
+    }
+  ],
+  "curiosidades": [
+    "São animais de 'sangue quente', capazes de manter a temperatura corporal mais alta que a da água.",
+    "Seu corpo em formato de torpedo é construído para máxima velocidade e eficiência hidrodinâmica.",
+    "Precisa nadar constantemente com a boca aberta para respirar, forçando a água a passar por suas brânquias.",
+    "Podem atingir velocidades de até 75 km/h em curtas distâncias."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Tubarão-Branco",
+      "img": "../../../img/Animals/fish/epipelagic/tubarao_branco/tubarao_branco.png",
+      "targetId": "Tubarão-Branco"
+    },
+    {
+      "nome": "Marlin-Azul",
+      "img": "../../../img/Animals/fish/epipelagic/blue_marlin/blue_marlin.png",
+      "targetId": "Marlin-Azul"
+    },
+    {
+      "nome": "Tubarão-Martelo",
+      "img": "../../../img/Animals/fish/epipelagic/hammerhead_shark/hammerhead_shark.png",
+      "targetId": "Tubarão-Martelo"
+    }
+  ]
+}

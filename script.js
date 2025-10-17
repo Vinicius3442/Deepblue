@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     OCEAN_FLOOR_START_DEPTH: 7000,
     OCEAN_FLOOR_FULL_OPACITY_DEPTH: 10000,
   };
-
+  const PARTICLE_START_DEPTH = 1000;
   const oceanAbyss = document.getElementById("ocean-abyss");
   const oceanBackground = document.querySelector(".ocean-background");
   const depthIndicator = document.getElementById("depth-indicator");
@@ -18,13 +18,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const oceanFloor = document.querySelector(".ocean-floor-svg-wrapper");
   const particleCanvas = document.getElementById("particle-canvas");
   const ctx = particleCanvas.getContext("2d");
-  let particles = [];
-  const PARTICLE_START_DEPTH = 1000;
-  const logDisplay = document.getElementById("log-display");
+  const resetButton = document.getElementById("reset-button");
+
+  // --- ELEMENTOS DA NOVA INTERFACE DO LOG ---
+  const logToggleButton = document.getElementById("log-toggle-button");
+  const logPanel = document.getElementById("log-panel");
+  const logTabsContainer = document.querySelector(".log-tabs");
   const logMessagesList = document.getElementById("log-messages-list");
-  const vehicleHud = document.getElementById("vehicle-hud");
-  const hudPressure = document.getElementById("hud-pressure");
-  const hudTemperature = document.getElementById("hud-temperature");
+  const hullBar = document.getElementById("hull-bar"),
+    energyBar = document.getElementById("energy-bar"),
+    oxygenBar = document.getElementById("oxygen-bar");
+  const hullValue = document.getElementById("hull-value"),
+    energyValue = document.getElementById("energy-value"),
+    oxygenValue = document.getElementById("oxygen-value");
+  const faunaLogList = document.querySelector(".fauna-log-list"),
+    faunaEmptyState = document.querySelector(".log-empty-state");
+  const zoneInfoTitle = document.getElementById("zone-info-title"),
+    zoneInfoList = document.getElementById("zone-info-list");
 
   const ZONES = [
     {
@@ -33,6 +43,11 @@ document.addEventListener("DOMContentLoaded", () => {
       startDepth: 0,
       color: [0, 119, 190],
       logged: false,
+      curiosidades: [
+        "Também conhecida como 'Zona da Luz Solar', pois é a única camada que recebe luz suficiente para a fotossíntese.",
+        "Abriga a grande maioria da vida marinha conhecida.",
+        "A temperatura pode variar muito nesta zona.",
+      ],
     },
     {
       id: "zone-mesopelagic",
@@ -40,6 +55,11 @@ document.addEventListener("DOMContentLoaded", () => {
       startDepth: 200,
       color: [0, 66, 104],
       logged: false,
+      curiosidades: [
+        "Conhecida como 'Zona do Crepúsculo', a luz solar aqui é extremamente fraca.",
+        "Muitos animais desta zona são bioluminescentes.",
+        "Organismos realizam a 'migração vertical diária' para se alimentar.",
+      ],
     },
     {
       id: "zone-bathypelagic",
@@ -47,6 +67,11 @@ document.addEventListener("DOMContentLoaded", () => {
       startDepth: 1000,
       color: [2, 25, 40],
       logged: false,
+      curiosidades: [
+        "Conhecida como 'Zona da Meia-Noite', não há luz solar.",
+        "A pressão da água aqui é esmagadora, mais de 100 vezes a da superfície.",
+        "Animais aqui desenvolveram corpos moles e metabolismo lento para sobreviver.",
+      ],
     },
     {
       id: "zone-abyssopelagic",
@@ -54,6 +79,11 @@ document.addEventListener("DOMContentLoaded", () => {
       startDepth: 4000,
       color: [1, 8, 15],
       logged: false,
+      curiosidades: [
+        "O nome vem do grego e significa 'sem fundo'.",
+        "As temperaturas são próximas do congelamento.",
+        "A comida é escassa, consistindo principalmente de 'neve marinha' que cai das camadas superiores.",
+      ],
     },
     {
       id: "zone-hadopelagic",
@@ -61,6 +91,11 @@ document.addEventListener("DOMContentLoaded", () => {
       startDepth: 6000,
       color: [0, 2, 5],
       logged: false,
+      curiosidades: [
+        "Localizada nas fossas oceânicas mais profundas do mundo.",
+        "A pressão pode exceder 1.000 vezes a da superfície.",
+        "A vida aqui é surpreendente, incluindo espécies como o peixe-caracol e anfípodes gigantes.",
+      ],
     },
     {
       id: "final-depth",
@@ -71,33 +106,12 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   ];
 
-  function calculatePressure(depth) {
-    const pressure = 1 + depth / 10;
-    return pressure;
-  }
-
-  function calculateTemperature(depth) {
-    const surfaceTemp = 20;
-    const deepTemp = 4;
-
-    if (depth <= 200) {
-      // 1. Camada da Superfície (Epipelágica):
-      return surfaceTemp - depth / 200;
-    } else if (depth <= 1000) {
-      // 2. Termoclina (Mesopelágica):
-      const progress = (depth - 200) / 800;
-      return 19 - 15 * progress;
-    } else {
-      // 3. Oceano Profundo:
-      const progress = (depth - 1000) / 10000;
-      return deepTemp - 2 * progress;
-    }
-  }
-
-  let animals = [];
-  let currentDepth = 0;
-  let lastScrollY = 0;
-  let isTicking = false;
+  let vehicleStats = { hull: 100, energy: 100, oxygen: 100 };
+  let animals = [],
+    currentDepth = 0,
+    lastScrollY = 0,
+    isTicking = false,
+    particles = [];
 
   let noiseSeedX = Math.random() * 1000;
   let noiseSeedY = Math.random() * 1000;
@@ -121,21 +135,18 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="modal-body">
         <div class="tab-content active" id="tab-geral">
           <img class="modal-main-image" src="" alt="Imagem principal do animal">
-          <p class="modal-description"></p>
+          <p class="image-credit modal-main-credit"></p> <p class="modal-description"></p>
         </div>
         <div class="tab-content" id="tab-ficha">
           <ul class="ficha-tecnica-list"></ul>
-          <div class="info-module map-module"> <h4>Mapa de Distribuição</h4> <img src="" alt=""> </div>
-          <div class="info-module size-module"> <h4>Comparativo de Tamanho</h4> <img src="" alt=""> <p></p> </div>
-        </div>
-        
+          <div class="info-module map-module"> <h4>Mapa de Distribuição</h4> <img src="" alt=""> <p class="image-credit map-credit"></p> </div> <div class="info-module size-module"> <h4>Comparativo de Tamanho</h4> <img src="" alt=""> <p class="image-credit size-credit"></p> <p></p> </div> </div>
         <div class="tab-content" id="tab-galeria">
           <div class="gallery-grid"></div>
           <div class="expanded-media-viewer">
             <span class="close-expanded-media">&times;</span>
             <div class="expanded-media-content"></div>
-            <p class="expanded-media-caption"></p>  
-          </div>
+            <p class="expanded-media-caption"></p>
+            <p class="image-credit expanded-media-credit"></p> </div>
         </div>
         <div class="tab-content" id="tab-curiosidades"> <ul class="curiosidades-list"></ul> </div>
         <div class="tab-content" id="tab-relacionados"> <div class="related-species-grid"></div> </div>
@@ -152,6 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const expandedMediaViewer = modal.querySelector(".expanded-media-viewer");
   const closeExpandedMediaBtn = modal.querySelector(".close-expanded-media");
   const expandedMediaContent = modal.querySelector(".expanded-media-content");
+  const relatedGrid = modal.querySelector(".related-species-grid");
 
   // --- FUNÇÕES DE CONTROLE MODAL ---
   function openModal() {
@@ -184,15 +196,26 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function openAnimalModal(animalData) {
+    // Limpeza inicial
     modal.querySelector(".ficha-tecnica-list").innerHTML = "";
     modal.querySelector(".gallery-grid").innerHTML = "";
     modal.querySelector(".curiosidades-list").innerHTML = "";
-    modal.querySelector(".related-species-grid").innerHTML = "";
+    relatedGrid.innerHTML = "";
+
     modalTitle.textContent = animalData.name;
     modalScientific.textContent = animalData.scientificName;
     modal.querySelector(".modal-main-image").src = animalData.img;
+
+    // Crédito da imagem principal
+    const mainCredit = modal.querySelector(".modal-main-credit");
+    mainCredit.textContent = animalData.fonte
+      ? `Fonte: ${animalData.fonte}`
+      : "";
+
     modal.querySelector(".modal-description").textContent =
       animalData.description;
+
+    // Ficha Técnica
     const fichaList = modal.querySelector(".ficha-tecnica-list");
     for (const [key, value] of Object.entries(animalData.fichaTecnica)) {
       const li = document.createElement("li");
@@ -200,72 +223,88 @@ document.addEventListener("DOMContentLoaded", () => {
         .replace(/([A-Z])/g, " $1")
         .replace(/^./, (str) => str.toUpperCase());
       li.innerHTML = `<strong>${label}:</strong> <span>${value}</span>`;
-
       fichaList.appendChild(li);
     }
+
+    // Módulos de Informação (Mapa e Tamanho) com créditos
     const mapModule = modal.querySelector(".map-module");
     if (animalData.mapaDistribuicao && animalData.mapaDistribuicao.img) {
-      // Verifica se img existe
       mapModule.style.display = "block";
       mapModule.querySelector("img").src = animalData.mapaDistribuicao.img;
       mapModule.querySelector("img").alt =
         animalData.mapaDistribuicao.alt || "Mapa de Distribuição";
+      mapModule.querySelector(".map-credit").textContent = animalData
+        .mapaDistribuicao.fonte
+        ? `Fonte: ${animalData.mapaDistribuicao.fonte}`
+        : "";
     } else {
       mapModule.style.display = "none";
     }
+
     const sizeModule = modal.querySelector(".size-module");
     if (animalData.comparativoTamanho && animalData.comparativoTamanho.img) {
-      // Verifica se img existe
       sizeModule.style.display = "block";
       sizeModule.querySelector("img").src = animalData.comparativoTamanho.img;
       sizeModule.querySelector("img").alt =
         animalData.comparativoTamanho.alt || "Comparativo de Tamanho";
-      sizeModule.querySelector("p").textContent =
+      sizeModule.querySelector(".size-credit").textContent = animalData
+        .comparativoTamanho.fonte
+        ? `Fonte: ${animalData.comparativoTamanho.fonte}`
+        : "";
+      sizeModule.querySelector("p:last-of-type").textContent =
         animalData.comparativoTamanho.descricao || "";
     } else {
       sizeModule.style.display = "none";
     }
-    const galleryGrid = modal.querySelector(".gallery-grid");
-    galleryGrid.innerHTML = "";
 
+    // Galeria (ÁREA CORRIGIDA)
+    const galleryGrid = modal.querySelector(".gallery-grid");
     animalData.galeria.forEach((item) => {
       const wrapper = document.createElement("div");
       wrapper.className = "gallery-item-wrapper";
-
       let mediaElement;
 
       if (item.type === "image") {
         mediaElement = document.createElement("img");
         mediaElement.src = item.src;
-        mediaElement.alt = item.alt;
       } else if (item.type === "video") {
         mediaElement = document.createElement("video");
         mediaElement.src = item.src;
-        mediaElement.setAttribute("aria-label", item.alt);
-        mediaElement.muted = true;
-        mediaElement.loop = true;
-        mediaElement.playsInline = true;
-        mediaElement.preload = "metadata";
+        Object.assign(mediaElement, {
+          muted: true,
+          loop: true,
+          playsInline: true,
+          preload: "metadata",
+        });
+      } else if (item.type === "youtube") {
+        // <- NOVA LÓGICA AQUI
+        // Para a galeria, criamos uma imagem (thumbnail) que o YouTube nos fornece
+        mediaElement = document.createElement("img");
+        // Usamos o ID do vídeo (item.src) para buscar a thumbnail padrão
+        mediaElement.src = `https://img.youtube.com/vi/${item.src}/mqdefault.jpg`;
+        // Adicionamos uma classe para o CSS saber que é um vídeo do YouTube
+        wrapper.classList.add("youtube-thumb");
       }
 
       if (mediaElement) {
+        mediaElement.alt = item.alt;
         wrapper.appendChild(mediaElement);
         galleryGrid.appendChild(wrapper);
-
-        wrapper.addEventListener("click", () => {
-          showExpandedMedia(item.type, item.src, item.alt, item.legenda);
-        });
+        wrapper.addEventListener("click", () => showExpandedMedia(item));
       }
     });
 
     expandedMediaViewer.classList.remove("active");
+
+    // Curiosidades
     const curiosidadesList = modal.querySelector(".curiosidades-list");
     animalData.curiosidades.forEach((fact) => {
       const li = document.createElement("li");
       li.textContent = fact;
       curiosidadesList.appendChild(li);
     });
-    const relatedGrid = modal.querySelector(".related-species-grid");
+
+    // Espécies Relacionadas com 'targetId'
     if (
       animalData.especiesRelacionadas &&
       animalData.especiesRelacionadas.length > 0
@@ -273,6 +312,7 @@ document.addEventListener("DOMContentLoaded", () => {
       animalData.especiesRelacionadas.forEach((species) => {
         const item = document.createElement("div");
         item.className = "related-species-item";
+        item.dataset.targetId = species.targetId;
         item.innerHTML = `<img src="${species.img}" alt="${species.nome}"><span>${species.nome}</span>`;
         relatedGrid.appendChild(item);
       });
@@ -285,54 +325,59 @@ document.addEventListener("DOMContentLoaded", () => {
     openModal();
   }
 
-  function showExpandedMedia(type, src, alt, legenda) {
+  function showExpandedMedia(item) {
     expandedMediaContent.innerHTML = "";
-
     let mediaElement;
-    if (type === "image") {
+
+    if (item.type === "image") {
       mediaElement = document.createElement("img");
-      mediaElement.src = src;
-      mediaElement.alt = alt;
-    } else if (type === "video") {
+      mediaElement.src = item.src;
+    } else if (item.type === "video") {
       mediaElement = document.createElement("video");
-      mediaElement.src = src;
-      mediaElement.setAttribute("aria-label", alt);
-      mediaElement.controls = true;
-      mediaElement.autoplay = true;
-      mediaElement.loop = true;
-      mediaElement.muted = false;
-      mediaElement.playsInline = true;
+      Object.assign(mediaElement, {
+        src: item.src,
+        controls: true,
+        autoplay: true,
+        loop: true,
+        playsInline: true,
+      });
+    } else if (item.type === "youtube") {
+      // <- NOVA CONDIÇÃO
+      mediaElement = document.createElement("iframe");
+      mediaElement.src = `https://www.youtube.com/embed/${item.src}?autoplay=1&rel=0`;
+      mediaElement.setAttribute("frameborder", "0");
+      mediaElement.setAttribute(
+        "allow",
+        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      );
+      mediaElement.setAttribute("allowfullscreen", "");
     }
 
     if (mediaElement) {
+      mediaElement.alt = item.alt;
       expandedMediaContent.appendChild(mediaElement);
-
-      const captionElement = expandedMediaViewer.querySelector(
-        ".expanded-media-caption"
-      );
-      if (legenda && legenda.trim() !== "") {
-        captionElement.textContent = legenda;
-        captionElement.style.display = "block";
-      } else {
-        captionElement.style.display = "none";
-      }
     }
 
-    closeExpandedMediaBtn.addEventListener(
-      "click",
-      () => {
-        expandedMediaViewer.classList.remove("active");
-        const currentMedia = expandedMediaContent.querySelector("video");
-        if (currentMedia) {
-          currentMedia.pause();
-          currentMedia.currentTime = 0;
-        }
-      },
-      { once: true }
-    );
-
+    // Exibe legenda e crédito (funciona para todos os tipos)
+    expandedMediaViewer.querySelector(".expanded-media-caption").textContent =
+      item.legenda || "";
+    expandedMediaViewer.querySelector(".expanded-media-credit").textContent =
+      item.fonte ? `Fonte: ${item.fonte}` : "";
     expandedMediaViewer.classList.add("active");
   }
+
+  // Evento de fechar a mídia expandida (MODIFICADO)
+  closeExpandedMediaBtn.addEventListener("click", () => {
+    expandedMediaViewer.classList.remove("active");
+
+    // Pausa o vídeo se for um <video>
+    const currentVideo = expandedMediaContent.querySelector("video");
+    if (currentVideo) currentVideo.pause();
+
+    // Limpa o src do iframe para parar o vídeo do YouTube
+    const currentIframe = expandedMediaContent.querySelector("iframe");
+    if (currentIframe) currentIframe.src = "";
+  });
 
   function pseudoPerlinNoise(x, y) {
     const freq = 0.05;
@@ -346,8 +391,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- INICIALIZAÇÃO E ANIMAÇÃO ---
   function init() {
-    const totalHeight =
-      CONFIG.MAX_DEPTH * CONFIG.PIXELS_PER_METER + window.innerHeight;
+    const totalHeight = CONFIG.MAX_DEPTH * CONFIG.PIXELS_PER_METER + (window.innerHeight * 2);
     oceanAbyss.style.height = `${totalHeight}px`;
 
     ZONES.forEach((zone) => {
@@ -358,9 +402,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     prepareAnimals();
+    // Adiciona o listener de rolagem que estava faltando
     window.addEventListener("scroll", onScroll);
 
-    // Listener global de mouse, agora com a lógica completa e correta
     document.body.addEventListener("mousemove", (e) => {
       const mouseX = e.clientX;
       const mouseY = e.clientY;
@@ -382,7 +426,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    update();
+    update(); // Chama uma vez para definir o estado inicial
     setupParticles();
     requestAnimationFrame(animateParticles);
 
@@ -473,47 +517,53 @@ document.addEventListener("DOMContentLoaded", () => {
       CONFIG.MAX_DEPTH
     );
 
-    const titleOpacity = Math.max(
+    // Atualiza a opacidade do título
+    titleSlide.style.opacity = Math.max(
       0,
       1 - lastScrollY / (window.innerHeight * 0.75)
     );
-    titleSlide.style.opacity = titleOpacity;
-    titleSlide.style.pointerEvents = titleOpacity > 0 ? "auto" : "none";
 
-    depthValueSpan.textContent = currentDepth.toLocaleString("pt-BR");
+    // ATUALIZA O MEDIDOR DE PROFUNDIDADE (CORRIGIDO)
     depthIndicator.style.opacity = lastScrollY > 50 ? 1 : 0;
+    depthValueSpan.textContent = currentDepth.toLocaleString("pt-BR");
 
-    if (lastScrollY > window.innerHeight * 0.8) {
-      logDisplay.classList.add("visible");
-    } else {
-      logDisplay.classList.remove("visible");
-    }
-    if (lastScrollY > 50) {
-      vehicleHud.style.opacity = 1;
+    // Atualiza os status do veículo no painel
+    const depthRatio = currentDepth / CONFIG.MAX_DEPTH;
+    vehicleStats.hull = Math.max(0, 100 - (depthRatio * 15) + Math.sin(Date.now() / 1000) * 0.5);
+    vehicleStats.energy = Math.max(0, 100 - (depthRatio * 40));
+    updateLogPanelUI();
 
-      const pressure = calculatePressure(currentDepth);
-      const temperature = calculateTemperature(currentDepth);
+    // Mostra o botão de reset no final
+    resetButton.classList.toggle('visible', currentDepth >= CONFIG.MAX_DEPTH);
 
-      hudPressure.textContent = pressure.toFixed(0);
-      hudTemperature.textContent = temperature.toFixed(1);
-    } else {
-      vehicleHud.style.opacity = 0;
-    }
-
+    // CHAMA AS FUNÇÕES DE ATUALIZAÇÃO VISUAL (CORRIGIDO)
     updateBackgroundColor(currentDepth);
     checkAnimalActivation();
     updateOceanFloor(currentDepth);
     updateParticleVisibility(currentDepth);
-
-    if (currentDepth >= CONFIG.MAX_DEPTH && !logCleared) {
-      logMessagesList.innerHTML = "";
-      setTimeout(() => {
-        addLogMessage("SINAL PERDIDO...", "system");
-        addLogMessage("FIM DA TRANSMISSÃO.", "system");
-      }, 500);
-      logCleared = true;
-    }
   }
+
+  function updateLogPanelUI() {
+      hullBar.style.width = `${vehicleStats.hull}%`;
+      hullValue.textContent = `${Math.floor(vehicleStats.hull)}%`;
+      energyBar.style.width = `${vehicleStats.energy}%`;
+      energyValue.textContent = `${Math.floor(vehicleStats.energy)}%`;
+      oxygenBar.style.width = `${vehicleStats.oxygen}%`;
+      oxygenValue.textContent = `${Math.floor(vehicleStats.oxygen)}%`;
+
+      let currentZone = ZONES.find(z => currentDepth >= z.startDepth && (ZONES[ZONES.indexOf(z) + 1] ? currentDepth < ZONES[ZONES.indexOf(z) + 1].startDepth : true)) || ZONES[0];
+      zoneInfoTitle.textContent = `Zona ${currentZone.name}`;
+      if (zoneInfoTitle.dataset.current !== currentZone.id) {
+          zoneInfoTitle.dataset.current = currentZone.id;
+          zoneInfoList.innerHTML = '';
+          currentZone.curiosidades?.forEach(fact => {
+              const li = document.createElement('li');
+              li.textContent = fact;
+              zoneInfoList.appendChild(li);
+          });
+      }
+  }
+
 
   function updateBackgroundColor(depth) {
     let startZone = ZONES[0],
@@ -919,18 +969,54 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", setupParticles);
 
   function addLogMessage(text, type = "info") {
-    const li = document.createElement("li");
-    li.className = `log-message ${type}`; // Adiciona classe para estilização opcional
-    li.textContent = text;
-    logMessagesList.appendChild(li);
-
-    // Auto-scroll para a nova mensagem
-    logMessagesList.scrollTop = logMessagesList.scrollHeight;
-
-    if (logMessagesList.children.length > 50) {
-      logMessagesList.removeChild(logMessagesList.children[0]);
-    }
+      const li = document.createElement("li");
+      li.className = `log-message ${type}`;
+      if (type === 'sighting') {
+          const animalName = text.replace('AVISTAMENTO: ', '').replace('.', '');
+          li.innerHTML = `AVISTAMENTO: <a data-animal-id="${animalName}">${animalName}</a>.`;
+          if (!faunaLogList.querySelector(`[data-animal-id="${animalName}"]`)) {
+              const faunaLi = document.createElement('li');
+              faunaLi.textContent = animalName;
+              faunaLi.dataset.animalId = animalName;
+              faunaLogList.appendChild(faunaLi);
+              faunaEmptyState.style.display = 'none';
+          }
+      } else {
+          li.textContent = text;
+      }
+      logMessagesList.appendChild(li);
+      logMessagesList.scrollTop = logMessagesList.scrollHeight;
   }
+
+  logToggleButton.addEventListener('click', () => logPanel.classList.toggle('visible'));
+  logTabsContainer.addEventListener('click', (e) => {
+    if (e.target.matches('.log-tab-button')) {
+        logTabsContainer.querySelector('.active').classList.remove('active');
+        e.target.classList.add('active');
+        document.querySelector('.log-tab-content.active').classList.remove('active');
+        document.getElementById(`log-content-${e.target.dataset.tab}`).classList.add('active');
+    }
+  });
+  logPanel.addEventListener('click', (e) => {
+      if (e.target.dataset.animalId) {
+          const animal = animals.find(a => a.name === e.target.dataset.animalId);
+          if (animal) {
+              closeModal();
+              animal.figure.click();
+          }
+      }
+  });
+  resetButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    addLogMessage("Retornando à superfície...", "system");
+    setTimeout(() => {
+        logMessagesList.innerHTML = '';
+        faunaLogList.innerHTML = '';
+        faunaEmptyState.style.display = 'block';
+        addLogMessage("Sistemas online. Iniciando descida.");
+    }, 2000);
+    ZONES.forEach(zone => zone.logged = false);
+  });
 
   init();
 });

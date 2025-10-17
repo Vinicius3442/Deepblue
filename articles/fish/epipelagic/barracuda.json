@@ -2,6 +2,7 @@
   "name": "Grande Barracuda",
   "scientificName": "Sphyraena barracuda",
   "img": "../../../img/Animals/fish/epipelagic/barracuda/barracuda.png",
+  "fonte": "Eu mesmo",
   "description": "A Grande Barracuda é um predador voraz e oportunista, conhecido por seu corpo alongado em forma de torpedo e sua boca cheia de dentes afiados. Patrulhando recifes de corais e o mar aberto, sua velocidade explosiva e aparência intimidadora a tornam um dos caçadores mais eficientes da Zona Epipelágica.",
   "fichaTecnica": {
     "Status de Conservação": "Pouco Preocupante (LC)",
@@ -13,37 +14,43 @@
   },
   "mapaDistribuicao": {
     "img": "../../../img/Animals/fish/epipelagic/barracuda/map_barracuda.png",
+    "fonte": "placeholder",
     "alt": "Mapa de distribuição da Grande Barracuda nos oceanos tropicais e subtropicais do mundo."
   },
   "comparativoTamanho": {
     "img": "../../../img/Animals/fish/epipelagic/barracuda/size_barracuda.png",
     "alt": "Comparativo de tamanho de uma Grande Barracuda com um ser humano.",
-    "descricao": "Uma barracuda adulta pode ter um comprimento comparável à altura de uma pessoa, tornando-a um predador imponente."
+    "descricao": "Uma barracuda adulta pode ter um comprimento comparável à altura de uma pessoa, tornando-a um predador imponente.",
+    "fonte": "placeholder"
   },
   "galeria": [
     {
       "type": "image",
       "src": "../../../img/Animals/fish/epipelagic/barracuda/gallery/barracuda_1.jpg",
       "alt": "Close-up da cabeça de uma barracuda, mostrando seus dentes afiados.",
-      "legenda": "A boca da barracuda possui duas fileiras de dentes desiguais e afiados como adagas, projetados para rasgar a presa."
+      "legenda": "A boca da barracuda possui duas fileiras de dentes desiguais e afiados como adagas, projetados para rasgar a presa.",
+      "fonte": "placeholder"
     },
     {
       "type": "image",
       "src": "../../../img/Animals/fish/epipelagic/barracuda/gallery/barracuda_2.jpg",
       "alt": "Uma barracuda solitária patrulhando um recife de coral.",
-      "legenda": "Barracudas adultas são frequentemente solitárias, usando o ambiente para emboscar suas presas."
+      "legenda": "Barracudas adultas são frequentemente solitárias, usando o ambiente para emboscar suas presas.",
+      "fonte": "placeholder"
     },
     {
       "type": "image",
       "src": "../../../img/Animals/fish/epipelagic/barracuda/gallery/barracuda_3.jpg",
       "alt": "Um cardume de barracudas jovens.",
-      "legenda": "Indivíduos mais jovens costumam formar cardumes como forma de proteção e para caçar de forma mais eficiente."
+      "legenda": "Indivíduos mais jovens costumam formar cardumes como forma de proteção e para caçar de forma mais eficiente.",
+      "fonte": "placeholder"
     },
     {
       "type": "video",
       "src": "../../../img/Animals/fish/epipelagic/barracuda/gallery/video/barracuda_hunting.mp4",
       "alt": "Vídeo de uma barracuda atacando um peixe.",
-      "legenda": "Sua aceleração explosiva permite que ela capture presas ágeis em um piscar de olhos."
+      "legenda": "Sua aceleração explosiva permite que ela capture presas ágeis em um piscar de olhos.",
+      "fonte": "placeholder"
     }
   ],
   "curiosidades": [
