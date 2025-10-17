@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const CONFIG = {
     MAX_DEPTH: 11000,
     PIXELS_PER_METER: 25,
-    ANIMAL_ACTIVATION_RANGE: 300,
+    ANIMAL_ACTIVATION_RANGE: 500,
     OCEAN_FLOOR_START_DEPTH: 7000,
     OCEAN_FLOOR_FULL_OPACITY_DEPTH: 10000,
   };
@@ -433,27 +433,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Adiciona o listener de rolagem que estava faltando
     window.addEventListener("scroll", onScroll);
 
-    document.body.addEventListener("mousemove", (e) => {
-      const mouseX = e.clientX;
-      const mouseY = e.clientY;
-      animals.forEach((animal) => {
-        if (!animal.isActive) return;
-        const rect = animal.figure.getBoundingClientRect();
-        const animalScreenX = rect.left + rect.width / 2;
-        const animalScreenY = rect.top + rect.height / 2;
-        const dx = animalScreenX - mouseX;
-        const dy = animalScreenY - mouseY;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        const reactionRadius = 150;
-        if (distance < reactionRadius && animal.spookTimer <= 0) {
-          animal.spookTimer = 120;
-          const force = (reactionRadius - distance) / reactionRadius;
-          animal.vx += (dx / distance) * force * 2.5;
-          animal.vy += (dy / distance) * force * 2.5;
-        }
-      });
-    });
-
     update(); // Chama uma vez para definir o estado inicial
     setupParticles();
     requestAnimationFrame(animateParticles);
@@ -711,7 +690,11 @@ document.addEventListener("DOMContentLoaded", () => {
       if (animal.x === -9999) {
         const gallery = animal.figure.parentElement;
         if (gallery && gallery.offsetWidth > 0) {
-          animal.x = Math.random() * gallery.offsetWidth;
+          const animalWidth = animal.width || animal.scale * 100;
+
+          const spawnableWidth = gallery.offsetWidth - animalWidth;
+
+          animal.x = Math.random() * Math.max(0, spawnableWidth);
         } else {
           return;
         }
@@ -724,6 +707,13 @@ document.addEventListener("DOMContentLoaded", () => {
           break;
         case "agua-viva":
           applyAguaVivaPhysics(animal);
+          break;
+        case "peixe-pequeno":
+          applyPequenoPeixePhysics(animal); // Agora usa a nova física!
+          break;
+
+        case "reptil":
+          applyReptilPhysics(animal);
           break;
         default:
           applyPeixePhysics(animal);
@@ -744,6 +734,151 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(animateAnimals);
   }
 
+  // COLE ESTA NOVA FUNÇÃO NO SEU SCRIPT.JS
+
+  function applyReptilPhysics(animal) {
+    if (animal.spookTimer > 0) animal.spookTimer--;
+
+    const gallery = animal.figure.parentElement;
+    if (!gallery || gallery.offsetWidth === 0) return;
+
+    const galleryWidth = gallery.offsetWidth;
+    const galleryHeight = gallery.offsetHeight;
+    const imgWidth = animal.width || animal.scale * 100;
+
+    // Movimento mais lento e deliberado, muda de direção com menos frequência
+    animal.wanderAngle += (Math.random() - 0.5) * 0.2;
+    const wanderForce = {
+      x: Math.cos(animal.wanderAngle) * 0.05, // Força de nado mais suave
+      y: Math.sin(animal.wanderAngle) * 0.05,
+    };
+
+    // Força para retornar à sua profundidade ideal
+    const homeForce = { x: 0, y: (animal.homeY - animal.y) * 0.005 };
+
+    const avoidanceForce = { x: 0, y: 0 };
+    const margin = 200; // A "zona de perigo" perto da borda
+
+    // Calcula a força baseada na proximidade da borda
+    let progress;
+
+    // Borda Esquerda
+    if (animal.x < margin) {
+      progress = (margin - animal.x) / margin; // 0.0 a 1.0
+      avoidanceForce.x = progress * 0.5; // Força aumenta quanto mais perto
+    }
+    // Borda Direita
+    else if (animal.x > galleryWidth - imgWidth - margin) {
+      progress = (animal.x - (galleryWidth - imgWidth - margin)) / margin;
+      avoidanceForce.x = -progress * 0.5;
+    }
+
+    // Borda Superior
+    if (animal.y < margin) {
+      progress = (margin - animal.y) / margin;
+      avoidanceForce.y = progress * 0.5;
+    }
+    // Borda Inferior
+    else if (animal.y > galleryHeight - imgWidth - margin) {
+      progress = (animal.y - (galleryHeight - imgWidth - margin)) / margin;
+      avoidanceForce.y = -progress * 0.5;
+    }
+
+    // Aplica as forças na aceleração
+    animal.vx += wanderForce.x + homeForce.x + avoidanceForce.x;
+    animal.vy += wanderForce.y + homeForce.y + avoidanceForce.y;
+
+    // Atrito maior (simula o "planar" na água) e velocidade máxima menor
+    animal.vx *= 0.98;
+    animal.vy *= 0.98;
+    const maxSpeed = 0.8; // Velocidade máxima mais baixa que a dos peixes
+
+    const speed = Math.sqrt(animal.vx * animal.vx + animal.vy * animal.vy);
+    if (speed > maxSpeed) {
+      animal.vx = (animal.vx / speed) * maxSpeed;
+      animal.vy = (animal.vy / speed) * maxSpeed;
+    }
+
+    animal.x += animal.vx;
+    animal.y += animal.vy;
+
+    // Trava de Segurança para garantir que não saia da tela
+    if (galleryWidth > imgWidth) {
+      animal.x = Math.max(0, Math.min(animal.x, galleryWidth - imgWidth));
+    }
+  }
+
+  function applyPequenoPeixePhysics(animal) {
+    if (animal.spookTimer > 0) animal.spookTimer--;
+
+    const gallery = animal.figure.parentElement;
+    if (!gallery || gallery.offsetWidth === 0) return;
+
+    const galleryWidth = gallery.offsetWidth;
+    const galleryHeight = gallery.offsetHeight;
+    const imgWidth = animal.width || animal.scale * 100;
+
+    // Movimento mais errático e rápido para peixes pequenos
+    animal.wanderAngle += (Math.random() - 0.5) * 0.8; // Muda de direção mais rápido
+    const wanderForce = {
+      x: Math.cos(animal.wanderAngle) * 0.15,
+      y: Math.sin(animal.wanderAngle) * 0.15,
+    };
+
+    // Força maior para voltar ao centro
+    const homeForce = { x: 0, y: (animal.homeY - animal.y) * 0.01 };
+
+    // Aceleração e velocidade
+    const avoidanceForce = { x: 0, y: 0 };
+    const margin = 200; // A "zona de perigo" perto da borda
+
+    // Calcula a força baseada na proximidade da borda
+    let progress;
+
+    // Borda Esquerda
+    if (animal.x < margin) {
+      progress = (margin - animal.x) / margin; // 0.0 a 1.0
+      avoidanceForce.x = progress * 0.5; // Força aumenta quanto mais perto
+    }
+    // Borda Direita
+    else if (animal.x > galleryWidth - imgWidth - margin) {
+      progress = (animal.x - (galleryWidth - imgWidth - margin)) / margin;
+      avoidanceForce.x = -progress * 0.5;
+    }
+
+    // Borda Superior
+    if (animal.y < margin) {
+      progress = (margin - animal.y) / margin;
+      avoidanceForce.y = progress * 0.5;
+    }
+    // Borda Inferior
+    else if (animal.y > galleryHeight - imgWidth - margin) {
+      progress = (animal.y - (galleryHeight - imgWidth - margin)) / margin;
+      avoidanceForce.y = -progress * 0.5;
+    }
+
+    animal.vx += wanderForce.x + homeForce.x;
+    animal.vy += wanderForce.y + homeForce.y;
+
+    animal.vx *= 0.93; // Atrito um pouco maior para movimentos mais "secos"
+    animal.vy *= 0.93;
+
+    const maxSpeed = 1.6; // Um pouco mais rápido em seus "surtos"
+    const speed = Math.sqrt(animal.vx * animal.vx + animal.vy * animal.vy);
+    if (speed > maxSpeed) {
+      animal.vx = (animal.vx / speed) * maxSpeed;
+      animal.vy = (animal.vy / speed) * maxSpeed;
+    }
+
+    animal.x += animal.vx;
+    animal.y += animal.vy;
+
+    // --- Trava de Segurança (Clamp) ---
+    // Impede fisicamente que o animal saia dos limites da galeria
+    if (galleryWidth > imgWidth) {
+      animal.x = Math.max(0, Math.min(animal.x, galleryWidth - imgWidth));
+    }
+  }
   function applyPeixePhysics(animal) {
     if (animal.spookTimer > 0) animal.spookTimer--;
 
@@ -761,11 +896,32 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     const homeForce = { x: 0, y: (animal.homeY - animal.y) * 0.005 };
     const avoidanceForce = { x: 0, y: 0 };
-    const margin = 200;
-    if (animal.x < margin) avoidanceForce.x = 1;
-    if (animal.x > galleryWidth - imgWidth - margin) avoidanceForce.x = -1;
-    if (animal.y < margin) avoidanceForce.y = 1;
-    if (animal.y > galleryHeight - imgWidth - margin) avoidanceForce.y = -1;
+    const margin = 200; // A "zona de perigo" perto da borda
+
+    // Calcula a força baseada na proximidade da borda
+    let progress;
+
+    // Borda Esquerda
+    if (animal.x < margin) {
+      progress = (margin - animal.x) / margin; // 0.0 a 1.0
+      avoidanceForce.x = progress * 0.5; // Força aumenta quanto mais perto
+    }
+    // Borda Direita
+    else if (animal.x > galleryWidth - imgWidth - margin) {
+      progress = (animal.x - (galleryWidth - imgWidth - margin)) / margin;
+      avoidanceForce.x = -progress * 0.5;
+    }
+
+    // Borda Superior
+    if (animal.y < margin) {
+      progress = (margin - animal.y) / margin;
+      avoidanceForce.y = progress * 0.5;
+    }
+    // Borda Inferior
+    else if (animal.y > galleryHeight - imgWidth - margin) {
+      progress = (animal.y - (galleryHeight - imgWidth - margin)) / margin;
+      avoidanceForce.y = -progress * 0.5;
+    }
 
     const accelerationX = wanderForce.x + homeForce.x + avoidanceForce.x * 1.0;
     const accelerationY = wanderForce.y + homeForce.y + avoidanceForce.y * 1.0;
@@ -783,6 +939,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     animal.x += animal.vx;
     animal.y += animal.vy;
+
+    // --- Trava de Segurança (Clamp) --- NOVO BLOCO ADICIONADO AQUI
+    // Impede fisicamente que o animal saia dos limites da galeria
+    if (galleryWidth > imgWidth) {
+      animal.x = Math.max(0, Math.min(animal.x, galleryWidth - imgWidth));
+    }
   }
 
   // 3. NOVA FÍSICA DAS LULAS (PROPULSÃO A JATO)
