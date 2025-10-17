@@ -1,0 +1,94 @@
+{
+  "name": "Peixe-Machado-de-Prata",
+  "scientificName": "Argyropelecus aculeatus",
+  "img": "../../../img/Animals/fish/mesopelagic/silver_hatchetfish/silver_hatchetfish.png",
+  "fonte": "Monterey Bay Aquarium Research Institute (MBARI)",
+  "description": "O Peixe-Machado-de-Prata é um pequeno habitante das profundezas médias do oceano, conhecido por seu corpo prateado que reflete a luz e por seus órgãos bioluminescentes. Sua forma incomum, lembrando a lâmina de um machado, ajuda a dispersar a luz de maneira a confundi-los com o brilho da superfície, tornando-o quase invisível para predadores e presas.",
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/fish/mesopelagic/silver_hatchetfish/map_silver_hatchetfish.jpg",
+    "alt": "Mapa de distribuição global do Peixe-Machado-de-Prata",
+    "fonte": "NOAA Ocean Explorer"
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/fish/mesopelagic/silver_hatchetfish/size_comparison.jpg",
+    "alt": "Comparativo de tamanho do Peixe-Machado-de-Prata com uma mão humana",
+    "descricao": "Com cerca de 10 centímetros de comprimento, o Peixe-Machado-de-Prata é pequeno, mas extremamente adaptado à vida nas zonas crepusculares do oceano.",
+    "fonte": "Wikimedia Commons"
+  },
+  "fichaTecnica": {
+    "statusConservacao": "Pouco Preocupante (LC)",
+    "profundidade": "300 a 1.000 metros",
+    "dieta": "Carnívoro (zooplâncton e pequenos crustáceos)",
+    "tamanhoMaximo": "Até 12 cm",
+    "expectativaVida": "Cerca de 3 a 5 anos",
+    "habitat": "Zonas mesopelágicas tropicais e temperadas do mundo inteiro"
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/mesopelagic/silver_hatchetfish/gallery/silver_hatchetfish1.jpg",
+      "alt": "Peixe-Machado-de-Prata visto de lado",
+      "legenda": "Seu corpo achatado e altamente reflexivo funciona como um espelho, confundindo predadores que o observam de baixo.",
+      "fonte": "MBARI"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/mesopelagic/silver_hatchetfish/gallery/silver_hatchetfish2.jpg",
+      "alt": "Close dos fotóforos do Peixe-Machado-de-Prata",
+      "legenda": "Os fotóforos em sua barriga produzem luz que combina com o brilho vindo da superfície, uma técnica de camuflagem chamada contrailuminação.",
+      "fonte": "Science Photo Library"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/mesopelagic/silver_hatchetfish/gallery/silver_hatchetfish3.jpg",
+      "alt": "Peixe-Machado-de-Prata nadando em grupo",
+      "legenda": "Esses peixes às vezes formam pequenos grupos para se proteger e caçar nas zonas mais iluminadas da mesopelágica.",
+      "fonte": "NOAA Deep Sea"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/mesopelagic/silver_hatchetfish/gallery/silver_hatchetfish4.jpg",
+      "alt": "Peixe-Machado-de-Prata em ambiente escuro",
+      "legenda": "Durante o dia, permanece nas profundezas; à noite, sobe em busca de alimento — um comportamento comum entre espécies mesopelágicas.",
+      "fonte": "Wikimedia Commons"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/mesopelagic/silver_hatchetfish/gallery/silver_hatchetfish5.jpg",
+      "alt": "Ilustração científica mostrando o formato de machado do peixe",
+      "legenda": "A forma corporal peculiar e o brilho prateado renderam ao peixe seu nome característico.",
+      "fonte": "NOAA Education"
+    },
+    {
+      "type": "youtube",
+      "src": "rK6CrjG-sPU",
+      "alt": "Vídeo do Peixe-Machado-de-Prata em águas profundas",
+      "legenda": "Gravação real mostrando o Peixe-Machado-de-Prata se movendo lentamente nas águas escuras, exibindo sua bioluminescência.",
+      "fonte": "Monterey Bay Aquarium (via YouTube)"
+    }
+  ],
+  "curiosidades": [
+    "Possui órgãos luminosos chamados fotóforos, usados para camuflagem e comunicação.",
+    "Reflete a luz da superfície como um espelho, tornando-se quase invisível para predadores abaixo.",
+    "Seus olhos grandes e voltados para cima ajudam a detectar silhuetas contra a pouca luz do oceano.",
+    "É uma das espécies mais comuns nas zonas crepusculares dos oceanos tropicais.",
+    "Realiza migrações verticais diárias, subindo à noite e descendo durante o dia."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Peixe-Lanterna",
+      "img": "../../../img/Animals/fish/mesopelagic/lanternfish/lanternfish.png",
+      "targetId": "Peixe-Lanterna"
+    },
+    {
+      "nome": "Peixe-Víbora",
+      "img": "../../../img/Animals/fish/bathypelagic/viperfish/viperfish.png",
+      "targetId": "Peixe-Víbora"
+    },
+    {
+      "nome": "Peixe-Dragão-do-Pacífico",
+      "img": "../../../img/Animals/fish/bathypelagic/pacific_dragonfish/pacific_dragonfish.png",
+      "targetId": "Peixe-Dragão-do-Pacífico"
+    }
+  ]
+}
