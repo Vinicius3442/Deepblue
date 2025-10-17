@@ -1,0 +1,94 @@
+{
+  "name": "Peixe-Diabo Negro",
+  "scientificName": "Melanocetus johnsonii",
+  "img": "../../../img/Animals/fish/bathypelagic/black_devil/black_devil.png",
+  "fonte": "Monterey Bay Aquarium Research Institute (MBARI)",
+  "description": "O Peixe-Diabo Negro é um dos mais temidos habitantes das profundezas oceânicas. Com seu corpo escuro, dentes translúcidos e um apêndice luminoso usado para atrair presas, ele é um verdadeiro predador das trevas. Vivendo a mais de 2.000 metros de profundidade, onde a luz solar não chega, este peixe depende de sua bioluminescência para caçar e sobreviver.",
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/fish/bathypelagic/black_devil/map_black_devil.jpg",
+    "alt": "Mapa de distribuição global do Peixe-Diabo Negro",
+    "fonte": "NOAA Deep Sea Research"
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/fish/bathypelagic/black_devil/size_comparison.jpg",
+    "alt": "Comparativo de tamanho do Peixe-Diabo Negro com um ser humano",
+    "descricao": "Apesar de sua aparência assustadora, o Peixe-Diabo Negro mede apenas cerca de 15 centímetros, tornando-o um dos menores predadores abissais.",
+    "fonte": "MBARI"
+  },
+  "fichaTecnica": {
+    "statusConservacao": "Pouco Preocupante (LC)",
+    "profundidade": "2.000 a 3.000 metros",
+    "dieta": "Carnívoro (pequenos peixes e crustáceos)",
+    "tamanhoMaximo": "Até 18 cm (fêmeas); machos são minúsculos, cerca de 3 cm",
+    "expectativaVida": "Desconhecida (estimada em até 20 anos)",
+    "habitat": "Zonas profundas dos oceanos tropicais e temperados"
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/black_devil/gallery/black_devil1.jpg",
+      "alt": "Peixe-Diabo Negro com a isca luminosa acesa",
+      "legenda": "A famosa isca bioluminescente do Peixe-Diabo Negro atrai presas diretamente para sua boca repleta de dentes afiados.",
+      "fonte": "MBARI"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/black_devil/gallery/black_devil2.jpg",
+      "alt": "Close-up da cabeça do Peixe-Diabo Negro",
+      "legenda": "Os dentes translúcidos e o formato monstruoso fazem do Peixe-Diabo Negro um dos mais icônicos peixes abissais.",
+      "fonte": "National Geographic"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/black_devil/gallery/black_devil3.jpg",
+      "alt": "Peixe-Diabo Negro nadando em águas profundas",
+      "legenda": "Registrado em águas profundas, este predador se move lentamente para economizar energia nas regiões frias e escuras do oceano.",
+      "fonte": "Wikimedia Commons"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/black_devil/gallery/black_devil4.jpg",
+      "alt": "Fêmea do Peixe-Diabo Negro com o macho preso ao corpo",
+      "legenda": "O macho minúsculo se funde ao corpo da fêmea, tornando-se um parasita reprodutivo — uma das adaptações mais bizarras do reino animal.",
+      "fonte": "Smithsonian Ocean Portal"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/black_devil/gallery/black_devil5.jpg",
+      "alt": "Ilustração científica do Peixe-Diabo Negro",
+      "legenda": "Representação científica mostrando o tamanho relativo e as estruturas luminescentes do Peixe-Diabo Negro.",
+      "fonte": "Science Photo Library"
+    },
+    {
+      "type": "youtube",
+      "src": "o2K9Z-HvL9M",
+      "alt": "Vídeo do Peixe-Diabo Negro em águas profundas",
+      "legenda": "Gravação rara feita por um ROV do MBARI mostrando o Peixe-Diabo Negro vivo em seu habitat natural a mais de 2.000 metros de profundidade.",
+      "fonte": "MBARI (via YouTube)"
+    }
+  ],
+  "curiosidades": [
+    "A luz em sua 'lanterna' é produzida por bactérias bioluminescentes que vivem dentro de seu apêndice frontal.",
+    "O macho, ao encontrar uma fêmea, morde e se funde permanentemente ao corpo dela, compartilhando o mesmo sistema circulatório.",
+    "Apesar de parecer um monstro gigante, o Peixe-Diabo Negro é pequeno — menor que uma régua escolar.",
+    "Sua pele preta absorve quase toda a luz, tornando-o praticamente invisível nas profundezas.",
+    "Foi filmado vivo pela primeira vez apenas em 2014, nas águas do Pacífico por pesquisadores do MBARI."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Peixe-Ogrosso",
+      "img": "../../../img/Animals/fish/bathypelagic/fangtooth/fangtooth.png",
+      "targetId": "Peixe-Ogrosso"
+    },
+    {
+      "nome": "Peixe-Lanterna",
+      "img": "../../../img/Animals/fish/mesopelagic/lanternfish/lanternfish.png",
+      "targetId": "Peixe-Lanterna"
+    },
+    {
+      "nome": "Enguia-Pelicano",
+      "img": "../../../img/Animals/fish/bathypelagic/pelican_eel/pelican_eel.png",
+      "targetId": "Enguia-Pelicano"
+    }
+  ]
+}
