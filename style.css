@@ -290,9 +290,12 @@ body {
 /* Estilos para o Botão de Reset */
 #reset-button {
   position: fixed;
-  bottom: 2rem; /* Alinhado com a base da nova UI */
-  left: 2rem;
-  z-index: 2600; /* Z-index alto */
+  bottom: 8rem; /* Posição vertical acima do HUD de canto */
+  left: 50%;
+  transform: translateX(-50%); /* Centraliza horizontalmente */
+  z-index: 2600;
+  
+  /* Aparência (sem alterações) */
   background-color: var(--color-accent);
   color: var(--color-text-dark);
   font-family: var(--font-family-display);
@@ -304,22 +307,29 @@ body {
   padding: 0.8rem 1.5rem;
   cursor: pointer;
   box-shadow: 0 0 15px var(--color-accent), 0 0 25px rgba(255, 184, 108, 0.4);
+  
+  /* Transições e estado inicial (sem alterações) */
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.2s ease;
 }
+
 #reset-button.visible {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
 }
+
 #reset-button:hover {
-  transform: scale(1.05);
+  /* Combina a translação com a escala */
+  transform: translateX(-50%) scale(1.05);
   filter: brightness(1.1);
 }
+
 #reset-button:active {
-  transform: scale(0.98);
+  /* Combina a translação com a escala */
+  transform: translateX(-50%) scale(0.98);
 }
 /* Posicionamento dos animais - Ajuste conforme necessário para cada zona */
 #zone-epipelagic figure:nth-of-type(1) {
@@ -435,36 +445,6 @@ body {
   font-size: 1.5rem;
   color: var(--color-accent);
 }
-
-/* --- INDICADOR DE PROFUNDIDADE FIXO --- */
-.depth-indicator {
-  position: fixed;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2000;
-  background: rgba(0, 0, 0, 0.6);
-  color: var(--color-text);
-  font-family: var(--font-family-monospace);
-  font-size: clamp(0.8rem, 2vw, 1rem);
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(8px);
-  display: flex;
-  align-items: baseline;
-  gap: 0.5rem;
-  white-space: nowrap;
-  opacity: 0; /* Começa invisível, controlado pelo JS */
-  transition: opacity 0.3s ease-in-out;
-}
-
-.depth-indicator .depth-value {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  font-weight: 700;
-  color: var(--color-accent);
-}
-/* --- ESTILOS PARA O NOVO MODAL (VERSÃO CORRIGIDA) --- */
 
 .animal-modal .modal-content {
   max-width: 750px;
@@ -1241,4 +1221,50 @@ body {
 .log-panel-body::-webkit-scrollbar-thumb {
   background-color: #0ff;
   border-radius: 6px;
+}
+#corner-depth-hud {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 2500;
+  
+  font-family: var(--font-family-monospace);
+  color: var(--color-accent);
+  text-shadow: 0 0 5px var(--color-accent), 0 0 10px rgba(255, 184, 108, 0.3);
+  
+  /* Estado inicial e transição */
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  pointer-events: none;
+}
+
+#corner-depth-hud .hud-main-metric {
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  line-height: 1;
+}
+
+#corner-depth-hud #corner-depth-value {
+  font-weight: bold;
+  font-size: 2.5rem; /* Profundidade é a maior */
+}
+
+#corner-depth-hud .hud-secondary-metrics {
+  margin-top: 0.5rem;
+  border-top: 1px solid rgba(255, 184, 108, 0.3);
+  padding-top: 0.5rem;
+}
+
+#corner-depth-hud .hud-secondary-metrics p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+#corner-depth-hud .hud-secondary-metrics span {
+  font-weight: bold;
+  font-size: 1rem;
 }

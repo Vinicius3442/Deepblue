@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const PARTICLE_START_DEPTH = 1000;
   const oceanAbyss = document.getElementById("ocean-abyss");
   const oceanBackground = document.querySelector(".ocean-background");
-  const depthIndicator = document.getElementById("depth-indicator");
   const depthValueSpan = document.querySelector(
     "#depth-indicator .depth-value"
   );
@@ -35,6 +34,11 @@ document.addEventListener("DOMContentLoaded", () => {
     faunaEmptyState = document.querySelector(".log-empty-state");
   const zoneInfoTitle = document.getElementById("zone-info-title"),
     zoneInfoList = document.getElementById("zone-info-list");
+
+  const cornerDepthHud = document.getElementById("corner-depth-hud");
+  const cornerDepthValue = document.getElementById("corner-depth-value");
+  const cornerPressureValue = document.getElementById("corner-pressure-value"); // ADICIONE ESTA
+  const cornerTempValue = document.getElementById("corner-temp-value");
 
   const ZONES = [
     {
@@ -115,6 +119,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let noiseSeedX = Math.random() * 1000;
   let noiseSeedY = Math.random() * 1000;
+
+  function calculatePressure(depth) {
+    // 1 ATM na superfície + 1 ATM a cada 10 metros
+    const pressure = 1 + depth / 10;
+    return pressure;
+  }
+
+  function calculateTemperature(depth) {
+    const surfaceTemp = 20;
+    const deepTemp = 4;
+
+    if (depth <= 200) {
+      // Epipelágica
+      return surfaceTemp - (depth / 200) * (surfaceTemp - 19);
+    } else if (depth <= 1000) {
+      // Mesopelágica (Termoclina)
+      const progress = (depth - 200) / 800;
+      return 19 - 15 * progress;
+    } else {
+      // Águas profundas
+      const progress = Math.min(1, (depth - 1000) / 9000);
+      return deepTemp - 2 * progress;
+    }
+  }
 
   const modal = document.createElement("div");
   modal.className = "animal-modal";
@@ -391,7 +419,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- INICIALIZAÇÃO E ANIMAÇÃO ---
   function init() {
-    const totalHeight = CONFIG.MAX_DEPTH * CONFIG.PIXELS_PER_METER + (window.innerHeight * 2);
+    const totalHeight =
+      CONFIG.MAX_DEPTH * CONFIG.PIXELS_PER_METER + window.innerHeight * 2;
     oceanAbyss.style.height = `${totalHeight}px`;
 
     ZONES.forEach((zone) => {
@@ -523,9 +552,15 @@ document.addEventListener("DOMContentLoaded", () => {
       1 - lastScrollY / (window.innerHeight * 0.75)
     );
 
-    // ATUALIZA O MEDIDOR DE PROFUNDIDADE (CORRIGIDO)
-    depthIndicator.style.opacity = lastScrollY > 50 ? 1 : 0;
-    depthValueSpan.textContent = currentDepth.toLocaleString("pt-BR");
+    // --- LÓGICA DO HUD AMBIENTAL DE CANTO (ATUALIZADO) ---
+    cornerDepthHud.style.opacity = lastScrollY > 50 ? 1 : 0;
+    cornerDepthValue.textContent = currentDepth.toLocaleString("pt-BR");
+    
+    // Calcula e atualiza pressão e temperatura
+    const pressure = calculatePressure(currentDepth);
+    const temperature = calculateTemperature(currentDepth);
+    cornerPressureValue.textContent = pressure.toFixed(0);
+    cornerTempValue.textContent = temperature.toFixed(1);
 
     // Atualiza os status do veículo no painel
     const depthRatio = currentDepth / CONFIG.MAX_DEPTH;
@@ -536,7 +571,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Mostra o botão de reset no final
     resetButton.classList.toggle('visible', currentDepth >= CONFIG.MAX_DEPTH);
 
-    // CHAMA AS FUNÇÕES DE ATUALIZAÇÃO VISUAL (CORRIGIDO)
+    // CHAMA AS FUNÇÕES DE ATUALIZAÇÃO VISUAL
     updateBackgroundColor(currentDepth);
     checkAnimalActivation();
     updateOceanFloor(currentDepth);
@@ -544,26 +579,32 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateLogPanelUI() {
-      hullBar.style.width = `${vehicleStats.hull}%`;
-      hullValue.textContent = `${Math.floor(vehicleStats.hull)}%`;
-      energyBar.style.width = `${vehicleStats.energy}%`;
-      energyValue.textContent = `${Math.floor(vehicleStats.energy)}%`;
-      oxygenBar.style.width = `${vehicleStats.oxygen}%`;
-      oxygenValue.textContent = `${Math.floor(vehicleStats.oxygen)}%`;
+    hullBar.style.width = `${vehicleStats.hull}%`;
+    hullValue.textContent = `${Math.floor(vehicleStats.hull)}%`;
+    energyBar.style.width = `${vehicleStats.energy}%`;
+    energyValue.textContent = `${Math.floor(vehicleStats.energy)}%`;
+    oxygenBar.style.width = `${vehicleStats.oxygen}%`;
+    oxygenValue.textContent = `${Math.floor(vehicleStats.oxygen)}%`;
 
-      let currentZone = ZONES.find(z => currentDepth >= z.startDepth && (ZONES[ZONES.indexOf(z) + 1] ? currentDepth < ZONES[ZONES.indexOf(z) + 1].startDepth : true)) || ZONES[0];
-      zoneInfoTitle.textContent = `Zona ${currentZone.name}`;
-      if (zoneInfoTitle.dataset.current !== currentZone.id) {
-          zoneInfoTitle.dataset.current = currentZone.id;
-          zoneInfoList.innerHTML = '';
-          currentZone.curiosidades?.forEach(fact => {
-              const li = document.createElement('li');
-              li.textContent = fact;
-              zoneInfoList.appendChild(li);
-          });
-      }
+    let currentZone =
+      ZONES.find(
+        (z) =>
+          currentDepth >= z.startDepth &&
+          (ZONES[ZONES.indexOf(z) + 1]
+            ? currentDepth < ZONES[ZONES.indexOf(z) + 1].startDepth
+            : true)
+      ) || ZONES[0];
+    zoneInfoTitle.textContent = `Zona ${currentZone.name}`;
+    if (zoneInfoTitle.dataset.current !== currentZone.id) {
+      zoneInfoTitle.dataset.current = currentZone.id;
+      zoneInfoList.innerHTML = "";
+      currentZone.curiosidades?.forEach((fact) => {
+        const li = document.createElement("li");
+        li.textContent = fact;
+        zoneInfoList.appendChild(li);
+      });
+    }
   }
-
 
   function updateBackgroundColor(depth) {
     let startZone = ZONES[0],
@@ -969,53 +1010,59 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", setupParticles);
 
   function addLogMessage(text, type = "info") {
-      const li = document.createElement("li");
-      li.className = `log-message ${type}`;
-      if (type === 'sighting') {
-          const animalName = text.replace('AVISTAMENTO: ', '').replace('.', '');
-          li.innerHTML = `AVISTAMENTO: <a data-animal-id="${animalName}">${animalName}</a>.`;
-          if (!faunaLogList.querySelector(`[data-animal-id="${animalName}"]`)) {
-              const faunaLi = document.createElement('li');
-              faunaLi.textContent = animalName;
-              faunaLi.dataset.animalId = animalName;
-              faunaLogList.appendChild(faunaLi);
-              faunaEmptyState.style.display = 'none';
-          }
-      } else {
-          li.textContent = text;
+    const li = document.createElement("li");
+    li.className = `log-message ${type}`;
+    if (type === "sighting") {
+      const animalName = text.replace("AVISTAMENTO: ", "").replace(".", "");
+      li.innerHTML = `AVISTAMENTO: <a data-animal-id="${animalName}">${animalName}</a>.`;
+      if (!faunaLogList.querySelector(`[data-animal-id="${animalName}"]`)) {
+        const faunaLi = document.createElement("li");
+        faunaLi.textContent = animalName;
+        faunaLi.dataset.animalId = animalName;
+        faunaLogList.appendChild(faunaLi);
+        faunaEmptyState.style.display = "none";
       }
-      logMessagesList.appendChild(li);
-      logMessagesList.scrollTop = logMessagesList.scrollHeight;
+    } else {
+      li.textContent = text;
+    }
+    logMessagesList.appendChild(li);
+    logMessagesList.scrollTop = logMessagesList.scrollHeight;
   }
 
-  logToggleButton.addEventListener('click', () => logPanel.classList.toggle('visible'));
-  logTabsContainer.addEventListener('click', (e) => {
-    if (e.target.matches('.log-tab-button')) {
-        logTabsContainer.querySelector('.active').classList.remove('active');
-        e.target.classList.add('active');
-        document.querySelector('.log-tab-content.active').classList.remove('active');
-        document.getElementById(`log-content-${e.target.dataset.tab}`).classList.add('active');
+  logToggleButton.addEventListener("click", () =>
+    logPanel.classList.toggle("visible")
+  );
+  logTabsContainer.addEventListener("click", (e) => {
+    if (e.target.matches(".log-tab-button")) {
+      logTabsContainer.querySelector(".active").classList.remove("active");
+      e.target.classList.add("active");
+      document
+        .querySelector(".log-tab-content.active")
+        .classList.remove("active");
+      document
+        .getElementById(`log-content-${e.target.dataset.tab}`)
+        .classList.add("active");
     }
   });
-  logPanel.addEventListener('click', (e) => {
-      if (e.target.dataset.animalId) {
-          const animal = animals.find(a => a.name === e.target.dataset.animalId);
-          if (animal) {
-              closeModal();
-              animal.figure.click();
-          }
+  logPanel.addEventListener("click", (e) => {
+    if (e.target.dataset.animalId) {
+      const animal = animals.find((a) => a.name === e.target.dataset.animalId);
+      if (animal) {
+        closeModal();
+        animal.figure.click();
       }
+    }
   });
-  resetButton.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  resetButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
     addLogMessage("Retornando à superfície...", "system");
     setTimeout(() => {
-        logMessagesList.innerHTML = '';
-        faunaLogList.innerHTML = '';
-        faunaEmptyState.style.display = 'block';
-        addLogMessage("Sistemas online. Iniciando descida.");
+      logMessagesList.innerHTML = "";
+      faunaLogList.innerHTML = "";
+      faunaEmptyState.style.display = "block";
+      addLogMessage("Sistemas online. Iniciando descida.");
     }, 2000);
-    ZONES.forEach(zone => zone.logged = false);
+    ZONES.forEach((zone) => (zone.logged = false));
   });
 
   init();

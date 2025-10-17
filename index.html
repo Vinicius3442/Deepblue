@@ -44,9 +44,6 @@
 
     <div class="ocean-background"></div>
     <canvas id="particle-canvas"></canvas>
-    <div class="depth-indicator" id="depth-indicator">
-      <span class="depth-value">0</span> METROS
-    </div>
 
     <main id="ocean-abyss">
       <!-- ZONA EPIPELAGICA -->
@@ -473,6 +470,14 @@
             <ul id="zone-info-list"></ul>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div id="corner-depth-hud">
+      <p class="hud-main-metric"><span id="corner-depth-value">0</span> M</p>
+      <div class="hud-secondary-metrics">
+        <p>PRESSÃO EXT: <span id="corner-pressure-value">1</span> ATM</p>
+        <p>TEMP. EXT: <span id="corner-temp-value">20.0</span> °C</p>
       </div>
     </div>
 
