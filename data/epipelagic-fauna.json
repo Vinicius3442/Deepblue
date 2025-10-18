@@ -5,8 +5,8 @@
     "dataDepth": 70,
     "dataType": "predador-medio",
     "dataScale": 2.5,
-    "imgPath": "./img/Animals/fish/epipelagic/blue_tuna/blue_tuna.png",
-    "articlePath": "./articles/fish/epipelagic/blue_tuna.json"
+    "imgPath": "../img/Animals/fish/epipelagic/blue_tuna/blue_tuna.png",
+    "articlePath": "../articles/fish/epipelagic/blue_tuna.json"
   },
   {
     "id": "dourado",
@@ -14,8 +14,8 @@
     "dataDepth": 45,
     "dataType": "predador-medio",
     "dataScale": 1.3,
-    "imgPath": "./img/Animals/fish/epipelagic/dourado/dourado.png",
-    "articlePath": "./articles/fish/epipelagic/dourado.json"
+    "imgPath": "../img/Animals/fish/epipelagic/dourado/dourado.png",
+    "articlePath": "../articles/fish/epipelagic/dourado.json"
   },
   {
     "id": "barracuda",
@@ -23,8 +23,8 @@
     "dataDepth": 40,
     "dataType": "predador-medio",
     "dataScale": 1.2,
-    "imgPath": "./img/Animals/fish/epipelagic/barracuda/barracuda.png",
-    "articlePath": "./articles/fish/epipelagic/barracuda.json"
+    "imgPath": "../img/Animals/fish/epipelagic/barracuda/barracuda.png",
+    "articlePath": "../articles/fish/epipelagic/barracuda.json"
   },
   {
     "id": "tubarao_azul",
@@ -32,8 +32,8 @@
     "dataDepth": 120,
     "dataType": "predador-grande",
     "dataScale": 3.2,
-    "imgPath": "./img/Animals/elasmobranchii/epipelagic/blue-shark/tubarao_azul.png",
-    "articlePath": "./articles/elasmobranchii/epipelagic/tubarao_azul.json"
+    "imgPath": "../img/Animals/elasmobranchii/epipelagic/blue-shark/tubarao_azul.png",
+    "articlePath": "../articles/elasmobranchii/epipelagic/tubarao_azul.json"
   },
   {
     "id": "caribbean-reef_squid",
@@ -41,8 +41,8 @@
     "dataDepth": 15,
     "dataType": "lula",
     "dataScale": 0.5,
-    "imgPath": "./img/Animals/molluscae/epipelagic/caribbean-reef-squid/caribbean-reef-squid.png",
-    "articlePath": "./articles/molluscae/epipelagic/caribbean-reef_squid.json"
+    "imgPath": "../img/Animals/molluscae/epipelagic/caribbean-reef-squid/caribbean-reef-squid.png",
+    "articlePath": "../articles/molluscae/epipelagic/caribbean-reef_squid.json"
   },
   {
     "id": "moreia_verde",
@@ -50,8 +50,8 @@
     "dataDepth": 55,
     "dataType": "peixe",
     "dataScale": 2.1,
-    "imgPath": "./img/Animals/fish/epipelagic/moreia-verde/moreia_verde.png",
-    "articlePath": "./articles/fish/epipelagic/moreia_verde.json"
+    "imgPath": "../img/Animals/fish/epipelagic/moreia-verde/moreia_verde.png",
+    "articlePath": "../articles/fish/epipelagic/moreia_verde.json"
   },
   {
     "id": "tubarao_branco",
@@ -59,8 +59,8 @@
     "dataDepth": 150,
     "dataType": "predador-grande",
     "dataScale": 4.5,
-    "imgPath": "./img/Animals/elasmobranchii/epipelagic/tubarao_branco/tubarao_branco.png",
-    "articlePath": "./articles/elasmobranchii/epipelagic/tubarao_branco.json"
+    "imgPath": "../img/Animals/elasmobranchii/epipelagic/tubarao_branco/tubarao_branco.png",
+    "articlePath": "../articles/elasmobranchii/epipelagic/tubarao_branco.json"
   },
   {
     "id": "manta_ray",
@@ -68,8 +68,8 @@
     "dataDepth": 45,
     "dataType": "peixe",
     "dataScale": 5.5,
-    "imgPath": "./img/Animals/elasmobranchii/epipelagic/manta_ray/manta_ray.png",
-    "articlePath": "./articles/elasmobranchii/epipelagic/manta_ray.json"
+    "imgPath": "../img/Animals/elasmobranchii/epipelagic/manta_ray/manta_ray.png",
+    "articlePath": "../articles/elasmobranchii/epipelagic/manta_ray.json"
   },
   {
     "id": "blue_marlin",
@@ -77,8 +77,8 @@
     "dataDepth": 90,
     "dataType": "peixe",
     "dataScale": 3.8,
-    "imgPath": "./img/Animals/fish/epipelagic/blue_marlin/blue_marlin.png",
-    "articlePath": "./articles/fish/epipelagic/blue_marlin.json"
+    "imgPath": "../img/Animals/fish/epipelagic/blue_marlin/blue_marlin.png",
+    "articlePath": "../articles/fish/epipelagic/blue_marlin.json"
   },
   {
     "id": "hammerhead_shark",
@@ -86,8 +86,8 @@
     "dataDepth": 80,
     "dataType": "predador-grande",
     "dataScale": 4.2,
-    "imgPath": "./img/Animals/elasmobranchii/epipelagic/hammerhead_shark/hammerhead_shark.png",
-    "articlePath": "./articles/elasmobranchii/epipelagic/hammerhead_shark.json"
+    "imgPath": "../img/Animals/elasmobranchii/epipelagic/hammerhead_shark/hammerhead_shark.png",
+    "articlePath": "../articles/elasmobranchii/epipelagic/hammerhead_shark.json"
   },
   {
     "id": "espadarte",
@@ -95,8 +95,8 @@
     "dataDepth": 100,
     "dataType": "predador-grande",
     "dataScale": 3.6,
-    "imgPath": "./img/Animals/fish/epipelagic/espadarte/espadarte.png",
-    "articlePath": "./articles/fish/epipelagic/espadarte.json"
+    "imgPath": "../img/Animals/fish/epipelagic/espadarte/espadarte.png",
+    "articlePath": "../articles/fish/epipelagic/espadarte.json"
   },
   {
     "id": "whale_shark",
@@ -104,7 +104,7 @@
     "dataDepth": 160,
     "dataType": "predador-gigante",
     "dataScale": 7.5,
-    "imgPath": "./img/Animals/elasmobranchii/epipelagic/whale_shark/whale_shark.png",
+    "imgPath": "../img/Animals/elasmobranchii/epipelagic/whale_shark/whale_shark.png",
     "articlePath": "./articles/elasmobranchii/epipelagic/whale_shark.json"
   },
   {
@@ -113,8 +113,8 @@
     "dataDepth": 10,
     "dataType": "lula",
     "dataScale": 0.5,
-    "imgPath": "./img/Animals/molluscae/epipelagic/common_squid/common_squid.png",
-    "articlePath": "./articles/molluscae/epipelagic/common_squid.json"
+    "imgPath": "../img/Animals/molluscae/epipelagic/common_squid/common_squid.png",
+    "articlePath": "../articles/molluscae/epipelagic/common_squid.json"
   },
   {
     "id": "blue_ringed_octopus",
@@ -122,8 +122,8 @@
     "dataDepth": 5,
     "dataType": "lula",
     "dataScale": 0.2,
-    "imgPath": "./img/Animals/molluscae/epipelagic/blue_ringed_octopus/blue_ringed_octopus.png",
-    "articlePath": "./articles/molluscae/epipelagic/blue_ringed_octopus.json"
+    "imgPath": "../img/Animals/molluscae/epipelagic/blue_ringed_octopus/blue_ringed_octopus.png",
+    "articlePath": "../articles/molluscae/epipelagic/blue_ringed_octopus.json"
   },
   {
     "id": "cuttlefish",
@@ -131,8 +131,8 @@
     "dataDepth": 50,
     "dataType": "lula",
     "dataScale": 0.4,
-    "imgPath": "./img/Animals/molluscae/epipelagic/common_cuttlefish/common_cuttlefish.png",
-    "articlePath": "./articles/molluscae/epipelagic/cuttlefish.json"
+    "imgPath": "../img/Animals/molluscae/epipelagic/common_cuttlefish/common_cuttlefish.png",
+    "articlePath": "../articles/molluscae/epipelagic/cuttlefish.json"
   },
   {
     "id": "nurse_shark",
@@ -140,8 +140,8 @@
     "dataDepth": 60,
     "dataType": "predador-grande",
     "dataScale": 2.7,
-    "imgPath": "./img/Animals/elasmobranchii/epipelagic/nurse_shark/nurse_shark.png",
-    "articlePath": "./articles/elasmobranchii/epipelagic/nurse_shark.json"
+    "imgPath": "../img/Animals/elasmobranchii/epipelagic/nurse_shark/nurse_shark.png",
+    "articlePath": "../articles/elasmobranchii/epipelagic/nurse_shark.json"
   },
   {
     "id": "mako_shark",
@@ -149,8 +149,8 @@
     "dataDepth": 120,
     "dataType": "predador-grande",
     "dataScale": 3.2,
-    "imgPath": "./img/Animals/elasmobranchii/epipelagic/mako_shark/mako_shark.png",
-    "articlePath": "./articles/elasmobranchii/epipelagic/mako_shark.json"
+    "imgPath": "../img/Animals/elasmobranchii/epipelagic/mako_shark/mako_shark.png",
+    "articlePath": "../articles/elasmobranchii/epipelagic/mako_shark.json"
   },
   {
     "id": "bull_shark",
@@ -158,8 +158,8 @@
     "dataDepth": 80,
     "dataType": "predador-grande",
     "dataScale": 2.8,
-    "imgPath": "./img/Animals/elasmobranchii/epipelagic/bull_shark/bull_shark.png",
-    "articlePath": "./articles/elasmobranchii/epipelagic/bull_shark.json"
+    "imgPath": "../img/Animals/elasmobranchii/epipelagic/bull_shark/bull_shark.png",
+    "articlePath": "../articles/elasmobranchii/epipelagic/bull_shark.json"
   },
   {
     "id": "tiger_shark",
@@ -167,8 +167,8 @@
     "dataDepth": 130,
     "dataType": "predador-grande",
     "dataScale": 4.0,
-    "imgPath": "./img/Animals/elasmobranchii/epipelagic/tiger_shark/tiger_shark.png",
-    "articlePath": "./articles/elasmobranchii/epipelagic/tiger_shark.json"
+    "imgPath": "../img/Animals/elasmobranchii/epipelagic/tiger_shark/tiger_shark.png",
+    "articlePath": "../articles/elasmobranchii/epipelagic/tiger_shark.json"
   },
   {
     "id": "porbeagle_shark",
@@ -176,8 +176,8 @@
     "dataDepth": 160,
     "dataType": "predador-grande",
     "dataScale": 2.3,
-    "imgPath": "./img/Animals/elasmobranchii/epipelagic/porbeagle_shark/porbeagle_shark.png",
-    "articlePath": "./articles/elasmobranchii/epipelagic/porbeagle_shark.json"
+    "imgPath": "../img/Animals/elasmobranchii/epipelagic/porbeagle_shark/porbeagle_shark.png",
+    "articlePath": "../articles/elasmobranchii/epipelagic/porbeagle_shark.json"
   },
   {
     "id": "basking_shark",
@@ -185,8 +185,8 @@
     "dataDepth": 170,
     "dataType": "predador-gigante",
     "dataScale": 6.5,
-    "imgPath": "./img/Animals/elasmobranchii/epipelagic/basking_shark/basking_shark.png",
-    "articlePath": "./articles/elasmobranchii/epipelagic/basking_shark.json"
+    "imgPath": "../img/Animals/elasmobranchii/epipelagic/basking_shark/basking_shark.png",
+    "articlePath": "../articles/elasmobranchii/epipelagic/basking_shark.json"
   },
   {
     "id": "lemon_shark",
@@ -194,8 +194,8 @@
     "dataDepth": 30,
     "dataType": "predador-grande",
     "dataScale": 2.5,
-    "imgPath": "./img/Animals/elasmobranchii/epipelagic/lemon_shark/lemon_shark.png",
-    "articlePath": "./articles/elasmobranchii/epipelagic/lemon_shark.json"
+    "imgPath": "../img/Animals/elasmobranchii/epipelagic/lemon_shark/lemon_shark.png",
+    "articlePath": "../articles/elasmobranchii/epipelagic/lemon_shark.json"
   },
   {
     "id": "sand_tiger_shark",
@@ -203,8 +203,8 @@
     "dataDepth": 50,
     "dataType": "predador-grande",
     "dataScale": 2.8,
-    "imgPath": "./img/Animals/elasmobranchii/epipelagic/sand_tiger_shark/sand_tiger_shark.png",
-    "articlePath": "./articles/elasmobranchii/epipelagic/sand_tiger_shark.json"
+    "imgPath": "../img/Animals/elasmobranchii/epipelagic/sand_tiger_shark/sand_tiger_shark.png",
+    "articlePath": "../articles/elasmobranchii/epipelagic/sand_tiger_shark.json"
   },
   {
     "id": "wobbegong_shark",
@@ -212,8 +212,8 @@
     "dataDepth": 70,
     "dataType": "peixe",
     "dataScale": 1.8,
-    "imgPath": "./img/Animals/elasmobranchii/epipelagic/wobbegong_shark/wobbegong_shark.png",
-    "articlePath": "./articles/elasmobranchii/epipelagic/wobbegong_shark.json"
+    "imgPath": "../img/Animals/elasmobranchii/epipelagic/wobbegong_shark/wobbegong_shark.png",
+    "articlePath": "../articles/elasmobranchii/epipelagic/wobbegong_shark.json"
   },
   {
     "id": "oceanic_whitetip_shark",
@@ -221,8 +221,8 @@
     "dataDepth": 150,
     "dataType": "predador-grande",
     "dataScale": 2.8,
-    "imgPath": "./img/Animals/elasmobranchii/epipelagic/oceanic_whitetip_shark/oceanic_whitetip_shark.png",
-    "articlePath": "./articles/elasmobranchii/epipelagic/oceanic_whitetip_shark.json"
+    "imgPath": "../img/Animals/elasmobranchii/epipelagic/oceanic_whitetip_shark/oceanic_whitetip_shark.png",
+    "articlePath": "../articles/elasmobranchii/epipelagic/oceanic_whitetip_shark.json"
   },
   {
     "id": "blacktip_reef_shark",
@@ -230,8 +230,8 @@
     "dataDepth": 20,
     "dataType": "predador-medio",
     "dataScale": 1.6,
-    "imgPath": "./img/Animals/elasmobranchii/epipelagic/blacktip_reef_shark/blacktip_reef_shark.png",
-    "articlePath": "./articles/elasmobranchii/epipelagic/blacktip_reef_shark.json"
+    "imgPath": "../img/Animals/elasmobranchii/epipelagic/blacktip_reef_shark/blacktip_reef_shark.png",
+    "articlePath": "../articles/elasmobranchii/epipelagic/blacktip_reef_shark.json"
   },
   {
     "id": "thresher_shark",
@@ -239,8 +239,8 @@
     "dataDepth": 140,
     "dataType": "predador-grande",
     "dataScale": 4.2,
-    "imgPath": "./img/Animals/elasmobranchii/epipelagic/thresher_shark/thresher_shark.png",
-    "articlePath": null
+    "imgPath": "../img/Animals/elasmobranchii/epipelagic/thresher_shark/thresher_shark.png",
+    "articlePath": "../articles/elasmobranchii/epipelagic/thresher_shark.json"
   },
   {
     "id": "sawfish",
@@ -248,8 +248,8 @@
     "dataDepth": 40,
     "dataType": "peixe",
     "dataScale": 5.2,
-    "imgPath": "./img/Animals/elasmobranchii/epipelagic/sawfish/sawfish.png",
-    "articlePath": "./articles/elasmobranchii/epipelagic/sawfish.json"
+    "imgPath": "../img/Animals/elasmobranchii/epipelagic/sawfish/sawfish.png",
+    "articlePath": "../articles/elasmobranchii/epipelagic/sawfish.json"
   },
   {
     "id": "spotted_eagle_ray",
@@ -257,8 +257,8 @@
     "dataDepth": 25,
     "dataType": "peixe",
     "dataScale": 2.6,
-    "imgPath": "./img/Animals/elasmobranchii/epipelagic/spotted_eagle_ray/spotted_eagle_ray.png",
-    "articlePath": "./articles/elasmobranchii/epipelagic/spotted_eagle_ray.json"
+    "imgPath": "../img/Animals/elasmobranchii/epipelagic/spotted_eagle_ray/spotted_eagle_ray.png",
+    "articlePath": "../articles/elasmobranchii/epipelagic/spotted_eagle_ray.json"
   },
   {
     "id": "pufferfish",
@@ -266,8 +266,8 @@
     "dataDepth": 25,
     "dataType": "peixe",
     "dataScale": 0.5,
-    "imgPath": "./img/Animals/fish/epipelagic/pufferfish/pufferfish.png",
-    "articlePath": "./articles/fish/epipelagic/pufferfish.json"
+    "imgPath": "../img/Animals/fish/epipelagic/pufferfish/pufferfish.png",
+    "articlePath": "../articles/fish/epipelagic/pufferfish.json"
   },
   {
     "id": "mola_mola",
@@ -275,8 +275,8 @@
     "dataDepth": 190,
     "dataType": "peixe",
     "dataScale": 2.8,
-    "imgPath": "./img/Animals/fish/epipelagic/mola_mola/mola_mola.png",
-    "articlePath": "./articles/fish/epipelagic/mola_mola.json"
+    "imgPath": "../img/Animals/fish/epipelagic/mola_mola/mola_mola.png",
+    "articlePath": "../articles/fish/epipelagic/mola_mola.json"
   },
   {
     "id": "sailfish",
@@ -284,8 +284,8 @@
     "dataDepth": 15,
     "dataType": "predador-grande",
     "dataScale": 2.5,
-    "imgPath": "./img/Animals/fish/epipelagic/sailfish/sailfish.png",
-    "articlePath": "./articles/fish/epipelagic/sailfish.json"
+    "imgPath": "../img/Animals/fish/epipelagic/sailfish/sailfish.png",
+    "articlePath": "../articles/fish/epipelagic/sailfish.json"
   },
   {
     "id": "mimic_octopus",
@@ -293,8 +293,8 @@
     "dataDepth": 15,
     "dataType": "lula",
     "dataScale": 0.6,
-    "imgPath": "./img/Animals/molluscae/epipelagic/mimic_octopus/mimic_octopus.png",
-    "articlePath": "./articles/molluscae/epipelagic/mimic_octopus.json"
+    "imgPath": "../img/Animals/molluscae/epipelagic/mimic_octopus/mimic_octopus.png",
+    "articlePath": "../articles/molluscae/epipelagic/mimic_octopus.json"
   },
   {
     "id": "leatherback_turtle",
@@ -302,7 +302,7 @@
     "dataDepth": 180,
     "dataType": "reptil",
     "dataScale": 2.0,
-    "imgPath": "./img/Animals/reptiles/epipelagic/leatherback_turtle/leatherback_turtle.png",
+    "imgPath": "../img/Animals/reptiles/epipelagic/leatherback_turtle/leatherback_turtle.png",
     "articlePath": "./articles/reptiles/epipelagic/leatherback_turtle.json"
   },
   {
@@ -311,7 +311,7 @@
     "dataDepth": 30,
     "dataType": "reptil",
     "dataScale": 1.5,
-    "imgPath": "./img/Animals/reptiles/epipelagic/green_turtle/green_turtle.png",
-    "articlePath": "./articles/reptiles/epipelagic/green_turtle.json"
+    "imgPath": "../img/Animals/reptiles/epipelagic/green_turtle/green_turtle.png",
+    "articlePath": "../articles/reptiles/epipelagic/green_turtle.json"
   }
 ]

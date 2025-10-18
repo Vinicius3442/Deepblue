@@ -1,0 +1,47 @@
+[
+  {
+    "id": "giant_squid",
+    "name": "Lula-Gigante",
+    "dataDepth": 2500,
+    "dataType": "lula",
+    "dataScale": 6.0,
+    "imgPath": "../img/Animals/molluscae/bathypelagic/giant_squid/giant_squid.png",
+    "articlePath": "../articles/molluscae/bathypelagic/giant_squid.json"
+  },
+  {
+    "id": "goblin_shark",
+    "name": "Tubarao-Duende",
+    "dataDepth": 1300,
+    "dataType": "predador-grande",
+    "dataScale": 3.0,
+    "imgPath": "../img/Animals/elasmobranchii/bathypelagic/goblin_shark/goblin_shark.png",
+    "articlePath": "../articles/elasmobranchii/bathypelagic/goblin-shark.json"
+  },
+  {
+    "id": "hydrolagus_troll",
+    "name": "Quimera-azul",
+    "dataDepth": 1800,
+    "dataType": "peixe",
+    "dataScale": 1.7,
+    "imgPath": "../img/Animals/fish/bathypelagic/hydrolagus_troll/hydrolagus_troll.png",
+    "articlePath": "../articles/fish/bathypelagic/hydrolagus_troll.json"
+  },
+  {
+    "id": "pelican_eel",
+    "name": "Enguia-Pelicano",
+    "dataDepth": 2800,
+    "dataType": "predador-profundo",
+    "dataScale": 1.5,
+    "imgPath": "../img/Animals/fish/bathypelagic/pelican_eel/pelican_eel.png",
+    "articlePath": "../articles/fish/bathypelagic/pelican_eel.json"
+  },
+  {
+    "id": "black_devil",
+    "name": "Peixe-Diabo Negro",
+    "dataDepth": 3000,
+    "dataType": "predador-medio",
+    "dataScale": 0.9,
+    "imgPath": "../img/Animals/fish/bathypelagic/black_devil/black_devil.png",
+    "articlePath": "../articles/fish/bathypelagic/black_devil.json"
+  }
+]

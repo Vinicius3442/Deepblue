@@ -1,0 +1,20 @@
+[
+  {
+    "id": "barrel_eye_fish",
+    "name": "Peixe Olhos de Barril",
+    "dataDepth": 700,
+    "dataType": "peixe",
+    "dataScale": 1.2,
+    "imgPath": "../img/Animals/fish/mesopelagic/barrel_eye_fish/barrel_eye_fish.png",
+    "articlePath": "../articles/fish/mesopelagic/barrel_eye_fish.json"
+  },
+  {
+    "id": "silver_hatchetfish",
+    "name": "Peixe-Machado-de-Prata",
+    "dataDepth": 790,
+    "dataType": "peixe-pequeno",
+    "dataScale": 0.6,
+    "imgPath": "../img/Animals/fish/mesopelagic/silver_hatchetfish/silver_hatchetfish.png",
+    "articlePath": "../articles/fish/mesopelagic/silver_hatchetfish.json"
+  }
+]
