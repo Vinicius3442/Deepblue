@@ -1,5 +1,3 @@
-/* style.css - Versão com correção do scroll e nova imagem de céu */
-
 :root {
   /* Paleta de Cores */
   --color-text: #f0f4f8;
@@ -264,16 +262,23 @@ body {
 
 .fauna-gallery figure {
   position: absolute;
+  transition: transform 0.2s ease-out, z-index 0.2s linear; /* Transição suave */
+  pointer-events: none;
+
+  filter: drop-shadow(0 5px 15px var(--color-shadow));
 }
 
 .fauna-gallery img {
   display: block;
-  width: 100%; /* mantém a largura do figure */
-  max-width: 150px; /* limita o tamanho máximo */
+  width: 100%;
+  max-width: 150px;
   height: auto;
-  filter: drop-shadow(0 5px 15px var(--color-shadow));
+
+  pointer-events: auto; 
+  cursor: pointer;
+  user-select: none; 
 }
-/* permite que o container não capture scroll, mas o <figure> receba clicks */
+
 .fauna-gallery {
   pointer-events: none;
 }
@@ -281,13 +286,18 @@ body {
   pointer-events: auto;
   cursor: pointer;
 }
-/* evita que a própria <img> capture o evento (deixa o <figure> receber) */
+
 .fauna-gallery figure img {
   pointer-events: none;
-  user-drag: none;
   user-select: none;
 }
-/* Estilos para o Botão de Reset */
+
+.fauna-gallery figure:hover {
+  z-index: 1000 !important;
+  transform: scale(1.1); 
+}
+
+
 #reset-button {
   position: fixed;
   bottom: 8rem;

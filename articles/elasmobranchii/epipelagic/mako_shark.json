@@ -1,0 +1,79 @@
+{
+  "name": "Tubarão-Mako (Anequim)",
+  "scientificName": "Isurus oxyrinchus",
+  "img": "../../../img/Animals/elasmobranchii/epipelagic/mako_shark/mako_shark.png",
+  "fonte": "Oceana",
+  "description": "O tubarão-mako, também conhecido como anequim, é o tubarão mais rápido do oceano. Com um corpo hidrodinâmico em forma de torpedo e uma cauda poderosa, ele é capaz de atingir rajadas de velocidade de mais de 70 km/h. É famoso por seus saltos acrobáticos espetaculares para fora d'água quando está caçando ou foi fisgado.",
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/elasmobranchii/epipelagic/mako_shark/map_mako_shark.jpg",
+    "alt": "Mapa de distribuição do Tubarão-Mako no globo",
+    "fonte": "IUCN Red List of Threatened Species"
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/elasmobranchii/epipelagic/mako_shark/size_mako_shark.jpg",
+    "alt": "Comparativo de tamanho de um Tubarão-Mako com um mergulhador",
+    "descricao": "Um mako adulto tem em média 3 metros de comprimento, mas indivíduos excepcionais podem se aproximar dos 4 metros e pesar mais de 500 kg.",
+    "fonte": "Shark Research Institute"
+  },
+  "fichaTecnica": {
+    "statusConservacao": "Em Perigo (EN)",
+    "profundidade": "Superfície até 740m",
+    "dieta": "Carnívoro (atum, peixe-espada, lulas, outros tubarões)",
+    "tamanhoMaximo": "Até 4 metros",
+    "expectativaVida": "Aproximadamente 30 anos",
+    "habitat": "Oceano aberto (pelágico) em águas tropicais e temperadas ao redor do mundo"
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/mako_shark/gallery/mako_shark1.jpg",
+      "alt": "Tubarão-mako saltando espetacularmente da água",
+      "legenda": "Os makos são famosos por seus saltos acrobáticos, que podem atingir vários metros de altura.",
+      "fonte": "National Geographic"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/mako_shark/gallery/mako_shark2.jpg",
+      "alt": "Close-up dos dentes afiados de um tubarão-mako",
+      "legenda": "Seus dentes são longos, finos e incrivelmente afiados, perfeitos para agarrar presas rápidas e escorregadias como o atum.",
+      "fonte": "Wikimedia Commons"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/mako_shark/gallery/mako_shark3.jpg",
+      "alt": "Tubarão-mako nadando em alta velocidade",
+      "legenda": "A forma hidrodinâmica perfeita do mako, com seu focinho pontiagudo e grandes olhos.",
+      "fonte": "Adobe Stock"
+    },
+    {
+      "type": "youtube",
+      "src": "aBNXl-n_xxs",
+      "alt": "Vídeo mostrando a incrível velocidade de um tubarão-mako",
+      "legenda": "Filmado por pesquisadores, este vídeo captura a aceleração explosiva do mako em perseguição a uma isca.",
+      "fonte": "Blue Planet (via YouTube)"
+    }
+  ],
+  "curiosidades": [
+    "É o tubarão mais rápido do mundo, com velocidade de cruzeiro de 50 km/h e rajadas de até 74 km/h.",
+    "Assim como o tubarão-branco e o atum, o mako é de 'sangue quente' (endotérmico), mantendo seu corpo mais quente que a água.",
+    "Seu cérebro é um dos maiores em relação ao corpo entre todos os tubarões, indicando alta inteligência.",
+    "O nome 'Mako' vem da língua Maori e significa 'dente' ou 'tubarão'."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Tubarão-Branco",
+      "img": "../../../img/Animals/fish/epipelagic/tubarao_branco/tubarao_branco.png",
+      "targetId": "Tubarão-Branco"
+    },
+    {
+      "nome": "Atum-Azul",
+      "img": "../../../img/Animals/fish/epipelagic/blue_tuna/blue_tuna.png",
+      "targetId": "Atum Azul"
+    },
+    {
+      "nome": "Peixe-Vela",
+      "img": "../../../img/Animals/fish/epipelagic/sailfish/sailfish.png",
+      "targetId": "Peixe-Vela"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "name": "Tubarão-Lixa",
+  "scientificName": "Ginglymostoma cirratum",
+  "img": "../../../img/Animals/elasmobranchii/epipelagic/nurse_shark/nurse_shark.png",
+  "fonte": "Georgia Aquarium",
+  "description": "O tubarão-lixa é um tubarão de águas quentes e rasas, conhecido por seu comportamento noturno e por passar longos períodos imóvel no fundo do mar, bombeando água ativamente por suas brânquias para respirar sem precisar nadar. Sua boca pequena, mas poderosa, é usada para sugar presas de fendas e buracos nos recifes.",
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/elasmobranchii/epipelagic/nurse_shark/map_nurse_shark.jpg",
+    "alt": "Mapa de distribuição do Tubarão-Lixa no globo",
+    "fonte": "IUCN Red List of Threatened Species"
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/elasmobranchii/epipelagic/nurse_shark/size_nurse_shark.jpg",
+    "alt": "Comparativo de tamanho de um Tubarão-Lixa com um mergulhador",
+    "descricao": "Embora geralmente tenham entre 2,5 a 3 metros, tubarões-lixa podem crescer e ultrapassar os 4 metros de comprimento em casos excepcionais.",
+    "fonte": "Florida Museum of Natural History"
+  },
+  "fichaTecnica": {
+    "statusConservacao": "Vulnerável (VU)",
+    "profundidade": "Superfície até 75m",
+    "dieta": "Carnívoro (crustáceos, moluscos, ouriços-do-mar, peixes pequenos)",
+    "tamanhoMaximo": "Até 4.3 metros",
+    "expectativaVida": "Até 25 anos",
+    "habitat": "Recifes de coral, fundos arenosos, manguezais e águas costeiras rasas"
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/nurse_shark/gallery/nurse_shark1.jpg",
+      "alt": "Grupo de tubarões-lixa descansando no fundo do mar",
+      "legenda": "Tubarões-lixa são frequentemente vistos em grupos, empilhados uns sobre os outros enquanto descansam durante o dia.",
+      "fonte": "National Geographic"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/nurse_shark/gallery/nurse_shark2.jpg",
+      "alt": "Close-up da boca de um tubarão-lixa",
+      "legenda": "Note os 'barbilhões', apêndices sensoriais próximos à boca que ele usa para 'cheirar' e 'provar' o fundo do mar em busca de comida.",
+      "fonte": "Adobe Stock"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/nurse_shark/gallery/nurse_shark3.jpg",
+      "alt": "Tubarão-lixa nadando sobre um recife",
+      "legenda": "À noite, eles se tornam caçadores ativos, patrulhando os recifes em busca de presas escondidas.",
+      "fonte": "Wikimedia Commons"
+    },
+    {
+      "type": "youtube",
+      "src": "b_9-S-O7om8",
+      "alt": "Vídeo de um tubarão-lixa usando sucção para caçar",
+      "legenda": "O tubarão-lixa cria um vácuo poderoso com sua boca para sugar lagostas e caranguejos diretamente de suas tocas.",
+      "fonte": "Discovery (via YouTube)"
+    }
+  ],
+  "curiosidades": [
+    "Ao contrário de muitos tubarões, o tubarão-lixa pode respirar parado graças a um mecanismo chamado 'bombeamento bucal'.",
+    "O nome 'lixa' vem da sua pele, que é extremamente áspera e era historicamente usada como lixa de madeira.",
+    "São considerados os 'preguiçosos' do mundo dos tubarões devido ao seu hábito de descansar no fundo.",
+    "Apesar de geralmente dóceis, podem morder defensivamente se provocados ou pisados por um mergulhador."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Tubarão Wobbegong",
+      "img": "../../../img/Animals/elasmobranchii/epipelagic/wobbegong_shark/wobbegong_shark.png",
+      "targetId": "Tubarão Wobbegong"
+    },
+    {
+      "nome": "Tubarão-Galha-Preta-de-Recife",
+      "img": "../../../img/Animals/elasmobranchii/epipelagic/blacktip_reef_shark/blacktip_reef_shark.png",
+      "targetId": "Tubarão-Galha-Preta-de-Recife"
+    },
+    {
+      "nome": "Tubarão-Tigre",
+      "img": "../../../img/Animals/elasmobranchii/epipelagic/tiger_shark/tiger_shark.png",
+      "targetId": "Tubarão-Tigre"
+    }
+  ]
+}

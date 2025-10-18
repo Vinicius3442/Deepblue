@@ -1,0 +1,79 @@
+{
+  "name": "Tubarão-Touro (Cabeça-Chata)",
+  "scientificName": "Carcharhinus leucas",
+  "img": "../../../img/Animals/elasmobranchii/epipelagic/bull_shark/bull_shark.png",
+  "fonte": "National Geographic",
+  "description": "O tubarão-touro, ou cabeça-chata, é um dos predadores mais adaptáveis e potentes do oceano. É infame por sua agressividade e, mais notavelmente, por sua capacidade única de sobreviver e caçar em rios e lagos de água doce, a quilômetros do mar. Essa habilidade o coloca em contato frequente com humanos, sendo considerado um dos tubarões mais perigosos do mundo.",
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/elasmobranchii/epipelagic/bull_shark/map_bull_shark.jpg",
+    "alt": "Mapa de distribuição do Tubarão-Touro no globo",
+    "fonte": "IUCN Red List of Threatened Species"
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/elasmobranchii/epipelagic/bull_shark/size_bull_shark.jpg",
+    "alt": "Comparativo de tamanho de um Tubarão-Touro com um ser humano",
+    "descricao": "Com um corpo robusto e pesado, o tubarão-touro fêmea (que é maior que o macho) pode atingir até 3,5 metros de comprimento e pesar mais de 300 kg.",
+    "fonte": "Florida Museum of Natural History"
+  },
+  "fichaTecnica": {
+    "statusConservacao": "Vulnerável (VU)",
+    "profundidade": "Superfície até 150m (mas frequentemente em menos de 30m)",
+    "dieta": "Carnívoro generalista (peixes, outros tubarões, golfinhos, tartarugas)",
+    "tamanhoMaximo": "Até 3.5 metros",
+    "expectativaVida": "Cerca de 16 anos",
+    "habitat": "Oceanos costeiros tropicais e subtropicais, estuários e grandes rios de água doce"
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/bull_shark/gallery/bull_shark1.jpg",
+      "alt": "Tubarão-touro em um rio de água doce",
+      "legenda": "A visão rara de um grande tubarão em um ambiente de água doce, um feito possível pela sua incrível capacidade de osmorregulação.",
+      "fonte": "Discovery"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/bull_shark/gallery/bull_shark2.jpg",
+      "alt": "Close-up do focinho 'cabeça-chata' de um tubarão-touro",
+      "legenda": "O focinho curto e largo que dá ao tubarão seu nome popular no Brasil e contribui para sua aparência robusta.",
+      "fonte": "Wikimedia Commons"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/bull_shark/gallery/bull_shark3.jpg",
+      "alt": "Tubarão-touro nadando perto da superfície",
+      "legenda": "Eles preferem águas rasas e turvas, o que aumenta a chance de encontros acidentais com humanos.",
+      "fonte": "Adobe Stock"
+    },
+    {
+      "type": "youtube",
+      "src": "CAQ-p-kF-1s",
+      "alt": "Vídeo de um tubarão-touro caçando no raso",
+      "legenda": "Veja a força e a velocidade de um tubarão-touro em seu ambiente de caça preferido: águas costeiras rasas.",
+      "fonte": "Blue Planet (via YouTube)"
+    }
+  ],
+  "curiosidades": [
+    "É o único tubarão conhecido que pode sobreviver por longos períodos em água doce, graças a glândulas e rins especializados.",
+    "Existem registros de tubarões-touro a mais de 4.000 km rio acima no Rio Amazonas.",
+    "Faz parte do 'Big Three', os três tubarões mais frequentemente envolvidos em ataques a humanos (junto com o Branco e o Tigre).",
+    "O nome 'Touro' vem do seu temperamento territorial e da sua tendência a dar 'cabeçadas' em suas presas antes de morder."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Tubarão-Tigre",
+      "img": "../../../img/Animals/elasmobranchii/epipelagic/tiger_shark/tiger_shark.png",
+      "targetId": "Tubarão-Tigre"
+    },
+    {
+      "nome": "Tubarão-Branco",
+      "img": "../../../img/Animals/fish/epipelagic/tubarao_branco/tubarao_branco.png",
+      "targetId": "Tubarão-Branco"
+    },
+    {
+      "nome": "Tubarão-Galha-Branca-Oceânico",
+      "img": "../../../img/Animals/elasmobranchii/epipelagic/oceanic_whitetip_shark/oceanic_whitetip_shark.png",
+      "targetId": "Tubarão-Galha-Branca-Oceânico"
+    }
+  ]
+}

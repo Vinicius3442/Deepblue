@@ -447,6 +447,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function prepareAnimals() {
     document.querySelectorAll('[data-animal="true"]').forEach((figure) => {
       const specifiedScale = parseFloat(figure.dataset.scale) || 1.0;
+
+      const zIndex = Math.max(1, 100 - Math.floor(specifiedScale * 5));
+      figure.style.zIndex = zIndex;
+
       const gallery = figure.parentElement;
       const zoneDiv = gallery.parentElement;
 
@@ -471,6 +475,7 @@ document.addEventListener("DOMContentLoaded", () => {
         img: figure.querySelector("img"),
         depth: animalDepthInMeters,
         homeY: homeY,
+        zoneHeight: zoneHeight,
         name: figure.dataset.name || "Espécie desconhecida",
         articlePath: figure.dataset.article || null,
         type: figure.dataset.type || "peixe",
@@ -743,7 +748,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!gallery || gallery.offsetWidth === 0) return;
 
     const galleryWidth = gallery.offsetWidth;
-    const galleryHeight = gallery.offsetHeight;
+    const galleryHeight = animal.zoneHeight;
     const imgWidth = animal.width || animal.scale * 100;
 
     // Movimento mais lento e deliberado, muda de direção com menos frequência
@@ -815,7 +820,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!gallery || gallery.offsetWidth === 0) return;
 
     const galleryWidth = gallery.offsetWidth;
-    const galleryHeight = gallery.offsetHeight;
+    const galleryHeight = animal.zoneHeight;
     const imgWidth = animal.width || animal.scale * 100;
 
     // Movimento mais errático e rápido para peixes pequenos
@@ -886,7 +891,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!gallery || gallery.offsetWidth === 0) return;
 
     const galleryWidth = gallery.offsetWidth;
-    const galleryHeight = gallery.offsetHeight;
+    const galleryHeight = animal.zoneHeight;
     const imgWidth = animal.width || animal.scale * 100;
 
     animal.wanderAngle += (Math.random() - 0.5) * 0.4;
@@ -947,11 +952,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // 3. NOVA FÍSICA DAS LULAS (PROPULSÃO A JATO)
+  // 3. NOVA FÍSICA DAS LULAS
   function applyLulaPhysics(animal) {
     if (animal.spookTimer > 0) animal.spookTimer--;
 
-    // Lógica de Propulsão (Jato)
     animal.propulsionTimer = (animal.propulsionTimer || 0) - 1;
     if (animal.propulsionTimer <= 0) {
       animal.propulsionTimer = 60 + Math.random() * 120;

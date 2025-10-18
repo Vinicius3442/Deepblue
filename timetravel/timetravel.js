@@ -29,7 +29,7 @@ camera.position.z = 80;
 camera.lookAt(sun.position);
 
 // --- LÓGICA DA ANIMAÇÃO E DO CONTADOR (VERSÃO CORRIGIDA) ---
-const INITIAL_SPEED = 0.005; // Guardamos a velocidade inicial como uma constante
+const INITIAL_SPEED = 0.01; // Guardamos a velocidade inicial como uma constante
 let angle = 0;
 let speed = INITIAL_SPEED; // A velocidade começa com o valor inicial
 const accelerationFactor = 1.0035;
@@ -61,7 +61,7 @@ function animate() {
     }
 
     // Atualiza o texto na tela
-    if (speed > 0.2) {
+    if (speed > 3.0) {
         yearCounter.textContent = "?";
     } else {
         yearCounter.textContent = Math.floor(currentYear);
