@@ -47,11 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
   async function loadAllFauna() {
     console.log("Iniciando carregamento da fauna...");
     const faunaFiles = [
-      { id: "zone-epipelagic", path: "./epipelagic-fauna.json" },
-      { id: "zone-mesopelagic", path: "./mesopelagic-fauna.json" },
-      { id: "zone-bathypelagic", path: "./bathypelagic-fauna.json" },
-      { id: "zone-abyssopelagic", path: "./abyssopelagic-fauna.json" },
-      { id: "zone-hadopelagic", path: "./hadopelagic-fauna.json" },
+      { id: "zone-epipelagic", path: "./data/epipelagic-fauna.json" },
+      { id: "zone-mesopelagic", path: "./data/mesopelagic-fauna.json" },
+      { id: "zone-bathypelagic", path: "./data/bathypelagic-fauna.json" },
+      { id: "zone-abyssopelagic", path: "./data/abyssopelagic-fauna.json" },
+      { id: "zone-hadopelagic", path: "./data/hadopelagic-fauna.json" },
     ];
 
     await Promise.all(
