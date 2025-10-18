@@ -1,0 +1,79 @@
+{
+  "name": "Peixe-Serra",
+  "scientificName": "Pristis pristis",
+  "img": "../../../img/Animals/elasmobranchii/epipelagic/sawfish/sawfish.png",
+  "fonte": "PNG Tree",
+  "description": "Apesar da aparência de tubarão, o peixe-serra é na verdade um tipo de arraia. Seu 'rosto', ou rostro, em formato de serra, não é usado para cortar, but sim para detectar e atordoar presas que se escondem na areia, como peixes e crustáceos. É uma criatura antiga e, infelizmente, está criticamente ameaçada de extinção.",
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/elasmobranchii/epipelagic/sawfish/map_sawfish.jpg",
+    "alt": "Mapa de distribuição do Peixe-Serra no globo",
+    "fonte": "IUCN Red List of Threatened Species"
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/elasmobranchii/epipelagic/sawfish/size_sawfish.jpg",
+    "alt": "Comparativo de tamanho de um Peixe-Serra com um ser humano",
+    "descricao": "As maiores espécies de peixe-serra podem atingir comprimentos de até 7 metros, com a 'serra' compondo quase um terço desse total.",
+    "fonte": "Discovery"
+  },
+  "fichaTecnica": {
+    "statusConservacao": "Criticamente em Perigo (CR)",
+    "profundidade": "Superfície até 10m (raramente mais fundo)",
+    "dieta": "Carnívoro (peixes pequenos, crustáceos, moluscos)",
+    "tamanhoMaximo": "Até 7 metros",
+    "expectativaVida": "25 a 30 anos",
+    "habitat": "Águas costeiras rasas, estuários, deltas de rios e até mesmo água doce"
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/sawfish/gallery/sawfish1.jpg",
+      "alt": "Close-up do rostro (serra) de um peixe-serra",
+      "legenda": "O rostro é coberto por poros sensoriais que detectam os campos elétricos de presas escondidas no fundo do mar.",
+      "fonte": "National Geographic"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/sawfish/gallery/sawfish2.jpg",
+      "alt": "Peixe-serra nadando sobre um fundo arenoso",
+      "legenda": "Seu corpo achatado é perfeitamente adaptado para a vida no leito de rios e oceanos rasos.",
+      "fonte": "Wikimedia Commons"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/sawfish/gallery/sawfish3.jpg",
+      "alt": "Vista de cima de um grande peixe-serra",
+      "legenda": "A silhueta inconfundível do peixe-serra, mostrando porque ele é classificado como uma arraia.",
+      "fonte": "Adobe Stock"
+    },
+    {
+      "type": "youtube",
+      "src": "r-b-nI_2w-c",
+      "alt": "Vídeo de um peixe-serra usando seu rostro para caçar",
+      "legenda": "Veja em ação como o peixe-serra balança seu rostro para atordoar um cardume de peixes antes de se alimentar.",
+      "fonte": "BBC (via YouTube)"
+    }
+  ],
+  "curiosidades": [
+    "O 'serrote' é um órgão sensorial super sensível, não apenas uma arma de caça.",
+    "Os filhotes nascem com os 'dentes' da serra cobertos por uma bainha de tecido para não machucar a mãe durante o parto.",
+    "Existem apenas cinco espécies de peixe-serra no mundo, e todas estão ameaçadas.",
+    "Eles são um 'elo perdido' entre os tubarões e as arraias."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Arraia-Pintada",
+      "img": "../../../img/Animals/elasmobranchii/epipelagic/spotted_eagle_ray/spotted_eagle_ray.png",
+      "targetId": "Arraia-Pintada"
+    },
+    {
+      "nome": "Tubarão-Lixa",
+      "img": "../../../img/Animals/elasmobranchii/epipelagic/nurse_shark/nurse_shark.png",
+      "targetId": "Tubarão-Lixa"
+    },
+    {
+      "nome": "Tubarão-Touro",
+      "img": "../../../img/Animals/elasmobranchii/epipelagic/bull_shark/bull_shark.png",
+      "targetId": "Tubarão-Touro"
+    }
+  ]
+}

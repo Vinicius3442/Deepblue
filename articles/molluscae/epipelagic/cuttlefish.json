@@ -1,0 +1,79 @@
+{
+  "name": "Sépia Comum (Choco)",
+  "scientificName": "Sepia officinalis",
+  "img": "../../../img/Animals/molluscae/epipelagic/common_cuttlefish/common_cuttlefish.png",
+  "fonte": "eu :)",
+  "description": "A sépia, também conhecida como choco, é uma mestra do disfarce e da ilusão. Apesar do nome, não é um peixe, mas sim um cefalópode parente das lulas e polvos. Sua pele contém milhões de células de cor chamadas cromatóforos, que permitem que ela mude de cor, padrão e até textura em um piscar de olhos para se camuflar, caçar ou se comunicar.",
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/molluscae/epipelagic/common_cuttlefish/map_cuttlefish.jpg",
+    "alt": "Mapa de distribuição da Sépia Comum no globo",
+    "fonte": "IUCN Red List of Threatened Species"
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/molluscae/epipelagic/common_cuttlefish/size_cuttlefish.jpg",
+    "alt": "Comparativo de tamanho de uma Sépia Comum com mãos humanas",
+    "descricao": "A sépia comum pode atingir até 45 cm de comprimento de manto, embora a maioria seja menor. Seu tamanho a torna uma presa ágil e um predador eficiente.",
+    "fonte": "Wikipedia"
+  },
+  "fichaTecnica": {
+    "statusConservacao": "Pouco Preocupante (LC)",
+    "profundidade": "Superfície até 200m",
+    "dieta": "Carnívoro (caranguejos, camarões, peixes pequenos)",
+    "tamanhoMaximo": "Até 45 cm e 4kg",
+    "expectativaVida": "1 a 2 anos",
+    "habitat": "Fundos de areia e lama em águas costeiras do Atlântico e Mar Mediterrâneo"
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/epipelagic/common_cuttlefish/gallery/cuttlefish1.jpg",
+      "alt": "Sépia exibindo padrões de cores complexos",
+      "legenda": "Os padrões hipnóticos não servem apenas para camuflagem, mas também para comunicação entre indivíduos durante o acasalamento.",
+      "fonte": "National Geographic"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/epipelagic/common_cuttlefish/gallery/cuttlefish2.jpg",
+      "alt": "Sépia camuflada no fundo do mar",
+      "legenda": "Totalmente mimetizada com a areia e as pedras, a sépia se torna praticamente invisível para presas e predadores.",
+      "fonte": "Adobe Stock"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/epipelagic/common_cuttlefish/gallery/cuttlefish3.jpg",
+      "alt": "Close-up do olho em formato de 'W' de uma sépia",
+      "legenda": "Seus olhos são incrivelmente desenvolvidos, permitindo que controlem a polarização da luz e enxerguem de forma muito diferente da nossa.",
+      "fonte": "Wikimedia Commons"
+    },
+    {
+      "type": "youtube",
+      "src": "0gLcIyvKZjk",
+      "alt": "Vídeo de uma sépia hipnotizando e caçando um caranguejo",
+      "legenda": "Uma demonstração impressionante de como a sépia usa sua mudança de cor para confundir e capturar suas presas.",
+      "fonte": "BBC Earth (via YouTube)"
+    }
+  ],
+  "curiosidades": [
+    "Possui três corações: dois bombeiam sangue para as guelras e um para o resto do corpo. Seu sangue é azul-esverdeado.",
+    "A famosa 'tinta sépia', usada por artistas durante séculos, era originalmente feita da tinta escura que este animal ejeta.",
+    "Dentro de seu corpo, ela possui uma concha porosa chamada 'osso de choco' (cuttlebone), que ela enche ou esvazia de gás para controlar sua flutuabilidade.",
+    "Seus ovos, tingidos de preto com sua própria tinta, são conhecidos como 'uvas-do-mar'."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Lula-Comum",
+      "img": "../../../img/Animals/molluscae/epipelagic/common_squid/common_squid.png",
+      "targetId": "Lula-Comum"
+    },
+    {
+      "nome": "Polvo-Azul-de-Anéis",
+      "img": "../../../img/Animals/molluscae/epipelagic/blue_ringed_octopus/blue_ringed_octopus.png",
+      "targetId": "Polvo-Azul-de-Anéis"
+    },
+    {
+      "nome": "Lula-Gigante",
+      "img": "../../../img/Animals/molluscae/bathypelagic/giant_squid/giant_squid.png",
+      "targetId": "Lula-Gigante"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "name": "Arraia Jamanta",
   "scientificName": "Mobula birostris",
-  "img": "../../../img/Animals/fish/epipelagic/manta_ray/manta_ray.png",
+  "img": "../../../img/Animals/elasmobranchii/epipelagic/manta_ray/manta_ray.png",
   "description": "A Arraia Jamanta, ou Raia Manta Gigante Oceânica, é a maior espécie de raia do mundo. Com uma envergadura que pode ultrapassar os 7 metros, ela plana graciosamente pelas águas oceânicas como uma ave subaquática. Apesar de seu tamanho impressionante, é um gigante gentil, alimentando-se por filtração de minúsculos plânctons. Possui um dos maiores cérebros entre todos os peixes, demonstrando uma inteligência e curiosidade notáveis.",
   "fichaTecnica": {
     "statusConservacao": "Em Perigo (EN)",
@@ -12,36 +12,36 @@
     "habitat": "Oceanos tropicais, subtropicais e temperados em todo o mundo"
   },
   "mapaDistribuicao": {
-    "img": "../../../img/Animals/fish/epipelagic/manta_ray/map_manta_ray.png",
+    "img": "../../../img/Animals/elasmobranchii/epipelagic/manta_ray/map_manta_ray.png",
     "alt": "Mapa de distribuição global da Arraia Jamanta."
   },
   "comparativoTamanho": {
-    "img": "../../../img/Animals/fish/epipelagic/manta_ray/size_manta_ray.png",
+    "img": "../../../img/Animals/elasmobranchii/epipelagic/manta_ray/size_manta_ray.png",
     "alt": "Comparativo de tamanho de uma Arraia Jamanta com um mergulhador.",
     "descricao": "A envergadura de uma Arraia Jamanta adulta pode ser mais de três vezes a altura de um ser humano, criando uma sombra imensa ao passar."
   },
   "galeria": [
     {
       "type": "image",
-      "src": "../../../img/Animals/fish/epipelagic/manta_ray/gallery/manta_1.jpg",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/manta_ray/gallery/manta_1.jpg",
       "alt": "Arraia Jamanta vista de baixo, mostrando as marcas em seu ventre.",
       "legenda": "O padrão de manchas no ventre de uma jamanta é único para cada indivíduo, como uma impressão digital."
     },
     {
       "type": "image",
-      "src": "../../../img/Animals/fish/epipelagic/manta_ray/gallery/manta_2.jpg",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/manta_ray/gallery/manta_2.jpg",
       "alt": "Arraia Jamanta se alimentando com os lóbulos cefálicos abertos.",
       "legenda": "Para se alimentar, ela desenrola seus lóbulos cefálicos para canalizar a água rica em plâncton para sua boca."
     },
     {
       "type": "image",
-      "src": "../../../img/Animals/fish/epipelagic/manta_ray/gallery/manta_3.jpg",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/manta_ray/gallery/manta_3.jpg",
       "alt": "Arraia Jamanta saltando para fora da água.",
       "legenda": "As jamantas são conhecidas por darem saltos espetaculares para fora da água, um comportamento conhecido como 'breaching'."
     },
     {
       "type": "video",
-      "src": "../../../img/Animals/fish/epipelagic/manta_ray/gallery/video/manta_ray_feeding.mp4",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/manta_ray/gallery/video/manta_ray_feeding.mp4",
       "alt": "Vídeo de uma Arraia Jamanta nadando em círculos para se alimentar.",
       "legenda": "Frequentemente, elas nadam em 'loopings' ou ' cambalhotas' para permanecerem em uma área densa de plâncton."
     }
@@ -55,11 +55,11 @@
   "especiesRelacionadas": [
     {
       "nome": "Raia Manta de Recife",
-      "img": "../../../img/Animals/related/reef_manta.jpg"
+      "img": "../../../img/Animals/elasmobranchii/epipelagic/reef_manta/reef_manta.jpg"
     },
     {
       "nome": "Tubarão-Baleia",
-      "img": "../../../img/Animals/related/whale_shark.jpg"
+      "img": "../../../img/Animals/elasmobranchii/epipelagic/whale_shark/whale_shark.jpg"
     }
   ]
 }

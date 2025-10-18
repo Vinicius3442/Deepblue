@@ -1,7 +1,7 @@
 {
   "name": "Tubarão-Baleia",
   "scientificName": "Rhincodon typus",
-  "img": "../../../img/Animals/fish/epipelagic/whale_shark/whale_shark.png",
+  "img": "../../../img/Animals/elasmobranchii/epipelagic/whale_shark/whale_shark.png",
   "description": "O Tubarão-Baleia é o maior peixe do mundo. Apesar do seu nome e tamanho, ele é um gigante gentil e inofensivo para os humanos. É um filtrador que se alimenta exclusivamente de plâncton, e sua pele é coberta por um padrão único de manchas brancas e listras, usadas como camuflagem e para identificação individual.",
 
   "mapaDistribuicao": {
@@ -27,31 +27,31 @@
   "galeria": [
     {
       "type": "image",
-      "src": "../../../img/Animals/fish/whale_shark/gallery/whaleshark1.jpg",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/whale_shark/gallery/whaleshark1.jpg",
       "alt": "Tubarão-Baleia com a boca aberta filtrando água",
       "legenda": "O Tubarão-Baleia filtra grandes volumes de água através de sua boca cavernosa, capturando pequenos organismos."
     },
     {
       "type": "image",
-      "src": "../../../img/Animals/fish/whale_shark/gallery/whaleshark2.jpg",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/whale_shark/gallery/whaleshark2.jpg",
       "alt": "Tubarão-Baleia nadando ao lado de um mergulhador",
       "legenda": "Sua natureza dócil e movimentos lentos permitem que mergulhadores nadem com segurança ao seu lado, respeitando uma distância segura."
     },
     {
       "type": "image",
-      "src": "../../../img/Animals/fish/whale_shark/gallery/whaleshark3.jpg",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/whale_shark/gallery/whaleshark3.jpg",
       "alt": "Visão da pele manchada do Tubarão-Baleia",
       "legenda": "O padrão único de manchas e listras atua como uma 'impressão digital' biológica, usada por cientistas para monitorar os indivíduos."
     },
     {
       "type": "image",
-      "src": "../../../img/Animals/fish/whale_shark/gallery/whaleshark4.jpg",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/whale_shark/gallery/whaleshark4.jpg",
       "alt": "Jovem Tubarão-Baleia nadando próximo à superfície",
       "legenda": "Apesar de seu tamanho imponente, os jovens frequentemente habitam águas mais rasas ricas em alimento."
     },
     {
       "type": "video",
-      "src": "../../../img/Animals/fish/whale_shark/gallery/video/whaleshark_feeding.mp4",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/whale_shark/gallery/video/whaleshark_feeding.mp4",
       "alt": "Vídeo de um Tubarão-Baleia se alimentando de plâncton",
       "legenda": "Filmagens detalhadas de sua alimentação por filtração, uma das cenas mais impressionantes da natureza."
     }
@@ -66,11 +66,11 @@
   "especiesRelacionadas": [
     {
       "nome": "Tubarão-Peregrino (Cetorhinus maximus)",
-      "img": "../../../img/Animals/fish/whale_shark/basking_shark.png"
+      "img": "../../../img/Animals/elasmobranchii/basking_shark/basking_shark.png"
     },
     {
       "nome": "Arraia-Jamanta (Mobula birostris)",
-      "img": "../../../img/Animals/fish/whale_shark/manta_ray.png"
+      "img": "../../../img/Animals/elasmobranchii/manta_ray/manta_ray.png"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "name": "Tubarão-Branco",
   "scientificName": "Carcharodon carcharias",
-  "img": "../../../img/Animals/fish/epipelagic/tubarao_branco/tubarao_branco.png",
+  "img": "../../../img/Animals/elasmobranchii/epipelagic/tubarao_branco/tubarao_branco.png",
   "description": "O Grande Tubarão-Branco é o maior peixe predador do mundo e uma lenda dos oceanos. Com um corpo robusto em forma de torpedo, uma força imensa e uma boca equipada com fileiras de dentes serrilhados, ele é um predador de topo perfeitamente evoluído. Apesar de sua reputação temível, é uma criatura complexa e crucial para a saúde dos ecossistemas marinhos.",
   "fichaTecnica": {
     "statusConservacao": "Vulnerável (VU)",
@@ -12,36 +12,36 @@
     "habitat": "Águas costeiras e de mar aberto em mares temperados e subtropicais"
   },
   "mapaDistribuicao": {
-    "img": "../../../img/Animals/sharks/epipelagic/tubarao_branco/map_tubarao_branco.png",
+    "img": "../../../img/Animals/elasmobranchii/epipelagic/tubarao_branco/map_tubarao_branco.png",
     "alt": "Mapa de distribuição global do Tubarão-Branco."
   },
   "comparativoTamanho": {
-    "img": "../../../img/Animals/sharks/epipelagic/tubarao_branco/size_tubarao_branco.png",
+    "img": "../../../img/Animals/elasmobranchii/epipelagic/tubarao_branco/size_tubarao_branco.png",
     "alt": "Comparativo de tamanho de um Tubarão-Branco fêmea com um ser humano.",
     "descricao": "Uma fêmea adulta de Tubarão-Branco pode ter o comprimento de um carro de passeio, superando em muito o tamanho de um ser humano."
   },
   "galeria": [
     {
       "type": "image",
-      "src": "../../../img/Animals/sharks/epipelagic/tubarao_branco/gallery/branco_1.jpg",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/tubarao_branco/gallery/branco_1.jpg",
       "alt": "Tubarão-Branco com a boca aberta, mostrando os dentes.",
       "legenda": "Seus dentes triangulares e serrilhados são perfeitos para cortar carne. Eles podem ter até 300 dentes na boca em várias fileiras."
     },
     {
       "type": "image",
-      "src": "../../../img/Animals/sharks/epipelagic/tubarao_branco/gallery/branco_2.jpg",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/tubarao_branco/gallery/branco_2.jpg",
       "alt": "Tubarão-Branco patrulhando a superfície.",
       "legenda": "O contra-sombreamento (costas cinzas, barriga branca) o torna quase invisível para presas que olham de cima ou de baixo."
     },
     {
       "type": "image",
-      "src": "../../../img/Animals/sharks/epipelagic/tubarao_branco/gallery/branco_3.jpg",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/tubarao_branco/gallery/branco_3.jpg",
       "alt": "Close-up do focinho de um Tubarão-Branco.",
       "legenda": "O focinho é coberto por 'Ampolas de Lorenzini', poros que detectam os campos elétricos gerados pelos músculos de suas presas."
     },
     {
       "type": "video",
-      "src": "../../../img/Animals/sharks/epipelagic/tubarao_branco/gallery/video/branco_breach.mp4",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/tubarao_branco/gallery/video/branco_breach.mp4",
       "alt": "Vídeo de um Tubarão-Branco saltando ('breaching').",
       "legenda": "Uma de suas técnicas de caça mais espetaculares é o 'breach', um ataque em alta velocidade de baixo para cima que o lança para fora d'água."
     }
@@ -55,11 +55,11 @@
   "especiesRelacionadas": [
     {
       "nome": "Tubarão-Mako",
-      "img": "../../../img/Animals/related/mako_shark.jpg"
+      "img": "../../../img/Animals/elasmobranchii/mako_shark.jpg"
     },
     {
       "nome": "Orca",
-      "img": "../../../img/Animals/related/orca.jpg"
+      "img": "../../../img/Animals/mammals/orca.jpg"
     }
   ]
 }
