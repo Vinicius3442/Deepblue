@@ -1,0 +1,72 @@
+{
+  "name": "Água-viva Atolla (Coroa)",
+  "scientificName": "Atolla wyvillei",
+  "img": "../../../img/Animals/cnidaria/mesopelagic/atolla_jellyfish/atolla_jellyfish.png",
+  "fonte": "MBARI (Monterey Bay Aquarium Research Institute)",
+  "description": "Uma das habitantes mais icônicas da 'zona do crepúsculo'. A Água-viva Atolla, ou Coroa, é famosa por sua cor vermelha profunda e, principalmente, por sua impressionante bioluminescência. Quando ameaçada, ela dispara uma série de pulsos de luz azul, agindo como um 'alarme contra ladrões' para atrair um predador maior que possa atacar seu agressor.",
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/cnidaria/mesopelagic/atolla_jellyfish/map_atolla.jpg",
+    "alt": "Mapa de distribuição global da Água-viva Atolla",
+    "fonte": "Ocean Biodiversity Information System (OBIS)"
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/cnidaria/mesopelagic/atolla_jellyfish/size_atolla.jpg",
+    "alt": "Comparativo de tamanho de uma Água-viva Atolla com uma mão humana",
+    "descricao": "O sino (corpo principal) da Atolla geralmente atinge cerca de 15 cm de diâmetro. No entanto, seu único tentáculo de caça pode se estender por vários metros.",
+    "fonte": "NOAA"
+  },
+  "fichaTecnica": {
+    "statusConservacao": "Não Avaliado (NE)",
+    "profundidade": "200m - 1.000m (Mesopelágica), mas encontrada até 5.000m",
+    "dieta": "Carnívoro (crustáceos pequenos, como copépodes e misidáceos)",
+    "tamanhoMaximo": "Até 15 cm (diâmetro do sino)",
+    "expectativaVida": "Desconhecida",
+    "habitat": "Cosmopolita (oceanos profundos do mundo inteiro)"
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/cnidaria/mesopelagic/atolla_jellyfish/gallery/atolla1.jpg",
+      "alt": "Close-up do sino vermelho da Atolla, mostrando a 'coroa'",
+      "legenda": "A cor vermelha profunda a torna quase invisível na escuridão, pois a luz vermelha não penetra nas profundezas do oceano.",
+      "fonte": "MBARI"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/cnidaria/mesopelagic/atolla_jellyfish/gallery/atolla2.jpg",
+      "alt": "Atolla com seu longo tentáculo de caça estendido",
+      "legenda": "O único tentáculo hipertrofiado é usado para capturar presas na escuridão.",
+      "fonte": "Wikimedia Commons"
+    },
+    {
+      "type": "youtube",
+      "src": "K9c-k9M9yM8",
+      "alt": "Vídeo da bioluminescência da Atolla",
+      "legenda": "O 'alarme de ladrão' bioluminescente em ação. A luz pulsante atrai predadores maiores para salvar a água-viva.",
+      "fonte": "MBARI (via YouTube)"
+    }
+  ],
+  "curiosidades": [
+    "Possui exatamente 20 tentáculos curtos e um único tentáculo de caça hipertrofiado (longo).",
+    "Acredita-se que sua bioluminescência pulsante seja uma defesa. Ela não assusta o predador direto, mas atrai um predador maior ainda.",
+    "A cor vermelha é uma camuflagem no oceano profundo. Como a luz vermelha não chega lá, ela parece preta e fica invisível contra o fundo escuro.",
+    "O 'sino' no topo, que lhe dá o nome de 'Coroa', é um órgão sensorial."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Lula-Vampira-do-Inferno",
+      "img": "../../../img/Animals/molluscae/mesopelagic/vampire_squid/vampire_squid.png",
+      "targetId": "Lula-Vampira-do-Inferno"
+    },
+    {
+      "nome": "Peixe Olhos de Barril",
+      "img": "../../../img/Animals/fish/mesopelagic/barrel_eye_fish/barrel_eye_fish.png",
+      "targetId": "Peixe Olhos de Barril"
+    },
+    {
+      "nome": "Peixe-Lanterna",
+      "img": "../../../img/Animals/fish/mesopelagic/lanternfish/lanternfish.png",
+      "targetId": "Peixe-Lanterna"
+    }
+  ]
+}

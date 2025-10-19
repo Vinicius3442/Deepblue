@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <button id="bestiary-toggle-button" aria-label="Abrir Bestiário">📖</button>
+
     <div class="sky-and-surface-wrapper">
       <div class="sky"></div>
       <div class="ocean-surface">
@@ -51,8 +53,7 @@
       <div class="zone-cluster" id="zone-epipelagic">
         <h2 class="zone-title">Zona Epipelágica</h2>
         <p class="zone-range">(Superfície até 200m)</p>
-        <div class="fauna-gallery">
-        </div>
+        <div class="fauna-gallery"></div>
       </div>
 
       <!-- ZONA MESOPELAGICA -->
@@ -60,15 +61,13 @@
       <div class="zone-cluster" id="zone-mesopelagic">
         <h2 class="zone-title">Zona Mesopelágica</h2>
         <p class="zone-range">(200m até 1.000m)</p>
-        <div class="fauna-gallery">
-        </div>
+        <div class="fauna-gallery"></div>
       </div>
 
       <div class="zone-cluster" id="zone-bathypelagic">
         <h2 class="zone-title">Zona Batipelágica</h2>
         <p class="zone-range">(1.000m até 4.000m)</p>
-        <div class="fauna-gallery">
-        </div>
+        <div class="fauna-gallery"></div>
       </div>
 
       <div class="zone-cluster" id="zone-abyssopelagic">
@@ -203,6 +202,24 @@
 
     <button id="reset-button">Retornar à Superfície</button>
     <button id="time-travel-button">Ativar Unidade Temporal</button>
+
+    <div id="bestiary-panel">
+      <div class="bestiary-content">
+        <span id="bestiary-close-btn">&times;</span>
+        <div class="bestiary-header">
+          <h2>Bestiário</h2>
+          <p>Seu diário de descobertas marinhas.</p>
+        </div>
+
+        <ul class="bestiary-list"></ul>
+
+        <div class="bestiary-footer">
+          <button id="bestiary-prev-btn">‹ Anterior</button>
+          <span id="bestiary-page-counter">Página 1 / X</span>
+          <button id="bestiary-next-btn">Próxima ›</button>
+        </div>
+      </div>
+    </div>
 
     <script src="main.js" type="module"></script>
   </body>

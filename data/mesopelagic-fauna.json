@@ -16,5 +16,15 @@
     "dataScale": 0.9,
     "imgPath": "../img/Animals/fish/mesopelagic/silver_hatchetfish/silver_hatchetfish.png",
     "articlePath": "../articles/fish/mesopelagic/silver_hatchetfish.json"
+  },
+  {
+    "id": "atolla_jellyfish",
+    "name": "Água-viva Atolla",
+    "dataDepth": 600,
+    "dataType": "agua-viva-brilhante", 
+    "dataScale": 0.3,
+    "dataGlowColor": "rgb(255, 20, 20)",
+    "imgPath": "../img/Animals/cnidaria/mesopelagic/atolla_jellyfish/atolla_jellyfish.png",
+    "articlePath": "../articles/cnidaria/mesopelagic/atolla_jellyfish.json"
   }
 ]

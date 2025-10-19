@@ -9,22 +9,30 @@ import {
 import { initHUD, updateHUD, addLogMessage } from "./js/hud.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  
-  
   const oceanAbyss = document.getElementById("ocean-abyss");
   const oceanBackground = document.querySelector(".ocean-background");
   const titleSlide = document.querySelector(".title-slide");
   const oceanFloor = document.querySelector(".ocean-floor-svg-wrapper");
   const resetButton = document.getElementById("reset-button");
   const timeTravelButton = document.getElementById("time-travel-button");
+  const bestiaryToggleButton = document.getElementById(
+    "bestiary-toggle-button"
+  );
+  const bestiaryPanel = document.getElementById("bestiary-panel");
+  const bestiaryCloseButton = document.getElementById("bestiary-close-btn");
+  const bestiaryListElement = bestiaryPanel.querySelector(".bestiary-list");
+  const bestiaryPrevBtn = document.getElementById("bestiary-prev-btn");
+  const bestiaryNextBtn = document.getElementById("bestiary-next-btn");
+  const bestiaryPageCounter = document.getElementById("bestiary-page-counter");
 
-  
-  let animals = []; 
+  let bestiaryCurrentPage = 0; // Controla a página atual (índice 0, 2, 4...)
+  let totalBestiaryAnimals = 0;
+
+  let animals = [];
   let currentDepth = 0,
     lastScrollY = 0,
     isTicking = false;
 
-  
   function calculatePressure(depth) {
     const pressure = 1 + depth / 10;
     return pressure;
@@ -43,6 +51,163 @@ document.addEventListener("DOMContentLoaded", () => {
       return deepTemp - 2 * progress;
     }
   }
+
+const BESTIARY_STORAGE_KEY = "deepBlueBestiary";
+
+  function getDiscoveredAnimals() {
+    const data = localStorage.getItem(BESTIARY_STORAGE_KEY);
+    return data ? JSON.parse(data) : [];
+  }
+
+  // NOVA FUNÇÃO: Atualiza a aparência de uma página (usada pela discoverAnimal)
+async function updateBestiaryPage(animalName) {
+    const page = bestiaryListElement.querySelector(`.bestiary-page[data-animal-name="${animalName}"]`);
+    if (!page || page.classList.contains("unlocked")) return; 
+
+    const animal = animals.find(a => a.name === animalName);
+    if (!animal) return;
+
+    page.classList.remove("locked");
+    page.classList.add("unlocked");
+
+    page.querySelector(".bestiary-page-img").style.filter = "none";
+    page.querySelector(".bestiary-page-title").textContent = animal.name;
+    
+    const descEl = page.querySelector(".bestiary-page-description");
+    
+    const stamp = document.createElement("span");
+    stamp.className = "bestiary-page-stamp";
+    stamp.textContent = "REGISTRADO";
+    page.appendChild(stamp);
+
+    try {
+      const response = await fetch(animal.articlePath);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      
+      /* --- MUDANÇA AQUI --- */
+      // Se a descrição existir, usa. Se não, fica em branco.
+      descEl.textContent = data.description || ""; 
+      /* --- FIM DA MUDANÇA --- */
+
+    } catch (err) {
+      /* --- MUDANÇA AQUI --- */
+      // Se FALHAR (404, JSON quebrado), também fica em branco.
+      descEl.textContent = ""; 
+      // Avisa no console (para você), mas não para o jogador.
+      console.warn(`Bestiário: Descrição não encontrada para ${animal.name}.`, err.message);
+      /* --- FIM DA MUDANÇA --- */
+    }
+  }
+
+  // FUNÇÃO ATUALIZADA: Salva no localStorage e chama a atualização da UI
+  function discoverAnimal(animalName) {
+    const discovered = getDiscoveredAnimals();
+    
+    if (!discovered.includes(animalName)) {
+      discovered.push(animalName);
+      localStorage.setItem(BESTIARY_STORAGE_KEY, JSON.stringify(discovered));
+      
+      // Atualiza a UI do Bestiário em tempo real
+      updateBestiaryPage(animalName); // Chama a nova função
+      
+      addLogMessage(`Novo registro: ${animalName} adicionado ao Bestiário.`, "system");
+    }
+  }
+
+  // NOVA FUNÇÃO: Controla a visibilidade das páginas
+  function showBestiaryPage(index) {
+    bestiaryCurrentPage = index;
+    const allPages = bestiaryListElement.querySelectorAll(".bestiary-page");
+
+    // Esconde todas
+    allPages.forEach(page => page.classList.remove("visible"));
+
+    // Mostra as duas atuais
+    const pageLeft = allPages[index];
+    const pageRight = allPages[index + 1];
+
+    if (pageLeft) pageLeft.classList.add("visible");
+    if (pageRight) pageRight.classList.add("visible");
+
+    // Atualiza contador e botões
+    const totalPages = Math.ceil(totalBestiaryAnimals / 2);
+    const currentPageNum = (index / 2) + 1;
+    bestiaryPageCounter.textContent = `Página ${currentPageNum} / ${totalPages}`;
+
+    bestiaryPrevBtn.disabled = (index === 0);
+    bestiaryNextBtn.disabled = (index + 2 >= totalBestiaryAnimals);
+  }
+
+  // FUNÇÃO ATUALIZADA: Constrói todas as páginas na inicialização
+  async function populateBestiary(allAnimals) {
+    const discovered = getDiscoveredAnimals();
+    bestiaryListElement.innerHTML = ""; 
+    totalBestiaryAnimals = allAnimals.length;
+
+    const sortedAnimals = [...allAnimals].sort((a, b) => a.depth - b.depth);
+
+    for (const animal of sortedAnimals) {
+      // ... (O código 'for' que cria as páginas continua o mesmo) ...
+      const page = document.createElement("li"); 
+      page.className = "bestiary-page";
+      page.dataset.animalName = animal.name;
+      page.dataset.pageIndex = sortedAnimals.indexOf(animal);
+
+      const isUnlocked = discovered.includes(animal.name);
+      
+      let imgHTML = `<img class="bestiary-page-img" src="${animal.imgPath}">`;
+      let titleHTML = `<h3 class="bestiary-page-title"></h3>`;
+      let descHTML = `<p class="bestiary-page-description"></p>`;
+      let stampHTML = ``;
+
+      if (isUnlocked) {
+        page.classList.add("unlocked");
+        titleHTML = `<h3 class="bestiary-page-title">${animal.name}</h3>`;
+        stampHTML = `<span class="bestiary-page-stamp">REGISTRADO</span>`;
+      } else {
+        page.classList.add("locked");
+        titleHTML = `<h3 class="bestiary-page-title">??? (Não Registrado)</h3>`;
+        descHTML = `<p class="bestiary-page-description">Visto por volta de ${animal.depth}m</p>`;
+      }
+      
+      page.innerHTML = imgHTML + titleHTML + descHTML + stampHTML;
+      bestiaryListElement.appendChild(page);
+    }
+    
+    showBestiaryPage(0);
+
+    // Loop que carrega as descrições
+    for (const animalName of discovered) {
+      const animal = sortedAnimals.find(a => a.name === animalName);
+      if (animal) {
+        const page = bestiaryListElement.querySelector(`.bestiary-page[data-animal-name="${animalName}"]`);
+        const descEl = page.querySelector(".bestiary-page-description");
+        
+        try {
+          const response = await fetch(animal.articlePath);
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          const data = await response.json();
+          
+          /* --- MUDANÇA AQUI --- */
+          descEl.textContent = data.description || "";
+          /* --- FIM DA MUDANÇA --- */
+
+        } catch (err) {
+          /* --- MUDANÇA AQUI --- */
+          descEl.textContent = "";
+          console.warn(`Bestiário: Descrição não encontrada para ${animal.name} na inicialização.`, err.message);
+          /* --- FIM DA MUDANÇA --- */
+        }
+      }
+    }
+  }
+  
+  
 
   async function loadAllFauna() {
     console.log("Iniciando carregamento da fauna...");
@@ -69,7 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
           if (!response.ok) throw new Error(`Falha ao carregar ${file.path}`);
           const faunaData = await response.json();
 
-          galleryContainer.innerHTML = ""; 
+          galleryContainer.innerHTML = "";
 
           faunaData.forEach((animal) => {
             const figure = document.createElement("figure");
@@ -81,6 +246,10 @@ document.addEventListener("DOMContentLoaded", () => {
               figure.dataset.article = animal.articlePath;
             }
             figure.dataset.scale = animal.dataScale;
+
+            if (animal.dataGlowColor) {
+              figure.dataset.glowcolor = animal.dataGlowColor;
+            }
 
             const img = document.createElement("img");
             img.dataset.src = animal.imgPath;
@@ -98,7 +267,6 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Carregamento da fauna completo.");
   }
 
-  
   /**
    * Função principal de inicialização, agora é 'async' para esperar a fauna.
    */
@@ -114,17 +282,34 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    await loadAllFauna(); 
-    prepareAnimals(animals); 
+    await loadAllFauna();
+    prepareAnimals(animals);
 
-    
-    const { relatedGrid } = initModal(); 
-    const { faunaLogList } = initHUD(); 
-    setupParticles(); 
+    const { relatedGrid } = initModal();
+    const { faunaLogList } = initHUD();
+    populateBestiary(animals);
 
-    
-    
-    
+    bestiaryPrevBtn.addEventListener("click", () => {
+      showBestiaryPage(bestiaryCurrentPage - 2);
+    });
+    bestiaryNextBtn.addEventListener("click", () => {
+      showBestiaryPage(bestiaryCurrentPage + 2);
+    });
+
+    bestiaryToggleButton.addEventListener("click", () => {
+      bestiaryPanel.classList.add("visible");
+    });
+
+    bestiaryCloseButton.addEventListener("click", () => {
+      bestiaryPanel.classList.remove("visible");
+    });
+
+    bestiaryPanel.addEventListener("click", (e) => {
+      if (e.target === bestiaryPanel) {
+        bestiaryPanel.classList.remove("visible");
+      }
+    });
+
     relatedGrid.addEventListener("click", (e) => {
       const item = e.target.closest(".related-species-item");
       if (item && item.dataset.targetId) {
@@ -137,10 +322,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    
     faunaLogList.addEventListener("click", (e) => {
       if (e.target.dataset.animalId) {
-        const animal = animals.find((a) => a.name === e.target.dataset.animalId);
+        const animal = animals.find(
+          (a) => a.name === e.target.dataset.animalId
+        );
         if (animal) {
           closeModal();
           animal.figure.click();
@@ -148,17 +334,16 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    
     window.addEventListener("scroll", onScroll);
     window.addEventListener("resize", setupParticles);
 
-    requestAnimationFrame(() => animateAnimals(animals)); 
-    requestAnimationFrame(animateParticles); 
+    requestAnimationFrame(() => animateAnimals(animals));
+    requestAnimationFrame(animateParticles);
 
-    update(); 
+    update();
 
     setTimeout(() => {
-      addLogMessage("Sistemas online. Iniciando descida."); 
+      addLogMessage("Sistemas online. Iniciando descida.");
     }, 1000);
   }
 
@@ -189,12 +374,30 @@ document.addEventListener("DOMContentLoaded", () => {
       const animal = {
         figure,
         img: figure.querySelector("img"),
+        imgPath: figure.querySelector("img").dataset.src,
         depth: animalDepthInMeters,
         homeY: homeY,
         zoneHeight: zoneHeight,
         name: figure.dataset.name || "Espécie desconhecida",
-        articlePath: figure.dataset.article || null,
+        articlePath: (() => {
+          const rawPath = figure.dataset.article;
+          if (!rawPath) return null;
+
+          // Encontra a parte "articles/" do caminho
+          const articlesIndex = rawPath.indexOf("articles/");
+          
+          if (articlesIndex > -1) {
+            // Reconstrói o caminho a partir da raiz do site (index.html)
+            // ex: "articles/foo.json" -> "./articles/foo.json"
+            // ex: "../articles/foo.json" -> "./articles/foo.json"
+            return "./" + rawPath.substring(articlesIndex);
+          }
+          
+          // Se não encontrar "articles/", retorna o caminho como está (pode falhar, mas é um fallback)
+          return rawPath;
+        })(),
         type: figure.dataset.type || "peixe",
+        glowColor: figure.dataset.glowcolor || null,
         isActive: false,
         sighted: false,
         x: -9999,
@@ -211,15 +414,15 @@ document.addEventListener("DOMContentLoaded", () => {
       animal.figure.style.opacity = 0;
       animal.figure.style.transition = "opacity 0.5s ease-in-out";
 
-      
       figure.addEventListener("click", async () => {
         if (!animal.articlePath) return;
+        discoverAnimal(animal.name);
         try {
           const response = await fetch(animal.articlePath);
           if (!response.ok)
             throw new Error(`HTTP error! status: ${response.status}`);
           const data = await response.json();
-          openAnimalModal(data); 
+          openAnimalModal(data);
         } catch (err) {
           console.error("Erro ao carregar artigo JSON:", err);
         }
@@ -227,8 +430,6 @@ document.addEventListener("DOMContentLoaded", () => {
       animalsArray.push(animal);
     });
   }
-
-  
 
   function onScroll() {
     lastScrollY = window.scrollY;
@@ -247,30 +448,25 @@ document.addEventListener("DOMContentLoaded", () => {
       CONFIG.MAX_DEPTH
     );
 
-    
     titleSlide.style.opacity = Math.max(
       0,
       1 - lastScrollY / (window.innerHeight * 0.75)
     );
 
-    
     const pressure = calculatePressure(currentDepth);
     const temperature = calculateTemperature(currentDepth);
     const depthRatio = currentDepth / CONFIG.MAX_DEPTH;
 
-    
-    updateHUD(currentDepth, pressure, temperature, depthRatio, ZONES); 
+    updateHUD(currentDepth, pressure, temperature, depthRatio, ZONES);
 
-    
     const atTheEnd = currentDepth >= CONFIG.MAX_DEPTH;
     resetButton.classList.toggle("visible", atTheEnd);
     timeTravelButton.classList.toggle("visible", atTheEnd);
 
-    
     updateBackgroundColor(currentDepth);
     checkAnimalActivation();
     updateOceanFloor(currentDepth);
-    updateParticleVisibility(currentDepth, CONFIG.PARTICLE_START_DEPTH); 
+    updateParticleVisibility(currentDepth, CONFIG.PARTICLE_START_DEPTH);
   }
 
   function updateBackgroundColor(depth) {
@@ -284,8 +480,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (startZone && !startZone.logged && startZone.startDepth > 0) {
-      addLogMessage(`Entrando na Zona ${startZone.name}.`); 
-      startZone.logged = true; 
+      addLogMessage(`Entrando na Zona ${startZone.name}.`);
+      startZone.logged = true;
     }
 
     let blendFactor = 0;
@@ -327,22 +523,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (isInRange && !animal.isActive) {
         if (animal.img.dataset.src) {
-          animal.img.src = animal.img.dataset.src;
           animal.img.onload = () => {
-            animal.width = animal.figure.offsetWidth;
+            animal.width = animal.img.offsetWidth;
+
+            if (animal.type === "agua-viva-brilhante" && animal.glowColor) {
+              animal.figure.style.filter = `
+              drop-shadow(0 0 15px ${animal.glowColor}) 
+              drop-shadow(0 5px 15px var(--color-shadow))
+            `;
+            }
           };
+
+          animal.img.src = animal.img.dataset.src;
           animal.img.removeAttribute("data-src");
         }
+
         animal.isActive = true;
         animal.figure.style.opacity = 1;
-
-        if (!animal.sighted) {
-          addLogMessage(`AVISTAMENTO: ${animal.name}.`, "sighting"); 
-          animal.sighted = true;
-        }
       } else if (!isInRange && animal.isActive) {
         animal.isActive = false;
         animal.figure.style.opacity = 0;
+        if (animal.type === "agua-viva-brilhante") {
+          animal.figure.style.filter = "";
+        }
+      }
+      if (animal.isActive && !animal.sighted) {
+        const proximity = Math.abs(animal.depth - currentDepth);
+        const sightingThreshold = 5;
+
+        if (proximity <= sightingThreshold) {
+          addLogMessage(`AVISTAMENTO: ${animal.name}.`, "sighting");
+          animal.sighted = true;
+        }
       }
     });
   }
@@ -361,14 +573,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  
-
   resetButton.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    addLogMessage("Retornando à superfície...", "system"); 
-    
-    
+    addLogMessage("Retornando à superfície...", "system");
+
     ZONES.forEach((zone) => (zone.logged = false));
+    animals.forEach((animal) => (animal.sighted = false));
   });
 
   timeTravelButton.addEventListener("click", () => {
@@ -378,6 +588,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1500);
   });
 
-  
   init();
 });

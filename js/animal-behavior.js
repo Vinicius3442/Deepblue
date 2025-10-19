@@ -23,6 +23,7 @@ export function animateAnimals(animals) {
         applyLulaPhysics(animal);
         break;
       case "agua-viva":
+      case "agua-viva-brilhante":
         applyAguaVivaPhysics(animal);
         break;
       case "peixe-pequeno":
@@ -139,19 +140,19 @@ function applyPequenoPeixePhysics(animal) {
   }
   if (animal.y < margin) {
     progress = (margin - animal.y) / margin;
-    avoidanceForce.y = progress * 0.5;
+    avoidanceForce.y = progress * 0.4;
   } else if (animal.y > galleryHeight - imgWidth - margin) {
     progress = (animal.y - (galleryHeight - imgWidth - margin)) / margin;
-    avoidanceForce.y = -progress * 0.5;
+    avoidanceForce.y = -progress * 0.4;
   }
 
   animal.vx += wanderForce.x + homeForce.x + avoidanceForce.x;
   animal.vy += wanderForce.y + homeForce.y + avoidanceForce.y;
 
-  animal.vx *= 0.93;
-  animal.vy *= 0.93;
+  animal.vx *= 0.95;
+  animal.vy *= 0.95;
 
-  const maxSpeed = 1.6;
+  const maxSpeed = 1.0;
   const speed = Math.sqrt(animal.vx * animal.vx + animal.vy * animal.vy);
   if (speed > maxSpeed) {
     animal.vx = (animal.vx / speed) * maxSpeed;

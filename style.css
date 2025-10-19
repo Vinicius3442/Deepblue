@@ -1334,3 +1334,252 @@ body.time-travel-start {
   50% { filter: hue-rotate(360deg) blur(5px) saturate(5); transform: scale(1.1); }
   100% { filter: hue-rotate(0deg) blur(20px) saturate(10); transform: scale(0.5); opacity: 0; }
 }
+
+#bestiary-toggle-button {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 2500;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(10, 25, 40, 0.85);
+  border: 1px solid rgba(100, 255, 255, 0.5);
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.2);
+  backdrop-filter: blur(5px);
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 60px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#bestiary-toggle-button:hover {
+  background-color: rgba(20, 45, 60, 0.9);
+  color: var(--color-accent);
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(0, 200, 255, 0.4);
+}
+
+/* --- PAINEL MODAL DO BESTIÁRIO --- */
+#bestiary-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 10, 18, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 3000; /* Acima do modal de animal */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s;
+}
+
+#bestiary-panel.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* O conteúdo (caixa) dentro do modal */
+.bestiary-content {
+  position: relative;
+  width: 90%;
+  display: flex; /* Adicionado para layout flexível */
+  flex-direction: column; /* Adicionado para layout flexível */
+  overflow: hidden; /* Adicionado para layout flexível */
+  max-width: 1000px; /* Mais largo para duas páginas */
+  height: 90vh; /* Mais alto */
+  max-height: 700px;
+  background: #f4f0e8; /* Fundo de papel */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+#bestiary-close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 2.5rem;
+  color: #777;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10; /* Garante que fique acima do header */
+}
+#bestiary-close-btn:hover {
+  color: #b94b00;
+  transform: rotate(90deg);
+}
+
+.bestiary-header {
+  padding: 1.5rem 2rem;
+  text-align: center;
+  flex-shrink: 0;
+  background: #e6e0d4; /* Papel mais escuro */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.bestiary-header h2 {
+  font-family: var(--font-family-display);
+  font-size: 2rem;
+  color: #b94b00; /* Laranja escuro */
+  margin-bottom: 0.25rem;
+}
+.bestiary-header p {
+  font-style: italic;
+  color: #595959;
+}
+
+/* 3. O CONTAINER DAS PÁGINAS */
+.bestiary-list {
+  display: flex; /* As páginas ficam lado a lado */
+  flex: 1; /* Ocupa todo o espaço vertical */
+  overflow: hidden; /* Isso é crucial! */
+  position: relative; /* Para a divisória */
+  padding: 1rem;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.1); /* Sombra interna */
+}
+
+/* A DIVISÓRIA DO LIVRO */
+.bestiary-list::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 10px;
+  height: 100%;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.15) 30%,
+    rgba(0, 0, 0, 0.15) 70%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: 1; /* Fica atrás das páginas */
+}
+
+/* 4. CADA PÁGINA */
+.bestiary-page {
+  width: 50%; /* Cada página ocupa metade */
+  flex-shrink: 0; /* Não encolhe */
+  padding: 1.5rem;
+  box-sizing: border-box;
+  flex-direction: column;
+  transition: opacity 0.3s ease;
+  display: none; /* Por padrão, todas as páginas estão escondidas */
+  z-index: 2; /* Fica na frente da divisória */
+}
+/* A classe que o JS usará para mostrar as páginas */
+.bestiary-page.visible {
+  display: flex;
+}
+
+/* Estilo da página da esquerda e direita */
+.bestiary-page:nth-of-type(odd) {
+  /* Página da esquerda */
+  padding-right: 2rem;
+  border-right: 1px dashed rgba(0, 0, 0, 0.1);
+}
+.bestiary-page:nth-of-type(even) {
+  /* Página da direita */
+  padding-left: 2rem;
+}
+
+/* 5. CONTEÚDO DA PÁGINA */
+.bestiary-page-img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
+}
+.bestiary-page-title {
+  font-family: var(--font-family-display);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #3a3a3a; /* Cor padrão do título */
+}
+.bestiary-page-description {
+  font-family: var(--font-family-body);
+  color: #3a3a3a;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  overflow-y: auto; /* Permite rolar a descrição se for longa */
+  flex: 1; /* Ocupa o espaço restante */
+}
+.bestiary-page-stamp {
+  font-family: var(--font-family-display);
+  font-size: 1rem;
+  color: #c9302c;
+  border: 3px solid #c9302c;
+  padding: 4px 8px;
+  transform: rotate(-8deg);
+  opacity: 0.7;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  display: inline-block;
+  align-self: flex-start; /* Alinha o carimbo */
+}
+.bestiary-page-hint {
+  font-family: var(--font-family-monospace);
+  font-size: 1.1rem;
+  color: #005f6b;
+  margin-top: 1rem;
+}
+
+/* 6. ESTADO BLOQUEADO */
+.bestiary-page.locked .bestiary-page-img {
+  filter: brightness(0) opacity(0.3); /* A silhueta! */
+  object-fit: contain;
+  padding: 1rem;
+}
+.bestiary-page.locked .bestiary-page-title {
+  color: #777;
+  font-style: italic;
+}
+.bestiary-page.locked .bestiary-page-description {
+  color: #777;
+  font-style: italic;
+  text-align: center;
+  padding-top: 2rem;
+}
+
+/* 7. O RODAPÉ DE NAVEGAÇÃO */
+.bestiary-footer {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  color: #000a12;
+  background: #e6e0d4;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-family: var(--font-family-monospace);
+  z-index: 10; /* Garante que fique acima de tudo */
+}
+.bestiary-footer button {
+  background: #b94b00;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s ease;
+}
+.bestiary-footer button:hover {
+  background: #8a3800;
+}
+.bestiary-footer button:disabled {
+  background: #c0c0c0;
+  cursor: not-allowed;
+}
