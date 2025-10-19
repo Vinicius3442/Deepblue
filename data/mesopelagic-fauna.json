@@ -11,9 +11,9 @@
   {
     "id": "silver_hatchetfish",
     "name": "Peixe-Machado-de-Prata",
-    "dataDepth": 790,
+    "dataDepth": 300,
     "dataType": "peixe-pequeno",
-    "dataScale": 0.6,
+    "dataScale": 0.9,
     "imgPath": "../img/Animals/fish/mesopelagic/silver_hatchetfish/silver_hatchetfish.png",
     "articlePath": "../articles/fish/mesopelagic/silver_hatchetfish.json"
   }

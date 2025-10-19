@@ -1,5 +1,6 @@
 /**
- * 
+ * Loop principal de animação para todos os animais.
+ * Exportado para ser chamado pelo 'main.js'.
  * @param {Array} animals - O array principal de objetos de animais.
  */
 export function animateAnimals(animals) {
@@ -25,7 +26,7 @@ export function animateAnimals(animals) {
         applyAguaVivaPhysics(animal);
         break;
       case "peixe-pequeno":
-        applyPequenoPeixePhysics(animal);
+        applyPequenoPeixePhysics(animal); // <-- FUNÇÃO ATUALIZADA
         break;
       case "reptil":
         applyReptilPhysics(animal);
@@ -106,6 +107,9 @@ function applyReptilPhysics(animal) {
   }
 }
 
+//
+// ******** FUNÇÃO ATUALIZADA ********
+//
 function applyPequenoPeixePhysics(animal) {
   if (animal.spookTimer > 0) animal.spookTimer--;
 
@@ -141,8 +145,8 @@ function applyPequenoPeixePhysics(animal) {
     avoidanceForce.y = -progress * 0.5;
   }
 
-  animal.vx += wanderForce.x + homeForce.x;
-  animal.vy += wanderForce.y + homeForce.y;
+  animal.vx += wanderForce.x + homeForce.x + avoidanceForce.x;
+  animal.vy += wanderForce.y + homeForce.y + avoidanceForce.y;
 
   animal.vx *= 0.93;
   animal.vy *= 0.93;
@@ -222,11 +226,12 @@ function applyPeixePhysics(animal) {
 function applyLulaPhysics(animal) {
   if (animal.spookTimer > 0) animal.spookTimer--;
 
+  // Lógica de propulsão
   animal.propulsionTimer = (animal.propulsionTimer || 0) - 1;
   if (animal.propulsionTimer <= 0) {
     animal.propulsionTimer = 60 + Math.random() * 120;
     const angle = (Math.random() - 0.5) * 0.8;
-    const thrust = 4 + Math.random() * 4;
+    const thrust = 4 + Math.random() * 4; // Impulso forte
     animal.vx += animal.flip * Math.cos(angle) * thrust;
     animal.vy += Math.sin(angle) * thrust * 0.5;
   }
@@ -234,20 +239,32 @@ function applyLulaPhysics(animal) {
   const gallery = animal.figure.parentElement;
   const avoidanceForce = { x: 0, y: 0 };
 
-  if (gallery) {
+  if (gallery && gallery.offsetWidth > 0) {
     const galleryWidth = gallery.offsetWidth;
+    const galleryHeight = animal.zoneHeight;
     const imgWidth = animal.width || animal.scale * 100;
     const margin = 200;
 
-    if (animal.x < margin) avoidanceForce.x = 1;
-    if (animal.x > galleryWidth - imgWidth - margin) avoidanceForce.x = -1;
-    if (animal.y < margin) avoidanceForce.y = 1;
-    if (animal.y > gallery.offsetHeight - imgWidth - margin)
-      avoidanceForce.y = -1;
+    let progress;
+    if (animal.x < margin) {
+      progress = (margin - animal.x) / margin;
+      avoidanceForce.x = progress * 1.0;
+    } else if (animal.x > galleryWidth - imgWidth - margin) {
+      progress = (animal.x - (galleryWidth - imgWidth - margin)) / margin;
+      avoidanceForce.x = -progress * 1.0;
+    }
+
+    if (animal.y < margin) {
+      progress = (margin - animal.y) / margin;
+      avoidanceForce.y = progress * 1.0;
+    } else if (animal.y > galleryHeight - imgWidth - margin) {
+      progress = (animal.y - (galleryHeight - imgWidth - margin)) / margin;
+      avoidanceForce.y = -progress * 1.0;
+    }
   }
 
-  animal.vx += avoidanceForce.x * 1.0;
-  animal.vy += avoidanceForce.y * 1.0;
+  animal.vx += avoidanceForce.x;
+  animal.vy += avoidanceForce.y;
 
   animal.vx *= 0.94;
   animal.vy *= 0.94;
@@ -255,6 +272,14 @@ function applyLulaPhysics(animal) {
 
   animal.x += animal.vx;
   animal.y += animal.vy;
+
+  if (gallery && gallery.offsetWidth > 0) {
+    const galleryWidth = gallery.offsetWidth;
+    const imgWidth = animal.width || animal.scale * 100;
+    if (galleryWidth > imgWidth) {
+      animal.x = Math.max(0, Math.min(animal.x, galleryWidth - imgWidth));
+    }
+  }
 }
 
 function applyAguaVivaPhysics(animal) {
