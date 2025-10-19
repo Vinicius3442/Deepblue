@@ -128,7 +128,7 @@
   {
     "id": "cuttlefish",
     "name": "Sépia Comum (Choco)",
-    "dataDepth": 50,
+    "dataDepth": 20,
     "dataType": "lula",
     "dataScale": 0.4,
     "imgPath": "../img/Animals/molluscae/epipelagic/common_cuttlefish/common_cuttlefish.png",
@@ -155,7 +155,7 @@
   {
     "id": "bull_shark",
     "name": "Tubarão-Touro",
-    "dataDepth": 80,
+    "dataDepth": 95,
     "dataType": "predador-grande",
     "dataScale": 2.8,
     "imgPath": "../img/Animals/elasmobranchii/epipelagic/bull_shark/bull_shark.png",
@@ -191,7 +191,7 @@
   {
     "id": "lemon_shark",
     "name": "Tubarão-Limão",
-    "dataDepth": 30,
+    "dataDepth": 40,
     "dataType": "predador-grande",
     "dataScale": 2.5,
     "imgPath": "../img/Animals/elasmobranchii/epipelagic/lemon_shark/lemon_shark.png",
@@ -200,7 +200,7 @@
   {
     "id": "sand_tiger_shark",
     "name": "Tubarão-Mangona (Tigre-de-Areia)",
-    "dataDepth": 50,
+    "dataDepth": 30,
     "dataType": "predador-grande",
     "dataScale": 2.8,
     "imgPath": "../img/Animals/elasmobranchii/epipelagic/sand_tiger_shark/sand_tiger_shark.png",
@@ -245,9 +245,9 @@
   {
     "id": "sawfish",
     "name": "Peixe-Serra",
-    "dataDepth": 40,
+    "dataDepth": 20,
     "dataType": "peixe",
-    "dataScale": 5.2,
+    "dataScale": 2.5,
     "imgPath": "../img/Animals/elasmobranchii/epipelagic/sawfish/sawfish.png",
     "articlePath": "../articles/elasmobranchii/epipelagic/sawfish.json"
   },

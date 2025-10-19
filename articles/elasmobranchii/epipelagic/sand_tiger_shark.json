@@ -1,0 +1,73 @@
+{
+  "name": "Tubarão-Mangona (Tigre-de-Areia)",
+  "scientificName": "Carcharias taurus",
+  "img": "../../../img/Animals/elasmobranchii/epipelagic/sand_tiger_shark/sand_tiger_shark.png",
+  "fonte": "Wikipedia / IUCN",
+  "description": "O Tubarão-Mangona é uma espécie de aparência intimidadora, famosa por seus dentes longos e pontiagudos que ficam expostos mesmo com a boca fechada. Apesar de sua aparência assustadora, é um tubarão notavelmente dócil e tímido, que raramente ataca humanos. Possui hábitos noturnos e é o único tubarão conhecido por engolir ar da superfície e armazená-lo no estômago, usando-o como uma 'bexiga natatória' para flutuar imóvel na coluna d'água.",
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/elasmobranchii/epipelagic/sand_tiger_shark/map_sand_tiger_shark.jpg",
+    "alt": "Mapa de distribuição do Tubarão-Mangona",
+    "fonte": "IUCN Red List of Threatened Species"
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/elasmobranchii/epipelagic/sand_tiger_shark/size_sand_tiger_shark.jpg",
+    "alt": "Comparativo de tamanho de um Tubarão-Mangona com um ser humano",
+    "descricao": "As fêmeas são maiores que os machos e podem atingir um comprimento máximo de cerca de 3,2 a 3,3 metros e pesar até 150kg. Ao nascer, os filhotes já são enormes, medindo cerca de 1 metro de comprimento.",
+    "fonte": "Aquário de São Paulo"
+  },
+  "fichaTecnica": {
+    "statusConservacao": "Criticamente em Perigo (CR) no Brasil",
+    "profundidade": "Costeiro, da zona de arrebentação até 232m",
+    "dieta": "Carnívoro (peixes, lulas, lagostas, raias e outros tubarões)",
+    "tamanhoMaximo": "Até 3.3 metros",
+    "expectativaVida": "Até 35 anos",
+    "habitat": "Mares tropicais e temperados, prefere fundos rochosos e cavernas durante o dia"
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/sand_tiger_shark/gallery/sand_tiger1.jpg",
+      "alt": "Close-up dos dentes de um Tubarão-Mangona",
+      "legenda": "Os dentes finos e afiados são perfeitos para agarrar presas lisas como peixes e lulas, mas não para rasgar.",
+      "fonte": "Wikimedia Commons"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/sand_tiger_shark/gallery/sand_tiger2.jpg",
+      "alt": "Tubarão-Mangona flutuando imóvel",
+      "legenda": "Ele engole ar da superfície para conseguir flutuar sem esforço, esperando por presas.",
+      "fonte": "Adobe Stock"
+    },
+    {
+      "type": "youtube",
+      "src": "gJr6yq45UZE",
+      "alt": "Vídeo de Richard Rasmussen com o Tubarão-Mangona",
+      "legenda": "Mergulhando com o 'super predador' de aparência assustadora, mas comportamento calmo.",
+      "fonte": "Richard Rasmussen (via YouTube)"
+    }
+  ],
+  "curiosidades": [
+    "É a única espécie de tubarão conhecida por praticar oofagia, ou canibalismo intrauterino: os embriões mais desenvolvidos comem seus irmãos menores dentro do útero.",
+    "Devido à oofagia, a fêmea dá à luz a apenas um ou dois filhotes de cada vez, o que torna sua taxa de reprodução muito baixa.",
+    "Para parecer maior para predadores ou rivais, ele pode 'inflar' seu estômago com o ar que engole.",
+    "Apesar da aparência, é um animal muito calmo e popular em aquários públicos do mundo todo, ajudando na conscientização.",
+    "No Brasil, sua população diminuiu drasticamente devido à pesca, sendo considerada Criticamente Ameaçada."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Tubarão-Tigre",
+      "img": "../../../img/Animals/elasmobranchii/epipelagic/tiger_shark/tiger_shark.png",
+      "targetId": "Tubarão-Tigre"
+    },
+    {
+      "nome": "Tubarão-Lixa",
+      "img": "../../../img/Animals/elasmobranchii/epipelagic/nurse_shark/nurse_shark.png",
+      "targetId": "Tubarão-Lixa"
+    },
+    {
+      "nome": "Tubarão-Branco",
+      "img": "../../../img/Animals/elasmobranchii/epipelagic/tubarao_branco/tubarao_branco.png",
+      "targetId": "Tubarão-Branco"
+    }
+  ]
+}
