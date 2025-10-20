@@ -52,5 +52,14 @@
     "dataScale": 1.2,
     "imgPath": "../img/Animals/molluscae/bathypelagic/whiplash_squid_magna/whiplash_squid_magna.png",
     "articlePath": "../articles/molluscae/bathypelagic/whiplash_squid_magna.json"
-  }
+  },
+  {
+  "id": "greenland_shark",
+  "name": "Tubarão-da-Groenlândia",
+  "dataDepth": 1300,
+  "dataType": "predador-grande",
+  "dataScale": 4.0,
+  "imgPath": "../img/Animals/elasmobranchii/bathypelagic/greenland_shark/greenland_shark.png",
+  "articlePath": "../articles/elasmobranchii/bathypelagic/greenland_shark.json"
+}
 ]

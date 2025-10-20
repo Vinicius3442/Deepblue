@@ -1,0 +1,73 @@
+{
+  "name": "Tubarão-da-Groenlândia",
+  "scientificName": "Somniosus microcephalus",
+  "img": "../../../img/Animals/elasmobranchii/bathypelagic/greenland_shark/greenland_shark.png",
+  "fonte": "ORS",
+  "description": "O Tubarão-da-Groenlândia é o vertebrado mais longevo conhecido no planeta, com uma expectativa de vida que pode ultrapassar os 400 anos. Predador lento, mas massivo, habita as águas extremamente frias e profundas do Ártico e Atlântico Norte, caçando através de uma abordagem furtiva e de emboscada. Sua biologia lenta e vida longa o tornam uma cápsula do tempo viva dos oceanos polares.",
+  
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/elasmobranchii/bathypelagic/greenland_shark/map_greenland_shark.jpg",
+    "alt": "Mapa de distribuição do Tubarão-da-Groenlândia, mostrando o Atlântico Norte e o Oceano Ártico.",
+    "fonte": "IUCN Red List / Adaptado"
+  },
+  
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/elasmobranchii/bathypelagic/greenland_shark/size_greenland_shark.jpg",
+    "alt": "Comparativo de tamanho de um Tubarão-da-Groenlândia com um ser humano",
+    "descricao": "O Tubarão-da-Groenlândia é um dos maiores tubarões do mundo, podendo crescer até 7,3 metros de comprimento. Seu crescimento é extremamente lento, cerca de 1 cm por ano, refletindo sua longevidade e metabolismo adaptado a baixas temperaturas.",
+    "fonte": "Fisheries and Oceans Canada"
+  },
+  
+  "fichaTecnica": {
+    "statusConservacao": "Quase Ameaçado (NT)",
+    "profundidade": "Superfície (no inverno) até 2.200m",
+    "dieta": "Carnívoro (peixes, focas, lulas, e carcaças de baleias e ursos polares)",
+    "tamanhoMaximo": "Até 7.3 metros",
+    "expectativaVida": "Estimada em mais de 400 anos",
+    "habitat": "Águas frias (0-12°C) do Oceano Ártico e Atlântico Norte"
+  },
+  
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/bathypelagic/greenland_shark/greenland_shark_focas.jpg",
+      "alt": "Tubarão-da-Groenlândia nadando em águas escuras.",
+      "legenda": "O Tubarão-da-Groenlândia é um predador que se alimenta principalmente de peixes e focas.",
+      "fonte": "Discovery Channel"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/bathypelagic/greenland_shark/greenland_shark_eye_parasite.jpg",
+      "alt": "Close-up do olho de um Tubarão-da-Groenlândia com o parasita Copépode.",
+      "legenda": "Quase todos os Tubarões-da-Groenlândia carregam um parasita copépode que se prende aos olhos, comprometendo parcialmente a sua visão.",
+      "fonte": "Fotografia Científica"
+    },
+    {
+      "type": "youtube",
+      "src": "ID_DO_VIDEO_DO_YOUTUBE",
+      "alt": "Vídeo raro de um Tubarão-da-Groenlândia em seu habitat.",
+      "legenda": "Filmagem de um espécime em profundidade, destacando seus movimentos lentos e massivos.",
+      "fonte": "Natureza Extrema (via YouTube)"
+    }
+  ],
+  
+  "curiosidades": [
+    "É o animal vertebrado com a maior longevidade conhecida no planeta, com indivíduos que se estima terem nascido antes do século XVII.",
+    "Atinge a maturidade sexual incrivelmente tarde: as fêmeas só estão prontas para acasalar por volta dos 150 anos de idade.",
+    "Sua carne fresca é tóxica devido a um composto químico chamado trimetilamina N-óxido, que causa efeitos neurológicos semelhantes a uma embriaguez extrema em quem a consome.",
+    "Embora sejam lentos, são capazes de caçar presas rápidas como focas, possivelmente devido à sua tática de emboscada ou por atacarem enquanto as focas dormem."
+  ],
+  
+  "especiesRelacionadas": [
+    {
+      "nome": "Tubarão-Dorminhoco-do-Pacífico",
+      "img": "../../../img/Animals/elasmobranchii/bathypelagic/pacific_sleeper_shark/pacific_sleeper_shark.png",
+      "targetId": "pacific_sleeper_shark"
+    },
+    {
+      "nome": "Tubarão-Duende",
+      "img": "../../../img/Animals/elasmobranchii/bathypelagic/goblin_shark/goblin_shark.png",
+      "targetId": "goblin_shark"
+    }
+  ]
+}
