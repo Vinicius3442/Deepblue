@@ -1,0 +1,94 @@
+{
+  "name": "Tubarão-Tigre",
+  "scientificName": "Galeocerdo cuvier",
+  "img": "../../../img/Animals/fish/epipelagic/tiger_shark/tiger_shark.png",
+  "fonte": "NOAA Fisheries",
+  "description": "O Tubarão-Tigre é um dos predadores mais temidos e versáteis dos oceanos. Seu nome vem das listras escuras que cobrem seu corpo, especialmente visíveis em indivíduos jovens. Oportunista por natureza, ele se alimenta de uma ampla variedade de presas — de peixes e tartarugas a aves marinhas e até objetos não comestíveis.",
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/fish/epipelagic/tiger_shark/map_tiger_shark.jpg",
+    "alt": "Mapa de distribuição global do Tubarão-Tigre",
+    "fonte": "IUCN Red List of Threatened Species"
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/fish/epipelagic/tiger_shark/size_tiger_shark.jpg",
+    "alt": "Comparativo de tamanho de um Tubarão-Tigre com um mergulhador",
+    "descricao": "O Tubarão-Tigre adulto pode atingir de 4 a 5 metros de comprimento e pesar mais de 600 kg, tornando-se um dos maiores tubarões do mundo.",
+    "fonte": "National Geographic"
+  },
+  "fichaTecnica": {
+    "statusConservacao": "Quase Ameaçado (NT)",
+    "profundidade": "Superfície até 350 metros",
+    "dieta": "Carnívoro (peixes, aves marinhas, tartarugas, focas, lulas e até detritos)",
+    "tamanhoMaximo": "Até 5 metros e 900 kg",
+    "expectativaVida": "Entre 30 e 40 anos",
+    "habitat": "Águas tropicais e subtropicais de todos os oceanos, principalmente em regiões costeiras"
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/epipelagic/tiger_shark/gallery/tiger1.jpg",
+      "alt": "Tubarão-Tigre nadando próximo à superfície",
+      "legenda": "O padrão de listras no corpo dá ao Tubarão-Tigre seu nome e ajuda na camuflagem em águas rasas.",
+      "fonte": "National Geographic"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/epipelagic/tiger_shark/gallery/tiger2.jpg",
+      "alt": "Close da cabeça do Tubarão-Tigre",
+      "legenda": "Sua cabeça larga e focinho curto ajudam a morder com enorme força e precisão.",
+      "fonte": "Oceanographic Magazine"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/epipelagic/tiger_shark/gallery/tiger3.jpg",
+      "alt": "Tubarão-Tigre em um recife de coral",
+      "legenda": "Frequentemente visto próximo a recifes e ilhas tropicais, onde a vida marinha é abundante.",
+      "fonte": "NOAA Ocean Explorer"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/epipelagic/tiger_shark/gallery/tiger4.jpg",
+      "alt": "Jovem Tubarão-Tigre com listras escuras bem marcadas",
+      "legenda": "As listras são mais visíveis em tubarões jovens, desbotando à medida que envelhecem.",
+      "fonte": "Wikimedia Commons"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/epipelagic/tiger_shark/gallery/tiger5.jpg",
+      "alt": "Tubarão-Tigre nadando livremente no oceano azul",
+      "legenda": "Apesar da reputação de predador agressivo, é um animal essencial para o equilíbrio dos ecossistemas marinhos.",
+      "fonte": "BBC Earth"
+    },
+    {
+      "type": "youtube",
+      "src": "hSxv7vWJ5hM",
+      "alt": "Vídeo de um Tubarão-Tigre em caça",
+      "legenda": "Gravações subaquáticas mostram o comportamento de caça preciso e curioso do Tubarão-Tigre.",
+      "fonte": "National Geographic (via YouTube)"
+    }
+  ],
+  "curiosidades": [
+    "Recebeu o apelido de 'lixeira do mar' por engolir quase qualquer coisa que encontra, incluindo objetos inorgânicos.",
+    "Possui um dos sentidos olfativos mais aguçados entre os tubarões.",
+    "As fêmeas são geralmente maiores que os machos.",
+    "Desempenha papel crucial no controle de populações de tartarugas e focas.",
+    "Pode viajar milhares de quilômetros em migrações sazonais."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Tubarão-Branco",
+      "img": "../../../img/Animals/fish/epipelagic/tubarao_branco/tubarao_branco.png",
+      "targetId": "Tubarão-Branco"
+    },
+    {
+      "nome": "Tubarão-Azul",
+      "img": "../../../img/Animals/fish/epipelagic/blue_shark/tubarao_azul.png",
+      "targetId": "Tubarão-Azul"
+    },
+    {
+      "nome": "Tubarão-Martelo",
+      "img": "../../../img/Animals/fish/epipelagic/hammerhead_shark/hammerhead_shark.png",
+      "targetId": "Tubarão-Martelo"
+    }
+  ]
+}
