@@ -1,0 +1,86 @@
+{
+  "name": "Lula-Bigfin (Magnapinna)",
+  "scientificName": "Magnapinna sp.",
+  "img": "../../../img/Animals/molluscae/abyssopelagic/bigfin_squid/bigfin_squid.png",
+  "fonte": "NOAA / MBARI",
+  "description": "Uma das criaturas mais etéreas e misteriosas das profundezas oceânicas. A Lula-Bigfin pertence ao gênero *Magnapinna* e é instantaneamente reconhecível por seus braços e tentáculos extremamente longos e finos, que podem se estender por metros. Outra característica única são os 'cotovelos' que seus braços formam. Avistamentos são raros, e pouco se sabe sobre sua biologia, mas acredita-se que ela flutua passivamente e usa seus longos filamentos para capturar presas no fundo do mar.",
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/molluscae/abyssopelagic/bigfin_squid/map_bigfin_squid.jpg",
+    "alt": "Mapa de distribuição global aproximada da Lula-Bigfin",
+    "fonte": "Ocean Conservancy / Observations"
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/molluscae/abyssopelagic/bigfin_squid/size_bigfin_squid.jpg",
+    "alt": "Comparativo de tamanho de uma Lula-Bigfin com um ser humano",
+    "descricao": "Embora o corpo (manto) seja relativamente pequeno (30-60 cm), o comprimento total, incluindo os filamentos, pode chegar a impressionantes 8 metros, tornando-a uma das lulas mais longas conhecidas.",
+    "fonte": "Dimensions.com"
+  },
+  "fichaTecnica": {
+    "statusConservacao": "Não Avaliado (NE)",
+    "profundidade": "Batissopelágica e Abissopelágica (900m - 6.000m+)",
+    "dieta": "Provavelmente pequenos crustáceos e organismos do fundo do mar",
+    "tamanhoMaximo": "Até 8 metros (comprimento total)",
+    "expectativaVida": "Desconhecida",
+    "habitat": "Oceanos profundos globalmente (Atlântico, Pacífico, Índico)"
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/abyssopelagic/bigfin_squid/gallery/bigfin1.jpg",
+      "alt": "Lula-Bigfin mostrando seus 'cotovelos'",
+      "legenda": "A postura única com os braços dobrados em ângulo reto é uma marca registrada da Magnapinna.",
+      "fonte": "NOAA Okeanos Explorer"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/abyssopelagic/bigfin_squid/gallery/bigfin2.jpg",
+      "alt": "Lula-Bigfin flutuando perto do fundo do mar",
+      "legenda": "Observações sugerem que ela pode arrastar seus filamentos pegajosos no fundo para capturar comida.",
+      "fonte": "MBARI"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/abyssopelagic/bigfin_squid/gallery/bigfin2.jpg",
+      "alt": "Lula-Bigfin flutuando perto do fundo do mar",
+      "legenda": "Observações sugerem que ela pode arrastar seus filamentos pegajosos no fundo para capturar comida.",
+      "fonte": "MBARI"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/abyssopelagic/bigfin_squid/gallery/bigfin2.jpg",
+      "alt": "Lula-Bigfin flutuando perto do fundo do mar",
+      "legenda": "Observações sugerem que ela pode arrastar seus filamentos pegajosos no fundo para capturar comida.",
+      "fonte": "MBARI"
+    },
+    {
+      "type": "youtube",
+      "src": "To2_Gq14UVs",
+      "alt": "Vídeo raro de uma Lula-Bigfin",
+      "legenda": "Avistamentos são tão raros que cada vídeo revela um pouco mais sobre esses animais misteriosos.",
+      "fonte": "OceanX (via YouTube)"
+    }
+  ],
+  "curiosidades": [
+    "Os braços e tentáculos podem ser até 20 vezes mais longos que o corpo da lula.",
+    "Acredita-se que os 'cotovelos' ajudem a evitar que os longos filamentos se emaranhem.",
+    "Elas são as lulas conhecidas que vivem nas maiores profundidades já registradas.",
+    "A ciência só confirmou sua existência através de filmagens de ROVs (Veículos Operados Remotamente) a partir do final dos anos 80 e 90."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Lula-Vampira-do-Inferno",
+      "img": "../../../img/Animals/molluscae/mesopelagic/vampire_squid/vampire_squid.png",
+      "targetId": "Lula-Vampira-do-Inferno"
+    },
+    {
+      "nome": "Polvo-Dumbo",
+      "img": "../../../img/Animals/molluscae/abyssopelagic/dumbo_octopus/dumbo_octopus.png",
+      "targetId": "Polvo-Dumbo"
+    },
+    {
+      "nome": "Lula-Gigante",
+      "img": "../../../img/Animals/molluscae/bathypelagic/giant_squid/giant_squid.png",
+      "targetId": "Lula-Gigante"
+    }
+  ]
+}

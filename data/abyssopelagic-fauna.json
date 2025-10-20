@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "id": "bigfin_squid",
+    "name": "Lula-Bigfin (Magnapinna)",
+    "dataDepth": 5800,
+    "dataType": "agua-viva",
+    "dataScale": 0.7,
+    "imgPath": "../img/Animals/molluscae/abyssopelagic/bigfin_squid/bigfin_squid.png",
+    "articlePath": "../articles/molluscae/abyssopelagic/bigfin_squid.json"
+  }
+]
