@@ -187,5 +187,15 @@
     "dataScale": 2.8,
     "imgPath": "../img/Animals/fish/epipelagic/mola_mola/mola_mola.png",
     "articlePath": "../articles/fish/epipelagic/mola_mola.json"
-  }
+  },
+  {
+  "id": "tiger_shark",
+  "name": "Tubarão-Tigre",
+  "dataDepth": 150,
+  "dataType": "predador-grande",
+  "dataScale": 2.6,
+  "imgPath": "../img/Animals/fish/epipelagic/tiger_shark/tiger_shark.png",
+  "articlePath": "../articles/fish/epipelagic/tiger_shark.json"
+}
+
 ]
