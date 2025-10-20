@@ -1,0 +1,93 @@
+{
+  "name": "Whiplash Squid",
+  "scientificName": "Magnoteuthis magna",
+  "img": "../../../img/Animals/molluscae/bathypelagic/whiplash_squid_magna/whiplash_squid_magna.png",
+  "fonte": "H. Fischer & Joubin (via Wikipedia)",
+  "description": "O Whiplash Squid (*Magnoteuthis magna*), pertencente à família Magnoteuthidae (ou Mastigoteuthidae), é um molusco de profundidade caracterizado por seus tentáculos longos e extremamente finos, que se assemelham a chicotes. Esta espécie é conhecida por habitar as zonas mesopelágica e batipelágica do oceano. O corpo desta lula é de cor vermelha ou marrom escura, uma adaptação comum em ambientes de pouca luz, e possui fotóforos (órgãos de luz) espalhados pelo corpo, braços e olhos.",
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/molluscae/bathypelagic/whiplash_squid_magna/map_whiplash_squid_magna.jpg",
+    "alt": "Mapa de distribuição global aproximada da Magnoteuthis magna",
+    "fonte": "IUCN Red List / Observações de arrasto"
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/molluscae/bathypelagic/whiplash_squid_magna/size_whiplash_squid_magna.jpg",
+    "alt": "Comparativo de tamanho do Whiplash Squid com um ser humano",
+    "descricao": "O comprimento do manto (corpo) desta espécie pode chegar a cerca de 40 cm, mas seus longos tentáculos chicoteados podem estender significativamente o comprimento total.",
+    "fonte": "Estimativa (Baseado em Magnoteuthis spp.)"
+  },
+  "fichaTecnica": {
+    "statusConservacao": "Dados Insuficientes (DD)",
+    "profundidade": "Mesopelágica e Batipelágica (200m - 3.000m)",
+    "dieta": "Pequenos crustáceos e plâncton capturados pelos seus tentáculos pegajosos.",
+    "tamanhoMaximo": "Até 1.5 metros (comprimento total)",
+    "expectativaVida": "Desconhecida",
+    "habitat": "Oceano Atlântico Norte (principalmente em regiões subtropicais e temperadas)"
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/bathypelagic/whiplash_squid_magna/gallery/whip_magna1.jpg",
+      "alt": "Ilustração do Whiplash Squid com tentáculos estendidos",
+      "legenda": "O longo par de tentáculos é a característica definidora desta família.",
+      "fonte": "Oceanic Illustration (Exemplo)"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/bathypelagic/whiplash_squid_magna/gallery/whip_magna2.jpg",
+      "alt": "Close-up do corpo (manto) e nadadeiras grandes.",
+      "legenda": "A espécie possui nadadeiras grandes e arredondadas para manobrabilidade na coluna d'água.",
+      "fonte": "Teuthology Study (Exemplo)"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/bathypelagic/whiplash_squid_magna/gallery/whip_magna3.jpg",
+      "alt": "Visualização esquemática da bioluminescência da lula.",
+      "legenda": "Fotóforos estão presentes no corpo, braços e olhos do animal.",
+      "fonte": "Deep-Sea Research (Exemplo)"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/bathypelagic/whiplash_squid_magna/gallery/whip_magna4.jpg",
+      "alt": "O Whiplash Squid em sua postura de caça (exemplo).",
+      "legenda": "Acredita-se que eles usam seus tentáculos pegajosos para 'pescar' passivamente na escuridão.",
+      "fonte": "Digital Reconstruction (Exemplo)"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/bathypelagic/whiplash_squid_magna/gallery/whip_magna4.jpg",
+      "alt": "O Whiplash Squid em sua postura de caça (exemplo).",
+      "legenda": "Acredita-se que eles usam seus tentáculos pegajosos para 'pescar' passivamente na escuridão.",
+      "fonte": "Digital Reconstruction (Exemplo)"
+    },
+    {
+      "type": "youtube",
+      "src": "pw_RpPwQGqg", 
+      "alt": "Vídeo de um Whiplash Squid em profundidade (substituir ID)",
+      "legenda": "Avistamentos em vídeo são extremamente raros e fornecem insights valiosos sobre seu comportamento.",
+      "fonte": "ROV Footage"
+    }
+  ],
+  "curiosidades": [
+    "A **Magnoteuthis magna** já foi classificada como *Mastigoteuthis magna*.",
+    "A família Mastigoteuthidae é distinguida por seus tentáculos longos e finos, que carecem de ventosas grandes e hastes de tentáculos espessas.",
+    "A cor vermelha da lula absorve o pouco de luz azul que penetra em grandes profundidades, tornando o animal essencialmente invisível para predadores.",
+    "Os fotóforos (órgãos de luz) ajudam na camuflagem (contra-iluminação) ou podem ser usados para atrair presas em ambientes escuros."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Lula-Bigfin",
+      "img": "../../../img/Animals/molluscae/abyssopelagic/bigfin_squid/bigfin_squid.png",
+      "targetId": "Lula-Bigfin (Magnapinna)"
+    },
+    {
+      "nome": "Lula-Gigante",
+      "img": "../../../img/Animals/molluscae/bathypelagic/giant_squid/giant_squid.png",
+      "targetId": "Lula-Gigante"
+    },
+    {
+      "nome": "Polvo-Dumbo",
+      "img": "../../../img/Animals/molluscae/abyssopelagic/dumbo_octopus/dumbo_octopus.png",
+      "targetId": "Polvo-Dumbo"
+    }
+  ]
+}

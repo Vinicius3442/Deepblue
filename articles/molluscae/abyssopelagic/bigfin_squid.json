@@ -53,6 +53,13 @@
       "fonte": "MBARI"
     },
     {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/abyssopelagic/bigfin_squid/gallery/bigfin2.jpg",
+      "alt": "Lula-Bigfin flutuando perto do fundo do mar",
+      "legenda": "Observações sugerem que ela pode arrastar seus filamentos pegajosos no fundo para capturar comida.",
+      "fonte": "MBARI"
+    },
+    {
       "type": "youtube",
       "src": "To2_Gq14UVs",
       "alt": "Vídeo raro de uma Lula-Bigfin",
@@ -68,9 +75,9 @@
   ],
   "especiesRelacionadas": [
     {
-      "nome": "Lula-Vampira-do-Inferno",
-      "img": "../../../img/Animals/molluscae/mesopelagic/vampire_squid/vampire_squid.png",
-      "targetId": "Lula-Vampira-do-Inferno"
+      "nome": "Whiplash Squid",
+      "img": "../../../img/Animals/molluscae/bathypelagic/whiplash_squid_magna/whiplash_squid_magna.png",
+      "targetId": "Whiplash Squid"
     },
     {
       "nome": "Polvo-Dumbo",

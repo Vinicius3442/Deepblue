@@ -43,5 +43,14 @@
     "dataScale": 0.9,
     "imgPath": "../img/Animals/fish/bathypelagic/black_devil/black_devil.png",
     "articlePath": "../articles/fish/bathypelagic/black_devil.json"
+  },
+  {
+    "id": "whiplash_squid_magna",
+    "name": "Whiplash Squid",
+    "dataDepth": 1500,
+    "dataType": "agua-viva",
+    "dataScale": 1.2,
+    "imgPath": "../img/Animals/molluscae/bathypelagic/whiplash_squid_magna/whiplash_squid_magna.png",
+    "articlePath": "../articles/molluscae/bathypelagic/whiplash_squid_magna.json"
   }
 ]
