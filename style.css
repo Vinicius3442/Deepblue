@@ -1,21 +1,21 @@
 :root {
-  /* Paleta de Cores */
+ 
   --color-text: #f0f4f8;
   --color-text-dark: #2c2c54;
   --color-accent: #ffb86c;
   --color-shadow: rgba(0, 10, 18, 0.7);
-  --color-sky-top: #a1c4fd; /* Usado como base para o gradiente */
-  --color-sky-bottom: #c2e9fb; /* Usado como base para o gradiente */
+  --color-sky-top: #a1c4fd;
+  --color-sky-bottom: #c2e9fb;
   --color-ocean-surface: #0070b3;
-  --color-ocean-dark: #000a12; /* Fundo do abismo */
+  --color-ocean-dark: #000a12;
 
-  /* Tipografia */
+ 
   --font-family-display: "Oswald", sans-serif;
   --font-family-body: "Roboto", sans-serif;
   --font-family-monospace: "Courier New", Courier, monospace;
 
-  --color-sand-base: #18232c; /* Cor base mais escura do solo */
-  --color-sand-highlight: #2c3e50; /* Cor para o topo iluminado das dunas */
+  --color-sand-base: #18232c;
+  --color-sand-highlight: #2c3e50;
   --color-sand-shadow: #121a21;
 }
 
@@ -30,20 +30,20 @@
 body {
   font-family: var(--font-family-body);
   color: var(--color-text);
-  background-color: var(--color-ocean-dark); /* Fundo inicial escuro */
+  background-color: var(--color-ocean-dark);
   overflow-x: hidden;
   position: relative;
-  scroll-behavior: smooth; /* Para rolagem suave */
+  scroll-behavior: smooth;
 }
 
-/* --- SEÇÃO CÉU E SUPERFÍCIE (AGORA ROLA COM A PÁGINA) --- */
+
 
 .sky-and-surface-wrapper {
-  position: relative; /* Parte do fluxo normal da página */
+  position: relative;
   width: 100%;
-  height: 100vh; /* Ocupa a altura da viewport inicial */
+  height: 100vh;
   overflow: hidden;
-  z-index: 1; /* Garante que o título esteja sobre ele */
+  z-index: 1;
 }
 
 .sky {
@@ -57,11 +57,11 @@ body {
   background-position: center bottom;
   background-repeat: no-repeat;
   z-index: 0;
-  /* Gradiente sutil para transição do céu para o oceano */
+ 
   background-blend-mode: overlay;
   background-color: var(--color-sky-bottom);
 
-  animation: panSky 120s linear infinite; /* Animação mais lenta para o céu */
+  animation: panSky 120s linear infinite;
 }
 
 @keyframes panSky {
@@ -78,10 +78,10 @@ body {
 
 .ocean-surface {
   position: absolute;
-  bottom: -5px; /* Ajuste para evitar lacunas */
+  bottom: -5px;
   left: 0;
   width: 100%;
-  height: 200px; /* Um pouco mais alto para as ondas */
+  height: 200px;
   overflow: hidden;
   z-index: 5;
 }
@@ -116,13 +116,13 @@ body {
   }
   to {
     transform: translateY(20px);
-  } /* Maior movimento da onda */
+  }
 }
 
-/* --- TÍTULO INICIAL --- */
+
 
 .title-slide {
-  position: absolute; /* Posicionado sobre o céu/superfície */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -135,8 +135,8 @@ body {
   color: var(--color-text-dark);
   padding: 1rem;
   z-index: 10;
-  /* Remover gradiente de fundo se o JS já estiver controlando a opacidade geral */
-  /* background: linear-gradient(to top, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%); */
+ 
+ 
 }
 
 .main-title {
@@ -196,27 +196,27 @@ body {
   }
 }
 
-/* --- FUNDO DO OCEANO (FIXO E CONTROLADO PELO JS) --- */
+
 .ocean-background {
-  position: fixed; /* Fica fixo, a cor muda com o JS */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  z-index: -1; /* Abaixo de todo o conteúdo */
-  background: var(--color-ocean-surface); /* Cor inicial */
-  transition: background-color 0.3s ease-out; /* Transição suave de cor */
+  z-index: -1;
+  background: var(--color-ocean-surface);
+  transition: background-color 0.3s ease-out;
 }
 
-/* --- ABISMO OCEÂNICO --- */
+
 
 #ocean-abyss {
-  position: relative; /* Contém as zonas */
+  position: relative;
   width: 100%;
-  /* O background inicial do abismo pode ser removido aqui, pois o .ocean-background faz o trabalho */
-  /* background: linear-gradient(...) */
-  z-index: 2; /* Acima do wrapper inicial, permitindo que ele role */
-  padding-top: 0; /* Não precisamos mais de padding-top aqui, pois o wrapper rola */
+ 
+ 
+  z-index: 2;
+  padding-top: 0;
 }
 
 .zone-cluster {
@@ -226,8 +226,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* ALTERE DE 'center' PARA 'flex-start' */
-  padding: 5rem 2rem 2rem 2rem; /* ADICIONE um padding-top maior */
+  justify-content: flex-start;
+  padding: 5rem 2rem 2rem 2rem;
   color: var(--color-text);
   text-align: center;
 }
@@ -262,7 +262,7 @@ body {
 
 .fauna-gallery figure {
   position: absolute;
-  transition: transform 0.2s ease-out, z-index 0.2s linear; /* Transição suave */
+  transition: transform 0.2s ease-out, z-index 0.2s linear;
   pointer-events: none;
 
   filter: drop-shadow(0 5px 15px var(--color-shadow));
@@ -301,12 +301,12 @@ body {
 #reset-button {
   position: fixed;
   bottom: 8rem;
-  /* Desloca para a esquerda a partir do centro */
+ 
   left: 50%;
-  transform: translateX(-105%); /* Move 100% da sua própria largura + 5% de margem para a esquerda */
+  transform: translateX(-105%);
   z-index: 2600;
   
-  /* Aparência (sem alterações) */
+ 
   background-color: var(--color-accent);
   color: var(--color-text-dark);
   font-family: var(--font-family-display);
@@ -319,7 +319,7 @@ body {
   cursor: pointer;
   box-shadow: 0 0 15px var(--color-accent), 0 0 25px rgba(255, 184, 108, 0.4);
   
-  /* Transições e estado inicial (sem alterações) */
+ 
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -333,7 +333,7 @@ body {
 }
 
 #reset-button:hover {
-  /* Mantém a transformação original ao dar hover */
+ 
   transform: translateX(-105%) scale(1.05);
   filter: brightness(1.1);
 }
@@ -345,12 +345,12 @@ body {
 #time-travel-button {
   position: fixed;
   bottom: 8rem;
-  /* Desloca para a direita a partir do centro */
+ 
   left: 50%;
-  transform: translateX(5%); /* Move 5% da sua própria largura para a direita (para criar um espaço) */
+  transform: translateX(5%);
   z-index: 2600;
   
-  /* Aparência distinta (sem alterações) */
+ 
   background: linear-gradient(45deg, #4c00ff, #aa00ff);
   color: var(--color-text);
   font-family: var(--font-family-display);
@@ -362,7 +362,7 @@ body {
   cursor: pointer;
   box-shadow: 0 0 15px #7a00ff, 0 0 25px rgba(170, 0, 255, 0.5);
   
-  /* Estado inicial e transição (sem alterações) */
+ 
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -387,7 +387,7 @@ body {
   100% { box-shadow: 0 0 15px #7a00ff; }
 }
 
-/* Posicionamento dos animais - Ajuste conforme necessário para cada zona */
+
 #zone-epipelagic figure:nth-of-type(1) {
   top: 30%;
   left: 10%;
@@ -454,22 +454,22 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 10, 18, 0.8); /* Fundo um pouco mais opaco */
-  backdrop-filter: blur(5px); /* Efeito de desfoque no fundo */
+  background: rgba(0, 10, 18, 0.8);
+  backdrop-filter: blur(5px);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 3000;
   opacity: 0;
   pointer-events: none;
-  visibility: hidden; /* Garante que o modal esteja totalmente inativo */
+  visibility: hidden;
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
 .animal-modal.active {
   opacity: 1;
   pointer-events: auto;
-  visibility: visible; /* Torna o modal ativo */
+  visibility: visible;
 }
 
 .animal-modal .modal-content {
@@ -505,20 +505,20 @@ body {
 .animal-modal .modal-content {
   max-width: 750px;
   width: 90%;
-  max-height: 90vh; /* Aumentei um pouco a altura máxima */
+  max-height: 90vh;
   display: flex;
   flex-direction: column;
-  background: #142635; /* Fundo um pouco mais suave */
+  background: #142635;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px; /* Bordas mais arredondadas */
+  border-radius: 16px;
 
-  /* --- MELHORIA VISUAL: Sombra para dar profundidade --- */
+ 
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  overflow: hidden; /* Garante que os cantos arredondados funcionem em tudo */
+  overflow: hidden;
 }
 
 .modal-header {
-  padding: 1.5rem 2rem; /* Aumentei o espaçamento */
+  padding: 1.5rem 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   flex-shrink: 0;
 }
@@ -527,14 +527,14 @@ body {
   font-family: var(--font-family-display);
   font-size: 2.25rem;
   color: #fff;
-  letter-spacing: 1px; /* Espaçamento entre letras */
+  letter-spacing: 1px;
   font-weight: 700;
 }
 
 .modal-header .modal-scientific-name {
   font-style: italic;
   color: var(--color-accent);
-  font-weight: 400; /* Um pouco mais de peso */
+  font-weight: 400;
   margin-top: 0.25rem;
   opacity: 0.9;
 }
@@ -542,9 +542,9 @@ body {
 .modal-tabs {
   display: flex;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 0 2rem; /* Aumentei o espaçamento */
+  padding: 0 2rem;
   flex-shrink: 0;
-  background-color: rgba(0, 0, 0, 0.1); /* Fundo sutil para a área das abas */
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .tab-button {
@@ -552,7 +552,7 @@ body {
   border: none;
   color: rgba(255, 255, 255, 0.6);
   padding: 1rem 0;
-  margin-right: 2rem; /* Mais espaço entre as abas */
+  margin-right: 2rem;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 700;
@@ -571,11 +571,11 @@ body {
 
 .modal-body {
   overflow-y: auto;
-  padding: 1.5rem 2rem; /* Aumentei o espaçamento */
+  padding: 1.5rem 2rem;
   flex: 1;
 }
 
-/* --- MELHORIA VISUAL: Barra de rolagem customizada --- */
+
 .modal-body::-webkit-scrollbar {
   width: 8px;
 }
@@ -610,35 +610,35 @@ body {
   }
 }
 .expanded-media-viewer .expanded-media-content iframe {
-  width: 100%; /* Ocupa a largura do container */
-  aspect-ratio: 16 / 9; /* Força a proporção de vídeo 16:9 */
+  width: 100%;
+  aspect-ratio: 16 / 9;
   border: none;
-  border-radius: 12px; /* Mantém a consistência visual */
+  border-radius: 12px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
 .image-credit {
-  font-size: 0.75rem; /* Pequeno */
-  font-style: italic; /* Itálico */
-  color: rgba(255, 255, 255, 0.6); /* Cor cinza-claro com transparência */
-  text-align: right; /* Alinhado à direita */
-  margin-top: -0.5rem; /* Puxa um pouco para cima, para perto da imagem */
-  margin-bottom: 1rem; /* Espaço abaixo do crédito */
-  padding-right: 0.5rem; /* Pequeno espaço à direita */
+  font-size: 0.75rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: right;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+  padding-right: 0.5rem;
 }
 
-/* Garante que o crédito da galeria expandida também funcione */
+
 .expanded-media-viewer .image-credit {
   text-align: center;
   margin-top: 0.5rem;
   padding-right: 0;
 }
 
-/* Ajuste no módulo de informação para acomodar o crédito */
+
 .info-module img {
-  margin: 0 auto 0.75rem auto; /* Reduz a margem inferior */
+  margin: 0 auto 0.75rem auto;
 }
 .info-module .image-credit {
-  margin-bottom: 1.5rem; /* Adiciona a margem de volta abaixo do crédito */
+  margin-bottom: 1.5rem;
 }
 
 .modal-body {
@@ -648,7 +648,7 @@ body {
 }
 
 .info-module {
-  margin-top: 2.5rem; /* Mais espaço entre os módulos */
+  margin-top: 2.5rem;
   padding-top: 1.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -669,7 +669,7 @@ body {
 
 .info-module img {
   width: 100%;
-  max-width: 500px; /* Limita mais a largura máxima da imagem */
+  max-width: 500px;
   display: block;
   margin: 0 auto 1.5rem auto;
   border-radius: 10px;
@@ -685,7 +685,7 @@ body {
 .curiosidades-list {
   list-style: none;
   padding: 0;
-  text-align: left; /* Alinha o texto à esquerda */
+  text-align: left;
 }
 
 .ficha-tecnica-list li,
@@ -700,33 +700,33 @@ body {
   border-bottom: none;
 }
 .ficha-tecnica-list li strong {
-  color: #fff; /* Key names are white */
+  color: #fff;
   margin-right: 0.7rem;
   font-weight: 500;
 }
 .ficha-tecnica-list li span {
-  color: var(--color-accent); /* Values are accented */
+  color: var(--color-accent);
   font-weight: 400;
 }
 
-/* --- ABA GALERIA --- */
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(
     auto-fill,
     minmax(150px, 1fr)
-  ); /* Imagens um pouco maiores */
-  gap: 1.2rem; /* Mais espaçamento */
+  );
+  gap: 1.2rem;
   margin-bottom: 2rem;
 }
 
 .gallery-item-wrapper {
   cursor: pointer;
   overflow: hidden;
-  border-radius: 8px; /* Bordas mais arredondadas */
+  border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   transition: transform 0.2s ease-in-out, border-color 0.2s, box-shadow 0.2s;
-  height: 120px; /* Altura fixa para todos os wrappers */
+  height: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -734,7 +734,7 @@ body {
 }
 
 .gallery-item-wrapper:hover {
-  transform: translateY(-5px) scale(1.02); /* Leve levantamento e zoom */
+  transform: translateY(-5px) scale(1.02);
   border-color: var(--color-accent);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
@@ -745,13 +745,13 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 0;
-} /* Estilos para a miniatura do vídeo do YouTube na galeria */
+}
 .gallery-item-wrapper.youtube-thumb {
-  position: relative; /* Necessário para posicionar o ícone de play */
+  position: relative;
 }
 
 .gallery-item-wrapper.youtube-thumb::after {
-  content: "▶"; /* Ícone de play (pode ser trocado por um SVG) */
+  content: "▶";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -766,10 +766,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  line-height: 50px; /* Alinha verticalmente o caractere ▶ */
-  padding-left: 5px; /* Ajuste fino para centralizar o caractere ▶ */
+  line-height: 50px;
+  padding-left: 5px;
   transition: transform 0.2s ease, background-color 0.2s ease;
-  pointer-events: none; /* Garante que o clique vá para o wrapper */
+  pointer-events: none;
 }
 
 .gallery-item-wrapper.youtube-thumb:hover::after {
@@ -796,13 +796,13 @@ body {
   border-radius: 16px;
 }
 .expanded-media-viewer .close-expanded-media {
-  position: absolute; /* Mais importante: Tira o 'x' do fluxo normal */
-  top: 1.5rem; /* Distância do topo */
-  right: 1.5rem; /* Distância da direita */
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
   font-size: 2.5rem;
   color: #fff;
   cursor: pointer;
-  z-index: 10; /* Garante que ele fique sobre todos os outros elementos */
+  z-index: 10;
   transition: transform 0.2s ease-in-out;
 }
 .expanded-media-viewer.active {
@@ -818,7 +818,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 100%; /* <--- ADICIONE ESTA LINHA */
+  width: 100%;
 }
 
 .expanded-media-viewer .close-expanded-media:hover {
@@ -828,7 +828,7 @@ body {
 
 .expanded-media-viewer .expanded-media-content {
   max-width: 90%;
-  max-height: 85%; /* Um pouco menor para a legenda */
+  max-height: 85%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -840,7 +840,7 @@ body {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  border-radius: 12px; /* Bordas arredondadas para a mídia */
+  border-radius: 12px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
 
@@ -857,14 +857,14 @@ body {
   grid-template-columns: repeat(
     auto-fill,
     minmax(180px, 1fr)
-  ); /* Itens maiores */
+  );
   gap: 1.5rem;
   margin-top: 1.5rem;
   text-align: center;
 }
 
 .related-species-item {
-  background: #1d364a; /* Fundo sutil para cada item */
+  background: #1d364a;
   padding: 1rem;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -899,9 +899,9 @@ body {
   left: 0;
   width: 100%;
   height: 100vh;
-  z-index: 10; /* Z-index alto para ficar sobre o fundo */
+  z-index: 10;
   pointer-events: none;
-  opacity: 0; /* JS controla a opacidade */
+  opacity: 0;
   transition: opacity 1.5s ease-in-out;
 }
 
@@ -911,23 +911,23 @@ body {
 }
 
 .dune {
-  stroke: none; /* Sem contorno */
+  stroke: none;
   transition: transform 0.5s ease-out;
   animation: dune-gentle-sway 20s ease-in-out infinite alternate;
 }
 
-/* Paleta de cores para as dunas */
+
 #dune-back {
-  fill: #121a21; /* Duna de trás, a mais escura */
+  fill: #121a21;
   animation-duration: 35s;
 }
 #dune-middle {
-  fill: #18232c; /* Duna do meio */
+  fill: #18232c;
   animation-duration: 30s;
   animation-delay: -2s;
 }
 #dune-front {
-  fill: #2c3e50; /* Duna da frente, a mais "clara" */
+  fill: #2c3e50;
   animation-duration: 25s;
   animation-delay: -4s;
 }
@@ -954,15 +954,15 @@ body {
   }
 }
 #particle-canvas {
-  position: fixed; /* Fica fixo na tela */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1; /* Fica entre o fundo colorido e o conteúdo principal */
-  pointer-events: none; /* Não interfere com cliques do mouse */
+  z-index: 1;
+  pointer-events: none;
 
-  /* Começa invisível e terá uma transição suave */
+ 
   opacity: 0;
   transition: opacity 1.5s ease-in-out;
 }
@@ -983,14 +983,14 @@ body {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-  /* display: flex; e flex-direction: column; foram REMOVIDOS */
+ 
 
   background-image: linear-gradient(rgba(0, 0, 0, 0.3) 50%, transparent 50%);
   background-size: 100% 4px;
   animation: flicker 0.15s infinite;
 }
 
-/* Animação de flicker para o look analógico */
+
 @keyframes flicker {
   0% {
     opacity: 0.98;
@@ -1009,7 +1009,7 @@ body {
 }
 
 .log-header {
-  /* Estilo continua similar */
+ 
   background-color: rgba(0, 0, 0, 0.3);
   padding: 0.5rem 1rem;
   font-family: var(--font-family-monospace);
@@ -1022,7 +1022,7 @@ body {
 }
 
 #log-messages-list {
-  /* Reduzimos a altura para dar espaço ao sonar */
+ 
   height: 150px;
   list-style: none;
   margin: 0;
@@ -1033,7 +1033,7 @@ body {
 }
 
 .log-message {
-  /* Adicionamos um brilho de fósforo verde */
+ 
   color: #0f0;
   text-shadow: 0 0 5px #0f0, 0 0 10px rgba(0, 255, 0, 0.3);
   margin-bottom: 0.75rem;
@@ -1053,7 +1053,7 @@ body {
   border-right-color: #f0f4f8;
 }
 
-/* Animações (typing, blink-caret) e scrollbar continuam as mesmas */
+
 @keyframes typing {
   from {
     width: 0;
@@ -1087,11 +1087,11 @@ body {
   bottom: 2rem;
   left: 2rem;
   font-family: var(--font-family-monospace);
-  color: var(--color-accent); /* Laranja/Âmbar para diferenciar do log */
+  color: var(--color-accent);
   z-index: 2500;
-  opacity: 0; /* Começa invisível */
+  opacity: 0;
   transition: opacity 0.5s ease-out;
-  pointer-events: none; /* Não interfere com cliques */
+  pointer-events: none;
   text-shadow: 0 0 5px var(--color-accent), 0 0 10px rgba(255, 184, 108, 0.3);
 }
 
@@ -1288,7 +1288,7 @@ body {
   color: var(--color-accent);
   text-shadow: 0 0 5px var(--color-accent), 0 0 10px rgba(255, 184, 108, 0.3);
   
-  /* Estado inicial e transição */
+ 
   opacity: 0;
   transition: opacity 0.5s ease-out;
   pointer-events: none;
@@ -1304,7 +1304,7 @@ body {
 
 #corner-depth-hud #corner-depth-value {
   font-weight: bold;
-  font-size: 2.5rem; /* Profundidade é a maior */
+  font-size: 2.5rem;
 }
 
 #corner-depth-hud .hud-secondary-metrics {
@@ -1362,7 +1362,7 @@ body.time-travel-start {
   box-shadow: 0 0 25px rgba(0, 200, 255, 0.4);
 }
 
-/* --- PAINEL MODAL DO BESTIÁRIO --- */
+
 #bestiary-panel {
   position: fixed;
   top: 0;
@@ -1371,7 +1371,7 @@ body.time-travel-start {
   height: 100%;
   background: rgba(0, 10, 18, 0.8);
   backdrop-filter: blur(5px);
-  z-index: 3000; /* Acima do modal de animal */
+  z-index: 3000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1387,17 +1387,17 @@ body.time-travel-start {
   pointer-events: auto;
 }
 
-/* O conteúdo (caixa) dentro do modal */
+
 .bestiary-content {
   position: relative;
   width: 90%;
-  display: flex; /* Adicionado para layout flexível */
-  flex-direction: column; /* Adicionado para layout flexível */
-  overflow: hidden; /* Adicionado para layout flexível */
-  max-width: 1000px; /* Mais largo para duas páginas */
-  height: 90vh; /* Mais alto */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  max-width: 1000px;
+  height: 90vh;
   max-height: 700px;
-  background: #f4f0e8; /* Fundo de papel */
+  background: #f4f0e8;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
@@ -1411,7 +1411,7 @@ body.time-travel-start {
   color: #777;
   cursor: pointer;
   transition: all 0.2s ease;
-  z-index: 10; /* Garante que fique acima do header */
+  z-index: 10;
 }
 #bestiary-close-btn:hover {
   color: #b94b00;
@@ -1422,13 +1422,13 @@ body.time-travel-start {
   padding: 1.5rem 2rem;
   text-align: center;
   flex-shrink: 0;
-  background: #e6e0d4; /* Papel mais escuro */
+  background: #e6e0d4;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .bestiary-header h2 {
   font-family: var(--font-family-display);
   font-size: 2rem;
-  color: #b94b00; /* Laranja escuro */
+  color: #b94b00;
   margin-bottom: 0.25rem;
 }
 .bestiary-header p {
@@ -1436,17 +1436,17 @@ body.time-travel-start {
   color: #595959;
 }
 
-/* 3. O CONTAINER DAS PÁGINAS */
+
 .bestiary-list {
-  display: flex; /* As páginas ficam lado a lado */
-  flex: 1; /* Ocupa todo o espaço vertical */
-  overflow: hidden; /* Isso é crucial! */
-  position: relative; /* Para a divisória */
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
   padding: 1rem;
-  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.1); /* Sombra interna */
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.1);
 }
 
-/* A DIVISÓRIA DO LIVRO */
+
 .bestiary-list::after {
   content: "";
   position: absolute;
@@ -1462,37 +1462,37 @@ body.time-travel-start {
     rgba(0, 0, 0, 0.15) 70%,
     rgba(0, 0, 0, 0) 100%
   );
-  z-index: 1; /* Fica atrás das páginas */
+  z-index: 1;
 }
 
-/* 4. CADA PÁGINA */
+
 .bestiary-page {
-  width: 50%; /* Cada página ocupa metade */
-  flex-shrink: 0; /* Não encolhe */
+  width: 50%;
+  flex-shrink: 0;
   padding: 1.5rem;
   box-sizing: border-box;
   flex-direction: column;
   transition: opacity 0.3s ease;
-  display: none; /* Por padrão, todas as páginas estão escondidas */
-  z-index: 2; /* Fica na frente da divisória */
+  display: none;
+  z-index: 2;
 }
-/* A classe que o JS usará para mostrar as páginas */
+
 .bestiary-page.visible {
   display: flex;
 }
 
-/* Estilo da página da esquerda e direita */
+
 .bestiary-page:nth-of-type(odd) {
-  /* Página da esquerda */
+ 
   padding-right: 2rem;
   border-right: 1px dashed rgba(0, 0, 0, 0.1);
 }
 .bestiary-page:nth-of-type(even) {
-  /* Página da direita */
+ 
   padding-left: 2rem;
 }
 
-/* 5. CONTEÚDO DA PÁGINA */
+
 .bestiary-page-img {
   width: 100%;
   height: 200px;
@@ -1506,15 +1506,15 @@ body.time-travel-start {
   font-family: var(--font-family-display);
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
-  color: #3a3a3a; /* Cor padrão do título */
+  color: #3a3a3a;
 }
 .bestiary-page-description {
   font-family: var(--font-family-body);
   color: #3a3a3a;
   line-height: 1.6;
   font-size: 0.95rem;
-  overflow-y: auto; /* Permite rolar a descrição se for longa */
-  flex: 1; /* Ocupa o espaço restante */
+  overflow-y: auto;
+  flex: 1;
 }
 
 .bestiary-page-hint {
@@ -1524,9 +1524,9 @@ body.time-travel-start {
   margin-top: 1rem;
 }
 
-/* 6. ESTADO BLOQUEADO */
+
 .bestiary-page.locked .bestiary-page-img {
-  filter: brightness(0) opacity(0.3); /* A silhueta! */
+  filter: brightness(0) opacity(0.3);
   object-fit: contain;
   padding: 1rem;
 }
@@ -1541,7 +1541,7 @@ body.time-travel-start {
   padding-top: 2rem;
 }
 
-/* 7. O RODAPÉ DE NAVEGAÇÃO */
+
 .bestiary-footer {
   flex-shrink: 0;
   display: flex;
@@ -1552,7 +1552,7 @@ body.time-travel-start {
   background: #e6e0d4;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   font-family: var(--font-family-monospace);
-  z-index: 10; /* Garante que fique acima de tudo */
+  z-index: 10;
 }
 .bestiary-footer button {
   background: #b94b00;
