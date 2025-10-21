@@ -3,7 +3,7 @@
     "id": "giant_squid",
     "name": "Lula-Gigante",
     "dataDepth": 2500,
-    "dataType": "lula",
+    "dataType": "lula-grande",
     "dataScale": 6.0,
     "imgPath": "../img/Animals/molluscae/bathypelagic/giant_squid/giant_squid.png",
     "articlePath": "../articles/molluscae/bathypelagic/giant_squid.json"
@@ -48,18 +48,27 @@
     "id": "whiplash_squid_magna",
     "name": "Whiplash Squid",
     "dataDepth": 1500,
-    "dataType": "agua-viva",
+    "dataType": "flutuador-passivo",
     "dataScale": 1.2,
     "imgPath": "../img/Animals/molluscae/bathypelagic/whiplash_squid_magna/whiplash_squid_magna.png",
     "articlePath": "../articles/molluscae/bathypelagic/whiplash_squid_magna.json"
   },
   {
-  "id": "greenland_shark",
-  "name": "Tubarão-da-Groenlândia",
-  "dataDepth": 1300,
-  "dataType": "predador-grande",
-  "dataScale": 4.0,
-  "imgPath": "../img/Animals/elasmobranchii/bathypelagic/greenland_shark/greenland_shark.png",
-  "articlePath": "../articles/elasmobranchii/bathypelagic/greenland_shark.json"
-}
+    "id": "greenland_shark",
+    "name": "Tubarão-da-Groenlândia",
+    "dataDepth": 1300,
+    "dataType": "predador-grande",
+    "dataScale": 4.0,
+    "imgPath": "../img/Animals/elasmobranchii/bathypelagic/greenland_shark/greenland_shark.png",
+    "articlePath": "../articles/elasmobranchii/bathypelagic/greenland_shark.json"
+  },
+  {
+    "id": "portuguese_dogfish",
+    "name": "Carocho",
+    "dataDepth": 2200,
+    "dataType": "predador-medio",
+    "dataScale": 1.2,
+    "imgPath": "../img/Animals/elasmobranchii/bathypelagic/portuguese_dogfish/portuguese_dogfish.png",
+    "articlePath": "../articles/elasmobranchii/bathypelagic/portuguese_dogfish.json"
+  }
 ]

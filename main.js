@@ -337,6 +337,8 @@ async function updateBestiaryPage(animalName) {
     window.addEventListener("scroll", onScroll);
     window.addEventListener("resize", setupParticles);
 
+    setupParticles();
+
     requestAnimationFrame(() => animateAnimals(animals));
     requestAnimationFrame(animateParticles);
 
@@ -383,17 +385,12 @@ async function updateBestiaryPage(animalName) {
           const rawPath = figure.dataset.article;
           if (!rawPath) return null;
 
-          // Encontra a parte "articles/" do caminho
           const articlesIndex = rawPath.indexOf("articles/");
           
           if (articlesIndex > -1) {
-            // Reconstrói o caminho a partir da raiz do site (index.html)
-            // ex: "articles/foo.json" -> "./articles/foo.json"
-            // ex: "../articles/foo.json" -> "./articles/foo.json"
             return "./" + rawPath.substring(articlesIndex);
           }
-          
-          // Se não encontrar "articles/", retorna o caminho como está (pode falhar, mas é um fallback)
+        
           return rawPath;
         })(),
         type: figure.dataset.type || "peixe",
@@ -526,7 +523,7 @@ async function updateBestiaryPage(animalName) {
           animal.img.onload = () => {
             animal.width = animal.img.offsetWidth;
 
-            if (animal.type === "agua-viva-brilhante" && animal.glowColor) {
+            if (animal.glowColor) {
               animal.figure.style.filter = `
               drop-shadow(0 0 15px ${animal.glowColor}) 
               drop-shadow(0 5px 15px var(--color-shadow))

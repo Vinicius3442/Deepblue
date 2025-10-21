@@ -1,0 +1,95 @@
+{
+  "name": "Cação-espinho",
+  "scientificName": "Squalus acanthias",
+  "img": "../../../img/Animals/elasmobranchii/epipelagic/spiny_dogfish/spiny_dogfish.png",
+  "fonte": "JG ORS",
+  "description": "O Cação-espinho, também conhecido como Galhudo ou Melga, é um dos tubarões mais abundantes e bem distribuídos do mundo, encontrado em águas temperadas. É famoso por caçar em grandes 'matilhas', o que lhe deu o nome 'dogfish' (cão-do-mar). Possui dois espinhos venenosos na frente de suas nadadeiras dorsais como mecanismo de defesa.",
+  
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/elasmobranchii/epipelagic/spiny_dogfish/map_spiny_dogfish.jpg",
+    "alt": "Mapa de distribuição do Cação-espinho, mostrando águas temperadas em todo o mundo.",
+    "fonte": "IUCN Red List / Adaptado"
+  },
+  
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/elasmobranchii/epipelagic/spiny_dogfish/size_spiny_dogfish.jpg",
+    "alt": "Comparativo de tamanho de um Cação-espinho com um ser humano",
+    "descricao": "É um tubarão relativamente pequeno. Os machos amadurecem com cerca de 80-100 cm, enquanto as fêmeas são maiores, amadurecendo entre 100-120 cm. O comprimento máximo registrado é de 1,6 metros.",
+    "fonte": "FishBase / Animal Diversity Web"
+  },
+  
+  "fichaTecnica": {
+    "statusConservacao": "Vulnerável (VU)",
+    "profundidade": "Superfície até ~1970m (mais comum entre 50m - 300m)",
+    "dieta": "Carnívoro generalista (peixes, lulas, caranguejos, camarões, polvos e até águas-vivas)",
+    "tamanhoMaximo": "~1.6 metros",
+    "expectativaVida": "Até 75 anos",
+    "habitat": "Águas temperadas e boreais, sobre plataformas continentais"
+  },
+  
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/spiny_dogfish/gallery_spine.jpg",
+      "alt": "Close-up do espinho na nadadeira dorsal do Cação-espinho.",
+      "legenda": "Cada uma das duas nadadeiras dorsais possui um espinho afiado e venenoso usado para defesa.",
+      "fonte": "NOAA"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/spiny_dogfish/gallery_pack.jpg",
+      "alt": "Um grande cardume (matilha) de Cação-espinho.",
+      "legenda": "Eles são conhecidos por formar grandes grupos, às vezes com milhares de indivíduos, para caçar.",
+      "fonte": "Discovery Channel"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/spiny_dogfish/gallery_spots.jpg",
+      "alt": "Vista dorsal de um Cação-espinho mostrando suas manchas brancas.",
+      "legenda": "São facilmente identificáveis por seu corpo esguio e as manchas brancas espalhadas pelas costas.",
+      "fonte": "MarLIN"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/spiny_dogfish/gallery_fish_and_chips.jpg",
+      "alt": "Prato de 'fish and chips' britânico.",
+      "legenda": "No Reino Unido, o Cação-espinho é historicamente uma das principais escolhas para o 'fish and chips'.",
+      "fonte": "Wikimedia Commons"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/spiny_dogfish/gallery_underside.jpg",
+      "alt": "Vista ventral de um Cação-espinho.",
+      "legenda": "A parte inferior é clara, o que ajuda na camuflagem (contraluminação) contra a superfície.",
+      "fonte": "JG ORS"
+    },
+    {
+      "type": "youtube",
+      "src": "ID_DO_VIDEO_DO_YOUTUBE",
+      "alt": "Vídeo de um Cação-espinho nadando.",
+      "legenda": "Filmagem subaquática mostrando o nado característico do Cação-espinho.",
+      "fonte": "YouTube"
+    }
+  ],
+  
+  "curiosidades": [
+    "Possui um dos períodos de gestação mais longos de qualquer vertebrado, durando de 18 a 24 meses.",
+    "Seus espinhos dorsais secretam um veneno leve que pode causar dor e inchaço em humanos que o manuseiam incorretamente.",
+    "O nome 'dogfish' (cão-do-mar) vem de sua tendência a caçar presas em grandes 'matilhas'.",
+    "É uma espécie extremamente vulnerável à sobrepesca, pois cresce lentamente e tem poucos filhotes. Algumas populações no Atlântico Nordeste foram reduzidas em mais de 95%.",
+    "São viajantes de longa distância; um indivíduo marcado na costa dos EUA foi recapturado posteriormente perto do Japão."
+  ],
+  
+  "especiesRelacionadas": [
+    {
+      "nome": "Tubarão-Mako",
+      "img": "../../../img/Animals/elasmobranchii/epipelagic/mako_shark/mako_shark.png",
+      "targetId": "Tubarão-Mako"
+    },
+    {
+      "nome": "Tubarão Azul",
+      "img": "../../../img/Animals/elasmobranchii/epipelagic/blue-shark/tubarao_azul.png",
+      "targetId": "Tubarão Azul"
+    }
+  ]
+}

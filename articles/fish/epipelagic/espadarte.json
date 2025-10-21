@@ -2,6 +2,7 @@
   "name": "Espadarte",
   "scientificName": "Xiphias gladius",
   "img": "../../../img/Animals/fish/epipelagic/swordfish/swordfish.png",
+  "fonte": "Scandinavian Fishing Year Book",
   "description": "O Espadarte, ou Peixe-Espada, é um dos principais predadores pelágicos, conhecido mundialmente por seu 'rostro' longo e achatado, que lembra uma espada. É um peixe de águas quentes e frias, capaz de tolerar uma ampla faixa de temperaturas, o que lhe permite realizar migrações verticais diárias extremas, caçando desde a superfície até profundidades de centenas de metros.",
 
   "mapaDistribuicao": {

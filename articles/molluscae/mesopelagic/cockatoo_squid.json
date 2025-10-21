@@ -1,0 +1,95 @@
+{
+  "name": "Lula-Cacatua",
+  "scientificName": "Leachia sp.",
+  "img": "../../../img/Animals/molluscae/mesopelagic/cockatoo_squid/cockatoo_squid.png",
+  "fonte": "Marsh Youngbluth / MAR-ECO / Census of Marine Life",
+  "description": "A Lula-Cacatua do gênero *Leachia* é um tipo de lula-de-vidro fantasmagórica que habita as profundezas oceânicas. Seu corpo é quase totalmente transparente, revelando seus órgãos internos. Como outras lulas-de-vidro, ela usa amônia para flutuar sem esforço e frequentemente adota uma postura vertical com os braços agrupados, lembrando uma cacatua.",
+  
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/molluscae/mesopelagic/cockatoo_squid/map_cockatoo_squid.jpg",
+    "alt": "Mapa de distribuição da Lula-Cacatua (gênero Leachia), mostrando presença global em águas profundas.",
+    "fonte": "CephBase / Adaptado" 
+  },
+  
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/molluscae/mesopelagic/cockatoo_squid/size_cockatoo_squid.jpg",
+    "alt": "Comparativo de tamanho de uma Lula-Cacatua (Leachia) com um ser humano",
+    "descricao": "As lulas do gênero *Leachia* são geralmente pequenas a médias, com comprimento do manto variando tipicamente entre 10 e 20 cm, dependendo da espécie.",
+    "fonte": "Tree of Life Web Project"
+  },
+  
+  "fichaTecnica": {
+    "statusConservacao": "Não Avaliado (NE)",
+    "profundidade": "200m - 2.000m+ (Mesopelágica e Batipelágica)",
+    "dieta": "Carnívoro (provavelmente pequenos crustáceos e peixes pelágicos)",
+    "tamanhoMaximo": "~20 cm+ (comprimento do manto, varia por espécie)",
+    "expectativaVida": "Desconhecida",
+    "habitat": "Pelágico, águas profundas oceânicas globalmente"
+  },
+  
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/mesopelagic/cockatoo_squid/gallery_transparent_body.jpg",
+      "alt": "Lula-Cacatua (Leachia) mostrando seu corpo transparente.",
+      "legenda": "A transparência extrema é sua principal forma de camuflagem.",
+      "fonte": "MBARI"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/mesopelagic/cockatoo_squid/gallery_cockatoo_posture.jpg",
+      "alt": "Lula-Cacatua (Leachia) na sua postura vertical.",
+      "legenda": "A postura 'cacatua' ajuda a minimizar a silhueta vista de baixo.",
+      "fonte": "NOAA Okeanos Explorer"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/mesopelagic/cockatoo_squid/gallery_juvenile_tubercles.jpg",
+      "alt": "Close-up mostrando tubérculos cartilaginosos em um jovem Leachia.",
+      "legenda": "Os juvenis de *Leachia* possuem pequenas protuberâncias cartilaginosas cobrindo o corpo.",
+      "fonte": "Wikimedia Commons / A. Süli"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/mesopelagic/cockatoo_squid/gallery_eye_photophores.jpg",
+      "alt": "Olho de uma lula *Leachia* com possíveis fotóforos.",
+      "legenda": "Algumas espécies de *Leachia* possuem órgãos bioluminescentes perto dos olhos ou nas pontas dos braços.",
+      "fonte": "EVNautilus"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/mesopelagic/cockatoo_squid/gallery_swimming.jpg",
+      "alt": "Lula-Cacatua (Leachia) nadando.",
+      "legenda": "Seu nado é geralmente lento, propulsionado pelas nadadeiras.",
+      "fonte": "Schmidt Ocean Institute"
+    },
+    {
+      "type": "youtube",
+      "src": "ID_DO_VIDEO_DO_YOUTUBE",
+      "alt": "Vídeo de uma Lula-Cacatua (Leachia) nas profundezas.",
+      "legenda": "Filmagem de ROV da etérea lula *Leachia*.",
+      "fonte": "YouTube / MBARI"
+    }
+  ],
+  
+  "curiosidades": [
+    "É uma 'lula-de-vidro', quase completamente transparente.",
+    "Usa uma câmara cheia de amônia para flutuar.",
+    "Os filhotes e juvenis têm o corpo coberto por pequenas 'verrugas' ou tubérculos cartilaginosos, que desaparecem nos adultos.",
+    "Algumas espécies de *Leachia* podem ter fotóforos (órgãos de luz) nas pontas dos braços ou perto dos olhos.",
+    "Adotam frequentemente uma postura vertical, com os braços acima da cabeça, minimizando a sombra."
+  ],
+  
+  "especiesRelacionadas": [
+    {
+      "nome": "Lula-Pavão",
+      "img": "../../../img/Animals/molluscae/mesopelagic/peacock_squid/peacock_squid.png",
+      "targetId": "Lula-Pavão" 
+    },
+    {
+      "nome": "Lula-vampiro",
+      "img": "../../../img/Animals/molluscae/mesopelagic/vampire_squid/vampire_squid.png",
+      "targetId": "Lula-vampiro"
+    }
+  ]
+}

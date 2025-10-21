@@ -1,0 +1,95 @@
+{
+  "name": "Lula-Pavão",
+  "scientificName": "Taonius sp.",
+  "img": "../../../img/Animals/molluscae/mesopelagic/peacock_squid/peacock_squid.png",
+  "fonte": "MBARI",
+  "description": "A Lula-Pavão é uma espécie de lula-de-vidro (família Cranchiidae) que habita as profundezas da zona mesopelágica. Seu corpo é quase completamente transparente, oferecendo camuflagem na penumbra. Possui cromatóforos coloridos que podem se expandir, criando padrões que lembram as penas de um pavão, possivelmente para comunicação ou defesa.",
+  
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/molluscae/mesopelagic/peacock_squid/map_peacock_squid.jpg",
+    "alt": "Mapa de distribuição da Lula-Pavão, mostrando presença global em águas profundas temperadas e tropicais.",
+    "fonte": "CephBase / Adaptado" 
+  },
+  
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/molluscae/mesopelagic/peacock_squid/size_peacock_squid.jpg",
+    "alt": "Comparativo de tamanho de uma Lula-Pavão com um ser humano",
+    "descricao": "Pode atingir um comprimento de manto (corpo principal) de até 60-70 cm, com um comprimento total (incluindo tentáculos) que pode exceder 1 metro, embora seja muito leve devido à sua composição gelatinosa.",
+    "fonte": "Tree of Life Web Project"
+  },
+  
+  "fichaTecnica": {
+    "statusConservacao": "Pouco Preocupante (LC)",
+    "profundidade": "500m - 1.000m (Zona Mesopelágica)",
+    "dieta": "Carnívoro (provavelmente pequenos peixes e crustáceos de profundidade)",
+    "tamanhoMaximo": "~70 cm (comprimento do manto)",
+    "expectativaVida": "Desconhecida",
+    "habitat": "Pelágico, águas profundas oceânicas"
+  },
+  
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/mesopelagic/peacock_squid/gallery_transparent.jpg",
+      "alt": "Lula-Pavão mostrando seu corpo transparente.",
+      "legenda": "A transparência é uma camuflagem eficaz na zona do crepúsculo.",
+      "fonte": "MBARI"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/mesopelagic/peacock_squid/gallery_chromatophores.jpg",
+      "alt": "Close-up dos cromatóforos coloridos da Lula-Pavão.",
+      "legenda": "Os cromatóforos permitem que ela mude de cor e crie padrões iridescentes.",
+      "fonte": "NOAA Okeanos Explorer"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/mesopelagic/peacock_squid/gallery_vertical_posture.jpg",
+      "alt": "Lula-Pavão mantendo uma postura vertical na água.",
+      "legenda": "Muitas lulas-de-vidro adotam uma postura vertical para minimizar sua silhueta vista de baixo.",
+      "fonte": "Schmidt Ocean Institute"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/mesopelagic/peacock_squid/gallery_eyes.jpg",
+      "alt": "Olhos grandes da Lula-Pavão.",
+      "legenda": "Possui olhos grandes voltados para cima para detectar silhuetas na penumbra.",
+      "fonte": "EVNautilus"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/mesopelagic/peacock_squid/gallery_internal_organs.jpg",
+      "alt": "Vista mostrando os órgãos internos através do corpo transparente.",
+      "legenda": "A glândula digestiva e outros órgãos são visíveis através do manto transparente.",
+      "fonte": "MBARI"
+    },
+    {
+      "type": "youtube",
+      "src": "ID_DO_VIDEO_DO_YOUTUBE",
+      "alt": "Vídeo de uma Lula-Pavão flutuando nas profundezas.",
+      "legenda": "Filmagem de ROV mostrando a beleza etérea e os movimentos lentos da Lula-Pavão.",
+      "fonte": "YouTube / NOAA"
+    }
+  ],
+  
+  "curiosidades": [
+    "Pertence ao grupo das 'lulas-de-vidro', conhecidas por seus corpos transparentes.",
+    "Controla sua flutuabilidade usando uma cavidade corporal cheia de uma solução de cloreto de amônio, que é mais leve que a água do mar.",
+    "Seus cromatóforos podem criar exibições de cores, embora sua função exata (camuflagem, comunicação) ainda seja debatida.",
+    "Como outras lulas-de-vidro, muitas vezes mantém uma postura vertical na coluna d'água.",
+    "Apesar do nome 'pavão', não há relação direta com a ave; o nome vem dos padrões coloridos que pode exibir."
+  ],
+  
+  "especiesRelacionadas": [
+    {
+      "nome": "Lula-vampiro",
+      "img": "../../../img/Animals/molluscae/mesopelagic/vampire_squid/vampire_squid.png",
+      "targetId": "Lula-vampiro"
+    },
+    {
+      "nome": "Lula-Gigante",
+      "img": "../img/Animals/molluscae/bathypelagic/giant_squid/giant_squid.png",
+      "targetId": "Lula-Gigante"
+    }
+  ]
+}

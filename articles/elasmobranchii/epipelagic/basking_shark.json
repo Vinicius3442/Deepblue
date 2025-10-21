@@ -1,0 +1,96 @@
+{
+  "name": "Tubarão-frade",
+  "scientificName": "Cetorhinus maximus",
+  "img": "../../../img/Animals/elasmobranchii/epipelagic/basking_shark/basking_shark.png",
+  "fonte": "Illustration by Marc Dando, Wildlife Illustrator",
+  "description": "O Tubarão-frade, ou Tubarão-peregrino, é o segundo maior peixe vivo do planeta, superado apenas pelo Tubarão-baleia. Este gigante gentil é um filtrador, conhecido por nadar lentamente perto da superfície com sua boca enorme aberta para capturar zooplâncton. Apesar de seu tamanho e aparência imponente, é completamente inofensivo para os seres humanos.",
+  
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/elasmobranchii/epipelagic/basking_shark/map_basking_shark.jpg",
+    "alt": "Mapa de distribuição do Tubarão-frade, mostrando águas temperadas em todo o mundo.",
+    "fonte": "IUCN Red List / Adaptado"
+  },
+  
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/elasmobranchii/epipelagic/basking_shark/size_basking_shark.jpg",
+    "alt": "Comparativo de tamanho de um Tubarão-frade com um ser humano e um ônibus",
+    "descricao": "Os adultos geralmente medem de 6 a 8 metros (20-26 pés), mas indivíduos de até 12 metros (quase 40 pés) já foram registrados, tornando-os do tamanho de um ônibus de dois andares.",
+    "fonte": "Natural History Museum / FishBase"
+  },
+  
+  "fichaTecnica": {
+    "statusConservacao": "Em Perigo (EN)",
+    "profundidade": "Superfície até ~2.000m (comum perto da superfície para se alimentar)",
+    "dieta": "Filtrador de Zooplâncton (principalmente copépodes)",
+    "tamanhoMaximo": "~12 metros",
+    "expectativaVida": "Estimada em cerca de 50 anos",
+    "habitat": "Costas temperadas e boreais, pelágico, altamente migratório"
+  },
+  
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/basking_shark/gallery_mouth.jpg",
+      "alt": "Tubarão-frade alimentando-se na superfície com a boca aberta.",
+      "legenda": "Sua boca pode se abrir a mais de 1 metro de largura para filtrar milhares de litros de água por hora.",
+      "fonte": "Chris Gotschalk / Wikimedia Commons"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/basking_shark/gallery_gills.jpg",
+      "alt": "Close-up das brânquias (rastros branquiais) de um Tubarão-frade.",
+      "legenda": "Ele usa seus rastros branquiais (estruturas negras parecidas com cerdas) para capturar o plâncton.",
+      "fonte": "Mark William Kirkland / Shutterstock"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/basking_shark/gallery_breaching.jpg",
+      "alt": "Um Tubarão-frade saltando (breaching) para fora da água.",
+      "legenda": "Apesar de seu tamanho e natureza lenta, o Tubarão-frade é capaz de saltar completamente para fora da água.",
+      "fonte": "BBC"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/basking_shark/gallery_divers.jpg",
+      "alt": "Mergulhadores nadando pacificamente perto de um Tubarão-frade.",
+      "legenda": "São gigantes dóceis e uma visão popular para ecoturismo, sendo inofensivos para os mergulhadores.",
+      "fonte": "The Shark Trust"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/basking_shark/gallery_fin.jpg",
+      "alt": "A grande nadadeira dorsal de um Tubarão-frade na superfície.",
+      "legenda": "Sua enorme nadadeira dorsal triangular é muitas vezes o primeiro sinal de sua presença na superfície.",
+      "fonte": "Natural History Museum"
+    },
+    {
+      "type": "youtube",
+      "src": "ID_DO_VIDEO_DO_YOUTUBE",
+      "alt": "Vídeo de um Tubarão-frade se alimentando na superfície.",
+      "legenda": "Filmagem subaquática mostrando o método de alimentação por filtração do Tubarão-frade.",
+      "fonte": "YouTube"
+    }
+  ],
+  
+  "curiosidades": [
+    "Apesar de seu comportamento lento, o Tubarão-frade é o maior tubarão que se sabe ser capaz de saltar ('breaching') completamente para fora da água.",
+    "É um dos três únicos tubarões filtradores conhecidos, junto com o Tubarão-baleia e o Tubarão-boca-grande.",
+    "Ao contrário dos outros filtradores, ele não suga a água; ele depende puramente de seu movimento para a frente para 'empurrar' a água por suas brânquias.",
+    "Seu período de gestação é um dos mais longos do reino animal, estimado em até três anos e meio.",
+    "Populações foram dizimadas pela pesca, pois eram caçados por seu fígado enorme (rico em óleo) e suas grandes nadadeiras.",
+    "Cientistas descobriram recentemente que eles são parcialmente de 'sangue quente' (endotermia regional), um traço que se pensava ser exclusivo de predadores ágeis como o Tubarão-branco."
+  ],
+  
+  "especiesRelacionadas": [
+    {
+      "nome": "Tubarão-Baleia",
+      "img": "../../../img/Animals/elasmobranchii/epipelagic/whale_shark/whale_shark.png",
+      "targetId": "Tubarão-Baleia"
+    },
+    {
+      "nome": "Tubarão-Branco",
+      "img": "../../../img/Animals/elasmobranchii/epipelagic/tubarao_branco/tubarao_branco.png",
+      "targetId": "Tubarão-Branco"
+    }
+  ]
+}

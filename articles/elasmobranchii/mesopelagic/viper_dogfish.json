@@ -1,0 +1,95 @@
+{
+  "name": "Tubarão-víbora",
+  "scientificName": "Trigonognathus kabeyai",
+  "img": "../../../img/Animals/elasmobranchii/mesopelagic/viper_dogfish/viper_dogfish.png",
+  "fonte": "Mochizuki & Ohe, 1990",
+  "description": "O Tubarão-víbora é um tubarão de profundidade raramente visto, notável por suas mandíbulas protráteis e dentes em forma de agulha, que dão a ele uma aparência alienígena. Habita a escuridão da zona mesopelágica do Oceano Pacífico, onde usa sua própria bioluminescência para caçar e se camuflar na penumbra.",
+  
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/elasmobranchii/mesopelagic/viper_dogfish/map_viper_dogfish.jpg",
+    "alt": "Mapa de distribuição do Tubarão-víbora, mostrando áreas no Oceano Pacífico (Japão, Taiwan, Havaí).",
+    "fonte": "IUCN Red List / Adaptado"
+  },
+  
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/elasmobranchii/mesopelagic/viper_dogfish/size_viper_dogfish.jpg",
+    "alt": "Comparativo de tamanho de um Tubarão-víbora com um ser humano",
+    "descricao": "O Tubarão-víbora é uma espécie muito pequena, com as fêmeas (maiores) atingindo um comprimento máximo conhecido de 54 cm, e os machos cerca de 47 cm.",
+    "fonte": "FishBase"
+  },
+  
+  "fichaTecnica": {
+    "statusConservacao": "Dados Insuficientes (DD)",
+    "profundidade": "270m - 360m (Zona Mesopelágica)",
+    "dieta": "Carnívoro (principalmente peixes ósseos, como peixes-lanterna, e crustáceos)",
+    "tamanhoMaximo": "~54 cm",
+    "expectativaVida": "Desconhecida",
+    "habitat": "Taludes continentais, próximo ao fundo marinho ou em águas abertas"
+  },
+  
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/mesopelagic/viper_dogfish/gallery_jaws.jpg",
+      "alt": "Close-up extremo das mandíbulas do Tubarão-víbora.",
+      "legenda": "As mandíbulas podem se projetar para frente, permitindo ao tubarão capturar presas ágeis.",
+      "fonte": "NHK"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/mesopelagic/viper_dogfish/gallery_teeth.jpg",
+      "alt": "Dentes em forma de agulha do Tubarão-víbora.",
+      "legenda": "Seus dentes são finos e espaçados, perfeitos para agarrar peixes escorregadios e lulas.",
+      "fonte": "DR"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/mesopelagic/viper_dogfish/gallery_bioluminescence.jpg",
+      "alt": "Ilustração mostrando os fotóforos do Tubarão-víbora.",
+      "legenda": "O tubarão possui órgãos produtores de luz (fotóforos) em sua barriga e flancos.",
+      "fonte": "Ilustração Científica"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/mesopelagic/viper_dogfish/gallery_preserved.jpg",
+      "alt": "Espécime de Tubarão-víbora preservado em um museu.",
+      "legenda": "Grande parte do que se sabe sobre esta espécie vem de espécimes raros capturados em redes de arrasto.",
+      "fonte": "Museu de História Natural"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/mesopelagic/viper_dogfish/gallery_in_hand.jpg",
+      "alt": "Um pequeno Tubarão-víbora sendo segurado na mão de um pesquisador.",
+      "legenda": "O tamanho pequeno da espécie é evidente quando comparado a uma mão humana.",
+      "fonte": "Taiwan Fisheries Research Institute"
+    },
+    {
+      "type": "youtube",
+      "src": "ID_DO_VIDEO_DO_YOUTUBE",
+      "alt": "Vídeo raro de um Tubarão-víbora em aquário ou submersível.",
+      "legenda": "Filmagem mostrando o movimento e a aparência fantasmagórica do Tubarão-víbora.",
+      "fonte": "YouTube"
+    }
+  ],
+  
+  "curiosidades": [
+    "Seu nome de gênero, *Trigonognathus*, significa 'mandíbula de triângulo'.",
+    "Assim como o Tubarão-Duende, ele pode projetar suas mandíbulas drasticamente para frente para capturar presas.",
+    "É bioluminescente. Possui fotóforos (órgãos de luz) na barriga e nos lados, usados para camuflagem (contraluminação) e, possivelmente, para atrair presas.",
+    "Devido à sua raridade e habitat profundo, é classificado como 'Dados Insuficientes' pela IUCN, pois não há informações suficientes para avaliar sua população.",
+    "Ele engole suas presas inteiras. Seus dentes em forma de agulha não são feitos para cortar, mas para prender a presa antes de engoli-la."
+  ],
+  
+  "especiesRelacionadas": [
+    {
+      "nome": "Tubarao-Duende",
+      "img": "../../../img/Animals/elasmobranchii/bathypelagic/goblin_shark/goblin_shark.png",
+      "targetId": "Tubarao-Duende"
+    },
+    {
+      "nome": "Carocho",
+      "img": "../../../img/Animals/elasmobranchii/bathypelagic/portuguese_dogfish/portuguese_dogfish.png",
+      "targetId": "Carocho"
+    }
+  ]
+}

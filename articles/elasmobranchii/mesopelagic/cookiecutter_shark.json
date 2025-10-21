@@ -1,0 +1,95 @@
+{
+  "name": "Tubarão-charuto",
+  "scientificName": "Isistius brasiliensis",
+  "img": "../../../img/Animals/elasmobranchii/mesopelagic/cookiecutter_shark/cookiecutter_shark.png",
+  "fonte": "Photograph Rob Zugaro/CSIRO",
+  "description": "O Tubarão-charuto, ou Tubarão-luminoso, é um pequeno mas notório parasita das profundezas. Ele é famoso por seu método de alimentação único: ele se acopla a animais muito maiores, como baleias, atuns e até tubarões-brancos, e usa seus dentes serrilhados para arrancar um pedaço circular de carne, deixando uma ferida em forma de cratera.",
+  
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/elasmobranchii/mesopelagic/cookiecutter_shark/map_cookiecutter_shark.jpg",
+    "alt": "Mapa de distribuição do Tubarão-charuto, mostrando águas tropicais e temperadas em todo o mundo.",
+    "fonte": "IUCN Red List / Adaptado"
+  },
+  
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/elasmobranchii/mesopelagic/cookiecutter_shark/size_cookiecutter_shark.jpg",
+    "alt": "Comparativo de tamanho de um Tubarão-charuto com um ser humano",
+    "descricao": "É um tubarão muito pequeno, com o corpo em forma de charuto. As fêmeas, que são maiores, atingem um comprimento máximo de 56 cm (22 polegadas), enquanto os machos chegam a 42 cm.",
+    "fonte": "Wikipedia / FishBase"
+  },
+  
+  "fichaTecnica": {
+    "statusConservacao": "Pouco Preocupante (LC)",
+    "profundidade": "Superfície até 3.700m (Realiza migração vertical diária)",
+    "dieta": "Parasita (morde pedaços de grandes animais) e predador (come lulas e peixes menores)",
+    "tamanhoMaximo": "~56 cm",
+    "expectativaVida": "Desconhecida (resiliência populacional muito baixa)",
+    "habitat": "Oceânico e batipelágico, em águas tropicais e temperadas"
+  },
+  
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/mesopelagic/cookiecutter_shark/gallery_bite.jpg",
+      "alt": "Mordida característica de um Tubarão-charuto em um atum.",
+      "legenda": "A mordida 'cortadora de biscoito' é inconfundível, deixando uma ferida perfeitamente redonda.",
+      "fonte": "NOAA"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/mesopelagic/cookiecutter_shark/gallery_bioluminescence.jpg",
+      "alt": "A barriga bioluminescente de um Tubarão-charuto.",
+      "legenda": "Sua barriga emite um brilho verde fantasmagórico, um dos mais fortes entre todos os tubarões.",
+      "fonte": "Wikimedia Commons"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/mesopelagic/cookiecutter_shark/gallery_teeth.jpg",
+      "alt": "Close-up da mandíbula de um Tubarão-charuto.",
+      "legenda": "Os dentes inferiores são enormes, triangulares e fundidos na base para formar uma lâmina de corte.",
+      "fonte": "Florida Museum of Natural History"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/mesopelagic/cookiecutter_shark/gallery_whale.jpg",
+      "alt": "Uma baleia coberta de cicatrizes de mordidas de tubarão-charuto.",
+      "legenda": "Baleias e golfinhos são alvos comuns, e suas cicatrizes contam a história de muitos encontros.",
+      "fonte": "Nature"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/mesopelagic/cookiecutter_shark/gallery_submarine.jpg",
+      "alt": "Pedaço de borracha de um submarino mordido por um tubarão-charuto.",
+      "legenda": "Eles são conhecidos por morder domos de sonar de submarinos nucleares, confundindo-os com presas.",
+      "fonte": "U.S. Naval Institute"
+    },
+    {
+      "type": "youtube",
+      "src": "ID_DO_VIDEO_DO_YOUTUBE",
+      "alt": "Vídeo raro de um Tubarão-charuto vivo.",
+      "legenda": "Filmagem mostrando o Tubarão-charuto em seu ambiente ou em laboratório.",
+      "fonte": "YouTube"
+    }
+  ],
+  
+  "curiosidades": [
+    "O Tubarão-charuto é bioluminescente, emitindo um brilho verde intenso em toda a sua barriga.",
+    "Ele usa seu brilho para camuflagem (contraluminação), exceto por um 'colar' escuro que atrai presas grandes, fazendo-as pensar que ele é um peixe pequeno.",
+    "Seus dentes inferiores são os maiores de qualquer tubarão em proporção ao tamanho de seu corpo.",
+    "Ele troca todos os seus dentes inferiores de uma só vez, engolindo-os, possivelmente para reciclar o cálcio.",
+    "Além de animais marinhos, eles já morderam cabos de comunicação submarinos e até domos de sonar de borracha em submarinos nucleares."
+  ],
+  
+  "especiesRelacionadas": [
+    {
+      "nome": "Tubarão-víbora",
+      "img": "../../../img/Animals/elasmobranchii/mesopelagic/viper_dogfish/viper_dogfish.png",
+      "targetId": "Tubarão-víbora"
+    },
+    {
+      "nome": "Peixe Olhos de Barril",
+      "img": "../img/Animals/fish/mesopelagic/barrel_eye_fish/barrel_eye_fish.png",
+      "targetId": "Peixe Olhos de Barril"
+    }
+  ]
+}

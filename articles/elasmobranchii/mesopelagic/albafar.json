@@ -1,0 +1,95 @@
+{
+  "name": "Tubarão-albafar",
+  "scientificName": "Hexanchus griseus",
+  "img": "../../../img/Animals/elasmobranchii/mesopelagic/albafar/albafar.png",
+  "fonte": "Wikimedia Commons",
+  "description": "O Tubarão-albafar é um verdadeiro fóssil vivo, uma espécie de tubarão pré-histórico que sobreviveu até os dias de hoje. Sua característica mais primitiva são os seis pares de fendas branquiais. É um predador de topo das profundezas, vivendo perto do fundo do mar e subindo para águas mais rasas durante a noite para caçar.",
+  
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/elasmobranchii/mesopelagic/albafar/map_albafar.jpg",
+    "alt": "Mapa de distribuição do Tubarão-albafar, mostrando uma distribuição global em águas temperadas e tropicais.",
+    "fonte": "IUCN Red List / Adaptado"
+  },
+  
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/elasmobranchii/mesopelagic/albafar/size_albafar.jpg",
+    "alt": "Comparativo de tamanho de um Tubarão-albafar com um ser humano",
+    "descricao": "Este é um dos maiores tubarões predadores do mundo, podendo atingir comprimentos de 4,8 metros (16 pés) e há registros de até 6,1 metros.",
+    "fonte": "FishBase / Florida Museum"
+  },
+  
+  "fichaTecnica": {
+    "statusConservacao": "Quase Ameaçado (NT)",
+    "profundidade": "Superfície até 2.500m (Comum entre 180m - 1.100m)",
+    "dieta": "Carnívoro (come quase tudo: outros tubarões, raias, lulas, caranguejos e até focas)",
+    "tamanhoMaximo": "~6.1 metros",
+    "expectativaVida": "Até 80 anos",
+    "habitat": "Demersal (próximo ao fundo) em taludes continentais, realiza migração vertical"
+  },
+  
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/mesopelagic/albafar/gallery_gills.jpg",
+      "alt": "Close-up da cabeça de um Tubarão-albafar, mostrando as seis fendas branquiais.",
+      "legenda": "As seis fendas branquiais são a marca registrada desta antiga linhagem de tubarões.",
+      "fonte": "NOAA"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/mesopelagic/albafar/gallery_teeth.jpg",
+      "alt": "Mandíbula de um Tubarão-albafar com dentes em forma de pente.",
+      "legenda": "Seus dentes inferiores são largos e em forma de pente, perfeitos para serrar grandes presas.",
+      "fonte": "Shark-References"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/mesopelagic/albafar/gallery_eyes.jpg",
+      "alt": "Olho verde brilhante de um Tubarão-albafar vivo.",
+      "legenda": "Seus grandes olhos verdes são adaptados à escuridão e brilham com um verde fluorescente.",
+      "fonte": "Andy Murch / Elasmodiver"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/mesopelagic/albafar/gallery_dorsal_fin.jpg",
+      "alt": "Vista lateral de um Tubarão-albafar mostrando sua única nadadeira dorsal.",
+      "legenda": "Assim como outros tubarões primitivos, ele possui apenas uma nadadeira dorsal, localizada bem atrás no corpo.",
+      "fonte": "Florida Museum of Natural History"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/mesopelagic/albafar/gallery_juvenile.jpg",
+      "alt": "Um Tubarão-albafar juvenil em águas mais rasas.",
+      "legenda": "Os tubarões mais jovens tendem a ficar em águas mais rasas antes de se mudarem para as profundezas.",
+      "fonte": "Monterey Bay Aquarium"
+    },
+    {
+      "type": "youtube",
+      "src": "ID_DO_VIDEO_DO_YOUTUBE",
+      "alt": "Vídeo de um Tubarão-albafar nadando em profundidade.",
+      "legenda": "Filmagem de submersível mostrando o nado lento e poderoso do Albafar.",
+      "fonte": "YouTube"
+    }
+  ],
+  
+  "curiosidades": [
+    "É um 'fóssil vivo' de uma linhagem que data de antes dos dinossauros, com 6 fendas branquiais.",
+    "Possui apenas uma nadadeira dorsal, ao contrário das duas da maioria dos tubarões.",
+    "Realiza uma 'migração vertical diária', passando o dia em águas profundas e subindo centenas de metros à noite para caçar.",
+    "Tem uma das maiores ninhadas de todos os tubarões, podendo dar à luz a mais de 100 filhotes de uma só vez (de 22 a 108).",
+    "Seus olhos brilham com um verde fluorescente intenso no escuro quando iluminados."
+  ],
+  
+  "especiesRelacionadas": [
+    {
+      "nome": "Bico-doce",
+      "img": "../../../img/Animals/elasmobranchii/mesopelagic/sharpnose_sevengill_shark/sharpnose_sevengill_shark.png",
+      "targetId": "Bico-doce"
+    },
+    {
+      "nome": "Tubarão-da-Groenlândia",
+      "img": "../../../img/Animals/elasmobranchii/bathypelagic/greenland_shark/greenland_shark.png",
+      "targetId": "Tubarão-da-Groenlândia"
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "name": "Lula-vampiro",
+  "scientificName": "Vampyroteuthis infernalis",
+  "img": "../../../img/Animals/molluscae/mesopelagic/vampire_squid/vampire_squid.png",
+  "fonte": "MBARI",
+  "description": "A Lula-vampiro-do-inferno, apesar do nome assustador, é uma pequena e dócil relíquia evolutiva que habita as profundezas escuras e com pouco oxigênio do oceano. Não é uma lula nem um polvo verdadeiro, mas o único membro remanescente de sua própria ordem. É famosa por sua capacidade de inverter sua 'capa' e por sua dieta única de 'neve marinha'.",
+  
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/molluscae/mesopelagic/vampire_squid/map_vampire_squid.jpg",
+    "alt": "Mapa de distribuição da Lula-vampiro, mostrando presença global em águas tropicais e temperadas profundas.",
+    "fonte": "IUCN Red List / Adaptado"
+  },
+  
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/molluscae/mesopelagic/vampire_squid/size_vampire_squid.jpg",
+    "alt": "Comparativo de tamanho de uma Lula-vampiro com uma mão humana",
+    "descricao": "É um cefalópode pequeno, atingindo um comprimento total máximo de cerca de 30 cm (1 pé). Seu corpo (manto) tem geralmente cerca de 15 cm.",
+    "fonte": "Monterey Bay Aquarium"
+  },
+  
+  "fichaTecnica": {
+    "statusConservacao": "Pouco Preocupante (LC)",
+    "profundidade": "600m - 1.200m (Zona de Oxigênio Mínimo)",
+    "dieta": "Detritívoro (alimenta-se de 'neve marinha' - detritos orgânicos)",
+    "tamanhoMaximo": "~30 cm",
+    "expectativaVida": "Desconhecida (metabolismo muito lento)",
+    "habitat": "Mesopelágico e Batipelágico, em zonas com baixo nível de oxigênio (OMZ)"
+  },
+  
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/mesopelagic/vampire_squid/gallery_cape_inversion.jpg",
+      "alt": "Lula-vampiro com sua 'capa' invertida sobre o corpo.",
+      "legenda": "Quando ameaçada, ela inverte seus braços palmados sobre o corpo, expondo projeções espinhosas (cirros).",
+      "fonte": "MBARI"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/mesopelagic/vampire_squid/gallery_filaments.jpg",
+      "alt": "Lula-vampiro estendendo seus longos filamentos coletores.",
+      "legenda": "Ela usa dois filamentos retráteis longos e finos para coletar 'neve marinha'.",
+      "fonte": "Nature"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/mesopelagic/vampire_squid/gallery_bioluminescence.jpg",
+      "alt": "Lula-vampiro mostrando seus órgãos de luz (fotóforos).",
+      "legenda": "Possui fotóforos complexos, incluindo dois grandes na base das nadadeiras, e pode liberar muco bioluminescente.",
+      "fonte": "Edith Widder / ORCA"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/mesopelagic/vampire_squid/gallery_eyes.jpg",
+      "alt": "Close-up dos grandes olhos azuis ou vermelhos da Lula-vampiro.",
+      "legenda": "Possui os maiores olhos em proporção ao tamanho do corpo de qualquer animal no mundo.",
+      "fonte": "MBARI"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/mesopelagic/vampire_squid/gallery_webbing.jpg",
+      "alt": "Vista mostrando a membrana (teia) entre os braços da Lula-vampiro.",
+      "legenda": "Seus oito braços são conectados por uma espessa teia de pele, formando uma 'capa'.",
+      "fonte": "Wikimedia Commons"
+    },
+    {
+      "type": "youtube",
+      "src": "ID_DO_VIDEO_DO_YOUTUBE",
+      "alt": "Vídeo de uma Lula-vampiro nadando nas profundezas.",
+      "legenda": "Filmagem de ROV mostrando o nado gracioso e as características únicas da Lula-vampiro.",
+      "fonte": "YouTube / MBARI"
+    }
+  ],
+  
+  "curiosidades": [
+    "Seu nome científico, *Vampyroteuthis infernalis*, significa 'lula-vampiro do inferno'.",
+    "Não se alimenta de sangue, mas sim de 'lixo' orgânico (neve marinha) que cai das águas superficiais.",
+    "Possui os maiores olhos em relação ao tamanho do corpo de qualquer animal.",
+    "É capaz de viver em águas com níveis de oxigênio tão baixos que matariam a maioria dos outros animais complexos (apenas 3% de saturação).",
+    "Pode liberar uma nuvem de muco bioluminescente pelas pontas dos braços para confundir predadores."
+  ],
+  
+  "especiesRelacionadas": [
+    {
+      "nome": "Lula-Gigante",
+      "img": "../img/Animals/molluscae/bathypelagic/giant_squid/giant_squid.png",
+      "targetId": "Lula-Gigante"
+    },
+    {
+      "nome": "Peixe Olhos de Barril",
+      "img": "../img/Animals/fish/mesopelagic/barrel_eye_fish/barrel_eye_fish.png",
+      "targetId": "Peixe Olhos de Barril"
+    }
+  ]
+}

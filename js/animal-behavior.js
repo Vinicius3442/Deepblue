@@ -16,42 +16,45 @@ export function animateAnimals(animals) {
         return;
       }
     }
-
-    // Decide qual comportamento aplicar com base no tipo do animal
-    switch (animal.type) {
+switch (animal.type) {
       case "lula":
         applyLulaPhysics(animal);
+        break;
+      case "lula-grande":
+        applyLulaGrandePhysics(animal);
         break;
       case "agua-viva":
       case "agua-viva-brilhante":
         applyAguaVivaPhysics(animal);
         break;
+      case "flutuador-passivo":
+         applyFlutuadorPassivoPhysics(animal);
+         break;
       case "peixe-pequeno":
-        applyPequenoPeixePhysics(animal); // <-- FUNÇÃO ATUALIZADA
+        applyPequenoPeixePhysics(animal);
         break;
-      case "reptil":
+      case "reptil": // Você tinha esse tipo, verifique se ainda usa
         applyReptilPhysics(animal);
         break;
-      default:
-        applyPeixePhysics(animal);
+      default: // Para 'predador-medio', 'predador-grande', 'peixe', etc.
+        applyPeixePhysics(animal); // Ou crie lógicas mais específicas se quiser
         break;
     }
 
-    const flipThreshold = 0.1;
+    const flipThreshold = (animal.type === "flutuador-passivo") ? 0.05 : 0.1;
     if (animal.vx > flipThreshold) {
       animal.flip = 1;
     } else if (animal.vx < -flipThreshold) {
       animal.flip = -1;
     }
-
+    // Aplica a transformação
     animal.figure.style.transform = `translate(${animal.x}px, ${animal.y}px) scale(${animal.scale}) scaleX(${animal.flip})`;
   });
 
-  // Solicita o próximo frame de animação
   requestAnimationFrame(() => animateAnimals(animals));
 }
 
-// --- FUNÇÕES DE FÍSICA INTERNAS (Não precisam ser exportadas) ---
+
 
 function applyReptilPhysics(animal) {
   if (animal.spookTimer > 0) animal.spookTimer--;
@@ -108,9 +111,9 @@ function applyReptilPhysics(animal) {
   }
 }
 
-//
-// ******** FUNÇÃO ATUALIZADA ********
-//
+
+
+
 function applyPequenoPeixePhysics(animal) {
   if (animal.spookTimer > 0) animal.spookTimer--;
 
@@ -227,12 +230,12 @@ function applyPeixePhysics(animal) {
 function applyLulaPhysics(animal) {
   if (animal.spookTimer > 0) animal.spookTimer--;
 
-  // Lógica de propulsão
+  
   animal.propulsionTimer = (animal.propulsionTimer || 0) - 1;
   if (animal.propulsionTimer <= 0) {
     animal.propulsionTimer = 60 + Math.random() * 120;
     const angle = (Math.random() - 0.5) * 0.8;
-    const thrust = 4 + Math.random() * 4; // Impulso forte
+    const thrust = 4 + Math.random() * 4; 
     animal.vx += animal.flip * Math.cos(angle) * thrust;
     animal.vy += Math.sin(angle) * thrust * 0.5;
   }
@@ -296,4 +299,150 @@ function applyAguaVivaPhysics(animal) {
 
   animal.x += animal.vx;
   animal.y += animal.vy;
+}
+function applyLulaGrandePhysics(animal) {
+  if (animal.spookTimer > 0) animal.spookTimer--;
+
+  
+  animal.propulsionTimer = (animal.propulsionTimer || 0) - 1;
+  if (animal.propulsionTimer <= 0) {
+    animal.propulsionTimer = 120 + Math.random() * 180; 
+    const angle = (Math.random() - 0.5) * 0.5; 
+    const thrust = 8 + Math.random() * 8; 
+    
+    animal.vx += -animal.flip * Math.cos(angle) * thrust;
+    
+    animal.vy += Math.sin(angle) * thrust * 0.3;
+  }
+
+  const gallery = animal.figure.parentElement;
+  const avoidanceForce = { x: 0, y: 0 };
+  let galleryWidth = window.innerWidth; 
+  let imgWidth = animal.width || animal.scale * 100;
+
+  if (gallery && gallery.offsetWidth > 0) {
+    galleryWidth = gallery.offsetWidth;
+    const galleryHeight = animal.zoneHeight;
+    const margin = 250; 
+
+    let progress;
+    
+    if (animal.x < margin) {
+      progress = (margin - animal.x) / margin;
+      avoidanceForce.x = progress * 1.5;
+    } else if (animal.x > galleryWidth - imgWidth - margin) {
+      progress = (animal.x - (galleryWidth - imgWidth - margin)) / margin;
+      avoidanceForce.x = -progress * 1.5;
+    }
+
+    if (animal.y < margin * 0.5) { 
+      progress = (margin * 0.5 - animal.y) / (margin * 0.5);
+      avoidanceForce.y = progress * 1.0;
+    } else if (animal.y > galleryHeight - imgWidth - margin * 0.5) { 
+      progress = (animal.y - (galleryHeight - imgWidth - margin * 0.5)) / (margin * 0.5);
+      avoidanceForce.y = -progress * 1.0;
+    }
+  }
+
+  animal.vx += avoidanceForce.x;
+  animal.vy += avoidanceForce.y;
+
+  
+  animal.vx *= 0.97;
+  animal.vy *= 0.97;
+  
+  animal.vy += (animal.homeY - animal.y) * 0.001;
+
+  
+  const maxSpeed = 4.5;
+  const speed = Math.sqrt(animal.vx * animal.vx + animal.vy * animal.vy);
+  if (speed > maxSpeed) {
+    animal.vx = (animal.vx / speed) * maxSpeed;
+    animal.vy = (animal.vy / speed) * maxSpeed;
+  }
+
+  animal.x += animal.vx;
+  animal.y += animal.vy;
+
+  
+  if (gallery && gallery.offsetWidth > 0) {
+     if (galleryWidth > imgWidth) {
+       animal.x = Math.max(0, Math.min(animal.x, galleryWidth - imgWidth));
+     } else {
+       animal.x = 0; 
+     }
+  }
+}
+
+function applyFlutuadorPassivoPhysics(animal) {
+  if (animal.spookTimer > 0) animal.spookTimer--; 
+
+  const gallery = animal.figure.parentElement;
+  if (!gallery || gallery.offsetWidth === 0) return;
+
+  const galleryWidth = gallery.offsetWidth;
+  const galleryHeight = animal.zoneHeight;
+  const imgWidth = animal.width || animal.scale * 100;
+
+  
+  animal.wanderAngle += (Math.random() - 0.5) * 0.05; 
+  const wanderForce = {
+    x: Math.cos(animal.wanderAngle) * 0.03, 
+    y: Math.sin(animal.wanderAngle) * 0.03,
+  };
+
+  
+  const homeForce = { x: 0, y: (animal.homeY - animal.y) * 0.002 };
+
+  
+  const avoidanceForce = { x: 0, y: 0 };
+  const margin = 150;
+  let progress;
+
+  if (animal.x < margin) {
+    progress = (margin - animal.x) / margin;
+    avoidanceForce.x = progress * 0.1; 
+  } else if (animal.x > galleryWidth - imgWidth - margin) {
+    progress = (animal.x - (galleryWidth - imgWidth - margin)) / margin;
+    avoidanceForce.x = -progress * 0.1;
+  }
+  if (animal.y < margin) {
+    progress = (margin - animal.y) / margin;
+    avoidanceForce.y = progress * 0.1;
+  } else if (animal.y > galleryHeight - imgWidth - margin) {
+    progress = (animal.y - (galleryHeight - imgWidth - margin)) / margin;
+    avoidanceForce.y = -progress * 0.1;
+  }
+
+  animal.vx += wanderForce.x + avoidanceForce.x;
+  animal.vy += wanderForce.y + homeForce.y + avoidanceForce.y;
+
+  
+  animal.vx *= 0.92;
+  animal.vy *= 0.92;
+
+  
+  const maxSpeed = 0.2;
+  const speed = Math.sqrt(animal.vx * animal.vx + animal.vy * animal.vy);
+  if (speed > maxSpeed) {
+    animal.vx = (animal.vx / speed) * maxSpeed;
+    animal.vy = (animal.vy / speed) * maxSpeed;
+  }
+
+  animal.x += animal.vx;
+  animal.y += animal.vy;
+
+  
+  if (galleryWidth > imgWidth) {
+    animal.x = Math.max(0, Math.min(animal.x, galleryWidth - imgWidth));
+  } else {
+    animal.x = 0;
+  }
+
+   const flipThreshold = 0.05; 
+   if (animal.vx > flipThreshold) {
+     animal.flip = 1;
+   } else if (animal.vx < -flipThreshold) {
+     animal.flip = -1;
+   }
 }

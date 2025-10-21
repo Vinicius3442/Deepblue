@@ -1,0 +1,95 @@
+{
+  "name": "Tubarão-Raposa",
+  "scientificName": "Alopias vulpinus",
+  "img": "../../../img/Animals/elasmobranchii/epipelagic/thresher_shark/thresher_shark.png",
+  "fonte": "S. Iglesels et al.",
+  "description": "O Tubarão-Raposa (ou Tubarão-Zorro) é um tubarão pelágico inconfundível, famoso por sua nadadeira caudal extraordinariamente longa, que ele utiliza como um chicote para atordoar cardumes de peixes. É um nadador ágil e poderoso encontrado em oceanos temperados e tropicais em todo o mundo.",
+  
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/elasmobranchii/epipelagic/thresher_shark/map_thresher_shark.jpg",
+    "alt": "Mapa de distribuição do Tubarão-Raposa, mostrando presença global em águas temperadas e tropicais.",
+    "fonte": "IUCN Red List / Adaptado"
+  },
+  
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/elasmobranchii/epipelagic/thresher_shark/size_thresher_shark.jpg",
+    "alt": "Comparativo de tamanho de um Tubarão-Raposa com um ser humano",
+    "descricao": "Adultos podem atingir até 5,7 metros (19 pés) de comprimento total, mas cerca de metade desse comprimento é composto pela longa nadadeira caudal. O corpo em si é mais comparável a outros tubarões de tamanho médio.",
+    "fonte": "FishBase / Florida Museum"
+  },
+  
+  "fichaTecnica": {
+    "statusConservacao": "Vulnerável (VU)",
+    "profundidade": "Superfície até ~650m (Comum em águas epipelágicas)",
+    "dieta": "Carnívoro (principalmente peixes de cardume como sardinhas, arenques, cavalas; também lulas)",
+    "tamanhoMaximo": "~5.7 metros (incluindo a cauda)",
+    "expectativaVida": "Cerca de 19-50 anos",
+    "habitat": "Pelágico, oceânico e costeiro em águas temperadas e tropicais"
+  },
+  
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/thresher_shark/gallery_tail_whip.jpg",
+      "alt": "Ilustração ou foto mostrando o Tubarão-Raposa usando a cauda para caçar.",
+      "legenda": "A cauda é usada com força e precisão incríveis para golpear e atordoar presas.",
+      "fonte": "Documentário BBC"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/thresher_shark/gallery_breaching.jpg",
+      "alt": "Um Tubarão-Raposa saltando (breaching) para fora da água.",
+      "legenda": "Eles são conhecidos por seus saltos acrobáticos fora d'água.",
+      "fonte": "Chris Fallows"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/thresher_shark/gallery_eyes.jpg",
+      "alt": "Close-up do olho grande de um Tubarão-Raposa.",
+      "legenda": "Possuem olhos grandes adaptados para caçar em condições de pouca luz.",
+      "fonte": "Andy Murch / Elasmodiver"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/thresher_shark/gallery_streamlined.jpg",
+      "alt": "Vista lateral de um Tubarão-Raposa mostrando seu corpo hidrodinâmico.",
+      "legenda": "Seu corpo é robusto e hidrodinâmico, construído para velocidade.",
+      "fonte": "Wikimedia Commons"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/thresher_shark/gallery_pup.jpg",
+      "alt": "Um filhote de Tubarão-Raposa.",
+      "legenda": "Nascem com uma cauda proporcionalmente longa, prontos para caçar.",
+      "fonte": "NOAA"
+    },
+    {
+      "type": "youtube",
+      "src": "ID_DO_VIDEO_DO_YOUTUBE",
+      "alt": "Vídeo mostrando um Tubarão-Raposa caçando com a cauda.",
+      "legenda": "Filmagem subaquática da impressionante técnica de caça do Tubarão-Raposa.",
+      "fonte": "YouTube"
+    }
+  ],
+  
+  "curiosidades": [
+    "A nadadeira caudal superior do Tubarão-Raposa pode ser tão longa quanto o resto de seu corpo.",
+    "Ele usa sua cauda longa como um chicote, golpeando cardumes de peixes com velocidade tremenda para atordoá-los ou matá-los antes de comer.",
+    "São um dos poucos tubarões conhecidos por saltar completamente para fora da água ('breaching').",
+    "São endotérmicos (parcialmente de 'sangue quente'), o que lhes permite ser nadadores rápidos e ativos em águas mais frias.",
+    "São ovovivíparos, com ninhadas muito pequenas (geralmente 2 a 4 filhotes), tornando-os vulneráveis à sobrepesca."
+  ],
+  
+  "especiesRelacionadas": [
+    {
+      "nome": "Tubarão-Mako",
+      "img": "../../../img/Animals/elasmobranchii/epipelagic/mako_shark/mako_shark.png",
+      "targetId": "Tubarão-Mako"
+    },
+    {
+      "nome": "Tubarão Azul",
+      "img": "../../../img/Animals/elasmobranchii/epipelagic/blue-shark/tubarao_azul.png",
+      "targetId": "Tubarão Azul"
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "name": "Dogfish-do-Pacífico",
+  "scientificName": "Squalus suckleyi",
+  "img": "../../../img/Animals/elasmobranchii/epipelagic/pacific_spiny_dogfish/pacific_spiny_dogfish.png",
+  "fonte": "Andy Murch / sharksandrays.com",
+  "description": "O Dogfish-do-Pacífico é um tubarão abundante nativo do Oceano Pacífico Norte, da Califórnia ao Japão. Por décadas, foi considerado a mesma espécie que seu primo do Atlântico (o Cação-espinho), mas foi reconhecido como uma espécie distinta em 2010. Assim como seu parente, ele possui espinhos venenosos e é conhecido por caçar em grandes grupos.",
+  
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/elasmobranchii/epipelagic/pacific_spiny_dogfish/map_pacific_spiny_dogfish.jpg",
+    "alt": "Mapa de distribuição do Dogfish-do-Pacífico, mostrando o Oceano Pacífico Norte.",
+    "fonte": "IUCN Red List / Adaptado"
+  },
+  
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/elasmobranchii/epipelagic/pacific_spiny_dogfish/size_pacific_spiny_dogfish.jpg",
+    "alt": "Comparativo de tamanho de um Dogfish-do-Pacífico com um ser humano",
+    "descricao": "Esta espécie cresce lentamente, mas pode viver até 100 anos. As fêmeas são maiores, atingindo um comprimento máximo de cerca de 1,3 a 1,4 metros.",
+    "fonte": "FishBase / NOAA"
+  },
+  
+  "fichaTecnica": {
+    "statusConservacao": "Menos Preocupante (LC)",
+    "profundidade": "15m - 1.244m (Mais comum em águas de plataforma continental)",
+    "dieta": "Carnívoro (peixes, lulas, polvos, caranguejos, camarões e krill)",
+    "tamanhoMaximo": "~1.4 metros",
+    "expectativaVida": "Até 100 anos",
+    "habitat": "Águas temperadas do Pacífico Norte, bentopelágico (próximo ao fundo)"
+  },
+  
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/pacific_spiny_dogfish/gallery_spine.jpg",
+      "alt": "Close-up do espinho dorsal do Dogfish-do-Pacífico.",
+      "legenda": "Como o nome 'spiny' sugere, ele tem espinhos venenosos afiados na frente de ambas as nadadeiras dorsais.",
+      "fonte": "NOAA Fisheries"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/pacific_spiny_dogfish/gallery_school.jpg",
+      "alt": "Um grande cardume de Dogfish-do-Pacífico.",
+      "legenda": "Eles frequentemente viajam e caçam em grandes 'matilhas', que podem conter centenas de indivíduos.",
+      "fonte": "Monterey Bay Aquarium"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/pacific_spiny_dogfish/gallery_spots.jpg",
+      "alt": "Vista de um Dogfish-do-Pacífico mostrando suas manchas brancas.",
+      "legenda": "Muitos indivíduos (mas não todos) têm manchas brancas características ao longo de seus flancos.",
+      "fonte": "Andy Murch"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/pacific_spiny_dogfish/gallery_pup.jpg",
+      "alt": "Um filhote recém-nascido de Dogfish-do-Pacífico.",
+      "legenda": "Os filhotes nascem como miniaturas perfeitas dos adultos, já com seus espinhos dorsais.",
+      "fonte": "Aquarium of the Pacific"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/epipelagic/pacific_spiny_dogfish/gallery_market.jpg",
+      "alt": "Dogfish-do-Pacífico em um mercado de peixe.",
+      "legenda": "É uma espécie de grande importância comercial, visada para carne e óleo de fígado.",
+      "fonte": "BC, Canada"
+    },
+    {
+      "type": "youtube",
+      "src": "ID_DO_VIDEO_DO_YOUTUBE",
+      "alt": "Vídeo de um Dogfish-do-Pacífico nadando em um aquário.",
+      "legenda": "Filmagem mostrando o comportamento calmo da espécie em um grande aquário.",
+      "fonte": "YouTube"
+    }
+  ],
+  
+  "curiosidades": [
+    "A fêmea do Dogfish-do-Pacífico tem um dos períodos de gestação mais longos de qualquer vertebrado, durando quase 2 anos (18-24 meses).",
+    "Eles podem viver incrivelmente muito tempo, com estimativas de idade chegando a 100 anos.",
+    "As fêmeas só atingem a maturidade sexual muito tarde, por volta dos 35 anos de idade.",
+    "São capazes de migrações transpacíficas; um tubarão marcado no Canadá foi recapturado perto do Japão.",
+    "Seu fígado era historicamente valioso como fonte de Vitamina A e como lubrificante industrial antes do desenvolvimento de alternativas sintéticas."
+  ],
+  
+  "especiesRelacionadas": [
+    {
+      "nome": "Cação-espinho",
+      "img": "../../../img/Animals/elasmobranchii/epipelagic/spiny_dogfish/spiny_dogfish.png",
+      "targetId": "Cação-espinho"
+    },
+    {
+      "nome": "Tubarão Azul",
+      "img": "../../../img/Animals/elasmobranchii/epipelagic/blue-shark/tubarao_azul.png",
+      "targetId": "Tubarão Azul"
+    }
+  ]
+}

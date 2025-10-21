@@ -1,0 +1,74 @@
+{
+  "name": "Carocho",
+  "scientificName": "Centroscymnus coelolepis",
+  "img": "../../../img/Animals/elasmobranchii/bathypelagic/portuguese_dogfish/portuguese_dogfish.png",
+  "fonte": "NORFANZ Founding Parties",
+  "description": "O Carocho, também conhecido como Tubarão-português, é uma das espécies de tubarão que vivem nas maiores profundidades já registradas. Habita as águas frias e escuras dos taludes continentais e planícies abissais em todo o mundo. De cor castanho-escuro uniforme, é um predador atarracado, famoso por seu fígado imenso e rico em esqualeno, o que o tornou um alvo valioso para a pesca de profundidade.",
+  
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/elasmobranchii/bathypelagic/portuguese_dogfish/map_portuguese_dogfish.jpg",
+    "alt": "Mapa de distribuição do Carocho, mostrando uma distribuição global irregular em águas profundas.",
+    "fonte": "IUCN Red List / Adaptado"
+  },
+  
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/elasmobranchii/bathypelagic/portuguese_dogfish/size_portuguese_dogfish.jpg",
+    "alt": "Comparativo de tamanho de um Carocho com um ser humano",
+    "descricao": "O Carocho é um tubarão de pequeno a médio porte, com os machos atingindo a maturidade por volta de 90 cm e as fêmeas por volta de 100 cm. O comprimento máximo registrado é de aproximadamente 1,2 metros.",
+    "fonte": "FishBase / Australian Museum"
+  },
+  
+  "fichaTecnica": {
+    "statusConservacao": "Quase Ameaçado (NT)",
+    "profundidade": "270m - 3.700m (Um dos tubarões de maior profundidade conhecidos)",
+    "dieta": "Carnívoro (peixes de profundidade, lulas, outros tubarões e carcaças de baleias)",
+    "tamanhoMaximo": "~1.2 metros",
+    "expectativaVida": "Desconhecida (crescimento muito lento, maturidade tardia)",
+    "habitat": "Bati-demersal (próximo ao fundo) em taludes continentais e planícies abissais."
+  },
+  
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/bathypelagic/portuguese_dogfish/gallery_denticles.jpg",
+      "alt": "Close-up da pele (dentículos dérmicos) do Carocho.",
+      "legenda": "Sua pele possui dentículos dérmicos grandes e lisos, que se assemelham a escamas.",
+      "fonte": "Australian Museum"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/bathypelagic/portuguese_dogfish/gallery_eyes.jpg",
+      "alt": "Close-up do olho de um Carocho.",
+      "legenda": "Seus olhos grandes e verdes são adaptados para captar a bioluminescência de presas na escuridão.",
+      "fonte": "NOAA"
+    },
+    {
+      "type": "video",
+      "src": "../../../img/Animals/elasmobranchii/bathypelagic/portuguese_dogfish/gallery_rov.mp4",
+      "alt": "Vídeo de ROV de um Carocho em seu habitat natural.",
+      "legenda": "Filmagem rara de um Carocho nadando lentamente perto do fundo do mar.",
+      "fonte": "Ocean Exploration Trust"
+    }
+  ],
+  
+  "curiosidades": [
+    "É considerado o tubarão que vive na maior profundidade conhecida, com registros de até 3.700 metros.",
+    "Seu fígado é enorme, podendo compor até 25% do seu peso corporal total. É rico em esqualeno, um óleo leve que o ajuda a manter a flutuabilidade neutra na profundidade.",
+    "Possui dentes diferentes nas mandíbulas superior e inferior: os superiores são finos para agarrar, enquanto os inferiores são largos e em forma de lâmina para cortar.",
+    "É ovovivíparo, o que significa que os filhotes se desenvolvem dentro de ovos que eclodem dentro da mãe, nascendo vivos. Uma ninhada pode ter de 13 a 29 filhotes.",
+    "Devido ao seu habitat profundo e biologia de crescimento lento, é extremamente vulnerável à sobrepesca, sendo classificado como 'Quase Ameaçado' pela IUCN."
+  ],
+  
+  "especiesRelacionadas": [
+    {
+      "nome": "Tubarão-da-Groenlândia",
+      "img": "../../../img/Animals/elasmobranchii/bathypelagic/greenland_shark/greenland_shark.png",
+      "targetId": "Tubarão-da-Groenlândia"
+    },
+    {
+      "nome": "Tubarao-Duende",
+      "img": "../../../img/Animals/elasmobranchii/bathypelagic/goblin_shark/goblin_shark.png",
+      "targetId":"Tubarao-Duende"
+    }
+  ]
+}

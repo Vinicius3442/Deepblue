@@ -1,0 +1,95 @@
+{
+  "name": "Bico-doce",
+  "scientificName": "Heptranchias perlo",
+  "img": "../../../img/Animals/elasmobranchii/mesopelagic/sharpnose_sevengill_shark/sharpnose_sevengill_shark.png",
+  "fonte": "Donna M. McLaughlin and John F. Morriss",
+  "description": "O Bico-doce, ou Tubarão-de-sete-guelras, é um tubarão considerado 'primitivo' que habita as águas profundas dos taludes continentais. Sua característica mais distintiva são os sete pares de fendas branquiais, ao invés dos cinco usuais da maioria dos tubarões. É um predador voraz da zona do crepúsculo, com grandes olhos verdes adaptados à escuridão.",
+  
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/elasmobranchii/mesopelagic/sharpnose_sevengill_shark/map_sharpnose_sevengill_shark.jpg",
+    "alt": "Mapa de distribuição do Bico-doce, mostrando uma distribuição global em águas temperadas e tropicais.",
+    "fonte": "IUCN Red List / Adaptado"
+  },
+  
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/elasmobranchii/mesopelagic/sharpnose_sevengill_shark/size_sharpnose_sevengill_shark.jpg",
+    "alt": "Comparativo de tamanho de um Bico-doce com um ser humano",
+    "descricao": "É um tubarão relativamente pequeno e esguio, com as fêmeas (maiores) atingindo um comprimento máximo de cerca de 1,4 metros (4,6 pés). Os machos são menores, amadurecendo com menos de 1 metro.",
+    "fonte": "FishBase / Shark Research Institute"
+  },
+  
+  "fichaTecnica": {
+    "statusConservacao": "Quase Ameaçado (NT)",
+    "profundidade": "27m - 1.000m (Mais comum entre 300m - 600m)",
+    "dieta": "Carnívoro (peixes de profundidade, lulas, camarões, lagostas e pequenos tubarões)",
+    "tamanhoMaximo": "~1.4 metros",
+    "expectativaVida": "Desconhecida (crescimento lento, baixa resiliência)",
+    "habitat": "Bati-demersal (próximo ao fundo) em taludes continentais e insulares"
+  },
+  
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/mesopelagic/sharpnose_sevengill_shark/gallery_gills.jpg",
+      "alt": "Close-up da cabeça de um Bico-doce, mostrando as sete fendas branquiais.",
+      "legenda": "As sete fendas branquiais são a marca registrada desta antiga linhagem de tubarões.",
+      "fonte": "Australian Museum"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/mesopelagic/sharpnose_sevengill_shark/gallery_teeth.jpg",
+      "alt": "Mandíbula de um Bico-doce com dentes visíveis.",
+      "legenda": "Os dentes superiores são finos para agarrar, enquanto os inferiores são largos e em forma de pente para cortar.",
+      "fonte": "Shark-References"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/mesopelagic/sharpnose_sevengill_shark/gallery_eyes.jpg",
+      "alt": "Olho verde brilhante de um Bico-doce vivo.",
+      "legenda": "Seus olhos são grandes e de um verde fluorescente, otimizados para caçar na escuridão.",
+      "fonte": "NOAA"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/mesopelagic/sharpnose_sevengill_shark/gallery_dorsal_fin.jpg",
+      "alt": "Vista lateral de um Bico-doce mostrando sua única nadadeira dorsal.",
+      "legenda": "Ao contrário da maioria dos tubarões, ele possui apenas uma nadadeira dorsal, localizada bem atrás no corpo.",
+      "fonte": "FishBase"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/elasmobranchii/mesopelagic/sharpnose_sevengill_shark/gallery_slender_body.jpg",
+      "alt": "Um Bico-doce inteiro mostrando seu corpo esguio.",
+      "legenda": "Possui um corpo esguio e fusiforme, construído para agilidade na caça.",
+      "fonte": "Florida Museum of Natural History"
+    },
+    {
+      "type": "youtube",
+      "src": "ID_DO_VIDEO_DO_YOUTUBE",
+      "alt": "Vídeo de ROV de um Bico-doce nadando em profundidade.",
+      "legenda": "Filmagem rara de um Bico-doce em seu habitat de profundidade.",
+      "fonte": "YouTube"
+    }
+  ],
+  
+  "curiosidades": [
+    "É um 'fóssil vivo', pertencendo a uma linhagem de tubarões (Hexanchiformes) que surgiu antes da maioria dos dinossauros.",
+    "Sua característica mais primitiva são os sete pares de fendas branquiais; a maioria dos tubarões modernos possui apenas cinco.",
+    "Possui apenas uma nadadeira dorsal, outra característica que o diferencia da maioria dos tubarões.",
+    "É ovovivíparo, dando à luz ninhadas de 9 a 20 filhotes que se desenvolvem dentro da mãe.",
+    "Apesar de pequeno, é um predador voraz e agressivo quando capturado, conhecido por morder rapidamente."
+  ],
+  
+  "especiesRelacionadas": [
+    {
+      "nome": "Tubarão-víbora",
+      "img": "../../../img/Animals/elasmobranchii/mesopelagic/viper_dogfish/viper_dogfish.png",
+      "targetId": "Tubarão-víbora"
+    },
+    {
+      "nome": "Peixe Olhos de Barril",
+      "img": "../img/Animals/fish/mesopelagic/barrel_eye_fish/barrel_eye_fish.png",
+      "targetId": "Peixe Olhos de Barril"
+    }
+  ]
+}
