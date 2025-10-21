@@ -79,7 +79,7 @@
     "id": "peacock_squid",
     "name": "Lula-Pavão",
     "dataDepth": 750,
-    "dataType": "lula",
+    "dataType": "lula-pavão",
     "dataScale": 0.7,
     "imgPath": "../img/Animals/molluscae/mesopelagic/peacock_squid/peacock_squid.png",
     "articlePath": "../articles/molluscae/mesopelagic/peacock_squid.json"
@@ -88,7 +88,7 @@
     "id": "cockatoo_squid",
     "name": "Lula-Cacatua",
     "dataDepth": 950,
-    "dataType": "lula",
+    "dataType": "lula-cacatua",
     "dataScale": 0.6,
     "dataGlowColor": "rgb(200, 200, 100)",
     "imgPath": "../img/Animals/molluscae/mesopelagic/cockatoo_squid/cockatoo_squid.png",
