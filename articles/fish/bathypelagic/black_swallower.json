@@ -1,0 +1,89 @@
+{
+  "name": "Engolidor Negro",
+  "scientificName": "Chiasmodon niger",
+  "img": "../../../img/Animals/fish/bathypelagic/black_swallower/black_swallower.png",
+  "fonte": "Emőke Dénes",
+  "description": "O Engolidor Negro é um peixe de profundidade conhecido por sua capacidade aparentemente impossível de engolir presas muito maiores que ele mesmo. Seu estômago e corpo podem se distender enormemente para acomodar refeições gigantescas, uma adaptação crucial para sobreviver no ambiente batipelágico, onde a comida é escassa.",
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/fish/bathypelagic/black_swallower/map_black_swallower.jpg",
+    "alt": "Mapa de distribuição do Engolidor Negro, mostrando presença global em águas profundas tropicais e temperadas.",
+    "fonte": "GBIF / Adaptado"
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/fish/bathypelagic/black_swallower/size_black_swallower.jpg",
+    "alt": "Comparativo de tamanho de um Engolidor Negro (normal e distendido) com uma mão humana",
+    "descricao": "Normalmente, é um peixe pequeno e esguio, atingindo cerca de 25 cm (10 polegadas) de comprimento. No entanto, após uma grande refeição, seu estômago pode se esticar tanto que o peixe parece quase esférico.",
+    "fonte": "FishBase / Australian Museum"
+  },
+  "fichaTecnica": {
+    "statusConservacao": "Pouco Preocupante (LC)",
+    "profundidade": "700m - 2.750m (Mesopelágica e Batipelágica)",
+    "dieta": "Carnívoro (principalmente peixes ósseos, muitas vezes maiores que ele)",
+    "tamanhoMaximo": "~25 cm",
+    "expectativaVida": "Desconhecida",
+    "habitat": "Pelágico, águas profundas oceânicas"
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/black_swallower/gallery_distended.jpg",
+      "alt": "Engolidor Negro com o estômago extremamente distendido por uma presa.",
+      "legenda": "Seu estômago elástico permite engolir peixes até duas vezes seu comprimento e dez vezes sua massa.",
+      "fonte": "Australian Museum"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/black_swallower/gallery_normal.jpg",
+      "alt": "Engolidor Negro em seu estado normal, não distendido.",
+      "legenda": "Sem uma presa no estômago, ele tem um corpo mais esguio e típico de peixe.",
+      "fonte": "Wikimedia Commons"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/black_swallower/gallery_teeth.jpg",
+      "alt": "Close-up da boca do Engolidor Negro mostrando seus dentes.",
+      "legenda": "Possui dentes afiados e curvados para trás em ambas as mandíbulas para segurar presas grandes.",
+      "fonte": "MBARI"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/black_swallower/gallery_burst.jpg",
+      "alt": "Engolidor Negro encontrado morto com o estômago rompido.",
+      "legenda": "Às vezes, a presa engolida é tão grande que começa a se decompor antes de ser digerida, liberando gases que fazem o engolidor flutuar até a superfície e/ou romper.",
+      "fonte": "Cayman Compass"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/black_swallower/gallery_skeleton.jpg",
+      "alt": "Esqueleto de um Engolidor Negro.",
+      "legenda": "O esqueleto mostra a estrutura da mandíbula e a capacidade de expansão do corpo.",
+      "fonte": "Sketchfab / Museum Collection"
+    },
+    {
+      "type": "youtube",
+      "src": "ID_DO_VIDEO_DO_YOUTUBE",
+      "alt": "Vídeo raro de um Engolidor Negro.",
+      "legenda": "Filmagem mostrando o peixe em seu ambiente ou um espécime capturado.",
+      "fonte": "YouTube"
+    }
+  ],
+  "curiosidades": [
+    "Pode engolir peixes até 2 vezes mais longos e 10 vezes mais pesados que ele próprio.",
+    "Seu estômago pode se esticar incrivelmente, e suas costelas são articuladas para permitir a expansão do corpo.",
+    "Às vezes é encontrado morto flutuando na superfície, porque a presa que engoliu era tão grande que começou a se decompor e liberar gases antes de ser digerida, fazendo o peixe inchar e subir.",
+    "Possui dentes caninos afiados em ambas as mandíbulas que se interligam quando a boca está fechada, ajudando a prender a presa.",
+    "Apesar de sua habilidade incrível, é um peixe relativamente pequeno, com cerca de 25 cm de comprimento."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Peixe-Semáforo",
+      "img": "../../../img/Animals/fish/bathypelagic/loosejaw_dragonfish/loosejaw_dragonfish.png",
+      "targetId": "Peixe-Semáforo"
+    },
+    {
+      "nome": "Enguia-Pelicano",
+      "img": "../../../img/Animals/fish/bathypelagic/pelican_eel/pelican_eel.png",
+      "targetId": "Enguia-Pelicano"
+    }
+  ]
+}

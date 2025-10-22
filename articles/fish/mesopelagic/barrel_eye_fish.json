@@ -2,6 +2,7 @@
   "name": "Peixe Olhos de Barril",
   "scientificName": "Macropinna microstoma",
   "img": "../../../img/Animals/fish/mesopelagic/barrel_eye_fish/barrel_eye_fish.png",
+  "fonte": "J. Hlidberg (Jon?), K. and E. Hjørne",
   "description": "O Peixe Olhos de Barril é conhecido por sua cabeça transparente que protege seus olhos tubular altamente sensíveis, permitindo detectar presas e predadores na escuridão da batipelágica. Seus olhos podem girar independentemente, proporcionando uma visão panorâmica sem movimentar o corpo.",
   "fichaTecnica": {
     "statusConservacao": "Não Avaliada (NE)",

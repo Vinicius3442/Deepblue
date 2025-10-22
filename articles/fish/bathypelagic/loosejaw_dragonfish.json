@@ -1,0 +1,89 @@
+{
+  "name": "Peixe-Semáforo",
+  "scientificName": "Malacosteus niger",
+  "img": "../../../img/Animals/fish/bathypelagic/loosejaw_dragonfish/loosejaw_dragonfish.png",
+  "fonte": "Emőke Dénes",
+  "description": "O Peixe-Semáforo, um tipo de peixe-dragão 'queixo-solto', é um predador fascinante das profundezas. Seu nome vem de sua habilidade única de produzir tanto luz vermelha quanto luz azul/verde com órgãos bioluminescentes (fotóforos) perto dos olhos. Sua mandíbula inferior não tem 'assoalho', permitindo que ele abra a boca de forma extraordinária para engolir presas.",
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/fish/bathypelagic/loosejaw_dragonfish/map_loosejaw_dragonfish.jpg",
+    "alt": "Mapa de distribuição do Peixe-Semáforo (Malacosteus), mostrando presença global em águas profundas.",
+    "fonte": "GBIF / Adaptado"
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/fish/bathypelagic/loosejaw_dragonfish/size_loosejaw_dragonfish.jpg",
+    "alt": "Comparativo de tamanho de um Peixe-Semáforo com uma mão humana",
+    "descricao": "É um peixe relativamente pequeno, atingindo um comprimento máximo de cerca de 25 cm (10 polegadas).",
+    "fonte": "FishBase"
+  },
+  "fichaTecnica": {
+    "statusConservacao": "Pouco Preocupante (LC)",
+    "profundidade": "500m - 3.900m (Batipelágico, com migração vertical)",
+    "dieta": "Carnívoro (principalmente crustáceos como copépodes, também pequenos peixes)",
+    "tamanhoMaximo": "~25 cm",
+    "expectativaVida": "Desconhecida",
+    "habitat": "Pelágico, águas profundas oceânicas (meso e batipelágico)"
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/loosejaw_dragonfish/gallery_jaw.jpg",
+      "alt": "Close-up da mandíbula 'solta' do Peixe-Semáforo.",
+      "legenda": "A ausência de membrana no fundo da boca permite uma abertura extrema.",
+      "fonte": "Wikimedia Commons"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/loosejaw_dragonfish/gallery_photophores.jpg",
+      "alt": "Cabeça do Peixe-Semáforo mostrando os fotóforos vermelho e azul/verde.",
+      "legenda": "Os dois fotóforos suborbitais emitem luzes de cores diferentes, como um semáforo.",
+      "fonte": "Edith Widder / ORCA"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/loosejaw_dragonfish/gallery_red_light.jpg",
+      "alt": "Ilustração mostrando o feixe de luz vermelha do Peixe-Semáforo.",
+      "legenda": "A luz vermelha é invisível para a maioria das criaturas marinhas, funcionando como um 'holofote sniper'.",
+      "fonte": "Ilustração Científica"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/loosejaw_dragonfish/gallery_teeth.jpg",
+      "alt": "Dentes longos e finos do Peixe-Semáforo.",
+      "legenda": "Possui dentes afiados como agulhas para capturar suas presas.",
+      "fonte": "Australian Museum"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/loosejaw_dragonfish/gallery_in_situ.jpg",
+      "alt": "Foto de um Peixe-Semáforo em seu habitat natural.",
+      "legenda": "Observações em profundidade são raras, revelando sua aparência no ambiente escuro.",
+      "fonte": "MBARI"
+    },
+    {
+      "type": "youtube",
+      "src": "ID_DO_VIDEO_DO_YOUTUBE",
+      "alt": "Vídeo de um Peixe-Semáforo (Loosejaw) vivo.",
+      "legenda": "Filmagem de ROV mostrando o peixe em seu ambiente e talvez sua bioluminescência.",
+      "fonte": "YouTube / MBARI"
+    }
+  ],
+  "curiosidades": [
+    "É um dos poucos animais conhecidos que pode produzir e detectar luz vermelha no fundo do mar.",
+    "Usa sua luz vermelha como um 'holofote' secreto para encontrar presas (principalmente crustáceos vermelhos) que não conseguem ver essa cor.",
+    "Sua mandíbula inferior não é conectada por baixo, permitindo que se abra enormemente para engolir presas relativamente grandes.",
+    "Apesar de sua aparência feroz, alimenta-se principalmente de pequenos crustáceos.",
+    "Realiza migração vertical, subindo para águas menos profundas durante a noite para se alimentar."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Peixe-Dragão Negro",
+      "img": "../../../img/Animals/fish/mesopelagic/black_dragonfish/black_dragonfish.png",
+      "targetId": "Peixe-Dragão Negro"
+    },
+    {
+      "nome": "Peixe-Víbora",
+      "img": "../../../img/Animals/fish/mesopelagic/viperfish/viperfish.png",
+      "targetId": "Peixe-Víbora"
+    }
+  ]
+}

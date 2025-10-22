@@ -1,0 +1,89 @@
+{
+  "name": "Peixe-Ogro",
+  "scientificName": "Anoplogaster cornuta",
+  "img": "../../../img/Animals/fish/bathypelagic/ogre_fish/ogre_fish.png",
+  "fonte": "Citron / CC-BY-SA-3.0",
+  "description": "O Peixe-Ogro, ou Fangtooth, detém o recorde dos maiores dentes em proporção ao tamanho do corpo entre todos os peixes. Apesar de sua aparência incrivelmente ameaçadora, é um peixe relativamente pequeno que habita as profundezas escuras das zonas batipelágica e abissal. Sua boca enorme e dentes como presas são adaptações para garantir que qualquer refeição encontrada na escuridão não escape.",
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/fish/bathypelagic/ogre_fish/map_ogre_fish.jpg",
+    "alt": "Mapa de distribuição do Peixe-Ogro, mostrando presença global em águas profundas.",
+    "fonte": "GBIF / IUCN / Adaptado"
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/fish/bathypelagic/ogre_fish/size_ogre_fish.jpg",
+    "alt": "Comparativo de tamanho de um Peixe-Ogro com uma mão humana",
+    "descricao": "Apesar dos dentes enormes, o Peixe-Ogro adulto atinge apenas cerca de 18 cm (7 polegadas) de comprimento. Os juvenis são muito diferentes e vivem em águas mais rasas.",
+    "fonte": "FishBase / Australian Museum"
+  },
+  "fichaTecnica": {
+    "statusConservacao": "Pouco Preocupante (LC)",
+    "profundidade": "500m - 5.000m (Mais comum >2.000m - Batipelágico e Abissal)",
+    "dieta": "Carnívoro (Peixes, crustáceos e lulas)",
+    "tamanhoMaximo": "~18 cm",
+    "expectativaVida": "Desconhecida",
+    "habitat": "Pelágico e bentopelágico, águas profundas oceânicas globalmente"
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/ogre_fish/gallery_teeth.jpg",
+      "alt": "Close-up extremo da boca aberta do Peixe-Ogro mostrando seus dentes.",
+      "legenda": "Os dentes inferiores são tão longos que o peixe tem cavidades especiais no 'cérebro' para acomodá-los quando a boca fecha.",
+      "fonte": "Wikimedia Commons"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/ogre_fish/gallery_juvenile.jpg",
+      "alt": "Forma juvenil do Peixe-Ogro, com aparência muito diferente.",
+      "legenda": "Os juvenis vivem em águas mais rasas (mesopelágicas) e têm espinhos na cabeça e olhos menores.",
+      "fonte": "NOAA"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/ogre_fish/gallery_head.jpg",
+      "alt": "Vista lateral da cabeça grande e ossificada do Peixe-Ogro.",
+      "legenda": "Sua cabeça é grande e cheia de cavidades mucosas, coberta por pele fina.",
+      "fonte": "MBARI"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/ogre_fish/gallery_dark.jpg",
+      "alt": "Peixe-Ogro em seu ambiente escuro natural.",
+      "legenda": "Sua cor escura o ajuda a se camuflar na total escuridão da zona batipelágica.",
+      "fonte": "David Shale"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/bathypelagic/ogre_fish/gallery_preserved.jpg",
+      "alt": "Espécime de Peixe-Ogro preservado.",
+      "legenda": "Grande parte do conhecimento sobre eles vem de espécimes capturados em redes de águas profundas.",
+      "fonte": "Museum Victoria"
+    },
+    {
+      "type": "youtube",
+      "src": "ID_DO_VIDEO_DO_YOUTUBE",
+      "alt": "Vídeo raro de um Peixe-Ogro vivo.",
+      "legenda": "Filmagem de ROV mostrando o Peixe-Ogro em seu habitat de profundidade.",
+      "fonte": "YouTube / MBARI"
+    }
+  ],
+  "curiosidades": [
+    "Possui os maiores dentes do mundo em proporção ao tamanho do corpo.",
+    "Os dentes inferiores são tão grandes que ele não consegue fechar a boca completamente e tem 'bolsos' no crânio para acomodá-los.",
+    "Apesar da aparência assustadora, é pequeno (máx. 18cm) e não representa ameaça para humanos.",
+    "Os juvenis são tão diferentes dos adultos (cor clara, espinhos longos, olhos menores) que já foram descritos como espécies separadas.",
+    "É um dos peixes que vivem nas maiores profundidades, sendo encontrado até 5.000 metros abaixo da superfície."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Peixe-Semáforo",
+      "img": "../../../img/Animals/fish/bathypelagic/loosejaw_dragonfish/loosejaw_dragonfish.png",
+      "targetId": "Peixe-Semáforo"
+    },
+    {
+      "nome": "Engolidor Negro",
+      "img": "../../../img/Animals/fish/bathypelagic/black_swallower/black_swallower.png",
+      "targetId": "Engolidor Negro"
+    }
+  ]
+}

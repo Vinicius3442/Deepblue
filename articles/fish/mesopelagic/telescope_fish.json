@@ -1,0 +1,95 @@
+{
+  "name": "Peixe-Telescópio",
+  "scientificName": "Gigantura chuni",
+  "img": "../../../img/Animals/fish/mesopelagic/telescope_fish/telescope_fish.png", 
+  "fonte": "Emőke Dénes",
+  "description": "O Peixe-Telescópio é um predador de emboscada das profundezas, instantaneamente reconhecível por seus olhos tubulares extraordinários, que apontam para frente ou para cima. Esses olhos especializados são adaptados para coletar o máximo de luz possível na escuridão das zonas mesopelágica e batipelágica, permitindo detectar presas à distância. Seu corpo é alongado e sem escamas.",
+  
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/fish/mesopelagic/telescope_fish/map_telescope_fish.jpg",
+    "alt": "Mapa de distribuição do Peixe-Telescópio (Gigantura), mostrando presença global em águas profundas.",
+    "fonte": "GBIF / Adaptado" 
+  },
+  
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/fish/mesopelagic/telescope_fish/size_telescope_fish.jpg",
+    "alt": "Comparativo de tamanho de um Peixe-Telescópio com uma mão humana",
+    "descricao": "São peixes relativamente pequenos, geralmente atingindo comprimentos de 15 a 20 cm.",
+    "fonte": "FishBase"
+  },
+  
+  "fichaTecnica": {
+    "statusConservacao": "Pouco Preocupante (LC)",
+    "profundidade": "500m - 3.000m (Mesopelágica e Batipelágica)",
+    "dieta": "Carnívoro (Peixes-lanterna, peixes-cerda e outros pequenos peixes de profundidade)",
+    "tamanhoMaximo": "~20 cm",
+    "expectativaVida": "Desconhecida",
+    "habitat": "Pelágico, águas profundas oceânicas globalmente"
+  },
+  
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/mesopelagic/telescope_fish/gallery_eyes_front.jpg",
+      "alt": "Vista frontal do Peixe-Telescópio mostrando os olhos tubulares.",
+      "legenda": "Os olhos telescópicos fornecem visão binocular focada para cima ou para frente.",
+      "fonte": "Wikimedia Commons"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/mesopelagic/telescope_fish/gallery_teeth.jpg",
+      "alt": "Close-up da boca com dentes afiados do Peixe-Telescópio.",
+      "legenda": "Possui dentes curvados para trás para segurar presas escorregadias.",
+      "fonte": "NOAA"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/mesopelagic/telescope_fish/gallery_body.jpg",
+      "alt": "Peixe-Telescópio mostrando seu corpo prateado e sem escamas.",
+      "legenda": "Seu corpo alongado e iridescente não possui escamas.",
+      "fonte": "Australian Museum"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/mesopelagic/telescope_fish/gallery_larva.jpg",
+      "alt": "Larva de um Peixe-Telescópio com olhos em pedúnculos.",
+      "legenda": "As larvas têm olhos em longos pedúnculos, que se retraem à medida que o peixe cresce.",
+      "fonte": "PLOS ONE"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/mesopelagic/telescope_fish/gallery_preserved.jpg",
+      "alt": "Espécime preservado de Peixe-Telescópio em museu.",
+      "legenda": "Espécimes de museu ajudam a estudar a anatomia única deste peixe.",
+      "fonte": "Natural History Museum"
+    },
+    {
+      "type": "youtube",
+      "src": "ID_DO_VIDEO_DO_YOUTUBE",
+      "alt": "Vídeo raro de um Peixe-Telescópio vivo.",
+      "legenda": "Filmagem de ROV mostrando o Peixe-Telescópio em seu habitat natural.",
+      "fonte": "YouTube / MBARI"
+    }
+  ],
+  
+  "curiosidades": [
+    "Seus olhos tubulares são fixos e geralmente apontam para cima ou para frente, especializados em detectar silhuetas contra a luz fraca vinda de cima.",
+    "Não possui bexiga natatória; controla a flutuabilidade com um corpo rico em água e gordura.",
+    "É um hermafrodita simultâneo, possuindo órgãos reprodutivos masculinos e femininos funcionais ao mesmo tempo.",
+    "As larvas têm uma aparência muito diferente, com olhos pedunculados (em hastes) que se encurtam durante o desenvolvimento.",
+    "Apesar da aparência bizarra, é um predador eficiente em seu ambiente escuro."
+  ],
+  
+  "especiesRelacionadas": [
+    {
+      "nome": "Peixe Olhos de Barril",
+      "img": "../img/Animals/fish/mesopelagic/barrel_eye_fish/barrel_eye_fish.png",
+      "targetId": "Peixe Olhos de Barril"
+    },
+    {
+      "nome": "Peixe-Víbora",
+      "img": "../../../img/Animals/fish/mesopelagic/viperfish/viperfish.png",
+      "targetId": "Peixe-Víbora"
+    }
+  ]
+}

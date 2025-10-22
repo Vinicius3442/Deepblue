@@ -1,0 +1,89 @@
+{
+  "name": "Peixe-Víbora",
+  "scientificName": "Chauliodus sloani",
+  "img": "../../../img/Animals/fish/mesopelagic/viperfish/viperfish.png",
+  "fonte": "mustafavangol - turbosquid.com",
+  "description": "O Peixe-Víbora é um predador voraz das profundezas, famoso por seus dentes inferiores em forma de presas, tão longos que não cabem dentro da boca e se curvam para trás, perto dos olhos. Ele habita as zonas mesopelágica e batipelágica, usando uma combinação de emboscada, bioluminescência e seus dentes assustadores para capturar presas na escuridão.",
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/fish/mesopelagic/viperfish/map_viperfish.jpg",
+    "alt": "Mapa de distribuição do Peixe-Víbora (Chauliodus sloani), mostrando presença global em águas tropicais e temperadas profundas.",
+    "fonte": "IUCN / GBIF / Adaptado"
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/fish/mesopelagic/viperfish/size_viperfish.jpg",
+    "alt": "Comparativo de tamanho de um Peixe-Víbora com uma mão humana",
+    "descricao": "Apesar de sua aparência feroz, o Peixe-Víbora é relativamente pequeno, atingindo um comprimento máximo de cerca de 30-35 cm (12-14 polegadas).",
+    "fonte": "FishBase / Australian Museum"
+  },
+  "fichaTecnica": {
+    "statusConservacao": "Pouco Preocupante (LC)",
+    "profundidade": "200m - 2.800m (Mesopelágica e Batipelágica, com migração vertical)",
+    "dieta": "Carnívoro (Peixes-lanterna, peixes-cerda, crustáceos)",
+    "tamanhoMaximo": "~35 cm",
+    "expectativaVida": "Desconhecida (estimada em 15-30 anos, mas incerto)",
+    "habitat": "Pelágico, águas profundas oceânicas globalmente"
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/mesopelagic/viperfish/gallery_teeth.jpg",
+      "alt": "Close-up extremo da cabeça do Peixe-Víbora mostrando os dentes expostos.",
+      "legenda": "Os dentes inferiores são tão longos que ficam do lado de fora da boca, curvando-se em direção aos olhos.",
+      "fonte": "NOAA"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/mesopelagic/viperfish/gallery_lure.jpg",
+      "alt": "Peixe-Víbora mostrando a isca bioluminescente na nadadeira dorsal.",
+      "legenda": "O primeiro raio da nadadeira dorsal é longo e possui um fotóforo na ponta, usado como isca para atrair presas.",
+      "fonte": "MBARI"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/mesopelagic/viperfish/gallery_photophores.jpg",
+      "alt": "Peixe-Víbora mostrando as fileiras de fotóforos no corpo.",
+      "legenda": "Possui múltiplos fotóforos ao longo do corpo, usados para camuflagem (contraluminação) e possivelmente comunicação.",
+      "fonte": "Wikimedia Commons"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/mesopelagic/viperfish/gallery_hinged_jaw.jpg",
+      "alt": "Crânio de Peixe-Víbora mostrando a mandíbula articulada.",
+      "legenda": "Sua mandíbula e crânio são articulados, permitindo que ele engula presas relativamente grandes.",
+      "fonte": "Museum Collection"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/mesopelagic/viperfish/gallery_preserved.jpg",
+      "alt": "Espécime de Peixe-Víbora preservado.",
+      "legenda": "Exemplares capturados em redes de arrasto revelaram muito sobre sua biologia.",
+      "fonte": "Smithsonian Institution"
+    },
+    {
+      "type": "youtube",
+      "src": "ID_DO_VIDEO_DO_YOUTUBE",
+      "alt": "Vídeo raro de um Peixe-Víbora vivo.",
+      "legenda": "Filmagem de ROV mostrando o Peixe-Víbora em seu habitat, possivelmente usando sua isca.",
+      "fonte": "YouTube / MBARI"
+    }
+  ],
+  "curiosidades": [
+    "Seus dentes inferiores são tão grandes que, se coubessem dentro da boca, perfurariam seu próprio cérebro.",
+    "Usa uma isca bioluminescente na ponta de um raio alongado da nadadeira dorsal para atrair presas na escuridão.",
+    "Possui fileiras de fotóforos (órgãos de luz) ao longo da barriga e flancos para camuflagem por contraluminação.",
+    "Pode deslocar seu crânio e abrir a boca em um ângulo enorme para engolir presas grandes.",
+    "Realiza migração vertical diária, subindo centenas de metros durante a noite para se alimentar em águas mais produtivas."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Peixe-Semáforo",
+      "img": "../../../img/Animals/fish/bathypelagic/loosejaw_dragonfish/loosejaw_dragonfish.png",
+      "targetId": "Peixe-Semáforo"
+    },
+    {
+      "nome": "Peixe-Ogro",
+      "img": "../../../img/Animals/fish/bathypelagic/ogre_fish/ogre_fish.png",
+      "targetId": "Peixe-Ogro"
+    }
+  ]
+}
