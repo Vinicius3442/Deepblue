@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-const BESTIARY_STORAGE_KEY = "deepBlueBestiary";
+  const BESTIARY_STORAGE_KEY = "deepBlueBestiary";
 
   function getDiscoveredAnimals() {
     const data = localStorage.getItem(BESTIARY_STORAGE_KEY);
@@ -60,11 +60,13 @@ const BESTIARY_STORAGE_KEY = "deepBlueBestiary";
   }
 
   // NOVA FUNÇÃO: Atualiza a aparência de uma página (usada pela discoverAnimal)
-async function updateBestiaryPage(animalName) {
-    const page = bestiaryListElement.querySelector(`.bestiary-page[data-animal-name="${animalName}"]`);
-    if (!page || page.classList.contains("unlocked")) return; 
+  async function updateBestiaryPage(animalName) {
+    const page = bestiaryListElement.querySelector(
+      `.bestiary-page[data-animal-name="${animalName}"]`
+    );
+    if (!page || page.classList.contains("unlocked")) return;
 
-    const animal = animals.find(a => a.name === animalName);
+    const animal = animals.find((a) => a.name === animalName);
     if (!animal) return;
 
     page.classList.remove("locked");
@@ -72,9 +74,9 @@ async function updateBestiaryPage(animalName) {
 
     page.querySelector(".bestiary-page-img").style.filter = "none";
     page.querySelector(".bestiary-page-title").textContent = animal.name;
-    
+
     const descEl = page.querySelector(".bestiary-page-description");
-    
+
     const stamp = document.createElement("span");
     stamp.className = "bestiary-page-stamp";
     stamp.textContent = "REGISTRADO";
@@ -86,18 +88,20 @@ async function updateBestiaryPage(animalName) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
-      
+
       /* --- MUDANÇA AQUI --- */
       // Se a descrição existir, usa. Se não, fica em branco.
-      descEl.textContent = data.description || ""; 
+      descEl.textContent = data.description || "";
       /* --- FIM DA MUDANÇA --- */
-
     } catch (err) {
       /* --- MUDANÇA AQUI --- */
       // Se FALHAR (404, JSON quebrado), também fica em branco.
-      descEl.textContent = ""; 
+      descEl.textContent = "";
       // Avisa no console (para você), mas não para o jogador.
-      console.warn(`Bestiário: Descrição não encontrada para ${animal.name}.`, err.message);
+      console.warn(
+        `Bestiário: Descrição não encontrada para ${animal.name}.`,
+        err.message
+      );
       /* --- FIM DA MUDANÇA --- */
     }
   }
@@ -105,15 +109,18 @@ async function updateBestiaryPage(animalName) {
   // FUNÇÃO ATUALIZADA: Salva no localStorage e chama a atualização da UI
   function discoverAnimal(animalName) {
     const discovered = getDiscoveredAnimals();
-    
+
     if (!discovered.includes(animalName)) {
       discovered.push(animalName);
       localStorage.setItem(BESTIARY_STORAGE_KEY, JSON.stringify(discovered));
-      
+
       // Atualiza a UI do Bestiário em tempo real
       updateBestiaryPage(animalName); // Chama a nova função
-      
-      addLogMessage(`Novo registro: ${animalName} adicionado ao Bestiário.`, "system");
+
+      addLogMessage(
+        `Novo registro: ${animalName} adicionado ao Bestiário.`,
+        "system"
+      );
     }
   }
 
@@ -123,7 +130,7 @@ async function updateBestiaryPage(animalName) {
     const allPages = bestiaryListElement.querySelectorAll(".bestiary-page");
 
     // Esconde todas
-    allPages.forEach(page => page.classList.remove("visible"));
+    allPages.forEach((page) => page.classList.remove("visible"));
 
     // Mostra as duas atuais
     const pageLeft = allPages[index];
@@ -134,30 +141,30 @@ async function updateBestiaryPage(animalName) {
 
     // Atualiza contador e botões
     const totalPages = Math.ceil(totalBestiaryAnimals / 2);
-    const currentPageNum = (index / 2) + 1;
+    const currentPageNum = index / 2 + 1;
     bestiaryPageCounter.textContent = `Página ${currentPageNum} / ${totalPages}`;
 
-    bestiaryPrevBtn.disabled = (index === 0);
-    bestiaryNextBtn.disabled = (index + 2 >= totalBestiaryAnimals);
+    bestiaryPrevBtn.disabled = index === 0;
+    bestiaryNextBtn.disabled = index + 2 >= totalBestiaryAnimals;
   }
 
   // FUNÇÃO ATUALIZADA: Constrói todas as páginas na inicialização
   async function populateBestiary(allAnimals) {
     const discovered = getDiscoveredAnimals();
-    bestiaryListElement.innerHTML = ""; 
+    bestiaryListElement.innerHTML = "";
     totalBestiaryAnimals = allAnimals.length;
 
     const sortedAnimals = [...allAnimals].sort((a, b) => a.depth - b.depth);
 
     for (const animal of sortedAnimals) {
       // ... (O código 'for' que cria as páginas continua o mesmo) ...
-      const page = document.createElement("li"); 
+      const page = document.createElement("li");
       page.className = "bestiary-page";
       page.dataset.animalName = animal.name;
       page.dataset.pageIndex = sortedAnimals.indexOf(animal);
 
       const isUnlocked = discovered.includes(animal.name);
-      
+
       let imgHTML = `<img class="bestiary-page-img" src="${animal.imgPath}">`;
       let titleHTML = `<h3 class="bestiary-page-title"></h3>`;
       let descHTML = `<p class="bestiary-page-description"></p>`;
@@ -172,42 +179,44 @@ async function updateBestiaryPage(animalName) {
         titleHTML = `<h3 class="bestiary-page-title">??? (Não Registrado)</h3>`;
         descHTML = `<p class="bestiary-page-description">Visto por volta de ${animal.depth}m</p>`;
       }
-      
+
       page.innerHTML = imgHTML + titleHTML + descHTML + stampHTML;
       bestiaryListElement.appendChild(page);
     }
-    
+
     showBestiaryPage(0);
 
     // Loop que carrega as descrições
     for (const animalName of discovered) {
-      const animal = sortedAnimals.find(a => a.name === animalName);
+      const animal = sortedAnimals.find((a) => a.name === animalName);
       if (animal) {
-        const page = bestiaryListElement.querySelector(`.bestiary-page[data-animal-name="${animalName}"]`);
+        const page = bestiaryListElement.querySelector(
+          `.bestiary-page[data-animal-name="${animalName}"]`
+        );
         const descEl = page.querySelector(".bestiary-page-description");
-        
+
         try {
           const response = await fetch(animal.articlePath);
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
           }
           const data = await response.json();
-          
+
           /* --- MUDANÇA AQUI --- */
           descEl.textContent = data.description || "";
           /* --- FIM DA MUDANÇA --- */
-
         } catch (err) {
           /* --- MUDANÇA AQUI --- */
           descEl.textContent = "";
-          console.warn(`Bestiário: Descrição não encontrada para ${animal.name} na inicialização.`, err.message);
+          console.warn(
+            `Bestiário: Descrição não encontrada para ${animal.name} na inicialização.`,
+            err.message
+          );
           /* --- FIM DA MUDANÇA --- */
         }
       }
     }
   }
-  
-  
 
   async function loadAllFauna() {
     console.log("Iniciando carregamento da fauna...");
@@ -252,7 +261,15 @@ async function updateBestiaryPage(animalName) {
             }
 
             const img = document.createElement("img");
-            img.dataset.src = animal.imgPath;
+            let cleanPath = animal.imgPath;
+            if (cleanPath.startsWith("../")) {
+              cleanPath = cleanPath.replace(/\.\.\//g, ""); 
+            }
+            if (!cleanPath.startsWith("./") && !cleanPath.startsWith("http")) {
+              cleanPath = "./" + cleanPath;
+            }
+
+            img.dataset.src = cleanPath;
             img.alt = animal.name;
             img.src = "";
 
@@ -386,11 +403,11 @@ async function updateBestiaryPage(animalName) {
           if (!rawPath) return null;
 
           const articlesIndex = rawPath.indexOf("articles/");
-          
+
           if (articlesIndex > -1) {
             return "./" + rawPath.substring(articlesIndex);
           }
-        
+
           return rawPath;
         })(),
         type: figure.dataset.type || "peixe",
