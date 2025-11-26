@@ -8,7 +8,7 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![JSON](https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white)
 
-> **Uma experiência web imersiva que simula uma expedição científica às profundezas do oceano, da superfície até a Fossa das Marianas.**
+> **Uma experiência web imersiva que simula uma expedição científica às profundezas do oceano, da superfície até a Fossa das Marianas, IMPORTANTE: O PROJETO AINDA NÃO POSSUI SUPORTE GARANTIDO EM MOBILE, PROVAVELMENTE NÃO DEVE RODAR COMO O ESPERADO, grato**
 
 ---
 
