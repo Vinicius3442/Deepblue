@@ -20,7 +20,7 @@ O objetivo é explorar as **5 Zonas Oceânicas** (Epipelágica a Hadopelágica),
 
 ### Demo Online
 [![JOGAR AGORA](https://img.shields.io/badge/⚓_INICIAR_EXPEDIÇÃO-0070b3?style=for-the-badge&logoColor=white)](https://vinicius3442.github.io/Deepsea/)
-*(Já ponho já)*
+> **Link direto:** [https://vinicius3442.github.io/Deepblue/](https://vinicius3442.github.io/Deepblue/)
 
 ---
 
