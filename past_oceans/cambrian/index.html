@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deep Blue | Período Cambriano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="cambrian.css" />
+</head>
+
+<body>
+  <!-- Fundo Infinito -->
+  <div id="infinite-bg">
+    <div class="bg-chunk" style="left: 0;"></div>
+    <div class="bg-chunk" style="left: 100vw;"></div>
+  </div>
+
+  <!-- Container de Zoom e Scroll -->
+  <div id="world-container">
+    <!-- Criaturas serão spawnadas aqui via JS -->
+
+    <!-- Leito Oceanico (Repetido via JS ou bem largo) -->
+    <div id="cambrian-floor">
+      <svg class="floor-svg" viewBox="0 0 1000 200" preserveAspectRatio="none">
+        <path d="M0,50 Q250,0 500,50 T1000,50 V200 H0 Z" fill="#1e3c50" opacity="0.8"></path>
+        <path d="M0,80 Q300,30 600,80 T1200,80 V200 H0 Z" fill="#122a3b" opacity="0.9"></path>
+        <path d="M0,120 Q400,100 800,120 T1600,120 V200 H0 Z" fill="#0a1821"></path>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Efeitos Visuais (Raios de Sol) -->
+  <canvas id="cambrian-effects"></canvas>
+
+  <!-- HUD Simplificado -->
+  <div id="cambrian-hud">
+    <div class="hud-time">
+      <h1>540 Milhões de Anos Atrás</h1>
+      <p>Período Cambriano</p>
+    </div>
+
+    <div class="hud-controls">
+      <div class="zoom-controls">
+        <button id="zoom-out" aria-label="Diminuir Zoom">−</button>
+        <button id="zoom-in" aria-label="Aumentar Zoom">+</button>
+      </div>
+      <a href="../../timeline/select.html" class="back-btn">Menu Temporal</a>
+    </div>
+  </div>
+
+  <script type="module" src="cambrian.js"></script>
+</body>
+
+</html>

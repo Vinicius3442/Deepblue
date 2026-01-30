@@ -1,0 +1,42 @@
+[
+  {
+    "id": "anomalocaris",
+    "name": "Anomalocaris",
+    "dataDepth": 100,
+    "dataType": "predador-apex",
+    "dataScale": 1.0,
+    "imgPath": "../../img/anomalocaris.jpg",
+    "articlePath": "../../articles/cambrian/anomalocaris.json", 
+    "description": "O principal predador do Cambriano, conhecido como 'Camarão Estranho'."
+  },
+  {
+    "id": "trilobite",
+    "name": "Trilobita",
+    "dataDepth": 190,
+    "dataType": "limpador",
+    "dataScale": 0.5,
+    "imgPath": "../../img/trilobite.png",
+    "articlePath": null,
+    "description": "Artrópodes icônicos com exoesqueletos duros."
+  },
+  {
+    "id": "opabinia",
+    "name": "Opabinia",
+    "dataDepth": 150,
+    "dataType": "curioso",
+    "dataScale": 0.6,
+    "imgPath": "../../img/opabinia.png",
+    "articlePath": null,
+    "description": "Criatura bizarra com cinco olhos e uma tromba garra."
+  },
+  {
+    "id": "wiwaxia",
+    "name": "Wiwaxia",
+    "dataDepth": 180,
+    "dataType": "presa",
+    "dataScale": 0.3,
+    "imgPath": "../../img/wiwaxia.png",
+    "articlePath": null,
+    "description": "Pequeno animal coberto por escamas e espinhos."
+  }
+]

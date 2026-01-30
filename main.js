@@ -6,6 +6,7 @@ import {
   animateParticles,
   updateParticleVisibility,
 } from "./js/particles.js";
+import { initVisuals, updateVisuals } from "./js/visuals.js";
 import { initHUD, updateHUD, addLogMessage } from "./js/hud.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -263,7 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const img = document.createElement("img");
             let cleanPath = animal.imgPath;
             if (cleanPath.startsWith("../")) {
-              cleanPath = cleanPath.replace(/\.\.\//g, ""); 
+              cleanPath = cleanPath.replace(/\.\.\//g, "");
             }
             if (!cleanPath.startsWith("./") && !cleanPath.startsWith("http")) {
               cleanPath = "./" + cleanPath;
@@ -381,12 +382,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const nextZoneData = ZONES[ZONES.indexOf(zoneData) + 1];
       const zoneHeight = nextZoneData
         ? (nextZoneData.startDepth - zoneData.startDepth) *
-          CONFIG.PIXELS_PER_METER
+        CONFIG.PIXELS_PER_METER
         : window.innerHeight;
       const animalDepthInMeters = parseInt(figure.dataset.depth, 10);
       const depthRatio = nextZoneData
         ? (animalDepthInMeters - zoneData.startDepth) /
-          (nextZoneData.startDepth - zoneData.startDepth)
+        (nextZoneData.startDepth - zoneData.startDepth)
         : 0.5;
       const homeY = depthRatio * zoneHeight;
 
@@ -481,6 +482,7 @@ document.addEventListener("DOMContentLoaded", () => {
     checkAnimalActivation();
     updateOceanFloor(currentDepth);
     updateParticleVisibility(currentDepth, CONFIG.PARTICLE_START_DEPTH);
+    updateVisuals(currentDepth);
   }
 
   function updateBackgroundColor(depth) {
@@ -505,7 +507,7 @@ document.addEventListener("DOMContentLoaded", () => {
         Math.min(
           1,
           (depth - startZone.startDepth) /
-            (endZone.startDepth - startZone.startDepth)
+          (endZone.startDepth - startZone.startDepth)
         )
       );
     }
@@ -578,8 +580,8 @@ document.addEventListener("DOMContentLoaded", () => {
       let floorOpacity = Math.min(
         1,
         (depth - CONFIG.OCEAN_FLOOR_START_DEPTH) /
-          (CONFIG.OCEAN_FLOOR_FULL_OPACITY_DEPTH -
-            CONFIG.OCEAN_FLOOR_START_DEPTH)
+        (CONFIG.OCEAN_FLOOR_FULL_OPACITY_DEPTH -
+          CONFIG.OCEAN_FLOOR_START_DEPTH)
       );
       oceanFloor.style.opacity = floorOpacity;
     } else {
@@ -602,5 +604,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1500);
   });
 
+  initVisuals();
   init();
 });

@@ -10,7 +10,6 @@ modal.innerHTML = `
       <div class="modal-tabs">
         <button class="tab-button active" data-tab="tab-geral">Visão Geral</button>
         <button class="tab-button" data-tab="tab-ficha">Informações</button>
-        <button class="tab-button" data-tab="tab-galeria">Galeria</button>
         <button class="tab-button" data-tab="tab-curiosidades">Curiosidades</button>
         <button class="tab-button" data-tab="tab-relacionados">Relacionados</button>
       </div>
@@ -22,14 +21,6 @@ modal.innerHTML = `
         <div class="tab-content" id="tab-ficha">
           <ul class="ficha-tecnica-list"></ul>
           <div class="info-module map-module"> <h4>Mapa de Distribuição</h4> <img src="" alt=""> <p class="image-credit map-credit"></p> </div> <div class="info-module size-module"> <h4>Comparativo de Tamanho</h4> <img src="" alt=""> <p class="image-credit size-credit"></p> <p></p> </div> </div>
-        <div class="tab-content" id="tab-galeria">
-          <div class="gallery-grid"></div>
-          <div class="expanded-media-viewer">
-            <span class="close-expanded-media">&times;</span>
-            <div class="expanded-media-content"></div>
-            <p class="expanded-media-caption"></p>
-            <p class="image-credit expanded-media-credit"></p> </div>
-        </div>
         <div class="tab-content" id="tab-curiosidades"> <ul class="curiosidades-list"></ul> </div>
         <div class="tab-content" id="tab-relacionados"> <div class="related-species-grid"></div> </div>
       </div>
@@ -41,9 +32,6 @@ const modalCloseBtn = modal.querySelector(".modal-close");
 const modalTitle = modal.querySelector(".modal-title");
 const modalScientific = modal.querySelector(".modal-scientific-name");
 const tabsContainer = modal.querySelector(".modal-tabs");
-const expandedMediaViewer = modal.querySelector(".expanded-media-viewer");
-const closeExpandedMediaBtn = modal.querySelector(".close-expanded-media");
-const expandedMediaContent = modal.querySelector(".expanded-media-content");
 const relatedGrid = modal.querySelector(".related-species-grid");
 
 // --- FUNÇÕES DE CONTROLE DO MODAL (INTERNAS) ---
@@ -51,45 +39,6 @@ const relatedGrid = modal.querySelector(".related-species-grid");
 function openModal() {
   document.body.style.overflow = "hidden";
   modal.classList.add("active");
-}
-
-function showExpandedMedia(item) {
-  expandedMediaContent.innerHTML = "";
-  let mediaElement;
-
-  if (item.type === "image") {
-    mediaElement = document.createElement("img");
-    mediaElement.src = item.src;
-  } else if (item.type === "video") {
-    mediaElement = document.createElement("video");
-    Object.assign(mediaElement, {
-      src: item.src,
-      controls: true,
-      autoplay: true,
-      loop: true,
-      playsInline: true,
-    });
-  } else if (item.type === "youtube") {
-    mediaElement = document.createElement("iframe");
-    mediaElement.src = `https://www.youtube.com/embed/${item.src}?autoplay=1&rel=0`;
-    mediaElement.setAttribute("frameborder", "0");
-    mediaElement.setAttribute(
-      "allow",
-      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    );
-    mediaElement.setAttribute("allowfullscreen", "");
-  }
-
-  if (mediaElement) {
-    mediaElement.alt = item.alt;
-    expandedMediaContent.appendChild(mediaElement);
-  }
-
-  expandedMediaViewer.querySelector(".expanded-media-caption").textContent =
-    item.legenda || "";
-  expandedMediaViewer.querySelector(".expanded-media-credit").textContent =
-    item.fonte ? `Fonte: ${item.fonte}` : "";
-  expandedMediaViewer.classList.add("active");
 }
 
 /**
@@ -107,13 +56,23 @@ export function closeModal() {
  */
 export function openAnimalModal(animalData) {
   modal.querySelector(".ficha-tecnica-list").innerHTML = "";
-  modal.querySelector(".gallery-grid").innerHTML = "";
   modal.querySelector(".curiosidades-list").innerHTML = "";
   relatedGrid.innerHTML = "";
 
   modalTitle.textContent = animalData.name;
   modalScientific.textContent = animalData.scientificName;
-  modal.querySelector(".modal-main-image").src = animalData.img;
+
+  // FIX: Limpar caminhos relativos (../) que quebram no index.html
+  let cleanImgPath = animalData.img;
+  while (cleanImgPath.startsWith("../")) {
+    cleanImgPath = cleanImgPath.substring(3);
+  }
+  // Se não começar com ./ e não for http, adiciona ./
+  if (!cleanImgPath.startsWith("./") && !cleanImgPath.startsWith("http")) {
+    cleanImgPath = "./" + cleanImgPath;
+  }
+
+  modal.querySelector(".modal-main-image").src = cleanImgPath;
 
   const mainCredit = modal.querySelector(".modal-main-credit");
   mainCredit.textContent = animalData.fonte
@@ -136,7 +95,13 @@ export function openAnimalModal(animalData) {
   const mapModule = modal.querySelector(".map-module");
   if (animalData.mapaDistribuicao && animalData.mapaDistribuicao.img) {
     mapModule.style.display = "block";
-    mapModule.querySelector("img").src = animalData.mapaDistribuicao.img;
+
+    // FIX também para imagem do mapa
+    let mapPath = animalData.mapaDistribuicao.img;
+    while (mapPath.startsWith("../")) mapPath = mapPath.substring(3);
+    if (!mapPath.startsWith("./") && !mapPath.startsWith("http")) mapPath = "./" + mapPath;
+
+    mapModule.querySelector("img").src = mapPath;
     mapModule.querySelector("img").alt =
       animalData.mapaDistribuicao.alt || "Mapa de Distribuição";
     mapModule.querySelector(".map-credit").textContent = animalData
@@ -150,7 +115,13 @@ export function openAnimalModal(animalData) {
   const sizeModule = modal.querySelector(".size-module");
   if (animalData.comparativoTamanho && animalData.comparativoTamanho.img) {
     sizeModule.style.display = "block";
-    sizeModule.querySelector("img").src = animalData.comparativoTamanho.img;
+
+    // FIX também para imagem de tamanho
+    let sizePath = animalData.comparativoTamanho.img;
+    while (sizePath.startsWith("../")) sizePath = sizePath.substring(3);
+    if (!sizePath.startsWith("./") && !sizePath.startsWith("http")) sizePath = "./" + sizePath;
+
+    sizeModule.querySelector("img").src = sizePath;
     sizeModule.querySelector("img").alt =
       animalData.comparativoTamanho.alt || "Comparativo de Tamanho";
     sizeModule.querySelector(".size-credit").textContent = animalData
@@ -163,40 +134,7 @@ export function openAnimalModal(animalData) {
     sizeModule.style.display = "none";
   }
 
-  // Galeria
-  const galleryGrid = modal.querySelector(".gallery-grid");
-  animalData.galeria.forEach((item) => {
-    const wrapper = document.createElement("div");
-    wrapper.className = "gallery-item-wrapper";
-    let mediaElement;
-
-    if (item.type === "image") {
-      mediaElement = document.createElement("img");
-      mediaElement.src = item.src;
-    } else if (item.type === "video") {
-      mediaElement = document.createElement("video");
-      mediaElement.src = item.src;
-      Object.assign(mediaElement, {
-        muted: true,
-        loop: true,
-        playsInline: true,
-        preload: "metadata",
-      });
-    } else if (item.type === "youtube") {
-      mediaElement = document.createElement("img");
-      mediaElement.src = `https://img.youtube.com/vi/${item.src}/mqdefault.jpg`;
-      wrapper.classList.add("youtube-thumb");
-    }
-
-    if (mediaElement) {
-      mediaElement.alt = item.alt;
-      wrapper.appendChild(mediaElement);
-      galleryGrid.appendChild(wrapper);
-      wrapper.addEventListener("click", () => showExpandedMedia(item));
-    }
-  });
-
-  expandedMediaViewer.classList.remove("active");
+  // Galeria REMOVIDA
 
   // Curiosidades
   const curiosidadesList = modal.querySelector(".curiosidades-list");
@@ -215,7 +153,13 @@ export function openAnimalModal(animalData) {
       const item = document.createElement("div");
       item.className = "related-species-item";
       item.dataset.targetId = species.targetId; // main.js vai usar isso
-      item.innerHTML = `<img src="${species.img}" alt="${species.nome}"><span>${species.nome}</span>`;
+
+      // FIX para imagens relacionadas
+      let relPath = species.img;
+      while (relPath.startsWith("../")) relPath = relPath.substring(3);
+      if (!relPath.startsWith("./") && !relPath.startsWith("http")) relPath = "./" + relPath;
+
+      item.innerHTML = `<img src="${relPath}" alt="${species.nome}"><span>${species.nome}</span>`;
       relatedGrid.appendChild(item);
     });
   } else {
@@ -256,14 +200,6 @@ export function initModal() {
       event.target.classList.add("active");
       modal.querySelector(`#${tabId}`).classList.add("active");
     }
-  });
-
-  closeExpandedMediaBtn.addEventListener("click", () => {
-    expandedMediaViewer.classList.remove("active");
-    const currentVideo = expandedMediaContent.querySelector("video");
-    if (currentVideo) currentVideo.pause();
-    const currentIframe = expandedMediaContent.querySelector("iframe");
-    if (currentIframe) currentIframe.src = "";
   });
 
   // Retorna os elementos que o main.js precisa para interagir
