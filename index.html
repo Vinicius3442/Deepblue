@@ -13,7 +13,83 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <button id="bestiary-toggle-button" aria-label="Abrir Bestiário">📖</button>
+    <!-- Barra de Controles Flutuantes (Topo Direito) -->
+    <div id="top-controls-bar">
+      <button id="bestiary-toggle-button" aria-label="Abrir Bestiário" title="Bestiário Marinho">
+        <svg class="btn-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+        </svg>
+        <span class="btn-label">Bestiário</span>
+      </button>
+
+      <button id="photo-mode-btn" aria-label="Modo Foto" title="Modo Foto (Ocultar HUD)">
+        <svg class="btn-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+          <circle cx="12" cy="13" r="4"></circle>
+        </svg>
+        <span class="btn-label">Modo Foto</span>
+      </button>
+    </div>
+
+    <!-- Botão de Sair do Modo Foto -->
+    <button id="exit-photo-mode-btn" class="hidden" aria-label="Sair do Modo Foto">
+      <svg class="btn-svg-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+      Sair do Modo Foto
+    </button>
+
+    <!-- Mini-Mapa Vertical de Zonas -->
+    <aside id="zone-minimap" aria-label="Navegação Vertical de Zonas">
+      <div class="minimap-track-bg">
+        <div id="minimap-progress-fill"></div>
+      </div>
+      <ul class="minimap-nodes">
+        <li data-depth="0" data-zone-id="zone-epipelagic" class="minimap-node active" title="Epipelágica (0m)">
+          <span class="node-dot"></span>
+          <span class="node-label">0m</span>
+        </li>
+        <li data-depth="200" data-zone-id="zone-mesopelagic" class="minimap-node" title="Mesopelágica (200m)">
+          <span class="node-dot"></span>
+          <span class="node-label">200m</span>
+        </li>
+        <li data-depth="1000" data-zone-id="zone-bathypelagic" class="minimap-node" title="Batipelágica (1.000m)">
+          <span class="node-dot"></span>
+          <span class="node-label">1.000m</span>
+        </li>
+        <li data-depth="4000" data-zone-id="zone-abyssopelagic" class="minimap-node" title="Abissopelágica (4.000m)">
+          <span class="node-dot"></span>
+          <span class="node-label">4.000m</span>
+        </li>
+        <li data-depth="6000" data-zone-id="zone-hadopelagic" class="minimap-node" title="Hadopelágica (6.000m)">
+          <span class="node-dot"></span>
+          <span class="node-label">6.000m</span>
+        </li>
+        <li data-depth="11000" data-zone-id="final-depth" class="minimap-node" title="Fim (11.000m)">
+          <span class="node-dot"></span>
+          <span class="node-label">11.000m</span>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Alerta RPG de Descoberta -->
+    <div id="discovery-toast" class="discovery-toast hidden">
+      <div class="toast-badge">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
+        <span>NOVA ESPÉCIE DESCOBERTA</span>
+      </div>
+      <div class="toast-content">
+        <img id="toast-animal-img" src="" alt="Nova Espécie" />
+        <div class="toast-text">
+          <h4 id="toast-animal-name">Nome do Animal</h4>
+          <p id="toast-animal-depth">Adicionado ao Bestiário • 0m</p>
+        </div>
+      </div>
+    </div>
 
     <div class="sky-and-surface-wrapper">
       <div class="sky"></div>
@@ -49,7 +125,6 @@
 
     <main id="ocean-abyss">
       <!-- ZONA EPIPELAGICA -->
-
       <div class="zone-cluster" id="zone-epipelagic">
         <h2 class="zone-title">Zona Epipelágica</h2>
         <p class="zone-range">(Superfície até 200m)</p>
@@ -57,30 +132,33 @@
       </div>
 
       <!-- ZONA MESOPELAGICA -->
-
       <div class="zone-cluster" id="zone-mesopelagic">
         <h2 class="zone-title">Zona Mesopelágica</h2>
         <p class="zone-range">(200m até 1.000m)</p>
         <div class="fauna-gallery"></div>
       </div>
 
+      <!-- ZONA BATIPELAGICA -->
       <div class="zone-cluster" id="zone-bathypelagic">
         <h2 class="zone-title">Zona Batipelágica</h2>
         <p class="zone-range">(1.000m até 4.000m)</p>
         <div class="fauna-gallery"></div>
       </div>
 
+      <!-- ZONA ABISSOPELAGICA -->
       <div class="zone-cluster" id="zone-abyssopelagic">
         <h2 class="zone-title">Zona Abissopelágica</h2>
         <p class="zone-range">(4.000m até 6.000m)</p>
         <div class="fauna-gallery"></div>
       </div>
 
+      <!-- ZONA HADOPELAGICA -->
       <div class="zone-cluster" id="zone-hadopelagic">
         <h2 class="zone-title">Zona Hadopelágica</h2>
         <p class="zone-range">(6.000m até 11.000m)</p>
         <div class="fauna-gallery"></div>
       </div>
+
       <div class="ocean-floor-svg-wrapper">
         <svg
           class="ocean-floor-svg"
@@ -117,81 +195,7 @@
       </div>
     </main>
 
-    <div id="log-interface">
-      <button id="log-toggle-button" class="closed">
-        <span>Log de Bordo</span>
-      </button>
-
-      <div id="log-panel">
-        <div class="log-panel-header">
-          <h3>Sistemas de Bordo</h3>
-        </div>
-        <div class="log-tabs">
-          <button class="log-tab-button active" data-tab="geral">Geral</button>
-          <button class="log-tab-button" data-tab="veiculo">Veículo</button>
-          <button class="log-tab-button" data-tab="tripulacao">
-            Tripulação
-          </button>
-          <button class="log-tab-button" data-tab="fauna">Fauna</button>
-          <button class="log-tab-button" data-tab="zona">Zona Atual</button>
-        </div>
-        <div class="log-panel-body">
-          <div class="log-tab-content active" id="log-content-geral">
-            <ul id="log-messages-list"></ul>
-          </div>
-          <div class="log-tab-content" id="log-content-veiculo">
-            <div class="stat-group">
-              <label>Integridade do Casco</label>
-              <div class="stat-bar">
-                <div id="hull-bar" class="stat-bar-fill"></div>
-              </div>
-              <span id="hull-value">100%</span>
-            </div>
-            <div class="stat-group">
-              <label>Reservas de Energia</label>
-              <div class="stat-bar">
-                <div id="energy-bar" class="stat-bar-fill"></div>
-              </div>
-              <span id="energy-value">100%</span>
-            </div>
-            <div class="stat-group">
-              <label>Níveis de Oxigênio</label>
-              <div class="stat-bar">
-                <div id="oxygen-bar" class="stat-bar-fill"></div>
-              </div>
-              <span id="oxygen-value">100%</span>
-            </div>
-          </div>
-          <div class="log-tab-content" id="log-content-tripulacao">
-            <ul class="crew-list">
-              <li>
-                <strong>Cmdt. Eva Rostova:</strong>
-                <span class="status-ok">Estável</span>
-              </li>
-              <li>
-                <strong>Dr. Aris Thorne (Ciência):</strong>
-                <span class="status-ok">Estável</span>
-              </li>
-              <li>
-                <strong>Kenji Tanaka (Engenharia):</strong>
-                <span class="status-ok">Estável</span>
-              </li>
-            </ul>
-          </div>
-          <div class="log-tab-content" id="log-content-fauna">
-            <p class="log-empty-state">
-              Nenhum espécime notável registrado ainda.
-            </p>
-            <ul class="fauna-log-list"></ul>
-          </div>
-          <div class="log-tab-content" id="log-content-zona">
-            <h4 id="zone-info-title">Zona Epipelágica</h4>
-            <ul id="zone-info-list"></ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    <!-- HUD de Métricas de Profundidade -->
     <div id="corner-depth-hud">
       <p class="hud-main-metric"><span id="corner-depth-value">0</span> M</p>
       <div class="hud-secondary-metrics">
@@ -200,23 +204,44 @@
       </div>
     </div>
 
+    <!-- Botão de Retorno à Superfície -->
     <button id="reset-button">Retornar à Superfície</button>
-    <button id="time-travel-button">Ativar Unidade Temporal</button>
 
+    <!-- Modal do Bestiário (Redesenhado) -->
     <div id="bestiary-panel">
       <div class="bestiary-content">
-        <span id="bestiary-close-btn">&times;</span>
         <div class="bestiary-header">
-          <h2>Bestiário</h2>
-          <p>Seu diário de descobertas marinhas.</p>
+          <div class="header-titles">
+            <h2>Bestiário Marinho</h2>
+            <p>Seu Diário de Descobertas nas Profundezas</p>
+          </div>
+          <span id="bestiary-close-btn" title="Fechar Bestiário">&times;</span>
         </div>
 
-        <ul class="bestiary-list"></ul>
+        <!-- Filtros por Zona Pelágica -->
+        <div class="bestiary-filter-bar">
+          <div class="filter-group zones-filter">
+            <button class="filter-btn active" data-zone-filter="all">Todas as Zonas</button>
+            <button class="filter-btn" data-zone-filter="zone-epipelagic">Epipelágica</button>
+            <button class="filter-btn" data-zone-filter="zone-mesopelagic">Mesopelágica</button>
+            <button class="filter-btn" data-zone-filter="zone-bathypelagic">Batipelágica</button>
+            <button class="filter-btn" data-zone-filter="zone-abyssopelagic">Abissopelágica</button>
+            <button class="filter-btn" data-zone-filter="zone-hadopelagic">Hadopelágica</button>
+          </div>
+          <div class="filter-group status-filter">
+            <button class="filter-status-btn active" data-status-filter="all">Todos</button>
+            <button class="filter-status-btn" data-status-filter="unlocked">Registrados</button>
+            <button class="filter-status-btn" data-status-filter="locked">A Descobrir</button>
+          </div>
+        </div>
+
+        <!-- Grid de Cards do Bestiário -->
+        <div class="bestiary-grid-container">
+          <ul id="bestiary-cards-grid" class="bestiary-cards-grid"></ul>
+        </div>
 
         <div class="bestiary-footer">
-          <button id="bestiary-prev-btn">‹ Anterior</button>
-          <span id="bestiary-page-counter">Página 1 / X</span>
-          <button id="bestiary-next-btn">Próxima ›</button>
+          <span id="bestiary-count-info">0 / 0 Espécies Descobertas</span>
         </div>
       </div>
     </div>
