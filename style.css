@@ -27,11 +27,16 @@
   padding: 0;
 }
 
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 body {
   font-family: var(--font-family-body);
   color: var(--color-text);
   background-color: var(--color-ocean-dark);
-  overflow-x: hidden;
   position: relative;
   scroll-behavior: smooth;
 }
@@ -42,6 +47,7 @@ body {
   position: relative;
   width: 100%;
   height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   z-index: 1;
 }
@@ -203,6 +209,7 @@ body {
   left: 0;
   width: 100%;
   height: 100vh;
+  height: 100dvh;
   z-index: -1;
   background: var(--color-ocean-surface);
   transition: background-color 0.3s ease-out;
@@ -1524,20 +1531,35 @@ body.time-travel-start {
 }
 
 
+.depth-hint-badge {
+  display: inline-block;
+  background: rgba(0, 95, 107, 0.12);
+  border: 1px solid rgba(0, 95, 107, 0.35);
+  color: #005f6b;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-family: var(--font-family-monospace);
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  font-style: normal;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
 .bestiary-page.locked .bestiary-page-img {
-  filter: brightness(0) opacity(0.3);
+  filter: brightness(0) opacity(0.35) drop-shadow(0 0 4px rgba(0, 0, 0, 0.4));
   object-fit: contain;
-  padding: 1rem;
+  padding: 0.75rem;
 }
 .bestiary-page.locked .bestiary-page-title {
-  color: #777;
+  color: #666;
   font-style: italic;
 }
 .bestiary-page.locked .bestiary-page-description {
-  color: #777;
+  color: #666;
   font-style: italic;
   text-align: center;
-  padding-top: 2rem;
+  padding-top: 1rem;
 }
 
 
@@ -1569,4 +1591,187 @@ body.time-travel-start {
 .bestiary-footer button:disabled {
   background: #c0c0c0;
   cursor: not-allowed;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE MOBILE & ADAPTAÇÕES DE TOUCH (UI/UX)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* Prevenir rolagens e quebras horizontais */
+  body, main#ocean-abyss {
+    width: 100vw;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  /* Title Slide Mobile */
+  .main-title {
+    font-size: clamp(2.5rem, 12vw, 4.5rem);
+  }
+  .subtitle {
+    font-size: clamp(0.9rem, 4vw, 1.2rem);
+    padding: 0 1rem;
+  }
+
+  /* Bestiário Modal Mobile */
+  .bestiary-content {
+    width: 94%;
+    height: 85vh;
+    height: 85dvh;
+    max-height: none;
+    border-radius: 12px;
+  }
+
+  .bestiary-header {
+    padding: 1rem;
+  }
+  .bestiary-header h2 {
+    font-size: 1.6rem;
+  }
+  .bestiary-header p {
+    font-size: 0.85rem;
+  }
+
+  .bestiary-list {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+  .bestiary-list::after {
+    display: none;
+  }
+
+  .bestiary-page {
+    width: 100% !important;
+    padding: 1rem !important;
+    border: none !important;
+  }
+
+  .bestiary-page-img {
+    height: 160px;
+  }
+
+  .bestiary-page-title {
+    font-size: 1.5rem;
+  }
+
+  .bestiary-footer {
+    padding: 0.75rem 1rem;
+  }
+  .bestiary-footer button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  /* Floating UI Buttons & HUD Mobile */
+  #bestiary-toggle-button {
+    top: 1rem;
+    right: 1rem;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.5rem;
+  }
+
+  #corner-depth-hud {
+    top: 1rem;
+    left: 1rem;
+    bottom: auto;
+    background: rgba(10, 25, 40, 0.75);
+    backdrop-filter: blur(6px);
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 184, 108, 0.35);
+  }
+
+  #corner-depth-hud #corner-depth-value {
+    font-size: 1.8rem;
+  }
+
+  #corner-depth-hud .hud-secondary-metrics {
+    margin-top: 0.25rem;
+    padding-top: 0.25rem;
+  }
+  #corner-depth-hud .hud-secondary-metrics p {
+    font-size: 0.75rem;
+  }
+
+  #log-interface {
+    bottom: 1rem;
+    right: 1rem;
+  }
+  #log-toggle-button {
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+  }
+  #log-panel {
+    width: calc(100vw - 2rem);
+    right: 0;
+    max-height: 55vh;
+  }
+
+  /* Reset & Time Travel Buttons Stack on Mobile */
+  #reset-button,
+  #time-travel-button {
+    left: 50%;
+    width: 85vw;
+    max-width: 300px;
+    text-align: center;
+    padding: 0.7rem 1rem;
+    font-size: 0.95rem;
+  }
+  #reset-button {
+    bottom: 4.8rem;
+    transform: translateX(-50%);
+  }
+  #time-travel-button {
+    bottom: 1rem;
+    transform: translateX(-50%);
+  }
+  #reset-button:hover,
+  #reset-button:active {
+    transform: translateX(-50%) scale(1.02);
+  }
+  #time-travel-button:hover,
+  #time-travel-button:active {
+    transform: translateX(-50%) scale(1.02);
+  }
+
+  /* Modais de Animais Mobile */
+  .animal-modal .modal-content {
+    width: 95%;
+    max-height: 85vh;
+    max-height: 85dvh;
+    border-radius: 12px;
+  }
+  .modal-header {
+    padding: 1rem 1.2rem;
+  }
+  .modal-header .modal-title {
+    font-size: 1.6rem;
+  }
+  .modal-tabs {
+    padding: 0 0.5rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tab-button {
+    padding: 0.75rem 0.5rem;
+    margin-right: 1rem;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  .modal-body {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #corner-depth-hud #corner-depth-value {
+    font-size: 1.5rem;
+  }
+  .bestiary-page-img {
+    height: 130px;
+  }
 }

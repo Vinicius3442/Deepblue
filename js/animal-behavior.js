@@ -56,6 +56,11 @@ switch (animal.type) {
 
 
 
+function getDynamicMargin(width, baseMargin = 200) {
+  if (!width || width <= 0) return 20;
+  return Math.max(15, Math.min(baseMargin, width * 0.08));
+}
+
 function applyReptilPhysics(animal) {
   if (animal.spookTimer > 0) animal.spookTimer--;
 
@@ -73,7 +78,7 @@ function applyReptilPhysics(animal) {
   };
   const homeForce = { x: 0, y: (animal.homeY - animal.y) * 0.005 };
   const avoidanceForce = { x: 0, y: 0 };
-  const margin = 200;
+  const margin = getDynamicMargin(galleryWidth, 200);
   let progress;
 
   if (animal.x < margin) {
@@ -111,9 +116,6 @@ function applyReptilPhysics(animal) {
   }
 }
 
-
-
-
 function applyPequenoPeixePhysics(animal) {
   if (animal.spookTimer > 0) animal.spookTimer--;
 
@@ -131,7 +133,7 @@ function applyPequenoPeixePhysics(animal) {
   };
   const homeForce = { x: 0, y: (animal.homeY - animal.y) * 0.01 };
   const avoidanceForce = { x: 0, y: 0 };
-  const margin = 200;
+  const margin = getDynamicMargin(galleryWidth, 200);
   let progress;
 
   if (animal.x < margin) {
@@ -187,7 +189,7 @@ function applyPeixePhysics(animal) {
   };
   const homeForce = { x: 0, y: (animal.homeY - animal.y) * 0.005 };
   const avoidanceForce = { x: 0, y: 0 };
-  const margin = 200;
+  const margin = getDynamicMargin(galleryWidth, 200);
   let progress;
 
   if (animal.x < margin) {
@@ -247,7 +249,7 @@ function applyLulaPhysics(animal) {
     const galleryWidth = gallery.offsetWidth;
     const galleryHeight = animal.zoneHeight;
     const imgWidth = animal.width || animal.scale * 100;
-    const margin = 200;
+    const margin = getDynamicMargin(galleryWidth, 200);
 
     let progress;
     if (animal.x < margin) {
@@ -323,7 +325,7 @@ function applyLulaGrandePhysics(animal) {
   if (gallery && gallery.offsetWidth > 0) {
     galleryWidth = gallery.offsetWidth;
     const galleryHeight = animal.zoneHeight;
-    const margin = 250; 
+    const margin = getDynamicMargin(galleryWidth, 250);
 
     let progress;
     
@@ -396,7 +398,7 @@ function applyFlutuadorPassivoPhysics(animal) {
 
   
   const avoidanceForce = { x: 0, y: 0 };
-  const margin = 150;
+  const margin = getDynamicMargin(galleryWidth, 150);
   let progress;
 
   if (animal.x < margin) {

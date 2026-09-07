@@ -125,28 +125,51 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function getItemsPerPage() {
+    return window.innerWidth <= 768 ? 1 : 2;
+  }
+
   // NOVA FUNÇÃO: Controla a visibilidade das páginas
   function showBestiaryPage(index) {
+    if (totalBestiaryAnimals === 0) return;
+    const itemsPerPage = getItemsPerPage();
+
+    if (index < 0) index = 0;
+    if (index >= totalBestiaryAnimals) {
+      index = Math.max(0, totalBestiaryAnimals - 1);
+    }
+
+    if (itemsPerPage === 2 && index % 2 !== 0) {
+      index = index - 1;
+    }
+
     bestiaryCurrentPage = index;
     const allPages = bestiaryListElement.querySelectorAll(".bestiary-page");
 
     // Esconde todas
     allPages.forEach((page) => page.classList.remove("visible"));
 
-    // Mostra as duas atuais
-    const pageLeft = allPages[index];
-    const pageRight = allPages[index + 1];
+    if (itemsPerPage === 1) {
+      const page = allPages[index];
+      if (page) page.classList.add("visible");
 
-    if (pageLeft) pageLeft.classList.add("visible");
-    if (pageRight) pageRight.classList.add("visible");
+      bestiaryPageCounter.textContent = `Página ${index + 1} / ${totalBestiaryAnimals}`;
+      bestiaryPrevBtn.disabled = index === 0;
+      bestiaryNextBtn.disabled = index + 1 >= totalBestiaryAnimals;
+    } else {
+      const pageLeft = allPages[index];
+      const pageRight = allPages[index + 1];
 
-    // Atualiza contador e botões
-    const totalPages = Math.ceil(totalBestiaryAnimals / 2);
-    const currentPageNum = index / 2 + 1;
-    bestiaryPageCounter.textContent = `Página ${currentPageNum} / ${totalPages}`;
+      if (pageLeft) pageLeft.classList.add("visible");
+      if (pageRight) pageRight.classList.add("visible");
 
-    bestiaryPrevBtn.disabled = index === 0;
-    bestiaryNextBtn.disabled = index + 2 >= totalBestiaryAnimals;
+      const totalPages = Math.ceil(totalBestiaryAnimals / 2);
+      const currentPageNum = Math.floor(index / 2) + 1;
+      bestiaryPageCounter.textContent = `Página ${currentPageNum} / ${totalPages}`;
+
+      bestiaryPrevBtn.disabled = index === 0;
+      bestiaryNextBtn.disabled = index + 2 >= totalBestiaryAnimals;
+    }
   }
 
   // FUNÇÃO ATUALIZADA: Constrói todas as páginas na inicialização
@@ -178,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         page.classList.add("locked");
         titleHTML = `<h3 class="bestiary-page-title">??? (Não Registrado)</h3>`;
-        descHTML = `<p class="bestiary-page-description">Visto por volta de ${animal.depth}m</p>`;
+        descHTML = `<p class="bestiary-page-description"><span class="depth-hint-badge">Visto por volta de ${animal.depth}m</span></p>`;
       }
 
       page.innerHTML = imgHTML + titleHTML + descHTML + stampHTML;
@@ -285,10 +308,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Carregamento da fauna completo.");
   }
 
-  /**
-   * Função principal de inicialização, agora é 'async' para esperar a fauna.
-   */
-  async function init() {
+  function handleWindowResize() {
     const totalHeight =
       CONFIG.MAX_DEPTH * CONFIG.PIXELS_PER_METER + window.innerHeight * 2;
     oceanAbyss.style.height = `${totalHeight}px`;
@@ -300,6 +320,16 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+    setupParticles();
+    showBestiaryPage(bestiaryCurrentPage);
+  }
+
+  /**
+   * Função principal de inicialização, agora é 'async' para esperar a fauna.
+   */
+  async function init() {
+    handleWindowResize();
+
     await loadAllFauna();
     prepareAnimals(animals);
 
@@ -308,14 +338,17 @@ document.addEventListener("DOMContentLoaded", () => {
     populateBestiary(animals);
 
     bestiaryPrevBtn.addEventListener("click", () => {
-      showBestiaryPage(bestiaryCurrentPage - 2);
+      const step = getItemsPerPage();
+      showBestiaryPage(bestiaryCurrentPage - step);
     });
     bestiaryNextBtn.addEventListener("click", () => {
-      showBestiaryPage(bestiaryCurrentPage + 2);
+      const step = getItemsPerPage();
+      showBestiaryPage(bestiaryCurrentPage + step);
     });
 
     bestiaryToggleButton.addEventListener("click", () => {
       bestiaryPanel.classList.add("visible");
+      showBestiaryPage(bestiaryCurrentPage);
     });
 
     bestiaryCloseButton.addEventListener("click", () => {
@@ -353,7 +386,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     window.addEventListener("scroll", onScroll);
-    window.addEventListener("resize", setupParticles);
+    window.addEventListener("resize", handleWindowResize);
 
     setupParticles();
 
