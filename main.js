@@ -8,6 +8,7 @@ import {
 } from "./js/particles.js";
 import { initVisuals, updateVisuals } from "./js/visuals.js";
 import { initHUD, updateHUD } from "./js/hud.js";
+import { toggleAudio, updateAudioDepth } from "./js/audio.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const oceanAbyss = document.getElementById("ocean-abyss");
@@ -17,15 +18,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const resetButton = document.getElementById("reset-button");
 
   // Botões de topo e modal do Bestiário
+  const audioToggleBtn = document.getElementById("audio-toggle-btn");
   const bestiaryToggleButton = document.getElementById("bestiary-toggle-button");
   const bestiaryPanel = document.getElementById("bestiary-panel");
   const bestiaryCloseButton = document.getElementById("bestiary-close-btn");
   const bestiaryCardsGrid = document.getElementById("bestiary-cards-grid");
   const bestiaryCountInfo = document.getElementById("bestiary-count-info");
 
-  // Modo Foto
+  // Modo Foto com Print & Download PNG
   const photoModeBtn = document.getElementById("photo-mode-btn");
   const exitPhotoModeBtn = document.getElementById("exit-photo-mode-btn");
+
+  const photoPreviewModal = document.getElementById("photo-preview-modal");
+  const photoPreviewImg = document.getElementById("photo-preview-img");
+  const photoPreviewClose = document.getElementById("photo-preview-close");
+  const closePreviewBtn = document.getElementById("close-preview-btn");
+  const downloadPhotoBtn = document.getElementById("download-photo-btn");
+  const photoDepthTag = document.getElementById("photo-preview-depth-tag");
 
   // Alerta de Descoberta RPG
   const discoveryToast = document.getElementById("discovery-toast");
@@ -44,6 +53,50 @@ document.addEventListener("DOMContentLoaded", () => {
   // Estado do Filtro do Bestiário
   let currentZoneFilter = "all";
   let currentStatusFilter = "all";
+  let currentCategoryFilter = "all";
+  let currentSearchQuery = "";
+
+  function getAnimalCategory(animal) {
+    const path = (animal.articlePath || "").toLowerCase();
+    const name = (animal.name || "").toLowerCase();
+    const type = (animal.type || "").toLowerCase();
+
+    if (
+      path.includes("elasmobranchii") ||
+      name.includes("tubarão") ||
+      name.includes("arraia") ||
+      name.includes("dogfish") ||
+      name.includes("cação") ||
+      name.includes("peregrino")
+    ) {
+      return "elasmobranchii";
+    }
+
+    if (
+      path.includes("molluscae") ||
+      type.includes("lula") ||
+      name.includes("polvo") ||
+      name.includes("lula") ||
+      name.includes("sépia") ||
+      name.includes("choco")
+    ) {
+      return "molluscae";
+    }
+
+    if (
+      path.includes("cnidaria") ||
+      type.includes("agua-viva") ||
+      name.includes("viva") ||
+      name.includes("medusa") ||
+      name.includes("caravela") ||
+      name.includes("anêmona") ||
+      name.includes("coral")
+    ) {
+      return "cnidaria";
+    }
+
+    return "peixe";
+  }
 
   function calculatePressure(depth) {
     return 1 + depth / 10;
@@ -105,6 +158,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // --- CONTROLE DE ÁUDIO DO OCEANO ---
+  if (audioToggleBtn) {
+    audioToggleBtn.addEventListener("click", () => {
+      const isPlaying = toggleAudio();
+      const soundOffIcon = audioToggleBtn.querySelector(".sound-off-icon");
+      const soundOnIcon = audioToggleBtn.querySelector(".sound-on-icon");
+      const label = audioToggleBtn.querySelector(".btn-label");
+
+      if (isPlaying) {
+        soundOffIcon?.classList.add("hidden");
+        soundOnIcon?.classList.remove("hidden");
+        if (label) label.textContent = "Som LIG";
+        audioToggleBtn.classList.add("active");
+      } else {
+        soundOnIcon?.classList.add("hidden");
+        soundOffIcon?.classList.remove("hidden");
+        if (label) label.textContent = "Som DESL";
+        audioToggleBtn.classList.remove("active");
+      }
+    });
+  }
+
   // --- RENDERING DO BESTIÁRIO REDESENHADO ---
   function renderBestiaryGrid() {
     if (!bestiaryCardsGrid) return;
@@ -123,10 +198,24 @@ document.addEventListener("DOMContentLoaded", () => {
           return false;
         }
       }
+
+      // Filtro de Categoria
+      if (currentCategoryFilter !== "all") {
+        const cat = getAnimalCategory(animal);
+        if (cat !== currentCategoryFilter) return false;
+      }
+
       // Filtro de Status
       const isUnlocked = discovered.includes(animal.name);
       if (currentStatusFilter === "unlocked" && !isUnlocked) return false;
       if (currentStatusFilter === "locked" && isUnlocked) return false;
+
+      // Filtro por Texto de Busca
+      if (currentSearchQuery.trim() !== "") {
+        const query = currentSearchQuery.toLowerCase().trim();
+        const animalName = animal.name.toLowerCase();
+        if (!animalName.includes(query)) return false;
+      }
 
       return true;
     });
@@ -180,6 +269,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Listeners de Busca e Filtros do Bestiário
+  const searchInput = document.getElementById("bestiary-search-input");
+  if (searchInput) {
+    searchInput.addEventListener("input", (e) => {
+      currentSearchQuery = e.target.value;
+      renderBestiaryGrid();
+    });
+  }
+
+  document.querySelectorAll(".filter-category-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      document
+        .querySelectorAll(".filter-category-btn")
+        .forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      currentCategoryFilter = btn.dataset.categoryFilter;
+      renderBestiaryGrid();
+    });
+  });
+
   // Listeners dos Filtros do Bestiário
   document.querySelectorAll(".filter-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -203,31 +312,65 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // --- MODO FOTO ---
+  // --- MODO FOTO COM CAPTURA PNG E MODAL DE DOWNLOAD ---
+  function closePhotoPreview() {
+    if (photoPreviewModal) photoPreviewModal.classList.add("hidden");
+  }
+
+  if (photoPreviewClose) photoPreviewClose.addEventListener("click", closePhotoPreview);
+  if (closePreviewBtn) closePreviewBtn.addEventListener("click", closePhotoPreview);
+  if (photoPreviewModal) {
+    photoPreviewModal.addEventListener("click", (e) => {
+      if (e.target === photoPreviewModal) closePhotoPreview();
+    });
+  }
+
   if (photoModeBtn) {
-    photoModeBtn.addEventListener("click", () => {
-      document.body.classList.add("photo-mode-active");
-      exitPhotoModeBtn.classList.remove("hidden");
+    photoModeBtn.addEventListener("click", async () => {
+      const topBar = document.getElementById("top-controls-bar");
+      const minimap = document.getElementById("zone-minimap");
+      const depthHud = document.getElementById("corner-depth-hud");
+
+      const hiddenElements = [topBar, minimap, depthHud, resetButton, discoveryToast];
+      hiddenElements.forEach((el) => {
+        if (el) el.style.visibility = "hidden";
+      });
+
+      try {
+        if (window.html2canvas) {
+          const canvas = await window.html2canvas(document.body, {
+            useCORS: true,
+            allowTaint: true,
+            logging: false,
+            width: window.innerWidth,
+            height: window.innerHeight,
+            x: 0,
+            y: window.scrollY,
+            windowWidth: window.innerWidth,
+            windowHeight: window.innerHeight,
+            scale: 1,
+          });
+
+          const dataUrl = canvas.toDataURL("image/png");
+          if (photoPreviewImg) photoPreviewImg.src = dataUrl;
+          if (downloadPhotoBtn) {
+            downloadPhotoBtn.href = dataUrl;
+            downloadPhotoBtn.download = `deep-blue-${currentDepth}m.png`;
+          }
+          if (photoDepthTag) {
+            photoDepthTag.textContent = `Deep Blue • ${currentDepth}m`;
+          }
+          if (photoPreviewModal) photoPreviewModal.classList.remove("hidden");
+        }
+      } catch (err) {
+        console.error("Erro ao capturar foto:", err);
+      } finally {
+        hiddenElements.forEach((el) => {
+          if (el) el.style.visibility = "visible";
+        });
+      }
     });
   }
-
-  if (exitPhotoModeBtn) {
-    exitPhotoModeBtn.addEventListener("click", () => {
-      document.body.classList.remove("photo-mode-active");
-      exitPhotoModeBtn.classList.add("hidden");
-    });
-  }
-
-  document.addEventListener("click", (e) => {
-    if (
-      document.body.classList.contains("photo-mode-active") &&
-      e.target !== photoModeBtn &&
-      e.target !== exitPhotoModeBtn
-    ) {
-      document.body.classList.remove("photo-mode-active");
-      exitPhotoModeBtn.classList.add("hidden");
-    }
-  });
 
   // --- MINI-MAPA VERTICAL DE ZONAS ---
   function getMinimapProgress(depth) {
@@ -520,9 +663,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateHUD(currentDepth, pressure, temperature);
     updateMinimap(currentDepth);
+    updateAudioDepth(currentDepth);
 
-    const atTheEnd = currentDepth >= CONFIG.MAX_DEPTH;
-    if (resetButton) resetButton.classList.toggle("visible", atTheEnd);
+    // Botão de Retorno à Superfície fica visível a partir de 150px de rolagem
+    if (resetButton) {
+      resetButton.classList.toggle("visible", window.scrollY > 150);
+    }
 
     updateBackgroundColor(currentDepth);
     checkAnimalActivation();
@@ -584,7 +730,7 @@ document.addEventListener("DOMContentLoaded", () => {
             animal.width = animal.img.offsetWidth;
 
             if (animal.glowColor) {
-              animal.figure.style.filter = `
+              animal.img.style.filter = `
               drop-shadow(0 0 15px ${animal.glowColor}) 
               drop-shadow(0 5px 15px var(--color-shadow))
             `;
@@ -601,7 +747,7 @@ document.addEventListener("DOMContentLoaded", () => {
         animal.isActive = false;
         animal.figure.style.opacity = 0;
         if (animal.type === "agua-viva-brilhante") {
-          animal.figure.style.filter = "";
+          animal.img.style.filter = "";
         }
       }
     });
@@ -624,7 +770,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (resetButton) {
     resetButton.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
-      animals.forEach((animal) => (animal.sighted = false));
     });
   }
 

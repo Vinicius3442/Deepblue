@@ -49,17 +49,23 @@ export function animateAnimals(animals) {
       animal.flip = -1;
     }
 
-    // Aplica a transformação alinhada à ponta superior esquerda para evitar cortes de tela
+    const isMobile = window.innerWidth <= 768;
+    const mobileScale = isMobile ? 0.45 : 1.0;
+    const finalScale = animal.scale * mobileScale;
+
+    // Aplica a transformação alinhada à ponta superior esquerda com escala responsiva para mobile
     animal.figure.style.transformOrigin = "top left";
-    animal.figure.style.transform = `translate(${animal.x}px, ${animal.y}px) scale(${animal.scale}) scaleX(${animal.flip})`;
+    animal.figure.style.transform = `translate(${animal.x}px, ${animal.y}px) scale(${finalScale}) scaleX(${animal.flip})`;
   });
 
   requestAnimationFrame(() => animateAnimals(animals));
 }
 
 function getEffectiveWidth(animal) {
-  const baseWidth = (animal.width && animal.width > 0) ? animal.width : 120;
-  return baseWidth * (animal.scale || 1.0);
+  const isMobile = window.innerWidth <= 768;
+  const mobileScale = isMobile ? 0.45 : 1.0;
+  const baseWidth = (animal.width && animal.width > 0) ? animal.width : (isMobile ? 65 : 120);
+  return baseWidth * (animal.scale || 1.0) * mobileScale;
 }
 
 function getDynamicMargin(width, baseMargin = 200) {
