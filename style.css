@@ -1601,8 +1601,15 @@ body.photo-mode-active #bestiary-panel {
   border-radius: 14px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 184, 108, 0.3);
   backdrop-filter: blur(12px);
-  padding: 1rem 1.2rem;
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  padding: 0.7rem 1.1rem 1rem;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  touch-action: pan-y;
+  user-select: none;
+  cursor: grab;
+}
+
+.discovery-toast:active {
+  cursor: grabbing;
 }
 
 .discovery-toast.hidden {
@@ -1611,13 +1618,84 @@ body.photo-mode-active #bestiary-panel {
   pointer-events: none;
 }
 
+/* Estado durante o arraste touch/swipe ativo */
+.discovery-toast.swiping {
+  transition: none !important;
+}
+
+/* Animações de descarte para os lados */
+.discovery-toast.dismissed-left {
+  opacity: 0 !important;
+  transform: translate(calc(-50% - 150vw), 0) rotate(-10deg) !important;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 1, 1), opacity 0.3s ease !important;
+  pointer-events: none;
+}
+
+.discovery-toast.dismissed-right {
+  opacity: 0 !important;
+  transform: translate(calc(-50% + 150vw), 0) rotate(10deg) !important;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 1, 1), opacity 0.3s ease !important;
+  pointer-events: none;
+}
+
+/* Indicador sutil de arraste no mobile / drag handle */
+.toast-drag-pill {
+  width: 36px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+  margin: 0 auto 0.5rem auto;
+  transition: background-color 0.2s ease;
+}
+
+.discovery-toast:hover .toast-drag-pill {
+  background: rgba(255, 184, 108, 0.4);
+}
+
+.toast-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
 .toast-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   font-family: var(--font-family-display);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--color-accent);
   letter-spacing: 1px;
-  margin-bottom: 0.6rem;
   text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+/* Botão X para fechar rapidamente no PC */
+.toast-close-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 184, 108, 0.3);
+  color: rgba(255, 255, 255, 0.7);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.toast-close-btn:hover {
+  background: rgba(255, 184, 108, 0.25);
+  border-color: var(--color-accent);
+  color: #fff;
+  transform: scale(1.12);
+}
+
+.toast-close-btn:active {
+  transform: scale(0.9);
 }
 
 .toast-content {
@@ -1634,13 +1712,22 @@ body.photo-mode-active #bestiary-panel {
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 0.2rem;
+  flex-shrink: 0;
+}
+
+.toast-text {
+  flex: 1;
+  min-width: 0;
 }
 
 .toast-text h4 {
   font-family: var(--font-family-display);
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   color: #fff;
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .toast-text p {

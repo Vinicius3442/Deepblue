@@ -5,7 +5,7 @@
     "dataDepth": 300,
     "dataType": "peixe-pequeno",
     "dataGlowColor": "rgb(120, 200, 220)",
-    "dataScale": 0.8,
+    "dataScale": 0.4,
     "imgPath": "../img/Animals/fish/mesopelagic/silver_hatchetfish/silver_hatchetfish.png",
     "articlePath": "../articles/fish/mesopelagic/silver_hatchetfish.json"
   },
@@ -14,7 +14,7 @@
     "name": "Tubarão-víbora",
     "dataDepth": 350,
     "dataType": "predador-medio",
-    "dataScale": 1.5,
+    "dataScale": 1.1,
     "dataGlowColor": "rgb(100, 150, 255)",
     "imgPath": "../img/Animals/elasmobranchii/mesopelagic/viper_dogfish/viper_dogfish.png",
     "articlePath": "../articles/elasmobranchii/mesopelagic/viper_dogfish.json"
@@ -24,7 +24,7 @@
     "name": "Bico-doce",
     "dataDepth": 450,
     "dataType": "predador-medio",
-    "dataScale": 1.5,
+    "dataScale": 1.4,
     "imgPath": "../img/Animals/elasmobranchii/mesopelagic/sharpnose_sevengill_shark/sharpnose_sevengill_shark.png",
     "articlePath": "../articles/elasmobranchii/mesopelagic/sharpnose_sevengill_shark.json"
   },
@@ -42,16 +42,16 @@
     "name": "Peixe Olhos de Barril",
     "dataDepth": 700,
     "dataType": "peixe",
-    "dataScale": 1.0,
+    "dataScale": 0.7,
     "imgPath": "../img/Animals/fish/mesopelagic/barrel_eye_fish/barrel_eye_fish.png",
     "articlePath": "../articles/fish/mesopelagic/barrel_eye_fish.json"
   },
-    {
+  {
     "id": "peacock_squid",
     "name": "Lula-Pavão",
     "dataDepth": 750,
     "dataType": "lula-a",
-    "dataScale": 0.9,
+    "dataScale": 0.8,
     "imgPath": "../img/Animals/molluscae/mesopelagic/peacock_squid/peacock_squid.png",
     "articlePath": "../articles/molluscae/mesopelagic/peacock_squid.json"
   },
@@ -60,17 +60,26 @@
     "name": "Lula-vampiro",
     "dataDepth": 800,
     "dataType": "lula-a",
-    "dataScale": 0.9,
+    "dataScale": 0.7,
     "dataGlowColor": "rgb(100, 100, 255)",
     "imgPath": "../img/Animals/molluscae/mesopelagic/vampire_squid/vampire_squid.png",
     "articlePath": "../articles/molluscae/mesopelagic/vampire_squid.json"
+  },
+  {
+    "id": "viperfish",
+    "name": "Peixe-Víbora",
+    "dataDepth": 820,
+    "dataType": "peixe",
+    "dataScale": 0.7,
+    "imgPath": "../img/Animals/fish/mesopelagic/viperfish/viperfish.png",
+    "articlePath": "../articles/fish/mesopelagic/viperfish.json"
   },
   {
     "id": "cookiecutter_shark",
     "name": "Tubarão-charuto",
     "dataDepth": 850,
     "dataType": "peixe-pequeno",
-    "dataScale": 1.0,
+    "dataScale": 0.55,
     "dataGlowColor": "rgb(100, 255, 100)",
     "imgPath": "../img/Animals/elasmobranchii/mesopelagic/cookiecutter_shark/cookiecutter_shark.png",
     "articlePath": "../articles/elasmobranchii/mesopelagic/cookiecutter_shark.json"
@@ -80,7 +89,7 @@
     "name": "Tubarão-albafar",
     "dataDepth": 900,
     "dataType": "predador-grande",
-    "dataScale": 4.5,
+    "dataScale": 2.4,
     "imgPath": "../img/Animals/elasmobranchii/mesopelagic/albafar/albafar.png",
     "articlePath": "../articles/elasmobranchii/mesopelagic/albafar.json"
   },
@@ -99,17 +108,8 @@
     "name": "Peixe-Telescópio",
     "dataDepth": 980,
     "dataType": "peixe",
-    "dataScale": 1.5,
+    "dataScale": 0.8,
     "imgPath": "../img/Animals/fish/mesopelagic/telescope_fish/telescope_fish.png",
     "articlePath": "../articles/fish/mesopelagic/telescope_fish.json"
-  },
-  {
-    "id": "viperfish",
-    "name": "Peixe-Víbora",
-    "dataDepth": 820,
-    "dataType": "peixe",
-    "dataScale": 0.9,
-    "imgPath": "../img/Animals/fish/mesopelagic/viperfish/viperfish.png",
-    "articlePath": "../articles/fish/mesopelagic/viperfish.json"
   }
 ]

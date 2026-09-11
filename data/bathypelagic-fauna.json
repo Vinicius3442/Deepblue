@@ -2,9 +2,9 @@
   {
     "id": "giant_squid",
     "name": "Lula-Gigante",
-    "dataDepth": 2500,
+    "dataDepth": 1250,
     "dataType": "lula-grande",
-    "dataScale": 6.0,
+    "dataScale": 3.5,
     "imgPath": "../img/Animals/molluscae/bathypelagic/giant_squid/giant_squid.png",
     "articlePath": "../articles/molluscae/bathypelagic/giant_squid.json"
   },
@@ -13,7 +13,7 @@
     "name": "Tubarao-Duende",
     "dataDepth": 1300,
     "dataType": "predador-grande",
-    "dataScale": 3.0,
+    "dataScale": 2.2,
     "imgPath": "../img/Animals/elasmobranchii/bathypelagic/goblin_shark/goblin_shark.png",
     "articlePath": "../articles/elasmobranchii/bathypelagic/goblin-shark.json"
   },
@@ -22,7 +22,7 @@
     "name": "Quimera-azul",
     "dataDepth": 1800,
     "dataType": "peixe",
-    "dataScale": 1.7,
+    "dataScale": 1.4,
     "imgPath": "../img/Animals/fish/bathypelagic/hydrolagus_troll/hydrolagus_troll.png",
     "articlePath": "../articles/fish/bathypelagic/hydrolagus_troll.json"
   },
@@ -68,7 +68,7 @@
     "name": "Tubarão-da-Groenlândia",
     "dataDepth": 1300,
     "dataType": "predador-grande",
-    "dataScale": 4.0,
+    "dataScale": 2.4,
     "imgPath": "../img/Animals/elasmobranchii/bathypelagic/greenland_shark/greenland_shark.png",
     "articlePath": "../articles/elasmobranchii/bathypelagic/greenland_shark.json"
   },
@@ -77,7 +77,7 @@
     "name": "Carocho",
     "dataDepth": 2200,
     "dataType": "predador-medio",
-    "dataScale": 1.2,
+    "dataScale": 1.1,
     "imgPath": "../img/Animals/elasmobranchii/bathypelagic/portuguese_dogfish/portuguese_dogfish.png",
     "articlePath": "../articles/elasmobranchii/bathypelagic/portuguese_dogfish.json"
   },

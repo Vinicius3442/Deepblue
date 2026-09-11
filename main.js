@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Alerta de Descoberta RPG
   const discoveryToast = document.getElementById("discovery-toast");
+  const toastCloseBtn = document.getElementById("toast-close-btn");
   const toastAnimalImg = document.getElementById("toast-animal-img");
   const toastAnimalName = document.getElementById("toast-animal-name");
   const toastAnimalDepth = document.getElementById("toast-animal-depth");
@@ -123,22 +124,122 @@ document.addEventListener("DOMContentLoaded", () => {
     return data ? JSON.parse(data) : [];
   }
 
-  // --- ALERTA RPG DE DESCOBERTA (TOAST) ---
+  // --- ALERTA RPG DE DESCOBERTA (TOAST) COM SWIPE NO MOBILE E FECHAMENTO RÁPIDO NO PC ---
   let toastTimeout = null;
+  let isSwipingToast = false;
+  let toastStartX = 0;
+  let toastDeltaX = 0;
+
+  function dismissDiscoveryToast(direction = 0) {
+    if (!discoveryToast) return;
+    if (toastTimeout) {
+      clearTimeout(toastTimeout);
+      toastTimeout = null;
+    }
+
+    discoveryToast.classList.remove("swiping");
+
+    if (direction < 0) {
+      discoveryToast.classList.add("dismissed-left");
+    } else if (direction > 0) {
+      discoveryToast.classList.add("dismissed-right");
+    } else {
+      discoveryToast.classList.remove("visible");
+      discoveryToast.classList.add("hidden");
+    }
+
+    setTimeout(() => {
+      discoveryToast.classList.remove("visible", "dismissed-left", "dismissed-right");
+      discoveryToast.classList.add("hidden");
+      discoveryToast.style.transform = "";
+      discoveryToast.style.opacity = "";
+    }, 320);
+  }
+
   function showDiscoveryToast(animal) {
     if (!discoveryToast || !animal) return;
+    if (toastTimeout) clearTimeout(toastTimeout);
+
+    discoveryToast.style.transform = "";
+    discoveryToast.style.opacity = "";
+    discoveryToast.classList.remove("swiping", "dismissed-left", "dismissed-right", "hidden");
+
     toastAnimalImg.src = animal.imgPath;
     toastAnimalName.textContent = animal.name;
     toastAnimalDepth.textContent = `Adicionado ao Bestiário • ${animal.depth}m`;
 
-    discoveryToast.classList.remove("hidden");
     discoveryToast.classList.add("visible");
 
-    if (toastTimeout) clearTimeout(toastTimeout);
     toastTimeout = setTimeout(() => {
-      discoveryToast.classList.remove("visible");
-      discoveryToast.classList.add("hidden");
-    }, 4000);
+      dismissDiscoveryToast(0);
+    }, 4500);
+  }
+
+  // Fechamento no PC via botão 'X'
+  if (toastCloseBtn) {
+    toastCloseBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      dismissDiscoveryToast(0);
+    });
+  }
+
+  // Suporte a Swipe para o lado no Mobile (Touch Gestures)
+  if (discoveryToast) {
+    discoveryToast.addEventListener(
+      "touchstart",
+      (e) => {
+        if (e.touches.length !== 1) return;
+        if (toastTimeout) clearTimeout(toastTimeout);
+        isSwipingToast = true;
+        toastStartX = e.touches[0].clientX;
+        toastDeltaX = 0;
+        discoveryToast.classList.add("swiping");
+      },
+      { passive: true }
+    );
+
+    discoveryToast.addEventListener(
+      "touchmove",
+      (e) => {
+        if (!isSwipingToast || e.touches.length !== 1) return;
+        const currentX = e.touches[0].clientX;
+        toastDeltaX = currentX - toastStartX;
+
+        const rotation = (toastDeltaX / 300) * 8;
+        const opacity = Math.max(0.2, 1 - Math.abs(toastDeltaX) / 300);
+        discoveryToast.style.transform = `translate(calc(-50% + ${toastDeltaX}px), 0) rotate(${rotation}deg)`;
+        discoveryToast.style.opacity = opacity;
+      },
+      { passive: true }
+    );
+
+    const finishSwipe = () => {
+      if (!isSwipingToast) return;
+      isSwipingToast = false;
+      discoveryToast.classList.remove("swiping");
+
+      const threshold = 65; // limiar de 65px para descartar pro lado
+      if (Math.abs(toastDeltaX) > threshold) {
+        dismissDiscoveryToast(toastDeltaX > 0 ? 1 : -1);
+      } else {
+        // Snap-back elástico suave se não atingir o limiar
+        discoveryToast.style.transition =
+          "transform 0.25s cubic-bezier(0.2, 0.9, 0.3, 1), opacity 0.25s ease";
+        discoveryToast.style.transform = "translate(-50%, 0)";
+        discoveryToast.style.opacity = "1";
+
+        setTimeout(() => {
+          discoveryToast.style.transition = "";
+          if (toastTimeout) clearTimeout(toastTimeout);
+          toastTimeout = setTimeout(() => {
+            dismissDiscoveryToast(0);
+          }, 3500);
+        }, 260);
+      }
+    };
+
+    discoveryToast.addEventListener("touchend", finishSwipe);
+    discoveryToast.addEventListener("touchcancel", finishSwipe);
   }
 
   // Descobrir um novo animal e atualizar a UI
