@@ -1,0 +1,59 @@
+{
+  "name": "Lula-Polvo Dana",
+  "scientificName": "Taningia danae",
+  "img": "../../../img/Animals/molluscae/bathypelagic/taningia_danae/taningia_danae.png",
+  "fonte": "Japan Agency for Marine-Earth Science and Technology (JAMSTEC)",
+  "description": "A Taningia danae é um cefalópode ágil e formidável. O que mais impressiona nesta lula gigante não é apenas o seu tamanho, mas os dois fotóforos maciços nas pontas de dois dos seus braços. Ela emite flashes ofuscantes de luz amarelo-esverdeada para desorientar e cegar temporariamente suas presas antes de atacar na completa escuridão batipelágica.",
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/molluscae/bathypelagic/taningia_danae/map_taningia.jpg",
+    "alt": "Mapa de distribuição global da Taningia danae",
+    "fonte": "FAO"
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/molluscae/bathypelagic/taningia_danae/size_comparison.jpg",
+    "alt": "Comparativo de tamanho da Taningia danae com um mergulhador",
+    "descricao": "É uma das maiores lulas conhecidas, podendo atingir até 2,3 metros de comprimento total e pesar mais de 160 kg.",
+    "fonte": "Discovery Channel"
+  },
+  "fichaTecnica": {
+    "statusConservacao": "Pouco Preocupante (LC)",
+    "profundidade": "1.000 a 2.400 metros",
+    "dieta": "Carnívora (peixes mesopelágicos, outras lulas e crustáceos)",
+    "tamanhoMaximo": "Até 2,3 metros",
+    "expectativaVida": "Estimada em 2 a 3 anos",
+    "habitat": "Oceanos temperados e tropicais do mundo todo"
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/bathypelagic/taningia_danae/gallery/taningia1.jpg",
+      "alt": "Taningia danae exibindo seus fotóforos",
+      "legenda": "Os enormes órgãos emissores de luz nas extremidades de seus braços são os maiores photóforos já registrados no reino animal.",
+      "fonte": "JAMSTEC"
+    },
+    {
+      "type": "youtube",
+      "src": "INSIRA_O_ID_DO_VIDEO_AQUI",
+      "alt": "Vídeo da Taningia danae atacando um ROV",
+      "legenda": "Imagens raras mostram a lula emitindo flashes rápidos de luz antes de se lançar contra as câmeras do submarino.",
+      "fonte": "National Geographic"
+    }
+  ],
+  "curiosidades": [
+    "Possui os maiores órgãos emissores de luz (fotóforos) do reino animal, cada um do tamanho de um limão grande.",
+    "Ela não tem os dois longos tentáculos de alimentação comuns na maioria das lulas, possuindo apenas 8 braços grossos, o que lhe dá o nome de lula 'octópode'.",
+    "Garras afiadas como de gatos substituem as tradicionais ventosas em seus braços, permitindo rasgar a carne das presas."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Lula-Gigante",
+      "img": "../../../img/Animals/molluscae/bathypelagic/giant_squid/giant_squid.png",
+      "targetId": "Lula-Gigante"
+    },
+    {
+      "nome": "Lula-vampiro",
+      "img": "../../../img/Animals/molluscae/mesopelagic/vampire_squid/vampire_squid.png",
+      "targetId": "Lula-vampiro"
+    }
+  ]
+}

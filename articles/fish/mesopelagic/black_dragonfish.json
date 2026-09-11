@@ -1,0 +1,59 @@
+{
+  "name": "Peixe-Dragão Negro",
+  "scientificName": "Idiacanthus atlanticus",
+  "img": "../../../img/Animals/fish/mesopelagic/black_dragonfish/black_dragonfish.png",
+  "fonte": "NOAA Ocean Exploration",
+  "description": "O Peixe-Dragão Negro é um predador esguio e implacável das zonas mesopelágica e batipelágica. Semelhante a uma enguia alienígena, as fêmeas possuem dentes caninos imensos e um barbilhão bioluminescente no queixo usado para atrair presas na escuridão total. Eles são conhecidos por um dos exemplos mais extremos de dimorfismo sexual no oceano.",
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/fish/mesopelagic/black_dragonfish/map_black_dragonfish.jpg",
+    "alt": "Mapa de distribuição global do Peixe-Dragão Negro",
+    "fonte": "OBIS (Ocean Biodiversity Information System)"
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/fish/mesopelagic/black_dragonfish/size_comparison.jpg",
+    "alt": "Comparativo de tamanho do Peixe-Dragão Negro com a mão de um ser humano",
+    "descricao": "As fêmeas podem atingir até 40 cm de comprimento, enquanto os machos não passam de meros 5 cm e não possuem dentes ou estômago funcional.",
+    "fonte": "Woods Hole Oceanographic Institution"
+  },
+  "fichaTecnica": {
+    "statusConservacao": "Pouco Preocupante (LC)",
+    "profundidade": "1.200 a 2.000 metros",
+    "dieta": "Carnívoro (peixes lanterna e crustáceos)",
+    "tamanhoMaximo": "Até 40 cm (fêmeas); machos cerca de 5 cm",
+    "expectativaVida": "Desconhecida",
+    "habitat": "Águas profundas subtropicais e temperadas do Hemisfério Sul"
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/mesopelagic/black_dragonfish/gallery/black_dragonfish1.jpg",
+      "alt": "Fêmea de Peixe-Dragão Negro mostrando seus dentes",
+      "legenda": "Os dentes da fêmea são tão grandes que ela não consegue fechar a boca completamente.",
+      "fonte": "NOAA"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/mesopelagic/black_dragonfish/gallery/black_dragonfish2.jpg",
+      "alt": "Bioluminescência no corpo do Dragão Negro",
+      "legenda": "Fotóforos ao longo de sua barriga emitem luz, ajudando a camuflar sua silhueta contra a fraca luz vinda da superfície.",
+      "fonte": "Science Photo Library"
+    }
+  ],
+  "curiosidades": [
+    "As larvas do Peixe-Dragão Negro são completamente transparentes e têm os olhos na ponta de longas hastes que se retraem à medida que amadurecem.",
+    "Os machos vivem apenas o tempo suficiente para se reproduzir, já que não possuem um sistema digestivo funcional para se alimentar.",
+    "Eles conseguem produzir luz infravermelha (vermelha), uma cor que a maioria das criaturas das profundezas não consegue enxergar, funcionando como uma 'lanterna de atirador de elite'."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Peixe-Víbora",
+      "img": "../../../img/Animals/fish/mesopelagic/viperfish/viperfish.png",
+      "targetId": "Peixe-Víbora"
+    },
+    {
+      "nome": "Engolidor Negro",
+      "img": "../../../img/Animals/fish/bathypelagic/black_swallower/black_swallower.png",
+      "targetId": "Engolidor Negro"
+    }
+  ]
+}

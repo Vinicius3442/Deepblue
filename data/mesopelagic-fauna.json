@@ -29,6 +29,16 @@
     "articlePath": "../articles/elasmobranchii/mesopelagic/sharpnose_sevengill_shark.json"
   },
   {
+    "id": "astronesthes",
+    "name": "Peixe-Dragão Arrastão",
+    "dataDepth": 550,
+    "dataType": "peixe-pequeno",
+    "dataGlowColor": "rgb(80, 180, 255)",
+    "dataScale": 0.6,
+    "imgPath": "../img/Animals/fish/mesopelagic/astronesthes/astronesthes.png",
+    "articlePath": "../articles/fish/mesopelagic/astronesthes.json"
+  },
+  {
     "id": "atolla_jellyfish",
     "name": "Água-viva Atolla",
     "dataDepth": 650,
@@ -36,6 +46,16 @@
     "dataScale": 0.5,
     "imgPath": "../img/Animals/cnidaria/mesopelagic/atolla_jellyfish/atolla_jellyfish.png",
     "articlePath": "../articles/cnidaria/mesopelagic/atolla_jellyfish.json"
+  },
+  {
+    "id": "histioteuthis",
+    "name": "Lula-Estrábica",
+    "dataDepth": 680,
+    "dataType": "lula-a",
+    "dataGlowColor": "rgb(120, 220, 255)",
+    "dataScale": 0.75,
+    "imgPath": "../img/Animals/molluscae/mesopelagic/histioteuthis/histioteuthis.png",
+    "articlePath": "../articles/molluscae/mesopelagic/histioteuthis.json"
   },
   {
     "id": "barrel_eye_fish",

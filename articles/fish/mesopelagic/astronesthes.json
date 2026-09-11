@@ -1,0 +1,59 @@
+{
+  "name": "Peixe-Dragão Arrastão",
+  "scientificName": "Astronesthes niger",
+  "img": "../../../img/Animals/fish/mesopelagic/astronesthes/astronesthes.png",
+  "fonte": "Ocean Biogeographic Information System (OBIS)",
+  "description": "O Peixe-Dragão Arrastão é um temível predador mesopelágico. Diferente de outros peixes-dragão, ele possui um corpo um pouco mais robusto, mas mantém a marca registrada da família: dentes enormes e pontiagudos projetados para fora da boca e um barbilhão longo e bioluminescente sob o queixo, usado como isca viva na escuridão.",
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/fish/mesopelagic/astronesthes/map_astronesthes.jpg",
+    "alt": "Mapa de distribuição global do Peixe-Dragão Arrastão",
+    "fonte": "NOAA Deep Sea Research"
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/fish/mesopelagic/astronesthes/size_comparison.jpg",
+    "alt": "Comparativo de tamanho do Astronesthes com um ser humano",
+    "descricao": "Apesar de seus dentes assustadores, a maioria das espécies deste gênero atinge no máximo 15 centímetros de comprimento.",
+    "fonte": "MarineBio"
+  },
+  "fichaTecnica": {
+    "statusConservacao": "Pouco Preocupante (LC)",
+    "profundidade": "200 a 1.000 metros (Migração Vertical)",
+    "dieta": "Carnívoro (peixes lanterna e crustáceos planctônicos)",
+    "tamanhoMaximo": "16 cm",
+    "expectativaVida": "Desconhecida",
+    "habitat": "Águas tropicais e subtropicais dos oceanos Atlântico, Índico e Pacífico"
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/mesopelagic/astronesthes/gallery/astronesthes1.jpg",
+      "alt": "Close dos dentes do Astronesthes",
+      "legenda": "Os dentes deste peixe-dragão são tão grandes que funcionam como uma gaiola, impedindo que as presas escapem após o bote.",
+      "fonte": "Science Photo Library"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/fish/mesopelagic/astronesthes/gallery/astronesthes2.jpg",
+      "alt": "Barbilhão bioluminescente do Astronesthes",
+      "legenda": "O longo apêndice no queixo pisca na escuridão, imitando os movimentos de pequenos organismos bioluminescentes.",
+      "fonte": "Woods Hole Oceanographic Institution"
+    }
+  ],
+  "curiosidades": [
+    "A pele deste peixe contém tecidos especiais que absorvem a luz, evitando que o brilho de suas presas engolidas o denuncie para predadores maiores.",
+    "Ele realiza a 'Migração Vertical Diária': sobe para águas mais rasas à noite para se alimentar e retorna às profundezas durante o dia para se esconder.",
+    "Seu estômago é altamente elástico, permitindo engolir presas que são quase do seu próprio tamanho."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Peixe-Víbora",
+      "img": "../../../img/Animals/fish/mesopelagic/viperfish/viperfish.png",
+      "targetId": "Peixe-Víbora"
+    },
+    {
+      "nome": "Peixe-Diabo Negro",
+      "img": "../../../img/Animals/fish/bathypelagic/black_devil/black_devil.png",
+      "targetId": "Peixe-Diabo Negro"
+    }
+  ]
+}

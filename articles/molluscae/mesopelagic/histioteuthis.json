@@ -1,0 +1,59 @@
+{
+  "name": "Lula-Estrábica",
+  "scientificName": "Histioteuthis bonnellii",
+  "img": "../../../img/Animals/molluscae/mesopelagic/histioteuthis/histioteuthis.png",
+  "fonte": "Monterey Bay Aquarium Research Institute (MBARI)",
+  "description": "A Lula-Estrábica é uma das criaturas mais bizarras e fascinantes da zona mesopelágica. O seu nome popular não é por acaso: ela possui um olho gigantesco e tubular, e outro pequeno e normal. Esta assimetria extrema permite que ela nade de lado, com o olho grande voltado para a superfície em busca da silhueta de presas, e o olho menor voltado para as profundezas escaneando flashes de bioluminescência.",
+  "mapaDistribuicao": {
+    "img": "../../../img/Animals/molluscae/mesopelagic/histioteuthis/map_histioteuthis.jpg",
+    "alt": "Mapa de distribuição da Lula-Estrábica",
+    "fonte": "Marine Species Identification Portal"
+  },
+  "comparativoTamanho": {
+    "img": "../../../img/Animals/molluscae/mesopelagic/histioteuthis/size_comparison.jpg",
+    "alt": "Comparativo de tamanho com um ser humano",
+    "descricao": "Seu manto chega a cerca de 33 cm, mas seus braços longos unidos por uma membrana dão a ela uma aparência de 'guarda-chuva'.",
+    "fonte": "MBARI"
+  },
+  "fichaTecnica": {
+    "statusConservacao": "Pouco Preocupante (LC)",
+    "profundidade": "500 a 2.000 metros",
+    "dieta": "Carnívora (peixes lanterna e pequenos invertebrados)",
+    "tamanhoMaximo": "33 cm (comprimento do manto)",
+    "expectativaVida": "Aproximadamente 2 anos",
+    "habitat": "Oceanos Atlântico e Mediterrâneo"
+  },
+  "galeria": [
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/mesopelagic/histioteuthis/gallery/histioteuthis1.jpg",
+      "alt": "Close-up nos olhos assimétricos",
+      "legenda": "O olho esquerdo gigante pode ser o dobro do tamanho do olho direito, uma adaptação perfeita para a luz difusa da 'zona crepuscular'.",
+      "fonte": "Schmidt Ocean Institute"
+    },
+    {
+      "type": "image",
+      "src": "../../../img/Animals/molluscae/mesopelagic/histioteuthis/gallery/histioteuthis2.jpg",
+      "alt": "Lula-Estrábica com os fotóforos brilhando",
+      "legenda": "Seu corpo avermelhado é coberto por centenas de pequenos órgãos que emitem luz azulada.",
+      "fonte": "Science Photo Library"
+    }
+  ],
+  "curiosidades": [
+    "O seu olho gigante tem uma lente amarelada, que atua como um filtro de câmera, quebrando a camuflagem bioluminescente de outros animais marinhos.",
+    "O corpo inteiro da lula é adornado com pequenos fotóforos que parecem joias e a ajudam na camuflagem (contra-iluminação).",
+    "A cor vermelha brilhante do seu corpo a torna praticamente invisível nas águas profundas, já que a luz vermelha não penetra no oceano."
+  ],
+  "especiesRelacionadas": [
+    {
+      "nome": "Peixe Olhos de Barril",
+      "img": "../../../img/Animals/fish/mesopelagic/barrel_eye_fish/barrel_eye_fish.png",
+      "targetId": "Peixe Olhos de Barril"
+    },
+    {
+      "nome": "Lula-Cacatua",
+      "img": "../../../img/Animals/molluscae/mesopelagic/cockatoo_squid/cockatoo_squid.png",
+      "targetId": "Lula-Cacatua"
+    }
+  ]
+}

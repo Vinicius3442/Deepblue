@@ -1,5 +1,15 @@
 [
   {
+    "id": "loosejaw_dragonfish",
+    "name": "Peixe-Semáforo",
+    "dataDepth": 1200,
+    "dataType": "predador-profundo",
+    "dataScale": 0.9,
+    "dataGlowColor": "rgb(255, 50, 50)",
+    "imgPath": "../img/Animals/fish/bathypelagic/loosejaw_dragonfish/loosejaw_dragonfish.png",
+    "articlePath": "../articles/fish/bathypelagic/loosejaw_dragonfish.json"
+  },
+  {
     "id": "giant_squid",
     "name": "Lula-Gigante",
     "dataDepth": 1250,
@@ -18,6 +28,52 @@
     "articlePath": "../articles/elasmobranchii/bathypelagic/goblin-shark.json"
   },
   {
+    "id": "greenland_shark",
+    "name": "Tubarão-da-Groenlândia",
+    "dataDepth": 1300,
+    "dataType": "predador-grande",
+    "dataScale": 2.4,
+    "imgPath": "../img/Animals/elasmobranchii/bathypelagic/greenland_shark/greenland_shark.png",
+    "articlePath": "../articles/elasmobranchii/bathypelagic/greenland_shark.json"
+  },
+  {
+    "id": "black_dragonfish",
+    "name": "Peixe-Dragão Negro",
+    "dataDepth": 1400,
+    "dataType": "predador-profundo",
+    "dataScale": 0.85,
+    "dataGlowColor": "rgb(255, 60, 60)",
+    "imgPath": "../img/Animals/fish/mesopelagic/black_dragonfish/black_dragonfish.png",
+    "articlePath": "../articles/fish/mesopelagic/black_dragonfish.json"
+  },
+  {
+    "id": "black_swallower",
+    "name": "Engolidor Negro",
+    "dataDepth": 1450,
+    "dataType": "peixe",
+    "dataScale": 0.5,
+    "imgPath": "../img/Animals/fish/bathypelagic/black_swallower/black_swallower.png",
+    "articlePath": "../articles/fish/bathypelagic/black_swallower.json"
+  },
+  {
+    "id": "whiplash_squid_magna",
+    "name": "Whiplash Squid",
+    "dataDepth": 1500,
+    "dataType": "agua-viva",
+    "dataScale": 1.2,
+    "imgPath": "../img/Animals/molluscae/bathypelagic/whiplash_squid_magna/whiplash_squid_magna.png",
+    "articlePath": "../articles/molluscae/bathypelagic/whiplash_squid_magna.json"
+  },
+  {
+    "id": "ogre_fish",
+    "name": "Peixe-Ogro",
+    "dataDepth": 1700,
+    "dataType": "peixe",
+    "dataScale": 0.4,
+    "imgPath": "../img/Animals/fish/bathypelagic/ogre_fish/ogre_fish.png",
+    "articlePath": "../articles/fish/bathypelagic/ogre_fish.json"
+  },
+  {
     "id": "hydrolagus_troll",
     "name": "Quimera-azul",
     "dataDepth": 1800,
@@ -25,6 +81,25 @@
     "dataScale": 1.4,
     "imgPath": "../img/Animals/fish/bathypelagic/hydrolagus_troll/hydrolagus_troll.png",
     "articlePath": "../articles/fish/bathypelagic/hydrolagus_troll.json"
+  },
+  {
+    "id": "taningia_danae",
+    "name": "Lula-Polvo Dana",
+    "dataDepth": 2100,
+    "dataType": "lula-grande",
+    "dataScale": 2.2,
+    "dataGlowColor": "rgb(220, 255, 120)",
+    "imgPath": "../img/Animals/molluscae/bathypelagic/taningia_danae/taningia_danae.png",
+    "articlePath": "../articles/molluscae/bathypelagic/taningia_danae.json"
+  },
+  {
+    "id": "portuguese_dogfish",
+    "name": "Carocho",
+    "dataDepth": 2200,
+    "dataType": "predador-medio",
+    "dataScale": 1.1,
+    "imgPath": "../img/Animals/elasmobranchii/bathypelagic/portuguese_dogfish/portuguese_dogfish.png",
+    "articlePath": "../articles/elasmobranchii/bathypelagic/portuguese_dogfish.json"
   },
   {
     "id": "pelican_eel",
@@ -43,60 +118,5 @@
     "dataScale": 0.9,
     "imgPath": "../img/Animals/fish/bathypelagic/black_devil/black_devil.png",
     "articlePath": "../articles/fish/bathypelagic/black_devil.json"
-  },
-  {
-    "id": "loosejaw_dragonfish",
-    "name": "Peixe-Semáforo",
-    "dataDepth": 1200,
-    "dataType": "predador-profundo",
-    "dataScale": 0.9,
-    "dataGlowColor": "rgb(255, 50, 50)",
-    "imgPath": "../img/Animals/fish/bathypelagic/loosejaw_dragonfish/loosejaw_dragonfish.png",
-    "articlePath": "../articles/fish/bathypelagic/loosejaw_dragonfish.json"
-  },
-  {
-    "id": "whiplash_squid_magna",
-    "name": "Whiplash Squid",
-    "dataDepth": 1500,
-    "dataType": "agua-viva",
-    "dataScale": 1.2,
-    "imgPath": "../img/Animals/molluscae/bathypelagic/whiplash_squid_magna/whiplash_squid_magna.png",
-    "articlePath": "../articles/molluscae/bathypelagic/whiplash_squid_magna.json"
-  },
-  {
-    "id": "greenland_shark",
-    "name": "Tubarão-da-Groenlândia",
-    "dataDepth": 1300,
-    "dataType": "predador-grande",
-    "dataScale": 2.4,
-    "imgPath": "../img/Animals/elasmobranchii/bathypelagic/greenland_shark/greenland_shark.png",
-    "articlePath": "../articles/elasmobranchii/bathypelagic/greenland_shark.json"
-  },
-  {
-    "id": "portuguese_dogfish",
-    "name": "Carocho",
-    "dataDepth": 2200,
-    "dataType": "predador-medio",
-    "dataScale": 1.1,
-    "imgPath": "../img/Animals/elasmobranchii/bathypelagic/portuguese_dogfish/portuguese_dogfish.png",
-    "articlePath": "../articles/elasmobranchii/bathypelagic/portuguese_dogfish.json"
-  },
-  {
-    "id": "black_swallower",
-    "name": "Engolidor Negro",
-    "dataDepth": 1450,
-    "dataType": "peixe",
-    "dataScale": 0.5,
-    "imgPath": "../img/Animals/fish/bathypelagic/black_swallower/black_swallower.png",
-    "articlePath": "../articles/fish/bathypelagic/black_swallower.json"
-  },
-  {
-    "id": "ogre_fish",
-    "name": "Peixe-Ogro",
-    "dataDepth": 1700,
-    "dataType": "peixe",
-    "dataScale": 0.4,
-    "imgPath": "../img/Animals/fish/bathypelagic/ogre_fish/ogre_fish.png",
-    "articlePath": "../articles/fish/bathypelagic/ogre_fish.json"
   }
 ]
