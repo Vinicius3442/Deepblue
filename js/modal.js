@@ -48,12 +48,12 @@ const tabsContainer = modal.querySelector(".modal-tabs");
 const relatedGrid = modal.querySelector(".related-species-grid");
 
 function openModal() {
-  document.body.style.overflow = "hidden";
+  document.body.classList.add("modal-open");
   modal.classList.add("active");
 }
 
 export function closeModal() {
-  document.body.style.overflow = "auto";
+  document.body.classList.remove("modal-open");
   modal.classList.remove("active");
 }
 
