@@ -595,10 +595,16 @@ document.addEventListener("DOMContentLoaded", () => {
       CONFIG.MAX_DEPTH * CONFIG.PIXELS_PER_METER + window.innerHeight * 2;
     oceanAbyss.style.height = `${totalHeight}px`;
 
-    ZONES.forEach((zone) => {
+    ZONES.forEach((zone, index) => {
       const element = document.getElementById(zone.id);
       if (element) {
         element.style.top = `${zone.startDepth * CONFIG.PIXELS_PER_METER}px`;
+        const nextZone = ZONES[index + 1];
+        if (nextZone) {
+          const zoneHeight =
+            (nextZone.startDepth - zone.startDepth) * CONFIG.PIXELS_PER_METER;
+          element.style.height = `${zoneHeight}px`;
+        }
       }
     });
 

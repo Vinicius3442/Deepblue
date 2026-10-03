@@ -231,11 +231,11 @@ body.modal-open {
 }
 
 .zone-cluster {
-  position: relative;
+  position: absolute;
+  left: 0;
   width: 100%;
   max-width: 100vw;
   overflow-x: hidden;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -276,6 +276,8 @@ body.modal-open {
 
 .fauna-gallery figure {
   position: absolute;
+  top: 0;
+  left: 0;
   transition: transform 0.2s ease-out, z-index 0.2s linear;
   pointer-events: auto;
   cursor: pointer;
@@ -389,65 +391,7 @@ body.modal-open {
 }
 
 
-#zone-epipelagic figure:nth-of-type(1) {
-  top: 30%;
-  left: 10%;
-  width: 150px;
-}
-#zone-epipelagic figure:nth-of-type(2) {
-  top: 50%;
-  right: 15%;
-  width: 120px;
-}
-#zone-epipelagic figure:nth-of-type(3) {
-  bottom: 20%;
-  left: 25%;
-  width: 180px;
-}
 
-#zone-mesopelagic figure:nth-of-type(1) {
-  top: 25%;
-  left: 20%;
-  width: 100px;
-}
-#zone-mesopelagic figure:nth-of-type(2) {
-  top: 60%;
-  right: 20%;
-  width: 130px;
-}
-#zone-mesopelagic figure:nth-of-type(3) {
-  bottom: 15%;
-  left: 10%;
-  width: 110px;
-}
-
-#zone-bathypelagic figure:nth-of-type(1) {
-  top: 40%;
-  left: 15%;
-  width: 150px;
-}
-#zone-bathypelagic figure:nth-of-type(2) {
-  bottom: 30%;
-  right: 25%;
-  width: 200px;
-}
-
-#zone-abyssopelagic figure:nth-of-type(1) {
-  top: 20%;
-  left: 30%;
-  width: 130px;
-}
-#zone-abyssopelagic figure:nth-of-type(2) {
-  bottom: 40%;
-  right: 10%;
-  width: 160px;
-}
-
-#zone-hadopelagic figure:nth-of-type(1) {
-  top: 50%;
-  left: 40%;
-  width: 140px;
-}
 
 .animal-modal {
   position: fixed;
