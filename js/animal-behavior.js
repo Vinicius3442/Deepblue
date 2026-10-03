@@ -50,7 +50,7 @@ export function animateAnimals(animals) {
     }
 
     const isMobile = window.innerWidth <= 768;
-    const mobileScale = isMobile ? 0.45 : 1.0;
+    const mobileScale = isMobile ? 1.8 : 1.0;
     const finalScale = animal.scale * mobileScale;
 
     // Aplica a transformação alinhada à ponta superior esquerda com escala responsiva para mobile
@@ -63,8 +63,8 @@ export function animateAnimals(animals) {
 
 function getEffectiveWidth(animal) {
   const isMobile = window.innerWidth <= 768;
-  const mobileScale = isMobile ? 0.45 : 1.0;
-  const baseWidth = (animal.width && animal.width > 0) ? animal.width : (isMobile ? 65 : 120);
+  const mobileScale = isMobile ? 1.8 : 1.0;
+  const baseWidth = (animal.width && animal.width > 0) ? animal.width : (isMobile ? 90 : 120);
   return baseWidth * (animal.scale || 1.0) * mobileScale;
 }
 

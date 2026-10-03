@@ -27,30 +27,78 @@
   padding: 0;
 }
 
+/* ==========================================================================
+   SISTEMA DE CURSORES PERSONALIZADOS (HUD AZUL & CIANO)
+   ========================================================================== */
+
+/* Cursor Padrão (Navegação Geral no Oceano) */
 html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><polygon points="2,2 22,10 12,14 9,23" fill="%2300b4d8" stroke="%2390e0ef" stroke-width="1.5" stroke-linejoin="round"/><polygon points="2,2 22,10 12,14 9,23" fill="%230077b6" opacity="0.5"/></svg>') 2 2, auto;
+body,
+div,
+section,
+main,
+aside,
+header,
+footer {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><polygon points="2,2 22,10 12,14 9,23" fill="%2300b4d8" stroke="%2390e0ef" stroke-width="1.5" stroke-linejoin="round"/><polygon points="2,2 22,10 12,14 9,23" fill="%230077b6" opacity="0.5"/></svg>') 2 2, auto !important;
 }
 
+/* Cursor de Clique / Hover (Substitui a mãozinha do Windows por completo) */
 button,
 a,
-input,
+label,
 select,
-textarea,
 .fauna-gallery figure,
+.fauna-gallery figure img,
 .bestiary-card,
 .minimap-node,
 .filter-btn,
 .filter-category-btn,
 .filter-status-btn,
-[role="button"],
+.tab-button,
+.modal-close,
 .toast-close-btn,
+.related-species-item,
+.gallery-item-wrapper,
 #photo-mode-btn,
 #bestiary-toggle-button,
-#reset-button {
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><polygon points="2,2 22,10 12,14 9,23" fill="%2300f0ff" stroke="%23ffffff" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="14" r="2" fill="%23ffffff"/></svg>') 2 2, pointer !important;
+#reset-button,
+#exit-photo-mode-btn,
+#photo-preview-close,
+#close-preview-btn,
+#download-photo-btn,
+[role="button"] {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><polygon points="2,2 22,10 12,14 9,23" fill="%2300f0ff" stroke="%23ffffff" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="14" r="2.5" fill="%23ffffff" stroke="%2300d2ff" stroke-width="0.8"/></svg>') 2 2, pointer !important;
+}
+
+/* Cursor de Clique Pressionado (:active - Feedback Dourado/Ciano Instantâneo) */
+button:active,
+a:active,
+.fauna-gallery figure:active,
+.bestiary-card:active,
+.minimap-node:active,
+.filter-btn:active,
+.filter-category-btn:active,
+.filter-status-btn:active,
+.tab-button:active,
+#reset-button:active,
+#photo-mode-btn:active,
+#bestiary-toggle-button:active {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><polygon points="3,3 21,11 12,14 10,22" fill="%23ffca8f" stroke="%23ffffff" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="14" r="3" fill="%2300f0ff"/></svg>') 2 2, pointer !important;
+}
+
+/* Cursor de Texto (Campo de Busca no Bestiário / Inputs) */
+input[type="text"],
+input[type="search"],
+textarea {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 20 24"><path d="M6 3 h8 M10 3 v18 M6 21 h8" stroke="%2300f0ff" stroke-width="2" stroke-linecap="round"/><path d="M7 4 h6 M10 4 v16 M7 20 h6" stroke="%23ffffff" stroke-width="1" stroke-linecap="round"/></svg>') 10 12, text !important;
+}
+
+/* Cursor Bloqueado / Não Permitido (Cards Trancados) */
+.locked,
+:disabled,
+[disabled] {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><polygon points="2,2 18,9 11,12 8,19" fill="%2300b4d8" opacity="0.4"/><circle cx="16" cy="16" r="7" fill="none" stroke="%23ff4d4d" stroke-width="2"/><line x1="11" y1="11" x2="21" y2="21" stroke="%23ff4d4d" stroke-width="2"/></svg>') 16 16, not-allowed !important;
 }
 
 body {
@@ -300,6 +348,7 @@ body.modal-open {
   left: 0;
   transition: transform 0.2s ease-out, z-index 0.2s linear;
   pointer-events: auto;
+  touch-action: manipulation;
   cursor: pointer;
   transform-origin: top left;
   filter: none;
@@ -310,7 +359,8 @@ body.modal-open {
   width: 100%;
   max-width: 150px;
   height: auto;
-  pointer-events: none;
+  pointer-events: auto;
+  cursor: pointer;
   user-select: none;
   object-fit: contain;
   filter: drop-shadow(0 5px 15px var(--color-shadow));
@@ -320,7 +370,7 @@ body.modal-open {
 /* Borda / Contorno branco brilhante ao redor da silhueta do peixe selecionado ou com mouse sobre */
 .fauna-gallery figure:hover img,
 .fauna-gallery figure.selected img {
-  filter: drop-shadow(0 0 4px #ffffff) drop-shadow(0 0 10px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 18px rgba(0, 212, 255, 0.8)) drop-shadow(0 5px 15px var(--color-shadow)) !important;
+  filter: drop-shadow(0 0 8px #ffffff) !important;
 }
 
 .fauna-gallery figure:hover {
@@ -328,7 +378,7 @@ body.modal-open {
 }
 
 /* Feedback de clique suave (sem exagero) */
-.fauna-gallery figure:active {
+.fauna-gallery figure:active img {
   transform: scale(0.97) !important;
   transition: transform 0.08s ease;
 }
@@ -2053,7 +2103,7 @@ body.photo-mode-active #bestiary-panel {
   }
 
   .fauna-gallery figure img {
-    max-width: 80px;
+    max-width: 130px;
   }
 
   /* Bestiário Modal Mobile */

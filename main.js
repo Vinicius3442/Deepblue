@@ -705,21 +705,55 @@ document.addEventListener("DOMContentLoaded", () => {
       animal.figure.style.opacity = 0;
       animal.figure.style.transition = "opacity 0.5s ease-in-out";
 
-      figure.addEventListener("click", async () => {
+      const onAnimalClick = async (e) => {
+        if (e) {
+          e.stopPropagation();
+        }
         document.querySelectorAll('[data-animal="true"]').forEach((f) => f.classList.remove("selected"));
         figure.classList.add("selected");
-        if (!animal.articlePath) return;
         discoverAnimal(animal.name);
+
+        if (!animal.articlePath) {
+          openAnimalModal({
+            name: animal.name,
+            scientificName: animal.name,
+            img: animal.imgPath,
+            description: `Espécie observada a ~${animal.depth}m de profundidade durante a expedição.`,
+            fichaTecnica: {
+              Profundidade: `${animal.depth}m`,
+              Categoria: animal.type
+            },
+            curiosidades: [
+              `Organismo marinho pertencente à fauna de ${animal.depth}m de profundidade.`
+            ]
+          });
+          return;
+        }
+
         try {
           const response = await fetch(animal.articlePath);
-          if (!response.ok)
-            throw new Error(`HTTP error! status: ${response.status}`);
+          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
           const data = await response.json();
           openAnimalModal(data);
         } catch (err) {
-          console.error("Erro ao carregar artigo JSON:", err);
+          console.warn("Ficha detalhada indisponível ou bloqueada por CORS local, usando ficha de síntese:", err);
+          openAnimalModal({
+            name: animal.name,
+            scientificName: animal.name,
+            img: animal.imgPath,
+            description: `Espécie observada durante a expedição a ~${animal.depth}m de profundidade.`,
+            fichaTecnica: {
+              Profundidade: `${animal.depth}m`,
+              Categoria: animal.type
+            },
+            curiosidades: [
+              `Organismo marinho registrado a ${animal.depth}m de profundidade.`
+            ]
+          });
         }
-      });
+      };
+
+      figure.addEventListener("click", onAnimalClick);
       animalsArray.push(animal);
     });
   }
@@ -736,8 +770,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function update() {
+    const oceanScrollY = Math.max(0, lastScrollY - window.innerHeight);
     currentDepth = Math.min(
-      Math.floor(lastScrollY / CONFIG.PIXELS_PER_METER),
+      Math.floor(oceanScrollY / CONFIG.PIXELS_PER_METER),
       CONFIG.MAX_DEPTH
     );
 
@@ -805,9 +840,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function checkAnimalActivation() {
     const range = CONFIG.ANIMAL_ACTIVATION_RANGE;
+    const oceanScrollY = Math.max(0, lastScrollY - window.innerHeight);
+    const viewportCenterDepth =
+      (oceanScrollY + window.innerHeight / 2) / CONFIG.PIXELS_PER_METER;
+
     animals.forEach((animal) => {
-      const viewportCenterDepth =
-        currentDepth + window.innerHeight / 2 / CONFIG.PIXELS_PER_METER;
       const isInRange =
         Math.abs(animal.depth - viewportCenterDepth) < range / 2;
 
@@ -830,9 +867,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         animal.isActive = true;
         animal.figure.style.opacity = 1;
+        animal.figure.style.pointerEvents = "auto";
       } else if (!isInRange && animal.isActive) {
         animal.isActive = false;
         animal.figure.style.opacity = 0;
+        animal.figure.style.pointerEvents = "none";
         if (animal.type === "agua-viva-brilhante") {
           animal.img.style.filter = "";
         }

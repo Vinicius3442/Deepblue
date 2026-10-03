@@ -48,13 +48,24 @@ const tabsContainer = modal.querySelector(".modal-tabs");
 const relatedGrid = modal.querySelector(".related-species-grid");
 
 function openModal() {
+  if (!document.body.contains(modal)) {
+    document.body.appendChild(modal);
+  }
   document.body.classList.add("modal-open");
   modal.classList.add("active");
+  modal.style.display = "flex";
+  modal.style.opacity = "1";
+  modal.style.visibility = "visible";
+  modal.style.pointerEvents = "auto";
+  modal.style.zIndex = "10000";
 }
 
 export function closeModal() {
   document.body.classList.remove("modal-open");
   modal.classList.remove("active");
+  modal.style.opacity = "0";
+  modal.style.visibility = "hidden";
+  modal.style.pointerEvents = "none";
 }
 
 /**
