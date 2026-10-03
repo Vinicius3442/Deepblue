@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const resetButton = document.getElementById("reset-button");
 
   // Botões de topo e modal do Bestiário
-  const audioToggleBtn = document.getElementById("audio-toggle-btn");
   const bestiaryToggleButton = document.getElementById("bestiary-toggle-button");
   const bestiaryPanel = document.getElementById("bestiary-panel");
   const bestiaryCloseButton = document.getElementById("bestiary-close-btn");
@@ -259,27 +258,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // --- CONTROLE DE ÁUDIO DO OCEANO ---
-  if (audioToggleBtn) {
-    audioToggleBtn.addEventListener("click", () => {
-      const isPlaying = toggleAudio();
-      const soundOffIcon = audioToggleBtn.querySelector(".sound-off-icon");
-      const soundOnIcon = audioToggleBtn.querySelector(".sound-on-icon");
-      const label = audioToggleBtn.querySelector(".btn-label");
 
-      if (isPlaying) {
-        soundOffIcon?.classList.add("hidden");
-        soundOnIcon?.classList.remove("hidden");
-        if (label) label.textContent = "Som LIG";
-        audioToggleBtn.classList.add("active");
-      } else {
-        soundOnIcon?.classList.add("hidden");
-        soundOffIcon?.classList.remove("hidden");
-        if (label) label.textContent = "Som DESL";
-        audioToggleBtn.classList.remove("active");
-      }
-    });
-  }
 
   // --- RENDERING DO BESTIÁRIO REDESENHADO ---
   function renderBestiaryGrid() {
@@ -727,6 +706,8 @@ document.addEventListener("DOMContentLoaded", () => {
       animal.figure.style.transition = "opacity 0.5s ease-in-out";
 
       figure.addEventListener("click", async () => {
+        document.querySelectorAll('[data-animal="true"]').forEach((f) => f.classList.remove("selected"));
+        figure.classList.add("selected");
         if (!animal.articlePath) return;
         discoverAnimal(animal.name);
         try {
@@ -770,7 +751,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateHUD(currentDepth, pressure, temperature);
     updateMinimap(currentDepth);
-    updateAudioDepth(currentDepth);
 
     // Botão de Retorno à Superfície fica visível a partir de 150px de rolagem
     if (resetButton) {
